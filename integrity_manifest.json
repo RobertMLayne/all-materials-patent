@@ -18,8 +18,13 @@
     ".git/"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 19,
+  "file_count": 20,
   "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "547f59603028195ff9f8a87d04c4651551e8bd0d68f075257dfd549cd846b25b",
+      "size_bytes": 13
+    },
     {
       "path": ".github/workflows/verify.yml",
       "sha256": "4c7fbbe074d2fc5da5b93382e699d8641ac09bf282517a39ead7055bcd1bce3d",
@@ -112,8 +117,8 @@
     },
     {
       "path": "verify_package.py",
-      "sha256": "90fbc25684a869b512b6ff0265c6a30b118db25cbb44b94ef34ec3052e8e0566",
-      "size_bytes": 18178
+      "sha256": "e8bda4df8f95a07091a2117b457e89636d63d9bd1a7a632f44f2333dbf5a8c69",
+      "size_bytes": 18196
     }
   ]
 }

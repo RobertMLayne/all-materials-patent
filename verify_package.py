@@ -21,7 +21,7 @@ sys.dont_write_bytecode = True
 MANIFEST = "integrity_manifest.json"
 RANGE_REPORT = "range_model/verification_report.json"
 EXPECTED_HASHED = frozenset({
-    ".github/workflows/verify.yml", ".gitignore", "AGENTS.md", "README.md",
+    ".gitattributes", ".github/workflows/verify.yml", ".gitignore", "AGENTS.md", "README.md",
     "verify_package.py", "data/claim_support_map.json", "data/entity_register.json",
     "data/entity_register_notes.md", "documents/provisional_application_draft.md",
     "documents/provisional_filing_strategy.md", "documents/pct_defensive_disclosure_blueprint.md",
