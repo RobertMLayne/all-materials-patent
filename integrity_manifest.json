@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 99,
+  "file_count": 100,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 17016,
-      "sha256": "cd526276163a7a81cb2810068cb98ca1f2823b85a12c85975882825e69ed609c"
+      "size_bytes": 17516,
+      "sha256": "a1d000960f6c94c9f704aaff692f32eeaffb402432b33f8bddd259c36f4706b7"
     },
     {
       "path": "data/claim_support_map.json",
@@ -297,6 +297,11 @@
       "sha256": "94bbdfb691ea2cf7ba2a27b68a44c1074ba319fe5fd2c534d78a8458632d4b6e"
     },
     {
+      "path": "documents/composite_comparator_source_review_2026-09-30.md",
+      "size_bytes": 3885,
+      "sha256": "01c4ff61ee036d2e15ca87a6b8c6c183acc7f6f8d3fde4df2c5ff1bcb93e8b6b"
+    },
+    {
       "path": "documents/consolidated_review_edition.md",
       "size_bytes": 13800,
       "sha256": "5ad1fcfd3f9ba160802507f6fe458e616a2270987922526e08273487ae599f86"
@@ -398,8 +403,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 24600,
-      "sha256": "dfb705e8a433e83fefb5d00bc6415587428c8801588fe9bfb50bd054d347d020"
+      "size_bytes": 25571,
+      "sha256": "7a4ff4657cb0216149887bbf7fbd5c4fbed293629128c77ead8a34fed2a77c21"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -513,8 +518,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 75906,
-      "sha256": "dbefdcd7dbb9c2af3be00fecf66b00f009edb00d9d8972eb4f75885b3ea669da"
+      "size_bytes": 75972,
+      "sha256": "16b5715ee07c93df1401b4c228fe10ffa91d90cbd82b9482fc4a9e4b3f4a33bb"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

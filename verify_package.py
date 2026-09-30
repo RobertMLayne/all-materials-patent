@@ -80,6 +80,7 @@ EXPECTED_HASHED = frozenset({
     "range_model/numeric_examples.json",
     "data/publication_observation.json", "documents/current_status_addendum.md",
     "documents/reference_entry_support.md", "documents/technical_scope_supplement.md",
+    "documents/composite_comparator_source_review_2026-09-30.md",
     "documents/full_scope_completion_audit.md",
     "range_model/unrestricted_compositions.py",
     "range_model/unrestricted_composition_model.json",
