@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 130,
+  "file_count": 132,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 22173,
-      "sha256": "8bdcf19e22f84f45e2ca619b127c4c7ca39e601e3d59c217eb6cd479ea735e8c"
+      "size_bytes": 22784,
+      "sha256": "90ff16874edb96f77d5fe303db2a493179e03aba7389442d0d3732e8e4126557"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -220,6 +220,11 @@
       "path": "data/claim_support_map_working_2026-09-30.json",
       "size_bytes": 154073,
       "sha256": "2f91092c37f1c730cbd930a38e539cf89f33347fc36c4843bb782d971fad8f4d"
+    },
+    {
+      "path": "data/electrical_candidate_record_review_2026-09-30.json",
+      "size_bytes": 11953,
+      "sha256": "7819e70baf4bda6d3cfb993d223bd7e4c2ba01ee1910f566971fb188dc120c08"
     },
     {
       "path": "data/electrical_source_review_2026-09-30.json",
@@ -432,6 +437,11 @@
       "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
     },
     {
+      "path": "documents/electrical_claim_comparison_2026-09-30.md",
+      "size_bytes": 16448,
+      "sha256": "753742677a6bebd5b0a974ac0b417dc2e4db4b365a2af7a27421de6e81044f16"
+    },
+    {
       "path": "documents/full_scope_completion_audit.md",
       "size_bytes": 17861,
       "sha256": "a2c438e2310ddaeb897cdabceb275f4c10681bd750f5d6ad12f5f7c5b876d954"
@@ -553,8 +563,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 35798,
-      "sha256": "e6a7aaf4ee53dfe9942d1c7c853992b81fd9074eb86c49e3a70993e1deb799c8"
+      "size_bytes": 38310,
+      "sha256": "5db3e6413f1e64e936af4db5468125af528a87e1e2f06b9f890505dcf47bdc1b"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -668,8 +678,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 118741,
-      "sha256": "fa4c3c3a5be26d2eb44ad6146404f10ba1736af840157e9f4bf286ac3545eba5"
+      "size_bytes": 118863,
+      "sha256": "2d5d035da5a62cef3f3aca911d229515ebc69eed55eac11c5eaa5bc48605b515"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

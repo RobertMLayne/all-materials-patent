@@ -20,6 +20,8 @@ The [current electrical-evidence edition](documents/application_electrical_evide
 
 The [hydrogel comparison against actual claims](documents/hydrogel_claim_comparison_2026-09-30.md) maps claims 1, 5, 177, 186 and 197-199, with whole-specimen and monomer-feed constructions kept separate. A [worked candidate record](data/hydrogel_candidate_record_review_2026-09-30.json) performs present target assignment and evidence recording; source-gel measurements are not assigned to the monomer feed or a new candidate. Four illustrative later-claim tests address a matched source material, changed ratio/structure, large-list selection and added method/use. These are preliminary comparisons, not completed novelty opinions or additions silently included in the application PDF.
 
+The [electrical comparison against actual claims](documents/electrical_claim_comparison_2026-09-30.md) maps claims 1, 178, 183-186 and 197-199, separating material specifications from record-building operations. Its [worked stock-origin record](data/electrical_candidate_record_review_2026-09-30.json) assigns normalized dry-input targets, rejects an unsupported independent-surfactant shortcut, and retains carrier-residue, threshold-basis and response-attribution limits. Four later-claim tests expose specific disclosure gaps; all claim assessments and historical application/PDF contents remain unchanged.
+
 ## Read the documents
 
 | Document | Readable PDF | Editable source |

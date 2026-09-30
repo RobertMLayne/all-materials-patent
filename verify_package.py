@@ -120,6 +120,8 @@ EXPECTED_HASHED = frozenset({
     "documents/hydrogel_property_evidence_2026-09-30.md",
     "documents/hydrogel_claim_comparison_2026-09-30.md",
     "data/hydrogel_candidate_record_review_2026-09-30.json",
+    "documents/electrical_claim_comparison_2026-09-30.md",
+    "data/electrical_candidate_record_review_2026-09-30.json",
     "documents/full_scope_completion_audit.md",
     "range_model/unrestricted_compositions.py",
     "range_model/unrestricted_composition_model.json",
