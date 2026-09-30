@@ -1,0 +1,146 @@
+{
+  "record_id": "MAT-LIT-HYDROGEL-0001-CURATED-RECORD",
+  "prepared_date": "2026-09-30",
+  "record_operation": "Performed present-day source curation and target assignment; no physical experiment performed for this record.",
+  "candidate_scope": "A proposed verification of the source-described PIC 1/linker 2a system, described using a two-monomer feed basis. Input feed, isolated polymer and wet gel are separate material stages.",
+  "application_source": "documents/provisional_application_preparation_evidence_2026-09-30.md",
+  "application_source_sha256": "c9b8f44b79f970379054cf89508cb81853906dbb825a6bca476eb4b0216f575e",
+  "repository_baseline": "ec72c40d013869765c19d9c86f4fab9b230bc60c",
+  "source_review": "data/hydrogel_preparation_source_review_2026-09-30.json",
+  "primary_source": {
+    "title": "Crosslinking of fibrous hydrogels",
+    "doi": "10.1038/s41467-018-04508-x",
+    "url": "https://www.nature.com/articles/s41467-018-04508-x",
+    "xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5986759/fullTextXML",
+    "xml_sha256": "40a0c581dcd74dc0c0ecf6d2b4922236923c0d4da65fd4ea175cdc6f87a1533a",
+    "supplementary_archive_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5986759/supplementaryFiles",
+    "supplementary_pdf_sha256": "8d9961d659a2b73a90f5fab39ff78101c95b7a9065949c96f391ca16d0759a54",
+    "license": "CC BY 4.0"
+  },
+  "composition": {
+    "evidence_status": "CALCULATED",
+    "support": [
+      "methoxy_2018",
+      "azide_2018"
+    ],
+    "basis": "Monomer mole/number fraction of the nominal two-monomer charge, excluding every other process input.",
+    "material_stage": "Feed targets selected for this record, before polymerization; not retained polymer or wet-gel composition.",
+    "nominal_amount_umol": {
+      "methoxy_2018": 790,
+      "azide_2018": 27
+    },
+    "assigned_target_fractions": {
+      "methoxy_2018": "790/817",
+      "azide_2018": "27/817"
+    },
+    "normalization": "Positive target fractions sum exactly to one on this explicitly limited feed denominator.",
+    "qualification": "Exact arithmetic does not increase source charge precision. The paper need not have printed these exact fractions; this assignment is made in the present record. These are not elemental atomic/mass fractions, measured incorporation or a complete specimen inventory."
+  },
+  "structural_field": {
+    "source_connectivity": {
+      "evidence_status": "ESTABLISHED",
+      "material_stage": "Source-labeled monomer inputs",
+      "locator": "Figure 1b; preparation-edition D[0065] identity table",
+      "statement": "The two source graphs have different methoxy/azide tails. The retained description prints their condensed connectivity."
+    },
+    "neutral_formula_accounting": {
+      "evidence_status": "CALCULATED",
+      "methoxy_2018": "C14H24N2O6",
+      "azide_2018": "C15H25N5O6",
+      "qualification": "Calculated graph atom counts, not elemental assays or resolved stereochemical identities."
+    },
+    "candidate_identity": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "No resolved exact stereochemical input, supplier specification, candidate-product sequence or complete molecular-weight distribution is established for this record. The source drawing/name conflict is retained."
+    },
+    "source_product_context": {
+      "evidence_status": "ESTABLISHED",
+      "material_stage": "Published isolated PIC and gel, not the two-monomer feed",
+      "locator": "Sec3/p[2]; Sec4/p[2]; Supplementary Methods page 1",
+      "statement": "The source describes helical PIC and bundled networks, states azide comonomer content and reports a viscometric Mv estimate. Those statements do not prove the assigned feed fractions are incorporated exactly or specify every chain."
+    }
+  },
+  "preparation_field": {
+    "source_operations": {
+      "evidence_status": "ESTABLISHED",
+      "material_stage": "Source monomer-to-PIC preparation and separate PIC-to-gel assembly",
+      "locator": "Supplementary Methods page 1; Sec12/p[1]; preparation-edition D[0065] operation paragraphs",
+      "statement": "Published polymerization, isolation and cold stock mixing followed by heating are retained as attributed operations. Linker 2a stock uses DMSO."
+    },
+    "candidate_verification": {
+      "evidence_status": "PROPOSED",
+      "statement": "Resolve input identities and route applicability before reproducing a defined preparation; retain actual quantities, stock-delivery volumes, isolation and thermal history. No preparation has been performed for this record."
+    },
+    "candidate_success": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "No candidate product, yield, retained impurity inventory or successful source-specific repetition is asserted. A feed target does not fill these fields."
+    }
+  },
+  "measurement_field": {
+    "candidate_measurement": {
+      "evidence_status": "UNSUPPORTED",
+      "material_stage": "Any new feed, isolated polymer or gel specimen",
+      "statement": "No assay, spectrum, molecular-weight distribution, bridge count or modulus measurement is supplied for a new specimen."
+    },
+    "source_gel_context": {
+      "evidence_status": "ESTABLISHED",
+      "material_stage": "Published PIC 1/linker 2a gels; not measurements of the two-monomer feed",
+      "locator": "Sec13/p[1]; Figure 4; Supplementary Table 1 page 4",
+      "conditions": "Final PIC 1 concentration 1 mg/mL; crosslinking 37 deg C followed by 11 hours at 5 deg C; 40 mm sandblasted parallel plates, 500 micrometre gap, amplitude 0.04 and 1 Hz.",
+      "qualification": "Figure 4 reports SD with n = 2 or 3; the absolute table lacks per-row uncertainty. Supplementary page 3 UV-vis error at least 10% concerns conversion/background correction, not rheological uncertainty."
+    },
+    "verification_tests": {
+      "evidence_status": "PROPOSED",
+      "statement": "For a future defined specimen, separately determine feed delivery, incorporation and residual inventory; compare oscillatory modulus and corrected conversion data. Record uncertainty, sampling and actual solvent fraction rather than equating conversion with active bridges."
+    }
+  },
+  "property_field": {
+    "candidate_result": {
+      "evidence_status": "UNSUPPORTED",
+      "material_stage": "New candidate gel; the monomer feed has no assigned gel modulus",
+      "statement": "No new candidate response, exact stiffness, statistical significance or unexpected result is asserted."
+    },
+    "source_gel_context": {
+      "evidence_status": "ESTABLISHED",
+      "material_stage": "Published PIC 1/linker 2a gels",
+      "locator": "Supplementary Table 1 page 4; retained property table",
+      "qualification": "Different loading comparisons, not opposite outcomes for one specimen under identical conditions. The high-loading listed value remains above the zero-linker control. These are not measurements of the monomer feed or guaranteed candidate results.",
+      "listed_storage_modulus_5_c_pa": {
+        "0": "<1",
+        "0.1": "7",
+        "1.25": "95",
+        "2.0": "20"
+      }
+    },
+    "bridge_interpretation": {
+      "evidence_status": "CALCULATED",
+      "locator": "Sec8/p[1]; Supplementary page 3",
+      "statement": "The source estimates active bridges from conversion and the two-reactions-on-one-linker assumption. This model is not a direct bridge count; its conversion evidence retains the UV-vis limitation. No new numerical bridge estimate is made."
+    },
+    "unsupported_extension": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "Exact final incorporated fractions 790/817 and 27/817 inferred solely from the nominal feed remain an unsupported possibility, not a physical result. The same feed can lead to different architectures and properties."
+    }
+  },
+  "property_scenario": {
+    "evidence_status": "PROPOSED",
+    "temporal_status": "Present-day unperformed verification plan informed by already-published comparisons; not an applicant prediction predating those results.",
+    "baseline_material_and_state": "A future defined PIC 1/linker 2a gel at nominal DBCO/azide 0.1, final PIC concentration 1 mg/mL, assessed at 5 deg C after the specified 37 deg C crosslinking and 11-hour stabilization. This is a proposed specimen, not the source's measured specimen.",
+    "controlled_change": "Compare nominal DBCO/azide 1.25 with 0.1, holding resolved material identities, polymer batch, final PIC concentration, geometry and thermal schedule fixed; measure and match DMSO fraction. Matching is proposed and not claimed as a source-performed correction.",
+    "proposed_response": "Hypothesis: higher Gprime at 5 deg C if additional effective intrabundle intermolecular bridges stabilize the network. No magnitude or significance is promised.",
+    "mechanism": "Conditionally increased active connectivity; the source's bridge interpretation motivates the hypothesis without establishing the candidate's bridge count.",
+    "conditions": "Use the source-context oscillatory settings as proposed settings, record actual implementation and wait for identity/applicability prerequisites. Related source comparisons are already known.",
+    "discriminating_test": "Compare matched-solvent rheometry with corrected DBCO conversion and network/retained-material characterization. Determine whether added conversion yields additional elastically effective connectivity; report uncertainty and negative outcomes.",
+    "credible_alternative": {
+      "evidence_status": "PROPOSED",
+      "hypothesis": "Unchanged within measurement resolution, or lower Gprime, if the extra nominal dose fails to add effective bridges or reduces active connectivity.",
+      "mechanism": "A smaller accessible azide population could make the nominal dose effectively excessive and favor one-ended attachment; proposed candidate accessibility and attachment distributions remain unmeasured.",
+      "scope": "A separate conditional hypothesis with a different reaction state, not an assertion of opposing outcomes for the same specimen in identical conditions. This does not reclassify the source's performed comparisons as unperformed."
+    }
+  },
+  "publication_boundary": "This new curation and its exact target assignment are not attributed backward to 2018 or presumed included in an earlier PDF/application. Critical dates and statutory effects remain unresolved.",
+  "physical_experiment_performed_for_this_record": false,
+  "physical_enablement_certified": false,
+  "novelty_or_inventorship_decided": false,
+  "filing_asserted": false
+}
