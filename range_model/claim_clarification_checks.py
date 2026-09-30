@@ -8,6 +8,7 @@ the direct-script CLI prints a deterministic JSON report without creating files.
 
 from fractions import Fraction
 from itertools import combinations, product
+from math import lcm
 from pathlib import Path
 import json
 import sys
@@ -340,6 +341,78 @@ def verify_isotope_examples():
     }
 
 
+def verify_basis_count_regressions(isotope):
+    """Check both native bases and the atom-count denominator, using toy masses.
+
+    These two examples are separate from the earlier box, boundary and missing-
+    mass counts. They add no physical masses or experimental inventories.
+    """
+    atomic = tuple(exact(value) for value in isotope["elemental_atomic"])
+    elemental_mass = tuple(exact(value) for value in isotope["elemental_mass"])
+    masses = tuple(exact(value) for value in isotope["effective_masses"])
+    atomic_mass_total = sum(value * mass for value, mass in zip(atomic, masses))
+    forward = tuple(value * mass / atomic_mass_total for value, mass in zip(atomic, masses))
+    mass_atom_total = sum(value / mass for value, mass in zip(elemental_mass, masses))
+    inverse = tuple((value / mass) / mass_atom_total
+                    for value, mass in zip(elemental_mass, masses))
+    require(forward == elemental_mass and inverse == atomic,
+            "Qualified-mass conversion failed in one of the two native bases.")
+    native_branches = []
+    for basis, x, corresponding in (("atomic", atomic, forward),
+                                     ("mass", elemental_mass, inverse)):
+        require(sum(x) == sum(corresponding) == 1,
+                "A native-basis branch fails exact normalization.")
+        require(x == (atomic if basis == "atomic" else elemental_mass),
+                "The generic x coordinate does not match its identified basis.")
+        native_branches.append({"native_basis": basis, "x": serialized(x),
+                                "other_basis": "mass" if basis == "atomic" else "atomic",
+                                "converted_fractions": serialized(corresponding)})
+    # Unequal masses make the prior accidental mass-as-atomic substitution visible.
+    wrong_total = sum(value * mass for value, mass in zip(elemental_mass, masses))
+    wrong = tuple(value * mass / wrong_total for value, mass in zip(elemental_mass, masses))
+    require(wrong == (Fraction(1, 2), Fraction(1, 2)) and wrong != elemental_mass,
+            "The unequal-mass regression no longer detects the wrong substitution.")
+    basis_record = {"case": "qualified_mass_conversion_both_native_bases",
+                    "effective_toy_masses": serialized(masses), "branches": native_branches,
+                    "mass_as_atomic_wrong_result": serialized(wrong),
+                    "wrong_result_differs_from_native_mass": True}
+
+    mass_target = (Fraction(1, 2), Fraction(1, 2))
+    toy_masses = (Fraction(1), Fraction(2))
+    total_atoms_per_mass = sum(value / mass for value, mass in zip(mass_target, toy_masses))
+    atom_target = tuple((value / mass) / total_atoms_per_mass
+                        for value, mass in zip(mass_target, toy_masses))
+    mass_denominator = lcm(*(value.denominator for value in mass_target))
+    atom_denominator = lcm(*(value.denominator for value in atom_target))
+    require(atom_target == (Fraction(2, 3), Fraction(1, 3))
+            and mass_denominator == 2 and atom_denominator == 3,
+            "The distinct mass/atomic denominator example changed.")
+    inventory_records = []
+    for total, expected in ((2, False), (3, True)):
+        counts = tuple(total * value for value in atom_target)
+        compatible = all(value.denominator == 1 for value in counts)
+        require(compatible == expected == (total % atom_denominator == 0),
+                "Atomic-count compatibility used the wrong basis denominator.")
+        require((total % mass_denominator == 0) != compatible,
+                "The toy inventory fails to distinguish the mass denominator.")
+        # These support IDs are bookkeeping inputs; toy masses are not their
+        # physical chemical masses. Compare only the production count operation.
+        production = target.finite_inventory([1, 2], atom_target, total)
+        require(production["count_compatible"] == compatible,
+                "Production atomic inventory differs from exact toy counts.")
+        inventory_records.append({"N": total, "target_atom_counts": serialized(counts),
+                                  "atomic_count_compatible": compatible,
+                                  "mass_denominator_divides_N": total % mass_denominator == 0})
+    count_record = {"case": "rational_mass_denominator_is_not_atom_count_denominator",
+                    "mass_target": serialized(mass_target),
+                    "qualified_toy_masses": serialized(toy_masses),
+                    "converted_atomic_target": serialized(atom_target),
+                    "mass_primitive_denominator": mass_denominator,
+                    "atomic_primitive_denominator": atom_denominator,
+                    "inventories": inventory_records}
+    return [basis_record, count_record]
+
+
 def verify():
     if not __debug__:
         raise VerificationError("Run without -O, -OO or PYTHONOPTIMIZE; production checks use assertions.")
@@ -350,11 +423,13 @@ def verify():
     grid_cases, by_denominator = verify_grid_boxes(intervals)
     boundaries = verify_boundaries()
     isotope = verify_isotope_examples()
+    basis_count = verify_basis_count_regressions(isotope)
     return {
         "status": "passed", "evidence_status": "CALCULATED",
         "epsilon_box_cases": epsilon_cases, "epsilon_feasible_boxes": feasible,
         "integer_grid_cases": grid_cases, "boundary_cases": len(boundaries),
         "isotope_unknown_mass_cases": len(isotope["unknown_mass_cases"]),
+        "basis_count_regression_cases": len(basis_count),
         "enumeration": {
             "endpoints": serialized(endpoints), "closed_intervals": len(intervals),
             "epsilon_box_domain": "All products of the 15 intervals for k=1,2,3",
@@ -368,8 +443,10 @@ def verify():
                     "independent positive tuples from separator positions, not greedy allocation",
                     "cross-check the current separate positive and arbitrary-lattice allocators",
                     "claim 193 positive-count cap, integer inequalities and residual construction",
-                    "anonymous five-atom inventory; omitted zero-state and unresolved populated masses"],
+                    "anonymous five-atom inventory; omitted zero-state and unresolved populated masses",
+                    "separate anonymous native-basis conversion and atomic-count denominator regressions"],
         "boundaries": boundaries, "isotope_example": isotope,
+        "basis_count_regressions": basis_count,
         "scope": "Bounded exact arithmetic only; no exhaustive infinite domain, physical preparation, "
                  "measured property, application support, patentability or legal effect established.",
     }

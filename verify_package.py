@@ -28,6 +28,16 @@ PARTICLE_DIRECTORY = "data/particle_archive"
 OPTIONAL_NUCLEAR_VIEW = f"{NUCLEAR_DIRECTORY}/nuclear_states.json"
 REVIEW_PACKET = "data/review_packet_manifest.json"
 REVIEW_PREPARED_DATE = "2026-09-30"
+WORKING_SOURCE = "documents/provisional_application_working_2026-09-30.md"
+WORKING_MAP = "data/claim_support_map_working_2026-09-30.json"
+WORKING_EDITION = "data/working_application_2026-09-30.json"
+WORKING_CHANGED_PARAGRAPHS = {"0008", "0010", "0011", "0018", "0030", "0031", "0032", "0047", "0075"}
+WORKING_CHANGED_CLAIMS = {147, 169, 191, 192, 193}
+WORKING_AUTHORING = {
+    "tools/pdf/build_working_application.py": "data/working_application_authoring_2026-09-30/builder.py.txt",
+    "tools/pdf/build_consolidated_review.py": "data/working_application_authoring_2026-09-30/layout.py.txt",
+    "tools/pdf/build_identity_review_annex.py": "data/working_application_authoring_2026-09-30/output_helper.py.txt",
+}
 REVIEW_AUTHORING_FILES = {
     "builder": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
     "helper": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
@@ -83,6 +93,10 @@ EXPECTED_HASHED = frozenset({
     f"{PARTICLE_DIRECTORY}/{name}" for name in PARTICLE_FILES
 }
 EXPECTED_HASHED = EXPECTED_HASHED | {
+    WORKING_SOURCE, WORKING_MAP, WORKING_EDITION,
+    "documents/working_application_2026-09-30.md",
+    "documents/pdf/provisional_application_working_2026-09-30.pdf",
+    "tools/pdf/build_working_application.py", *WORKING_AUTHORING.values(),
     ".editorconfig", ".vscode/settings.json", ".vscode/extensions.json", ".vscode/tasks.json",
     "CONTRIBUTING.md", "documents/workflow_decisions.md", "documents/restart_checkpoint.md",
     "documents/github_settings.md", "tools/update_manifest.py", "pyproject.toml", "requirements-dev.txt",
@@ -268,6 +282,89 @@ def check_claims(application: str, support: dict) -> dict:
     return {"numbered_paragraphs": 80, "candidate_claims": 199,
             "earlier_claim_dependencies_checked": dependencies,
             "claim_specific_novelty_assessments": 0}
+
+
+def check_working_application(root: Path) -> dict:
+    """Check actual edition adoption separately from historical or legal support.
+
+    Retained authoring snapshots bind this PDF to its actual code, without
+    pretending that future maintained-tool changes authored an earlier PDF.
+    This offline check validates recorded navigation; it does not parse PDFs.
+    """
+    original = (root / "documents/provisional_application_draft.md").read_text(encoding="utf-8")
+    working_bytes = (root / WORKING_SOURCE).read_bytes()
+    working = working_bytes.decode("utf-8")
+    support = load_json(root / WORKING_MAP)
+    proposal = (root / "documents/proposed_claim_clarifications.md").read_text(encoding="utf-8")
+    require(support.get("source_path") == WORKING_SOURCE and support.get("source_sha256")
+            == hashlib.sha256(working_bytes).hexdigest(), "Working source/map hash differs")
+    require(support.get("prepared_date") == "2026-09-30" and support.get("derived_from") == {
+        "path": "documents/provisional_application_draft.md",
+        "sha256": hashlib.sha256((root / "documents/provisional_application_draft.md").read_bytes()).hexdigest(),
+        "repository_baseline": "9cbd8323b2546088c19225143dd23fa38577e4b1",
+    }, "Working source derivation differs")
+    require(support.get("changed_claims") == sorted(WORKING_CHANGED_CLAIMS)
+            and support.get("changed_paragraphs") == sorted(WORKING_CHANGED_PARAGRAPHS),
+            "Working change inventory differs")
+    paragraphs = lambda text: dict(re.findall(r"^\[(\d{4})\] (.+)$", text, re.M))
+    claims = lambda text: {int(n): body for n, body in re.findall(r"^\*\*Claim (\d+)\.\*\* (.+)$", text, re.M)}
+    old_paragraphs, new_paragraphs = paragraphs(original), paragraphs(working)
+    old_claims, new_claims = claims(original), claims(working)
+    require(old_paragraphs.keys() == new_paragraphs.keys()
+            and {n for n in old_paragraphs if old_paragraphs[n] != new_paragraphs[n]}
+            == WORKING_CHANGED_PARAGRAPHS, "Unexpected working paragraph changes")
+    require(old_claims.keys() == new_claims.keys()
+            and {n for n in old_claims if old_claims[n] != new_claims[n]} == WORKING_CHANGED_CLAIMS,
+            "Unexpected working claim changes")
+    for n in (169, 191, 192, 193):
+        proposed = re.findall(rf"^\*\*Claim {n} - proposed (?:wording|clarification)\.\*\* (.+)$", proposal, re.M)
+        require(len(proposed) == 1 and new_claims[n] == proposed[0],
+                f"Working claim {n} differs from reviewed proposal")
+    proposed_paragraph = re.findall(r"^\*\*\[0047\] - proposed replacement\.\*\* (.+)$", proposal, re.M)
+    require(len(proposed_paragraph) == 1 and new_paragraphs["0047"] == proposed_paragraph[0],
+            "Working isotope paragraph differs from reviewed proposal")
+    claim_result = check_claims(working, support)
+    check_registry(load_json(root / "data/entity_register.json"), working)
+    historical_map = load_json(root / "data/claim_support_map.json")
+    for old_entry, new_entry in zip(historical_map["claims"], support["claims"]):
+        permitted = {"text", "textual_support_paragraphs"} if old_entry["claim_number"] in WORKING_CHANGED_CLAIMS else set()
+        require({key: value for key, value in old_entry.items() if key not in permitted}
+                == {key: value for key, value in new_entry.items() if key not in permitted},
+                "Working map silently changed support or physical/legal statuses")
+    edition = load_json(root / WORKING_EDITION)
+    require(edition.get("prepared_date") == "2026-09-30"
+            and edition.get("repository_baseline") == "9cbd8323b2546088c19225143dd23fa38577e4b1"
+            and edition.get("filing_asserted") is False
+            and edition.get("physical_enablement_certified") is False,
+            "Working edition preparation, baseline or factual status differs")
+    expected_sources = {WORKING_SOURCE, WORKING_MAP, "documents/drawings/composition_simplex.svg",
+                        "documents/drawings/material_record_sequence.svg", *WORKING_AUTHORING}
+    entries = edition.get("sources", [])
+    require(len(entries) == len(expected_sources) and {entry["path"] for entry in entries} == expected_sources,
+            "Working PDF source inventory differs")
+    for entry in entries:
+        snapshot = WORKING_AUTHORING.get(entry["path"])
+        require(entry.get("snapshot_path") == snapshot, "Working authoring snapshot identity differs")
+        data = safe_path(root, snapshot or entry["path"]).read_bytes()
+        require(hashlib.sha256(data).hexdigest() == entry["sha256"], "Working PDF captured-source hash differs")
+    pdf = edition.get("pdf", {})
+    require(pdf.get("path") == "documents/pdf/provisional_application_working_2026-09-30.pdf"
+            and type(pdf.get("page_count")) is int and pdf["page_count"] > 0, "Invalid working PDF identity")
+    pdf_bytes = safe_path(root, pdf["path"]).read_bytes()
+    require(len(pdf_bytes) == pdf.get("size_bytes") and hashlib.sha256(pdf_bytes).hexdigest() == pdf.get("sha256"),
+            "Working PDF bytes differ from edition record")
+    locations = edition.get("location_map", {})
+    expected_locations = {f"paragraph_{n:04d}" for n in range(1, 81)} | {f"claim_{n}" for n in range(1, 200)}
+    require(locations.keys() == expected_locations
+            and all(type(page) is int and 1 <= page <= pdf["page_count"] for page in locations.values()),
+            "Working recorded PDF locations differ or are out of bounds")
+    require(edition.get("complete_numbered_text_checked") == {"paragraphs": 80, "claims": 199}
+            and edition.get("vector_drawings_checked") == 2, "Working recorded content counts differ")
+    return {**claim_result, "changed_paragraphs": sorted(WORKING_CHANGED_PARAGRAPHS),
+            "changed_claims": sorted(WORKING_CHANGED_CLAIMS), "recorded_pdf_pages": pdf["page_count"],
+            "recorded_pdf_locations_checked": len(locations), "captured_sources_checked": len(entries),
+            "pdf_parsed_or_appearance_rechecked_by_this_check": False,
+            "filing_or_earlier_entitlement_or_enablement_certified": False}
 
 
 def check_local_links(root: Path) -> int:
@@ -665,6 +762,7 @@ def run(root: Path) -> dict:
     hashed = check_integrity(root)
     application = (root / "documents/provisional_application_draft.md").read_text(encoding="utf-8")
     claim_result = check_claims(application, load_json(root / "data/claim_support_map.json"))
+    working_result = check_working_application(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -683,6 +781,7 @@ def run(root: Path) -> dict:
             **claim_result, **registry_result, "local_markdown_links_checked": links, **math_result,
             "unrestricted_domain_verification": unrestricted_result,
             "claim_clarification_verification": clarification_result,
+            "working_application_edition_verification": working_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -904,6 +1003,36 @@ def self_test(root: Path) -> dict:
                     "Claim-report drift fixture failed for an unrelated reason")
             extended.append("claim_clarification_report_drift_rejected")
         clarification_path.write_bytes(clarification_original)
+        working_map_path = fixture / WORKING_MAP
+        working_map_original = working_map_path.read_bytes()
+        working_map = json.loads(working_map_original)
+        working_map["source_sha256"] = "0" * 64
+        working_map_path.write_text(json.dumps(working_map), encoding="utf-8")
+        try:
+            check_working_application(fixture)
+        except VerificationError as error:
+            require("Working source/map hash differs" in str(error), "Working-map fixture failed for another reason")
+            extended.append("working_source_map_drift_rejected")
+        working_map_path.write_bytes(working_map_original)
+        working_source_path = fixture / WORKING_SOURCE
+        working_source_original = working_source_path.read_bytes()
+        working_source = working_source_original.decode("utf-8")
+        marker = "**Claim 169.** The material of claim 1, wherein each selected element i has a conditional atom-count"
+        require(working_source.count(marker) == 1, "Working isotope mutation fixture lost its target")
+        altered = working_source.replace(marker, marker.replace("atom-count", "mass"))
+        working_source_path.write_text(altered, encoding="utf-8", newline="\n")
+        working_map = json.loads(working_map_original)
+        working_map["claims"][168]["text"] = working_map["claims"][168]["text"].replace("conditional atom-count", "conditional mass", 1)
+        working_map["source_sha256"] = hashlib.sha256(working_source_path.read_bytes()).hexdigest()
+        working_map_path.write_text(json.dumps(working_map), encoding="utf-8")
+        try:
+            check_working_application(fixture)
+        except VerificationError as error:
+            require("Working claim 169 differs from reviewed proposal" in str(error),
+                    "Wrong-basis fixture failed for another reason")
+            extended.append("working_isotope_basis_drift_rejected_after_consistent_map_update")
+        working_source_path.write_bytes(working_source_original)
+        working_map_path.write_bytes(working_map_original)
         for path in ("../outside.txt", "/absolute.txt", "C:/outside.txt", "a\\b"):
             try:
                 safe_path(fixture, path)
@@ -1093,7 +1222,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 18, f"Expected 18 extension failure checks, got {len(extended)}")
+    require(len(extended) == 20, f"Expected 20 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,

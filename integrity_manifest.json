@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 90,
+  "file_count": 99,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,13 +133,18 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 15920,
-      "sha256": "6e356a4c35cb3b21562e68489639b6ab12780b652ad017cbc02320137a1e1818"
+      "size_bytes": 17016,
+      "sha256": "cd526276163a7a81cb2810068cb98ca1f2823b85a12c85975882825e69ed609c"
     },
     {
       "path": "data/claim_support_map.json",
       "size_bytes": 154015,
       "sha256": "b75a45d1a92705eb2f45fcea18e9817f8fb75d86c3661cff0d1b3ae43a8bf87e"
+    },
+    {
+      "path": "data/claim_support_map_working_2026-09-30.json",
+      "size_bytes": 154073,
+      "sha256": "2f91092c37f1c730cbd930a38e539cf89f33347fc36c4843bb782d971fad8f4d"
     },
     {
       "path": "data/entity_register.json",
@@ -262,6 +267,26 @@
       "sha256": "9037d1632aba8a559df22184912316494a9b523b0c63f0b26ddc43d391650f67"
     },
     {
+      "path": "data/working_application_2026-09-30.json",
+      "size_bytes": 12369,
+      "sha256": "fd84b90ead0e99f58ce6b2bf1c8a91987ac1172e70135c78ff623f787ee1b9cf"
+    },
+    {
+      "path": "data/working_application_authoring_2026-09-30/builder.py.txt",
+      "size_bytes": 12567,
+      "sha256": "76d7dfa53c7a354695f5041b97ef4c0652cf4c84cc29c94e78fbb9babeb59bd6"
+    },
+    {
+      "path": "data/working_application_authoring_2026-09-30/layout.py.txt",
+      "size_bytes": 28416,
+      "sha256": "3d0b844c308919efc803cb07927c4cc4370789138b96929496aa75674bfd7b3e"
+    },
+    {
+      "path": "data/working_application_authoring_2026-09-30/output_helper.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
       "path": "documents/applicant_evidence_intake.md",
       "size_bytes": 11484,
       "sha256": "12faebd03a1459627f5a872501fe9318c46534cdfd349c583e6cd108f2794c37"
@@ -327,6 +352,11 @@
       "sha256": "a8306290a92c9433271dd1711e1bdabfd1c79779877897c99186638f3d6e0d7f"
     },
     {
+      "path": "documents/pdf/provisional_application_working_2026-09-30.pdf",
+      "size_bytes": 153458,
+      "sha256": "56da3a8af00ee15f4afb609e5192607e8cf51c16baef5f2a982789145ee014ee"
+    },
+    {
       "path": "documents/pdf/provisional_filing_strategy.pdf",
       "size_bytes": 95630,
       "sha256": "01d614ed448f385414997e788e749e1f1961fc5d2380e91b6640fa742c9cbe95"
@@ -340,6 +370,11 @@
       "path": "documents/provisional_application_draft.md",
       "size_bytes": 73191,
       "sha256": "3c3a6f9b42ca87ffedfd97435ac0476d3301f7f1d650b4c2b9f0fb0b66b15949"
+    },
+    {
+      "path": "documents/provisional_application_working_2026-09-30.md",
+      "size_bytes": 80010,
+      "sha256": "1b508938a31b1e7a19b59b3f06edfd21e8378d6ba9e375551250ceb79a8fd198"
     },
     {
       "path": "documents/provisional_filing_strategy.md",
@@ -363,8 +398,13 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 23058,
-      "sha256": "4701e3a97c84a298f125161c11186e9064541793d791e61552af35c8b8027c27"
+      "size_bytes": 24600,
+      "sha256": "dfb705e8a433e83fefb5d00bc6415587428c8801588fe9bfb50bd054d347d020"
+    },
+    {
+      "path": "documents/working_application_2026-09-30.md",
+      "size_bytes": 9578,
+      "sha256": "04179e5e29d4ee91bb88a63713e579db18b74a0405a580154e870cce32fb62a0"
     },
     {
       "path": "pyproject.toml",
@@ -373,13 +413,13 @@
     },
     {
       "path": "range_model/claim_clarification_checks.py",
-      "size_bytes": 19732,
-      "sha256": "6188d965955058a3bac6f4e8d199b7ebc97f9355e56edee7949d736a58a68f01"
+      "size_bytes": 24804,
+      "sha256": "fcba9e77394cee14593bcc273e314f1da74f82e1df591ce5df52429eb139900e"
     },
     {
       "path": "range_model/claim_clarification_report.json",
-      "size_bytes": 7514,
-      "sha256": "948df34b4addf65563ad66e0115230cebe76f0ce33863fa8bd8c6d3da9152d43"
+      "size_bytes": 9274,
+      "sha256": "6139b28a1aafb2b0e65e16ff32927df63763f93b0ef533a9b396492c6754c5dd"
     },
     {
       "path": "range_model/composition_range_model.json",
@@ -452,6 +492,11 @@
       "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
     },
     {
+      "path": "tools/pdf/build_working_application.py",
+      "size_bytes": 12671,
+      "sha256": "cdcf89036b5b65c42f70bf527406016545f3ce08e9a62946c0c484ad32b71bc1"
+    },
+    {
       "path": "tools/pdf/requirements-pdf.txt",
       "size_bytes": 115,
       "sha256": "cfb43a07bd0b4c2aa959c50eaf46c81f5d5cb785b0dcbf477c371545923f0b7b"
@@ -468,8 +513,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 66578,
-      "sha256": "444515315591fc49ffa949c36f1f93fea2959c0ed7f723809aab8623a438bbc7"
+      "size_bytes": 75883,
+      "sha256": "4432e8717c88e808446b436a059f1215c7e8d5e4f71f862067b8822461c0d654"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

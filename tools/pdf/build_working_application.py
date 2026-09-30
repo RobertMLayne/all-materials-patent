@@ -1,0 +1,244 @@
+"""Render the separately dated working application, preserving historical PDFs.
+
+Optional authoring uses requirements-pdf.txt; ordinary verification is offline
+and standard-library-only. The two retained SVGs use a deliberately small,
+checked primitive set, rendered directly as PDF vectors without extra tooling.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+from html import unescape
+import importlib.metadata
+import json
+from pathlib import Path
+import re
+import tempfile
+import xml.etree.ElementTree as ET
+
+from pypdf import PdfReader
+from reportlab.lib import colors
+from reportlab.platypus import Flowable, Paragraph
+
+import build_consolidated_review as layout
+from build_identity_review_annex import (
+    publish_outputs_exclusive, report_path_label, require, validate_baseline, validate_outputs,
+)
+
+SOURCE = "documents/provisional_application_working_2026-09-30.md"
+MAP = "data/claim_support_map_working_2026-09-30.json"
+DRAWINGS = ("documents/drawings/composition_simplex.svg",
+            "documents/drawings/material_record_sequence.svg")
+AUTHORING = ("tools/pdf/build_working_application.py",
+             "tools/pdf/build_consolidated_review.py",
+             "tools/pdf/build_identity_review_annex.py")
+LABEL = "Working application 2026-09-30"
+
+
+def digest(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+class SourceDrawing(Flowable):
+    """Render only the checked primitive vocabulary of these two static SVGs."""
+    def __init__(self, data: bytes):
+        super().__init__()
+        self.root = ET.fromstring(data)
+        self.source_width = float(self.root.attrib["width"])
+        self.source_height = float(self.root.attrib["height"])
+        require(self.source_width > 0 and self.source_height > 0, "Invalid SVG dimensions")
+        require(tuple(map(float, self.root.attrib["viewBox"].split()))
+                == (0, 0, self.source_width, self.source_height), "Unsupported SVG viewBox")
+        self.factor = layout.WIDTH / self.source_width
+        self.width, self.height = layout.WIDTH, self.source_height * self.factor
+        self.spaceBefore, self.spaceAfter = 7, 12
+        for node in self.root.iter():
+            require(node.tag.rsplit("}", 1)[-1] in
+                    {"svg", "g", "rect", "line", "polygon", "circle", "text"},
+                    "Unsupported SVG primitive")
+            require(not ({"transform", "style", "href"} & node.attrib.keys()),
+                    "Unsupported SVG transform, style or external reference")
+            require(node.attrib.get("text-anchor", "start") in {"start", "middle", "end"},
+                    "Unsupported SVG text anchor")
+
+    def draw(self):
+        canvas, height = self.canv, self.source_height
+        canvas.saveState()
+        canvas.scale(self.factor, self.factor)
+
+        def visit(node, inherited):
+            attributes = {**inherited, **node.attrib}
+            tag = node.tag.rsplit("}", 1)[-1]
+            if tag in {"svg", "g"}:
+                for child in node:
+                    visit(child, attributes)
+                return
+            canvas.saveState()
+            fill = attributes.get("fill", "black")
+            stroke = attributes.get("stroke", "none")
+            if fill != "none":
+                canvas.setFillColor(colors.toColor(fill))
+            if stroke != "none":
+                canvas.setStrokeColor(colors.toColor(stroke))
+            canvas.setLineWidth(float(attributes.get("stroke-width", 1)))
+            if "fill-opacity" in attributes:
+                canvas.setFillAlpha(float(attributes["fill-opacity"]))
+            filled, stroked = int(fill != "none"), int(stroke != "none")
+            value = lambda name, default=0: float(attributes.get(name, default))
+            if tag == "rect":
+                args = (value("x"), height-value("y")-value("height"),
+                        value("width"), value("height"))
+                if value("rx"):
+                    canvas.roundRect(*args, value("rx"), stroke=stroked, fill=filled)
+                else:
+                    canvas.rect(*args, stroke=stroked, fill=filled)
+            elif tag == "line":
+                canvas.line(value("x1"), height-value("y1"), value("x2"), height-value("y2"))
+            elif tag == "circle":
+                canvas.circle(value("cx"), height-value("cy"), value("r"), stroke=stroked, fill=filled)
+            elif tag == "polygon":
+                numbers = list(map(float, re.split(r"[ ,]+", attributes["points"].strip())))
+                require(len(numbers) >= 6 and len(numbers) % 2 == 0, "Invalid SVG polygon")
+                path = canvas.beginPath()
+                path.moveTo(numbers[0], height-numbers[1])
+                for x, y in zip(numbers[2::2], numbers[3::2]):
+                    path.lineTo(x, height-y)
+                path.close()
+                canvas.drawPath(path, stroke=stroked, fill=filled)
+            else:
+                require(not list(node), "Unsupported nested SVG text")
+                font = "ReviewArialBold" if attributes.get("font-weight") == "bold" else "ReviewArial"
+                canvas.setFont(font, value("font-size", 12))
+                draw = {"start": canvas.drawString, "middle": canvas.drawCentredString,
+                        "end": canvas.drawRightString}[attributes.get("text-anchor", "start")]
+                draw(value("x"), height-value("y"), node.text or "")
+            canvas.restoreState()
+
+        visit(self.root, {})
+        canvas.restoreState()
+
+
+def render(text: str, drawings: dict[str, bytes], output: Path) -> list[dict]:
+    lines, story, index = text.splitlines(), [], 0
+    while index < len(lines):
+        line = lines[index].strip()
+        index += 1
+        if not line:
+            continue
+        image = re.fullmatch(r"!\[(.+)\]\((.+)\)", line)
+        if image:
+            key = "documents/" + image.group(2)
+            require(key in drawings, "Unreviewed drawing reference")
+            story.append(SourceDrawing(drawings[key]))
+            continue
+        if line.startswith("|"):
+            block = [line]
+            while index < len(lines) and lines[index].strip().startswith("|"):
+                block.append(lines[index])
+                index += 1
+            story.append(layout.table(block))
+            continue
+        heading = re.fullmatch(r"(#{1,3})\s+(.+)", line)
+        style = {1: layout.TITLE, 2: layout.H1, 3: layout.H2}[len(heading[1])] if heading else layout.BODY
+        story.append(Paragraph(layout.inline(heading[2] if heading else line), style))
+    document = layout.ReviewDoc(output, LABEL)
+    document.build(story, onFirstPage=document.footer, onLaterPages=document.footer)
+    return document.headings
+
+
+def canonical(value: str) -> str:
+    value = value.replace("\u2011", "-").replace("\u2013", "-").replace("\u2014", "-")
+    return " ".join(value.split())
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--package-root", type=Path, default=Path(__file__).resolve().parents[2])
+    parser.add_argument("--baseline-commit", required=True)
+    parser.add_argument("--font-directory", type=Path)
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--report", type=Path)
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    root = args.package_root.resolve()
+    baseline = validate_baseline(args.baseline_commit)
+    names = (SOURCE, MAP, *DRAWINGS, *AUTHORING)
+    captured = {name: (root/name).read_bytes() for name in names}
+    source = captured[SOURCE].decode("utf-8")
+    support = json.loads(captured[MAP])
+    require(support["source_sha256"] == digest(captured[SOURCE]), "Working source/map drift")
+    require(support["derived_from"]["repository_baseline"] == baseline, "Unexpected edition baseline")
+    versions = {name: importlib.metadata.version(name) for name in ("reportlab", "pypdf")}
+    require(versions == {"reportlab": "4.4.9", "pypdf": "6.19.0"}, "Use the pinned optional PDF dependencies")
+    fonts = layout.configure_fonts(args.font_directory, [source, *(captured[n].decode("utf-8") for n in DRAWINGS)])
+    drawings = {name: captured[name] for name in DRAWINGS}
+    for data in drawings.values():
+        SourceDrawing(data)
+    if args.check:
+        print(json.dumps({"status": "inputs checked", "source_sha256": digest(captured[SOURCE]),
+                          "authoring_versions": versions, "fonts": fonts,
+                          "pdf_created": False}, indent=2))
+        return 0
+    output, report = validate_outputs(root,
+        args.output or root/"generated_reports/pdf/working_application_2026-09-30.pdf",
+        args.report or root/"generated_reports/pdf/working_application_2026-09-30.json",
+        [root/name for name in names])
+    output.parent.mkdir(parents=True, exist_ok=True)
+    report.parent.mkdir(parents=True, exist_ok=True)
+    # Complete text checks precede exclusive publication. A later I/O failure
+    # preserves partial output for inspection under the shared helper policy.
+    with tempfile.TemporaryDirectory(prefix="working-application-") as temporary:
+        pdf = Path(temporary)/"working.pdf"
+        headings = render(source, drawings, pdf)
+        reader = PdfReader(pdf)
+        pages = []
+        for number, page in enumerate(reader.pages, 1):
+            content = page.extract_text() or ""
+            content = content.replace(LABEL + " - REVIEW; no filing asserted", "", 1)
+            content = re.sub(rf"^\s*{number}\s*$", "", content, count=1, flags=re.M)
+            pages.append(content)
+        full = canonical("\n".join(pages))
+        locations = {}
+        for kind, pattern, expected in (
+            ("paragraph", r"^\[(\d{4})\] (.+)$", 80),
+            ("claim", r"^\*\*Claim (\d+)\.\*\* (.+)$", 199),
+        ):
+            matches = re.findall(pattern, source, re.M)
+            require(len(matches) == expected, "Unexpected working numbering")
+            for number, body in matches:
+                marker = f"[{number}]" if kind == "paragraph" else f"Claim {number}."
+                # Compare displayed wording, not Markdown link targets or bold
+                # delimiters. Escaped comparison symbols survive tag removal.
+                expected = unescape(re.sub(r"<[^>]+>", "", layout.inline(marker + " " + body)))
+                require(canonical(expected) in full, f"Rendered {kind} {number} lost or changed text")
+                positions = [i for i, page in enumerate(pages, 1)
+                             if re.search(r"^" + re.escape(marker) + r"(?=\s)", page, re.M)]
+                require(len(positions) == 1, f"Ambiguous rendered {kind} {number} start")
+                locations[f"{kind}_{number}"] = positions[0]
+        for data in drawings.values():
+            for node in ET.fromstring(data).iter():
+                if node.tag.endswith("}text"):
+                    require(canonical(node.text or "") in full, "Rendered SVG text was lost")
+        for name, data in captured.items():
+            require((root/name).read_bytes() == data, "Authoring input changed during render")
+        result = {"prepared_date": "2026-09-30", "edition_status": "prospective unfiled working edition",
+                  "repository_baseline": baseline, "authoring_versions": versions, "fonts": fonts,
+                  "sources": [{"path": name, "sha256": digest(data)} for name, data in captured.items()],
+                  "pdf": {"path": report_path_label(output, root),
+                          "intended_archival_path": "documents/pdf/provisional_application_working_2026-09-30.pdf",
+                          "sha256": digest(pdf.read_bytes()), "size_bytes": pdf.stat().st_size,
+                          "page_count": len(pages)},
+                  "complete_numbered_text_checked": {"paragraphs": 80, "claims": 199},
+                  "vector_drawings_checked": 2, "location_map": locations, "headings": headings,
+                  "visual_review": "Pending PNG inspection; extraction does not establish appearance.",
+                  "filing_asserted": False, "physical_enablement_certified": False}
+        metadata = Path(temporary)/"report.json"
+        metadata.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8", newline="\n")
+        publish_outputs_exclusive([(pdf, output), (metadata, report)])
+    print(json.dumps({"status": "rendered and text checked", "page_count": result["pdf"]["page_count"],
+                      "numbered_text": result["complete_numbered_text_checked"], "visual_review": result["visual_review"]}))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
