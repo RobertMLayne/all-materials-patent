@@ -1,0 +1,155 @@
+{
+  "record_id": "MAT-LIT-ELECTRICAL-0001-CURATED-RECORD",
+  "prepared_date": "2026-09-30",
+  "record_operation": "Performed present target assignment and evidence curation; no physical experiment performed for this record.",
+  "candidate_scope": "A proposed comparison of future moulded composites using three stock-origin nominal charged-dry-input accounting categories. Input, wet dispersion, conditioned powder, moulded composite and local measurement are separate stages.",
+  "application_source": "documents/provisional_application_electrical_evidence_2026-09-30.md",
+  "application_source_sha256": "36125cd499bd20cd64bdad9ca599d65f2e637fc2a130a552471f9c83c7f3284a",
+  "repository_baseline": "090b1c07010b7e9cd1184d487fd79333ff5c9587",
+  "source_review": "data/electrical_source_review_2026-09-30.json",
+  "primary_source": {
+    "doi": "10.1038/nnano.2011.40",
+    "url": "https://www.nature.com/articles/nnano.2011.40",
+    "main_text_access": "Verified original coauthor-uploaded cached text; no raw main-PDF bytes or complete graphical verification asserted.",
+    "supplementary_pdf_sha256": "57fdfb8120b8fc48d768a4fe5a0014b650dc90ba141c757e053a06882058dcb3",
+    "license": "No permissive license established; bounded factual source context and locators only."
+  },
+  "composition": {
+    "evidence_status": "CALCULATED",
+    "selection_status": "Newly chosen PROPOSED verification targets, assigned in this performed record.",
+    "support": [
+      "nanotube_SDS_stock_dry_category",
+      "PEDOT_PSS_stock_dry_category",
+      "PS_latex_stock_dry_category"
+    ],
+    "basis": "Nominal charged dry-input mass fraction, partitioned once by stock origin; excludes carrier water and does not assert final retained mass.",
+    "category_definitions": {
+      "nanotube_SDS_stock_dry_category": "All allocated non-water input mass from the received nanotube/SDS stock, including its reagent and impurity residues.",
+      "PEDOT_PSS_stock_dry_category": "All allocated non-water input mass from the conductive-polymer stock, including both polymers and any other stock residues.",
+      "PS_latex_stock_dry_category": "All allocated non-water input mass from the PS-latex stock, including its own surfactant and any other stock residues."
+    },
+    "baseline_target_fractions": {
+      "nanotube_SDS_stock_dry_category": "7/400",
+      "PEDOT_PSS_stock_dry_category": "1/250",
+      "PS_latex_stock_dry_category": "1957/2000"
+    },
+    "changed_target_fractions": {
+      "nanotube_SDS_stock_dry_category": "7/400",
+      "PEDOT_PSS_stock_dry_category": "1/200",
+      "PS_latex_stock_dry_category": "391/400"
+    },
+    "baseline_primitive_denominator": 2000,
+    "changed_primitive_denominator": 400,
+    "controlled_fraction_change": {
+      "nanotube_SDS_stock_dry_category": "0",
+      "PEDOT_PSS_stock_dry_category": "1/1000",
+      "PS_latex_stock_dry_category": "-1/1000"
+    },
+    "normalization": "All selected fractions are positive; both vectors sum exactly to one. Both primitive denominators divide 10^19, so these belong to both the finite grid and unrestricted rational domain.",
+    "accounting_prerequisites": "Specify conditioning and delivered non-water mass assays before physical charging. Allocate every stock-carried residue exactly once; received nanotube impurities remain inside that origin category. Do not assume three pure substances or infer stock volume from unmeasured dry solids.",
+    "qualification": "These are present model targets, not reported blend proportions, source-precision upgrades, elemental fractions, purified nanotube fractions, actual delivered dry residue or measured retained product."
+  },
+  "rejected_route_shortcut": {
+    "status": "REJECTED as a shortcut for the unchanged nominal source stock route; not a universal impossibility result.",
+    "original_attempt": "Four normalized categories had independently assigned received nanotube input 7/2000 and SDS 1/1000, alongside polymer categories.",
+    "source_locator": "Original Methods, printed page 368, SWCNT dispersions.",
+    "nominal_source_ratio": "Listed SW:SDS solute-mass coordinates 1:4; active-versus-reagent, extra residues and actual delivered mass require their own convention.",
+    "calculation_status": "CALCULATED conditional nominal accounting",
+    "fixed_ideal_stock_category": "7/400",
+    "ideal_received_SW_allocation": "7/2000",
+    "ideal_SDS_allocation": "7/500",
+    "attempted_SDS_allocation": "1/1000",
+    "nominal_SDS_excess_over_attempt": "13/1000",
+    "nominal_ratio_to_attempt": "14",
+    "boundary": "Under the stipulated two-solute convention without unproved loss, the unchanged nanotube stock already exceeds the attempted SDS allocation before PS-stock surfactant. No removal, purification or mass disappearance is invented. A different route would need its own support; exact residue composition remains unmeasured."
+  },
+  "structural_field": {
+    "source_context": {
+      "evidence_status": "ESTABLISHED",
+      "material_stage": "Published inputs and source composite discussion, not a new candidate assay.",
+      "locator": "Original pages 365/368; supplementary pages 1-3.",
+      "statement": "Component dimensions and dispersion/network context are reported. Orientation interpretation and constituent-only imaging do not establish complete final-composite structure."
+    },
+    "candidate_structure": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "No new constituent dimensions, orientation distribution, interface population, void fraction or dispersion measurement is supplied. Stock origin is an accounting identity rather than an exhaustive molecular identity."
+    }
+  },
+  "preparation_field": {
+    "source_context": {
+      "evidence_status": "ESTABLISHED",
+      "material_stage": "Published composite preparation.",
+      "locator": "Original Methods page 368; supplementary page 3.",
+      "statement": "The attributed latex route is retained in the application; it is not automatically a completed route to these newly assigned stock-origin targets."
+    },
+    "candidate_preparation": {
+      "evidence_status": "PROPOSED",
+      "statement": "Resolve stock grades/lots, conditioning, dry-input delivery and route applicability. Mix a fully recorded stock formulation, then specify actual powder conditioning and moulding histories. No stock has been delivered or composite prepared for this record."
+    },
+    "candidate_success": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "No yield, material loss, retained-residue amount or successful repetition is asserted."
+    }
+  },
+  "measurement_field": {
+    "source_context": {
+      "evidence_status": "ESTABLISHED",
+      "material_stage": "Published films.",
+      "locator": "Original Methods page 368 Analysis; Figure 2.",
+      "statement": "Four-point DC context is reported; composition tolerance and candidate sampling are separate inquiries."
+    },
+    "candidate_measurement": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "No new delivered-mass assay, retained composition, conductivity, geometry/current verification, raw data, fit domain or replicate uncertainty is supplied."
+    },
+    "verification_tests": {
+      "evidence_status": "PROPOSED",
+      "statement": "Quantify stock-carried residues, wet and conditioned delivery, retained composition and sampling. Separately measure four-point DC with specified geometry/current/temperature, contact controls and replicate uncertainty; characterize network structure."
+    }
+  },
+  "property_field": {
+    "source_context": {
+      "evidence_status": "ESTABLISHED",
+      "material_stage": "Published composites, not the input vector or new candidate.",
+      "locator": "Original fabrication discussion, Figure 2 and theory/Monte Carlo discussion.",
+      "statement": "The source distinguishes cooperative experimental mixtures from theoretical antagonistic behavior. The latter is not a measured reversal."
+    },
+    "source_coordinate_representation": {
+      "evidence_status": "CALCULATED",
+      "locator": "Figure 2; preserved source review.",
+      "given_threshold_fraction": "443/100000",
+      "given_coordinate_not_third_fit_parameter": true,
+      "qualification": "The number is contextual source-coordinate conversion. The stock-category target basis is different or unresolved, so numerical bracketing does not establish a candidate threshold crossing or predict its conductivity."
+    },
+    "candidate_result": {
+      "evidence_status": "UNSUPPORTED",
+      "material_stage": "Any newly prepared and moulded candidate.",
+      "statement": "No exact conductivity, observed unexpected result or complete property prediction is asserted. Conductivity is not assigned to the charged-input vector."
+    },
+    "unsupported_extension": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "Component targets alone do not determine elemental inventory, final network or every future electrical response."
+    }
+  },
+  "property_scenario": {
+    "evidence_status": "PROPOSED",
+    "temporal_status": "Present unperformed verification informed by existing literature; not an applicant prediction predating that literature.",
+    "baseline_material_and_state": "A future moulded composite prepared from the baseline three-stock targets, after resolving delivery, retained-residue and processing conditions; measured at a defined equilibrated temperature. This is not a source specimen.",
+    "controlled_change": "Replace 1/1000 PS-stock dry-category fraction with 1/1000 PEDOT:PSS-stock dry-category fraction at fixed nanotube/SDS-stock category. Hold stock identities, conditioning, moulding schedule and measurement geometry/current/temperature fixed as specified prerequisites; do not claim total SDS is thereby fixed.",
+    "proposed_response": "Hypothesis: increased positive DC conductivity if the substitution produces more effective mixed transport contacts and connected pathways. No magnitude, significance or threshold crossing is promised.",
+    "mechanism": "Conditional improvement in effective network/charge-transfer connectivity, motivated by source models rather than established for a new specimen.",
+    "conditions": "Specify lot identities, input-mass convention, actual processing and electrical protocol before implementation. Changing PS-stock amount can also change carrier residues; the pair alone does not isolate a pure-polymer effect.",
+    "discriminating_test": "Compare recorded stock-category formulations using delivered/retained-residue assays, contact-controlled four-point DC, network characterization and replicate uncertainty. Separately design complete carrier-matched control allocations before attributing a response solely to one polymer; those controls are not source-performed corrections.",
+    "credible_alternative": {
+      "evidence_status": "PROPOSED",
+      "hypothesis": "Unchanged conductivity within a defined resolution, or reduced positive conductivity, if effective tube paths are disrupted while mixed contacts transfer charge poorly.",
+      "mechanism": "A different network/contact state, potentially coupled to changed carrier residues, can offset added conductive material; candidate pathways remain unmeasured.",
+      "scope": "A separate conditional hypothesis, not simultaneous opposites for the identical specimen/conditions and not a measured source reversal."
+    }
+  },
+  "publication_boundary": "These exact targets, rejection and evidence records are present curation, not attributed backward to 2011 or presumed included in a historical application/PDF. Statutory dates and effects remain unresolved.",
+  "physical_experiment_performed_for_this_record": false,
+  "physical_enablement_certified": false,
+  "novelty_or_inventorship_decided": false,
+  "filing_asserted": false
+}
