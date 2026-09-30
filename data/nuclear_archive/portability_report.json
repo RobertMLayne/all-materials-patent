@@ -1,0 +1,10 @@
+{
+  "result": "pass",
+  "full_snapshot_verified_in_memory_without_normalized_json": true,
+  "parser_import_produced_no_files": true,
+  "verification_report_identical_in_both_modes": true,
+  "network_access_required": false,
+  "copied_bundle_paths": "relative to each script location",
+  "source_records_verified": 5843,
+  "deliberate_defects_rejected": 6
+}

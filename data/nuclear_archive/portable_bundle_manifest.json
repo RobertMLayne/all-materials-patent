@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "scope": "portable offline source/metadata/parser/verification bundle; normalized JSON is optional generated output",
+  "files": [
+    {
+      "path": "archive_counts.json",
+      "bytes": 939,
+      "sha256": "1bda5cded1e7a93a87bcfad0d49df926a885b43fc8e197878ac9e24c849575e0"
+    },
+    {
+      "path": "column_schema.json",
+      "bytes": 4084,
+      "sha256": "eee403e123cb105d2b27f896814f2b482e0e955b6ca7230740b64616eec9b62a"
+    },
+    {
+      "path": "license_attribution.md",
+      "bytes": 2048,
+      "sha256": "fd1d9c613e117819262aaed2cde77bd123c37f5d6bc446c448445a92211f8e72"
+    },
+    {
+      "path": "nubase_4.mas20.txt",
+      "bytes": 761906,
+      "sha256": "1585a5eea86c5e17e90307c7e6e786d060049c4039e392a261ff6db977df9859"
+    },
+    {
+      "path": "parse_nubase.py",
+      "bytes": 13755,
+      "sha256": "eae39a5516077dfbb0f9c00d2bb3aff974dada762ab3b6e5379d957821828e45"
+    },
+    {
+      "path": "portability_report.json",
+      "bytes": 367,
+      "sha256": "d36913ea26dfa777e1042de0359305941d5efd67aae09f78b1f5ff4ac5550db9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5016,
+      "sha256": "79239e699e93637fc182f2aae2e2f8928608a62ff62578a7acb168bc63ed1d69"
+    },
+    {
+      "path": "schema_header.txt",
+      "bytes": 2418,
+      "sha256": "cd282b2cc046a198ef74fa2967f92ae76a579f2f240b31315a70478fd4a3975a"
+    },
+    {
+      "path": "source_metadata.json",
+      "bytes": 4274,
+      "sha256": "fa53b1fb73d8723f4867177785ea77b69509336375f0b86aae0447320b012faf"
+    },
+    {
+      "path": "verification_report.json",
+      "bytes": 939,
+      "sha256": "74ea1d18dfb4c6d6ea28d5ce4ab5fbae49a62a0af62d6ef255cfda82547244cb"
+    },
+    {
+      "path": "verify_nuclear_archive.py",
+      "bytes": 12328,
+      "sha256": "d3fdba1118cf527e643411d8901b659f192d6029590bbac39ca96e9aecf59792"
+    }
+  ],
+  "file_count": 11,
+  "total_bytes": 808074,
+  "optional_generated_normalized_json": {
+    "path": "nuclear_states.json",
+    "bytes": 18118327,
+    "sha256": "eaa31cefbd9a0bc91b38d90e0d5f8096ad6a3285475fd219c58359fe35556c84",
+    "excluded_from_required_bundle": true
+  }
+}

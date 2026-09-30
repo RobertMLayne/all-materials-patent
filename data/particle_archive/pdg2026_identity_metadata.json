@@ -1,0 +1,598 @@
+{
+  "metadata_format_version": 1,
+  "extraction_script_version": "1.0",
+  "archive_file": "pdg2026_identity_archive.json",
+  "archive_sha256": "8ad5d6a07350ec3a9daf2d3ee37b32185a692d886365d5510c36bdf0e85800c6",
+  "archive_bytes": 1062960,
+  "source_download_observation": {
+    "url": "https://pdg.lbl.gov/2026/api/pdg-2026.0.sqlite",
+    "retrieved_at_utc": "2026-09-30T02:30:54Z",
+    "status_code": 200,
+    "content_type": [
+      "application/octet-stream"
+    ],
+    "last_modified": [
+      "Mon, 01 Jun 2026 18:25:28 GMT"
+    ],
+    "etag": [
+      "\"6a1dce98-188f000\""
+    ],
+    "length_bytes": 25751552,
+    "sha256": "40dc2587d9ae912d26fafb6b41f300f341d2a1f4bd620ff5b5f03827c39453fe"
+  },
+  "database_filename": "pdg-2026.0.sqlite",
+  "database_release_version_from_official_filename": "2026.0",
+  "publication_cutoff": {
+    "date": "2026-01-15",
+    "applies_to": "PDG 2026 Listings and Summary Tables",
+    "source_url": "https://pdg.lbl.gov/2026/listings/contents_listings.html",
+    "retrieval_date_utc": "2026-09-30",
+    "note": "Publication data cutoff, database release time and retrieval time are different dates."
+  },
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_license_literal": "CC BY 4.0",
+    "attribution": "F. Takahashi <i>et al.</i> (Particle Data Group), Int. J. Mod. Phys. A 41, 2630011 (2026)",
+    "documentation_url": "https://pdgapi.lbl.gov/doc/schema.html#license",
+    "modifications": "Selected identity/name/mapping/code tables from SQLite; serialized as deterministic UTF-8 JSON. No source row values corrected, deduplicated or scientifically reclassified."
+  },
+  "scope": {
+    "complete_source_tables": [
+      "pdgparticle",
+      "pdgitem",
+      "pdgitem_map",
+      "pdgdoc",
+      "pdginfo"
+    ],
+    "filtered_source_table": {
+      "table": "pdgid",
+      "condition": "data_type IN ('PART', 'SRCH')",
+      "purpose": "All particle identity and search groups, including groups with no charge-state row."
+    },
+    "not_exported": [
+      "property and branching-fraction identifiers",
+      "summary property values",
+      "literature measurements",
+      "decay records",
+      "references",
+      "footnotes",
+      "listing text",
+      "historical Summary Table editions"
+    ],
+    "not_asserted": [
+      "complete universe of physical particles",
+      "discovery of every listed particle or search candidate",
+      "all future theoretical entities",
+      "every nuclear isotope or isomer",
+      "a preparation route or stable material containing any listed entity",
+      "patent enablement or universal defensive coverage"
+    ]
+  },
+  "interpretation": {
+    "unknowns": "SQLite NULL remains JSON null. Literal question marks, blanks, ambiguous strings and original quantum-number text remain unchanged. They are not converted to zero, a measured result or a guessed value.",
+    "physical_existence_status": null,
+    "physical_existence_status_basis": "No particle discovery/existence-status column is supplied in these identity tables. PART, SRCH, category flags, Monte Carlo numbers, quantum numbers and CC_TYPE are preserved metadata, not discovery certificates. Release-level pdginfo.status=production describes the database, not all particles.",
+    "charge_conjugation": "CC_TYPE encodes particle, antiparticle or self-conjugate state, with the original code meanings retained in pdgdoc.",
+    "names": "Use numeric source primary keys and edition-qualified PDG identifiers for joins. Names are not necessarily unique; aliases/generic names/texts are not additional physical species.",
+    "charge": "The source REAL value is retained as a JSON number without new rounding; this identity value is not an independently measured charge or uncertainty record.",
+    "monte_carlo_ids": "MCID is distinct from a PDG Identifier and may be null. The source numbering conventions are not rewritten."
+  },
+  "upstream_api_limits": {
+    "documentation_url": "https://pdgapi.lbl.gov/doc/status.html",
+    "checked_date_utc": "2026-09-30",
+    "limits": [
+      "fit information and correlation matrices inaccessible",
+      "conservation-law data inaccessible",
+      "some listing header text/notes inaccessible",
+      "some listing text values lack parentheses",
+      "some limits lack numerical values and only have text"
+    ],
+    "note": "Identity-only extraction also deliberately omits available property/measurement tables; upstream limitations are not confused with this archive's selection scope."
+  },
+  "access_method": {
+    "method": "One official versioned SQLite download; offline standard-library SQL extraction",
+    "bulk_rest_used": false,
+    "rest_terms_url": "https://pdgapi.lbl.gov/doc/restapi.html#terms-of-use",
+    "schema_url": "https://pdgapi.lbl.gov/doc/schema.html",
+    "download_index_url": "https://pdg.lbl.gov/2026/api/index.html"
+  },
+  "source_database_info": {
+    "producer": "Particle Data Group (PDG)",
+    "status": "production",
+    "schema_version": "0.3",
+    "data_release": "1780173684.546848",
+    "data_release_timestamp": "2026-05-30 13:41:24 PDT",
+    "edition": "2026",
+    "citation": "F. Takahashi <i>et al.</i> (Particle Data Group), Int. J. Mod. Phys. A 41, 2630011 (2026)",
+    "license": "CC BY 4.0",
+    "about": "For further information see https://pdg.lbl.gov/api",
+    "changebar_start_date": "2025-09-01"
+  },
+  "source_table_row_counts": {
+    "pdgparticle": 1170,
+    "pdgid": 22049,
+    "pdgitem": 3270,
+    "pdgitem_map": 1341,
+    "pdgdoc": 71,
+    "pdginfo": 10
+  },
+  "source_schema": {
+    "pdgparticle": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "pdgid_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "pdgid",
+        "type": "VARCHAR",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "pdgitem_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "name",
+        "type": "VARCHAR",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "cc_type",
+        "type": "VARCHAR(1)",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 6,
+        "name": "mcid",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 7,
+        "name": "charge",
+        "type": "FLOAT",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 8,
+        "name": "quantum_i",
+        "type": "VARCHAR(40)",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 9,
+        "name": "quantum_g",
+        "type": "VARCHAR(1)",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 10,
+        "name": "quantum_j",
+        "type": "VARCHAR(40)",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 11,
+        "name": "quantum_p",
+        "type": "VARCHAR(1)",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 12,
+        "name": "quantum_c",
+        "type": "VARCHAR(1)",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      }
+    ],
+    "pdgid": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "pdgid",
+        "type": "VARCHAR",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "parent_id",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "parent_pdgid",
+        "type": "VARCHAR",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "description",
+        "type": "VARCHAR",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "mode_number",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 6,
+        "name": "data_type",
+        "type": "VARCHAR(4)",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 7,
+        "name": "flags",
+        "type": "VARCHAR(8)",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 8,
+        "name": "year_added",
+        "type": "INTEGER",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 9,
+        "name": "sort",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      }
+    ],
+    "pdgitem": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "name",
+        "type": "VARCHAR",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "item_type",
+        "type": "VARCHAR(1)",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      }
+    ],
+    "pdgitem_map": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "pdgitem_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "name",
+        "type": "VARCHAR",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "target_id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "sort",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      }
+    ],
+    "pdgdoc": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "INTEGER",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 1
+      },
+      {
+        "cid": 1,
+        "name": "table_name",
+        "type": "VARCHAR",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 2,
+        "name": "column_name",
+        "type": "VARCHAR",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 3,
+        "name": "value",
+        "type": "VARCHAR",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 4,
+        "name": "indicator",
+        "type": "VARCHAR",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 5,
+        "name": "description",
+        "type": "VARCHAR",
+        "notnull": 1,
+        "dflt_value": null,
+        "pk": 0
+      },
+      {
+        "cid": 6,
+        "name": "comment",
+        "type": "VARCHAR",
+        "notnull": 0,
+        "dflt_value": null,
+        "pk": 0
+      }
+    ]
+  },
+  "diagnostics": {
+    "exported_row_counts": {
+      "pdgparticle": 1170,
+      "pdgid": 450,
+      "pdgitem": 3270,
+      "pdgitem_map": 1341,
+      "pdgdoc": 71
+    },
+    "identifier_type_counts": {
+      "PART": 439,
+      "SRCH": 11
+    },
+    "charge_conjugation_code_counts": {
+      "A": 500,
+      "P": 530,
+      "S": 140
+    },
+    "particle_identifier_flag_counts": {
+      "B": 712,
+      "G": 8,
+      "L": 12,
+      "M": 426,
+      "Q": 12
+    },
+    "name_item_type_counts": {
+      "A": 8,
+      "B": 82,
+      "G": 362,
+      "I": 2,
+      "P": 1166,
+      "S": 11,
+      "T": 1586,
+      "W": 53
+    },
+    "distinct_charge_state_names": 1169,
+    "distinct_charge_state_pdg_identifiers": 438,
+    "duplicate_source_names_preserved": [
+      {
+        "name": "P_c_cbar(4312)+",
+        "row_count": 2
+      }
+    ],
+    "identity_groups_without_charge_states": [
+      {
+        "id": 416,
+        "pdgid": "S055",
+        "description": "Neutral Higgs Bosons, Searches for",
+        "data_type": "SRCH",
+        "flags": "G"
+      },
+      {
+        "id": 428,
+        "pdgid": "S064",
+        "description": "Charged Higgs Bosons (H+- and H+-+-), Searches for",
+        "data_type": "SRCH",
+        "flags": "G"
+      },
+      {
+        "id": 1126,
+        "pdgid": "S025",
+        "description": "Heavy Charged Lepton Searches",
+        "data_type": "SRCH",
+        "flags": "L"
+      },
+      {
+        "id": 1208,
+        "pdgid": "S077",
+        "description": "Heavy Neutral Leptons, Searches for",
+        "data_type": "SRCH",
+        "flags": "L"
+      },
+      {
+        "id": 1370,
+        "pdgid": "Q008",
+        "description": "b^' (Fourth Generation) Quark",
+        "data_type": "SRCH",
+        "flags": "Q"
+      },
+      {
+        "id": 1374,
+        "pdgid": "Q009",
+        "description": "t^' (Fourth Generation) Quark",
+        "data_type": "SRCH",
+        "flags": "Q"
+      },
+      {
+        "id": 1379,
+        "pdgid": "S027",
+        "description": "Free Quark Searches",
+        "data_type": "SRCH",
+        "flags": "Q"
+      },
+      {
+        "id": 3349,
+        "pdgid": "M169",
+        "description": "f_0(2330)",
+        "data_type": "PART",
+        "flags": "M"
+      },
+      {
+        "id": 21905,
+        "pdgid": "S028",
+        "description": "Magnetic Monopole Searches",
+        "data_type": "SRCH",
+        "flags": "S"
+      },
+      {
+        "id": 21912,
+        "pdgid": "S046",
+        "description": "Supersymmetric Particle Searches",
+        "data_type": "SRCH",
+        "flags": "S"
+      },
+      {
+        "id": 21993,
+        "pdgid": "S030",
+        "description": "WIMP and Dark Matter Searches",
+        "data_type": "SRCH",
+        "flags": "S"
+      },
+      {
+        "id": 22021,
+        "pdgid": "S015",
+        "description": "Other Particle Searches",
+        "data_type": "SRCH",
+        "flags": "S"
+      }
+    ],
+    "particle_null_counts_by_column": {
+      "id": 0,
+      "pdgid_id": 0,
+      "pdgid": 0,
+      "pdgitem_id": 0,
+      "name": 0,
+      "cc_type": 0,
+      "mcid": 554,
+      "charge": 0,
+      "quantum_i": 76,
+      "quantum_g": 969,
+      "quantum_j": 17,
+      "quantum_p": 34,
+      "quantum_c": 970
+    },
+    "literal_unknown_marker_counts": {
+      "quantum_i": {
+        "?": 57
+      },
+      "quantum_g": {
+        "?": 7
+      },
+      "quantum_j": {
+        "?": 172
+      },
+      "quantum_p": {
+        "?": 174
+      },
+      "quantum_c": {
+        "?": 6
+      }
+    },
+    "physical_existence_assessments_performed": 0
+  }
+}

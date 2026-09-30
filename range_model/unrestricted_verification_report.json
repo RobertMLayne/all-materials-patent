@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "test_group_count": 11,
+  "tests": [
+    {
+      "test": "coordinates_below_old_floor",
+      "status": "passed",
+      "evidence": "Exact denominators 10^20, 10^100 and 3*10^50; positive coordinates preserved without floor clipping."
+    },
+    {
+      "test": "all_support_cardinalities",
+      "status": "passed",
+      "evidence": "All sizes 1..138 independently checked against equal-count primitive vectors; hypothetical status retained."
+    },
+    {
+      "test": "primitive_enumeration",
+      "status": "passed",
+      "evidence": "Independent Cartesian enumeration of all positive count vectors, denominators 1..9, support sizes 2..4; repeated fractions deduplicated separately."
+    },
+    {
+      "test": "positive_box_boundary_and_feasibility",
+      "status": "passed",
+      "evidence": "3,600 quarter-endpoint boxes compared with independent positive Cartesian simplex vectors at denominators 8/12; includes strict-positive boundary cases."
+    },
+    {
+      "test": "arbitrary_lattice_box",
+      "status": "passed",
+      "evidence": "28,800 boxes/denominators independently checked against Cartesian count vectors; denominator is not tied to 10^19."
+    },
+    {
+      "test": "normalization_and_canonical_counts",
+      "status": "passed",
+      "evidence": "Weights2:3:5 independently give primitive denominator10 and exact normalized coordinates."
+    },
+    {
+      "test": "finite_inventory_divisibility",
+      "status": "passed",
+      "evidence": "Inventory sizes1..24 checked independently against divisibility by primitive denominator6."
+    },
+    {
+      "test": "assigned_atom_subsampling",
+      "status": "passed",
+      "evidence": "Uniform subsets enumerated independently for inventories1..8; exactly one distinguished atom, sampling without replacement."
+    },
+    {
+      "test": "invalid_inputs_rejected",
+      "status": "passed",
+      "evidence": "Nine negative/zero/inexact/duplicate/out-of-range/inventory/interval cases rejected."
+    },
+    {
+      "test": "separate_domains_preserved",
+      "status": "passed",
+      "evidence": "Original floor restriction unchanged; closure-only vector rejected; thirds continuous/rational feasible but absent from the original fixed grid."
+    },
+    {
+      "test": "conditional_partition_inventory",
+      "status": "passed",
+      "evidence": "Inventories1..24 independently checked against the joint primitive denominator6; N=3 fits elemental counts but not their supplied classical sub-partitions."
+    }
+  ],
+  "scope": "Exact mathematical positive-rational domain and finite-inventory accounting only. No preparation, measurement, property, novelty, or legal effect is established.",
+  "exhaustive_unbounded_domain_tested": false
+}

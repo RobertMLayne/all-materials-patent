@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "scope": "Exact mathematical positive-rational domain and finite-inventory accounting only. No preparation, measurement, property, novelty, or legal effect is established.",
+  "element_labels": {
+    "recognized": 118,
+    "hypothetical": 20,
+    "total": 138
+  },
+  "unrestricted_rational_domain": "For each nonempty ordered support S, x_i=n_i/q, q any positive integer, n_i>=1, sum(n_i)=q; gcd(q,n_1,...,n_k)=1 removes duplicate representations.",
+  "positive_floor": null,
+  "zero_rule": "An absent coordinate belongs to a smaller canonical support.",
+  "continuous_real_domain": "x_i>0 and sum(x_i)=1; remains symbolic. Exact numeric APIs here accept rational values only.",
+  "box_scope": "Closed rational component intervals intersected with strictly positive normalized coordinates. Zero-boundary-only solutions are rejected for that support.",
+  "finite_export_rule": "CLI denominator and output caps limit generated samples only; an infinite or physical exhaustive enumeration is not claimed.",
+  "finite_inventory_rule": "For primitive denominator q, exact atomic counts in a fixed N-atom inventory require q|N. Inventory compatibility is not material existence or controlled placement.",
+  "old_model_preserved": "composition_ranges.py retains its deliberate 10^-19 coordinate floor and optional fixed grid.",
+  "conditional_partition_rule": "Every isotope/state sub-count N*x_i*y_i,a,s must be an integer in a fixed classical inventory. Element-level compatibility alone is insufficient. Identifiers and physical state existence require separate evidence."
+}

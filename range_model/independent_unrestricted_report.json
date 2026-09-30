@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "positive_box_cases": 1812,
+  "lattice_box_cases": 2400,
+  "primitive_vectors_and_inventory_checks": 14609,
+  "joint_conditional_partition_cases": 1805,
+  "invalid_conditional_partition_cases_rejected": 8,
+  "single_atom_uniform_subset_cases": 65,
+  "methods": [
+    "box/simplex vertices and convex averages",
+    "integer separator positions",
+    "explicit uniform subsets"
+  ],
+  "seed": 20260930,
+  "scope": "Independent finite adversarial evidence; no exhaustive unbounded or physical claim"
+}

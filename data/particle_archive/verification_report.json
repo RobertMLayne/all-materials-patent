@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "archive_sha256": "8ad5d6a07350ec3a9daf2d3ee37b32185a692d886365d5510c36bdf0e85800c6",
+  "archive_bytes": 1062960,
+  "exported_row_counts": {
+    "pdgparticle": 1170,
+    "pdgid": 450,
+    "pdgitem": 3270,
+    "pdgitem_map": 1341,
+    "pdgdoc": 71
+  },
+  "source_comparison": "passed: all columns and all selected rows match pinned SQLite, including NULLs and repeated names",
+  "physical_existence_assessments_performed": 0,
+  "patent_enablement_assessed": false
+}

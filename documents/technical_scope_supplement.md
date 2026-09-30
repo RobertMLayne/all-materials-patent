@@ -1,0 +1,101 @@
+# Technical scope supplement: compositions, finite inventories and dated entities
+
+Prepared 30 September 2026 UTC. This supplement adds technical definitions, calculations and source-qualified records to the [original application working draft](provisional_application_draft.md). Its 80 numbered paragraphs, 199 candidate claims and original PDFs are retained. This supplement is not a filing receipt, a report of applicant experiments, or an assertion that the full physical domain is enabled.
+
+The requested scope remains all selected elemental supports and proportions, all component counts through 138, isotope and particle qualifications, and conditional expected or contrary property responses. Numerical addressing, entity identity, physical preparation, observation and legal effect remain distinct layers. The [full-scope audit](full_scope_completion_audit.md) records what is present and what remains unproved.
+
+## Composition domains and exact addresses
+
+The element vocabulary has recognized labels for Z=1…118 and separate hypothetical placeholders for Z=119…138. The [IUPAC periodic-table page](https://iupac.org/what-we-do/periodic-table-of-elements/) supplies the recognized table used here. The 138-label boundary is a chosen scope index; it is not a physical maximum or evidence that the last 20 nuclei exist. A support S is any nonempty strictly increasing tuple of distinct labels. A zero coordinate belongs to a smaller canonical support rather than an additional present constituent.
+
+For a support containing k labels, distinguish the following domains:
+
+| Domain | Definition | Meaning |
+| --- | --- | --- |
+| Strictly positive real target | x_i>0 and sum x_i=1 | A symbolic target domain, including irrational coordinates; it is not a finite list or an exact atom-count inventory. |
+| Unrestricted rational target | x_i=n_i/q, n_i positive integers, sum n_i=q, with q any positive integer at least k | Exact count-compatible candidate ratios with no imposed numerical concentration floor. |
+| Primitive rational address | The rational definition with gcd(q,n_1,…,n_k)=1 | A unique common-denominator address for a vector; prevents duplicated fractions from being treated as different compositions. |
+| Optional decimal grid | q=D=10^19 and each n_i>=1 | The earlier requested finite grid. It remains useful but does not replace the unrestricted domain. |
+| Measured composition | A stated assay, counted region, uncertainty and sampling convention | Experimental information, requiring actual evidence and a specified quantity basis. |
+
+The [new unrestricted module](../range_model/unrestricted_compositions.py) implements the rational domain separately from the [original bounded/grid module](../range_model/composition_ranges.py). Its exact APIs accept integer fractions and decimal/fraction strings, reject binary floats and booleans, and impose no 10^-19 floor. The original module retains that deliberate floor. Neither API numerically enumerates all real values.
+
+For each fixed support, enumerate q=k,k+1,…; enumerate every positive integer tuple summing to q; retain the primitive tuples. Every positive rational normalized vector appears exactly once. A command's maximum denominator or output limit bounds an export, not the defined domain. The procedure terminates for each finite q but does not claim that an infinite domain or the astronomical collection of all supports was printed in a finite application.
+
+The finer examples include a binary fraction 1/10^100 with its exact complement and equal proportions for all 138 labels. These are CALCULATED targets. No corresponding specimen, precursor availability or manufacturing precision is asserted. Counts above 118 necessarily use hypothetical labels.
+
+## All intervals and joint normalization
+
+The original decimal hierarchy addresses every endpoint pair [l/10^p,u/10^p] for p=0…19, 0<=l<=u<=10^p, including singleton points, elementary cells and contiguous subranges. Arbitrary rational endpoints extend that hierarchy without a fixed numerical floor. Real endpoint targets remain symbolic. The interval selection must name its vocabulary, support and atomic, mass, volume, feed, site or other denominator.
+
+At p=2, [1%,2%] in a binary material pairs with [98%,99%] for the other component. The two coordinates are correlated through x_B=1-x_A. The requested interval 0.0000000000000001%…0.000000000000001% equals fractions 10^-18…10^-17. On D=10^19 it contains numerators 10…100, giving 91 grid points and 90 elementary bins. Percent and fractional values must retain their separate units. A fixed decimal denominator does not contain 1/3; the unrestricted rational domain does.
+
+For a closed rational component box, first intersect each interval with [0,1]. A nonnegative normalized vector requires nonempty coordinate intervals and sum L_i<=1<=sum U_i. For a strictly positive support additionally require every U_i>0. If sum L_i=1, every L_i must already be positive. If there is remaining slack and zero lower bounds, reserve a sufficiently small positive rational share for each zero lower bound, then allocate the residual within upper bounds. This constructs a positive witness without choosing a universal floor. A vector forced to include zero cannot inhabit that support.
+
+For any selected positive integer denominator q, the exact count limits are b_i=max(1,ceil(q L_i)) and c_i=floor(q U_i). A lattice witness exists exactly when b_i<=c_i for every coordinate and sum b_i<=q<=sum c_i. Starting at the lower counts and allocating the residual constructs a witness. Continuous/rational feasibility does not imply feasibility on a particular q lattice. Failed interval requests are retained as rejected numerical candidates with their reason; they are not reported as materials.
+
+The [unrestricted verification report](../range_model/unrestricted_verification_report.json) records 11 implementation check groups. Independent adversarial checks use box/simplex vertices, integer separator positions and explicit sample subsets rather than repeating the greedy algorithm. Mathematical proof and bounded tests establish their stated arithmetic scope. They do not establish preparation, phase stability or prior-art effect.
+
+## Finite atoms and joint isotope/state counts
+
+For a specified N-atom inventory, each atomic fraction is N_i/N with integer N_i>=0 and sum N_i=N. The smallest positive count fraction in that particular inventory is 1/N. There is no specimen-independent lower fraction from this arithmetic. The [BIPM mole definition](https://www.bipm.org/en/si-base-units/mole) supplies the exact Avogadro constant and requires the counted entity to be specified.
+
+If the target vector has primitive denominator q, its exact counts in a fixed N-atom inventory exist at the accounting level exactly when q divides N. Counts are N_i=N n_i/q. Taking N=q or a positive multiple resolves count compatibility; it does not resolve the physical existence, co-location, lifetime, controlled placement, analysis or utility of those atoms. Increasing N can permit a smaller nonzero fraction but does not establish an attainable experiment.
+
+For element i, an isotope/state partition y_i,a,s has nonnegative entries summing to one. A classical joint inventory additionally requires every N*x_i*y_i,a,s to be an integer. Those sub-counts must sum to N_i. Element-level compatibility alone is insufficient. For example, elemental fractions (1/3,2/3) with anonymous conditional partitions (1/2,1/2) and (1/4,3/4) fit a six-atom inventory with sub-counts (1,1) and (1,3). They do not fit a three-atom inventory even though its elemental counts are integers.
+
+`conditional_inventory` implements this calculation with exact fractions. Its partitions are anonymous accounting examples; they do not identify actual nuclides, prove a nuclear state exists, or establish a preparable quantum population. Zero conditional populations are allowed. Nuclear/particle labels, coherence or occupation conventions, and the validity of a classical mixture interpretation must be supplied separately. No unobserved nucleus inherits existence from an integer count.
+
+## Sampling is separate from detection
+
+Suppose exactly M trace atoms exist among N atoms, and n distinct atoms are sampled uniformly without replacement, with integer N>=1, 0<=M<=N and 0<=n<=N. Assuming the selection model, the probability none are included is binomial(N-M,n)/binomial(N,n) when n<=N-M, and zero otherwise. With one assigned trace atom the inclusion probability is exactly n/N. A one-percent subsample has a one-percent chance of containing it; 95% inclusion requires sampling at least 95% of that specimen. The module reports **sample inclusion**, leaving detector efficiency and classification unmodeled.
+
+A different CALCULATED model takes independent draws from an unchanged effectively unlimited reservoir with trace probability p. Its count C is binomial: expectation np, variance np(1-p), and probability zero (1-p)^n. For rare events with np=lambda, the Poisson approximation gives exp(-lambda). At p=10^-19 and n=10^19, the expected count is one, but the zero-count probability is approximately 0.3678794412. This independent-draw model does not describe repeated sampling of a fixed one-atom specimen without replacement.
+
+For independent draws with 0<p<1 and 0<alpha<1, at least one trace entity occurs with probability at least 1-alpha when n>=ceil(log(alpha)/log(1-p)). At p=0 no finite number of draws gives a positive occurrence probability; at p=1 one draw suffices. For p=10^-19 and alpha=0.05, the high-precision calculation gives 29,957,322,735,539,909,933 draws. If zero counts are observed under perfect detection/classification in this model with n>=1, the exact one-sided 95% upper probability bound is 1-0.05^(1/n), approximately 2.995732274/n at low concentrations. The [calculation artifact](../range_model/trace_sampling_calculations.py) states assumptions and verifies the adjacent minimum-count boundary.
+
+For multinomial reservoir counts, Cov(C_i,C_j)=-n p_i p_j for different classes. For uniform finite sampling without replacement, fixed-population variances and covariances acquire factor (N-n)/(N-1) when N>1. These are sampling models, not calibration results. Contamination, adsorption, detector efficiency, misclassification, background, correlated samples and selection bias require method-specific treatment. [NIST's metrological-traceability guidance](https://www.nist.gov/metrology/metrological-traceability) emphasizes uncertainty and fitness for purpose. A nondetection cannot prove an absolute zero constituent fraction merely because the target inventory is closed.
+
+## Physical integration constraints
+
+The material record remains R=(B,S,x,I,U,C,P,M,F,E), connecting composition basis, support, fractions, isotopes/states, structure, preparation, properties, measurements, failure boundaries and evidence. Numerical feasibility is one field. Add the following constraints independently rather than infer them from normalization:
+
+| Field | Required physical description | Inference not supported by a bare vector |
+| --- | --- | --- |
+| Charge/construction level | Species charge, electronic state, boundary, countercharge/fields and a consistent counting level | Neutrality, confinement or stability of an arbitrary mixture; independent counting of an atom and its included nucleus/electrons. |
+| Sites and stoichiometry | Site multiplicities, allowed occupants, vacancies, ordering and any compensation in a nominated phase | Occupancy of one lattice by every selected element or realizability of every bulk fraction in that phase. |
+| Structure and geometry | Phases, connectivity, polymer sequence/network, interfaces, grain/particle dimensions, orientation and spatial distribution | A unique material identity from overall percentages. |
+| History and persistence | Precursors, process conditions, scale, atmosphere, conditioning, competing reactions/phases, storage and observation duration | A universal melting, deposition or nuclear-production route; persistence through an unspecified measurement. |
+| Measurement | Assay denominator, local versus whole-product sampling, calibration, uncertainty and detection/quantification limits | Exact manufacture or instrumental resolution at the numerical grid step. |
+
+For a region described only by nuclei and electrons, charge accounting is Q/e=sum Z N_Z-N_e. A different particle construction uses Q=sum q_s N_s with signed species charges. Specify the construction level to avoid double counting. Neutrality is a constraint for a chosen neutral embodiment, not a universal prohibition on charged matter. Formal oxidation-state balancing is a stated chemical model, not a complete electronic-structure or stability calculation.
+
+An atomic-to-mass conversion using isotope/state-qualified masses needs a declared allocation convention. Nominal neutral-atom masses, ion masses, independently weighed feeds and an interacting product are not automatically interchangeable at extreme precision. [AME2020 Part I](https://www-nds.iaea.org/amdc/ame2020/AME2020-a.pdf), journal page 030002-7, discusses precision-dependent binding-energy corrections. This does not negate ordinary practical composition reporting; it prevents nominal numerical precision from being presented as exact physical metrology.
+
+## Dated nuclear and particle identity archives
+
+The [NUBASE2020 archive](../data/nuclear_archive/README.md) preserves the exact official ASCII source, schema, metadata, parser and independent verifier. It accounts for **5,843 state rows and 3,558 distinct (A,Z) pairs**, including the free neutron at Z=0. Source columns, raw rows, uncertainties, unknown tokens and property-level systematics markers remain traceable. These are source-row counts, not a count of all presently observed isotopes or all usable material ingredients. A listed `non-exist` token remains such; a `#` mass marker is not a discovery classification.
+
+The [evaluation paper](https://doi.org/10.1088/1674-1137/abddae) reports a 30 October 2020 data-availability boundary and a stated isomer scope. The downloaded ASCII's scientific cutoff is not independently established. Its server modification date and its one literal 2021 discovery-year field remain separate observations; neither silently changes the paper's boundary or proves when particular evidence reached the evaluators. A source-qualified identifier includes its edition, Z, A and original state index/suffix. This archive does not include every nuclear level, all 2026 observations or future nuclei. Its published-work CC BY 3.0 notice and the companion ASCII header's separate attribution situation remain documented.
+
+The [PDG 2026.0 identity archive](../data/particle_archive/README.md) includes all **1,170 charge-state identity rows**, 450 selected particle/search identifier groups, 3,270 name/item rows, 1,341 mappings and 71 codebook rows from the pinned source, with source metadata. It preserves original IDs, aliases, nulls and ambiguous duplicate names. Its selection is complete for those tables/rows, not for the entire PDG publication or all particle properties. No discovery/existence assessments were performed. The archive omits available property measurements, masses/lifetimes, uncertainties, decays, references and other tables; a generic particle row or Monte Carlo identifier does not establish observation.
+
+The official [PDG edition page](https://pdg.lbl.gov/2026/api/index.html) supplies the pinned database; the [published cutoff](https://pdg.lbl.gov/2026/tables/contents_tables.html) is 15 January 2026. Release metadata and retrieval time have separate meanings. [API limitations](https://pdgapi.lbl.gov/doc/status.html) also preserve inaccessible or incomplete information. The [schema and license documentation](https://pdgapi.lbl.gov/doc/schema.html) govern identity mappings and attributed CC BY 4.0 reuse. Searches and hypothetical models remain distinct from established observations.
+
+An isotope identifier, particle name or model family supplies a reference address. Its combinations still need production/host, population, energy, lifetime, conservation/accounting, observation and useful-system descriptions. Free quarks, nuclei, their containing atoms and host-dependent excitations are not independent interchangeable chemical ingredients. The [CERN Standard Model account](https://home.web.cern.ch/science/physics/standard-model/) supports those category and confinement distinctions. No finite archive establishes every future theoretical model, quantum state or physical entity.
+
+## Specific references and conditional properties
+
+The [material reference entries](reference_entry_support.md) supply three individually identified published-literature records in two material families. They keep preparation and characterization details with their actual sources and list reproduction gaps. They do not represent applicant work, a newly discovered invention, a universal route, or a whole-product closed inventory where the source supports only principal-element or host-phase accounting. No field is automatically inherited as ESTABLISHED by a variant composition, isotope, process, structure or use.
+
+A property scenario specifies the baseline material and state, controlled change, observable, units, conditions, expected mechanism, credible alternative, discriminating test and evidence status. Let Delta P=P_candidate-P_baseline for the same defined observable and test convention. Increased, decreased and unresolved responses can use declared thresholds Delta P>=tau, Delta P<=-tau and |Delta P|<tau, with tau>0 justified by measurement resolution or model error. The threshold is not assumed known for an unmeasured material.
+
+The contrary response is a separate conditional hypothesis with a mechanism and conditions that can distinguish it from the expected branch. It is not the simultaneous assignment of opposite properties to one specimen under identical conditions. A sign change in Delta P is distinct from an impossible negative absolute quantity. Strength, stiffness and torque-dependent geometry remain different quantities; electrical, thermal, optical and chemical observables retain their relevant frequencies, fields, temperatures, geometry and environments.
+
+Where a predictive model is used, record its equations/version, parameter source, domain, boundary conditions, uncertainty and failure tests. Where these inputs are missing, the outcome is PROPOSED or UNSUPPORTED. A list of all possible signs or a declaration that unexpected effects are contemplated supplies research categories, not all future outcomes or a necessary inherent property.
+
+## Application integration and unresolved effect
+
+The supplement and archives provide additional technical content for review. Files referenced only by repository links are not automatically included in an application. A final submitted provisional/PCT must carry the relied-on material in accepted application forms and preserve the exact submitted set. The [filing memorandum](provisional_filing_strategy.md) and [current-status addendum](current_status_addendum.md) distinguish preparation, publication and filing. [PCT description guidance](https://www.wipo.int/en/web/pct-system/texts/ispe/4_02_27) does not make a general incorporation statement a substitute for essential disclosure.
+
+This extension does not add or alter the 199 candidate claims. Their textual support, physical enablement, novelty, inventorship and legal effect remain separate inquiries. [USPTO prior-art enablement guidance](https://www.uspto.gov/web/offices/pac/mpep/s2121.html) and [novelty guidance](https://www.uspto.gov/web/offices/pac/mpep/s2131.html) require assessment of actual teachings and later limitations. Experiments are not categorically required for every example, but mathematical addresses and dated labels cannot replace missing technical support. No application filing, universally prohibited later claim, comprehensive unexpected-property prediction or percentage of future patents blocked is asserted.

@@ -2,3 +2,4 @@ __pycache__/
 *.py[cod]
 package_verification_report.json
 generated_reports/
+data/nuclear_archive/nuclear_states.json
