@@ -38,6 +38,16 @@ WORKING_AUTHORING = {
     "tools/pdf/build_consolidated_review.py": "data/working_application_authoring_2026-09-30/layout.py.txt",
     "tools/pdf/build_identity_review_annex.py": "data/working_application_authoring_2026-09-30/output_helper.py.txt",
 }
+PROPERTY_SOURCE = "documents/provisional_application_property_evidence_2026-09-30.md"
+PROPERTY_MAP = "data/claim_support_map_property_evidence_2026-09-30.json"
+PROPERTY_EDITION = "data/application_property_evidence_2026-09-30.json"
+PROPERTY_PDF = "documents/pdf/provisional_application_property_evidence_2026-09-30.pdf"
+PROPERTY_BASELINE = "2352f733bcf4fc6d786ccd5f162037a252d2608a"
+PROPERTY_AUTHORING = {
+    "tools/pdf/build_working_application.py": "data/application_property_evidence_authoring_2026-09-30/builder.py.txt",
+    "tools/pdf/build_consolidated_review.py": "data/application_property_evidence_authoring_2026-09-30/layout.py.txt",
+    "tools/pdf/build_identity_review_annex.py": "data/application_property_evidence_authoring_2026-09-30/output_helper.py.txt",
+}
 REVIEW_AUTHORING_FILES = {
     "builder": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
     "helper": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
@@ -121,6 +131,8 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     "documents/pdf/materials_identity_data_review_annex.pdf",
     "tools/pdf/build_consolidated_review.py", "tools/pdf/build_identity_review_annex.py",
     "tools/pdf/requirements-pdf.txt", "tools/pdf/test_pdf_outputs.py",
+    PROPERTY_SOURCE, PROPERTY_MAP, PROPERTY_EDITION, PROPERTY_PDF,
+    "documents/application_property_evidence_2026-09-30.md", *PROPERTY_AUTHORING.values(),
 }
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
@@ -369,6 +381,126 @@ def check_working_application(root: Path) -> dict:
     return {**claim_result, "changed_paragraphs": sorted(WORKING_CHANGED_PARAGRAPHS),
             "changed_claims": sorted(WORKING_CHANGED_CLAIMS), "recorded_pdf_pages": pdf["page_count"],
             "recorded_pdf_locations_checked": len(locations), "captured_sources_checked": len(entries),
+            "pdf_parsed_or_appearance_rechecked_by_this_check": False,
+            "filing_or_earlier_entitlement_or_enablement_certified": False}
+
+
+def check_property_application(root: Path) -> dict:
+    """Bind the property edition to its source, unchanged claims and actual PDF.
+
+    This separate record preserves the earlier working edition and its captured
+    authoring bytes. Recorded text and appearance checks remain authoring
+    evidence; this dependency-free verifier does not repeat PDF parsing or QA.
+    """
+    working_bytes = (root / WORKING_SOURCE).read_bytes()
+    working = working_bytes.decode("utf-8")
+    property_bytes = (root / PROPERTY_SOURCE).read_bytes()
+    application = property_bytes.decode("utf-8")
+    support = load_json(root / PROPERTY_MAP)
+    require(support.get("source_path") == PROPERTY_SOURCE and support.get("source_sha256")
+            == hashlib.sha256(property_bytes).hexdigest(), "Property source/map hash differs")
+    require(support.get("prepared_date") == "2026-09-30" and support.get("derived_from") == {
+        "path": WORKING_SOURCE,
+        "sha256": hashlib.sha256(working_bytes).hexdigest(),
+        "repository_baseline": PROPERTY_BASELINE,
+    }, "Property source derivation differs")
+    require(support.get("changed_paragraphs") == ["0065"] and support.get("changed_claims") == [],
+            "Property change inventory differs")
+
+    def paragraphs(text):
+        return dict(re.findall(r"^\[(\d{4})\] (.+)$", text, re.M))
+
+    def claims(text):
+        return {int(n): body for n, body in re.findall(r"^\*\*Claim (\d+)\.\*\* (.+)$", text, re.M)}
+
+    old_paragraphs, new_paragraphs = paragraphs(working), paragraphs(application)
+    require(old_paragraphs.keys() == new_paragraphs.keys()
+            and {n for n in old_paragraphs if old_paragraphs[n] != new_paragraphs[n]} == {"0065"},
+            "Unexpected property paragraph changes")
+    require(claims(working) == claims(application), "Property candidate claims differ from working edition")
+    # Paragraph comparisons alone omit headings, tables and unnumbered prose.
+    # Permit the identified preface, hydrogel block and edition map reference,
+    # preserving other text rather than accepting unrelated additions.
+    boundary = "## 1 Technical field\n"
+    require(working.count(boundary) == application.count(boundary) == 1,
+            "Property edition technical-field boundary differs")
+    preface, new_body = application.split(boundary)
+    _, old_body = working.split(boundary)
+    preface_lines = [line for line in preface.splitlines() if line]
+    require(len(preface_lines) == 4 and preface_lines[0]
+            == "# Provisional materials disclosure with attributed property evidence - 30 September 2026"
+            and preface_lines[1] == "Prepared **30 September 2026** | **Prospective unfiled property-evidence edition** for applicant and patent counsel.",
+            "Property edition preface structure differs")
+    hydrogel_block = r"^\[0065\] .*?(?=^\[0066\] )"
+    require(len(re.findall(hydrogel_block, old_body, re.M | re.S)) == 1
+            and len(re.findall(hydrogel_block, new_body, re.M | re.S)) == 1,
+            "Property hydrogel-block boundary differs")
+    old_map_reference = PurePosixPath(WORKING_MAP).name
+    new_map_reference = PurePosixPath(PROPERTY_MAP).name
+    require(old_body.count(old_map_reference) == new_body.count(new_map_reference) == 1
+            and old_map_reference not in new_body,
+            "Property application companion-map reference differs")
+    old_body = old_body.replace(old_map_reference, new_map_reference, 1)
+    require(re.sub(hydrogel_block, "[0065] ADOPTED HYDROGEL BLOCK\n\n", old_body, flags=re.M | re.S)
+            == re.sub(hydrogel_block, "[0065] ADOPTED HYDROGEL BLOCK\n\n", new_body, flags=re.M | re.S),
+            "Property source changed outside the preface, paragraph 0065 block or companion-map reference")
+
+    def hydrogel_table(text):
+        lines = text.splitlines()
+        header = "| DBCO/azide ratio | Linker 2a concentration (µM) | G′ at 37 °C (Pa) | G′ at 5 °C (Pa) |"
+        require(lines.count(header) == 1, "Property hydrogel table header differs or is duplicated")
+        first = lines.index(header)
+        table = []
+        for line in lines[first:]:
+            if not line.startswith("|"):
+                break
+            table.append(line)
+        require(len(table) == 12, "Property hydrogel table must contain exactly ten data rows")
+        return table
+
+    companion = (root / "documents/hydrogel_property_evidence_2026-09-30.md").read_text(encoding="utf-8")
+    require(hydrogel_table(application) == hydrogel_table(companion),
+            "Property hydrogel table cells, units or row order differ from source companion")
+    claim_result = check_claims(application, support)
+    check_registry(load_json(root / "data/entity_register.json"), application)
+    require(support.get("claims") == load_json(root / WORKING_MAP).get("claims"),
+            "Property map silently changed claim support or physical/legal statuses")
+    edition = load_json(root / PROPERTY_EDITION)
+    require(edition.get("prepared_date") == "2026-09-30"
+            and edition.get("repository_baseline") == PROPERTY_BASELINE
+            and edition.get("filing_asserted") is False
+            and edition.get("physical_enablement_certified") is False,
+            "Property edition preparation, baseline or factual status differs")
+    expected_sources = {PROPERTY_SOURCE, PROPERTY_MAP, "documents/drawings/composition_simplex.svg",
+                        "documents/drawings/material_record_sequence.svg", *PROPERTY_AUTHORING}
+    entries = edition.get("sources", [])
+    require(len(entries) == len(expected_sources) and {entry["path"] for entry in entries} == expected_sources,
+            "Property PDF source inventory differs")
+    for entry in entries:
+        snapshot = PROPERTY_AUTHORING.get(entry["path"])
+        require(entry.get("snapshot_path") == snapshot, "Property authoring snapshot identity differs")
+        data = safe_path(root, snapshot or entry["path"]).read_bytes()
+        require(hashlib.sha256(data).hexdigest() == entry["sha256"], "Property PDF captured-source hash differs")
+    pdf = edition.get("pdf", {})
+    require(pdf.get("path") == PROPERTY_PDF and type(pdf.get("page_count")) is int
+            and pdf["page_count"] > 0, "Invalid property PDF identity")
+    pdf_bytes = safe_path(root, pdf["path"]).read_bytes()
+    require(len(pdf_bytes) == pdf.get("size_bytes") and hashlib.sha256(pdf_bytes).hexdigest() == pdf.get("sha256"),
+            "Property PDF bytes differ from edition record")
+    locations = edition.get("location_map", {})
+    expected_locations = {f"paragraph_{n:04d}" for n in range(1, 81)} | {f"claim_{n}" for n in range(1, 200)}
+    require(locations.keys() == expected_locations
+            and all(type(page) is int and 1 <= page <= pdf["page_count"] for page in locations.values()),
+            "Property recorded PDF locations differ or are out of bounds")
+    require(edition.get("complete_numbered_text_checked") == {"paragraphs": 80, "claims": 199}
+            and edition.get("vector_drawings_checked") == 2, "Property recorded content counts differ")
+    require(edition.get("complete_property_table_checked") == {
+        "data_rows": 10, "columns": 4, "headers_and_complete_rows_checked_in_order": True,
+    }, "Property recorded PDF table checks differ")
+    return {**claim_result, "changed_paragraphs": ["0065"], "changed_claims": [],
+            "recorded_pdf_pages": pdf["page_count"], "recorded_pdf_locations_checked": len(locations),
+            "captured_sources_checked": len(entries), "hydrogel_source_table_data_rows_checked": 10,
+            "remaining_application_text_preserved": True,
             "pdf_parsed_or_appearance_rechecked_by_this_check": False,
             "filing_or_earlier_entitlement_or_enablement_certified": False}
 
@@ -769,6 +901,7 @@ def run(root: Path) -> dict:
     application = (root / "documents/provisional_application_draft.md").read_text(encoding="utf-8")
     claim_result = check_claims(application, load_json(root / "data/claim_support_map.json"))
     working_result = check_working_application(root)
+    property_result = check_property_application(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -788,6 +921,7 @@ def run(root: Path) -> dict:
             "unrestricted_domain_verification": unrestricted_result,
             "claim_clarification_verification": clarification_result,
             "working_application_edition_verification": working_result,
+            "property_application_edition_verification": property_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -1039,6 +1173,65 @@ def self_test(root: Path) -> dict:
             extended.append("working_isotope_basis_drift_rejected_after_consistent_map_update")
         working_source_path.write_bytes(working_source_original)
         working_map_path.write_bytes(working_map_original)
+        property_source_path = fixture / PROPERTY_SOURCE
+        property_source_original = property_source_path.read_bytes()
+        property_map_path = fixture / PROPERTY_MAP
+        property_map_original = property_map_path.read_bytes()
+        # Editing this application source cannot silently re-use a map from the
+        # previous bytes, even when a general package manifest is not consulted.
+        property_source_path.write_bytes(property_source_original + b"\nUnadopted source addition.\n")
+        try:
+            check_property_application(fixture)
+        except VerificationError as error:
+            require("Property source/map hash differs" in str(error),
+                    "Property source-drift fixture failed for another reason")
+            extended.append("property_source_map_drift_rejected")
+        finally:
+            property_source_path.write_bytes(property_source_original)
+        require("property_source_map_drift_rejected" in extended, "Stale property source map was accepted")
+
+        # Keep the edited claim and map mutually consistent. The independent
+        # adoption boundary must still reject expansion of unchanged claim 1.
+        property_source = property_source_original.decode("utf-8")
+        marker = "**Claim 1.** "
+        claim_lines = re.findall(r"^\*\*Claim 1\.\*\* (.+)$", property_source, re.M)
+        require(len(claim_lines) == 1 and claim_lines[0].count("positive normalized fraction") == 1,
+                "Property claim-mutation fixture lost its target")
+        altered_claim = claim_lines[0].replace("positive normalized fraction", "nonnegative normalized fraction", 1)
+        altered_source = property_source.replace(marker + claim_lines[0], marker + altered_claim, 1)
+        property_source_path.write_text(altered_source, encoding="utf-8", newline="\n")
+        property_map = json.loads(property_map_original)
+        property_map["claims"][0]["text"] = altered_claim
+        property_map["source_sha256"] = hashlib.sha256(property_source_path.read_bytes()).hexdigest()
+        property_map_path.write_text(json.dumps(property_map), encoding="utf-8")
+        try:
+            check_property_application(fixture)
+        except VerificationError as error:
+            require("Property candidate claims differ from working edition" in str(error),
+                    "Property changed-claim fixture failed for another reason")
+            extended.append("property_claim_drift_rejected_after_consistent_map_update")
+        finally:
+            property_source_path.write_bytes(property_source_original)
+            property_map_path.write_bytes(property_map_original)
+        require("property_claim_drift_rejected_after_consistent_map_update" in extended,
+                "A consistently updated property map concealed an altered claim")
+        table_row = "| 1.25 | 65.1 | 184 | 95 |\n"
+        require(property_source.count(table_row) == 1, "Property table-mutation fixture lost its target")
+        property_source_path.write_text(property_source.replace(table_row, "", 1), encoding="utf-8", newline="\n")
+        property_map = json.loads(property_map_original)
+        property_map["source_sha256"] = hashlib.sha256(property_source_path.read_bytes()).hexdigest()
+        property_map_path.write_text(json.dumps(property_map), encoding="utf-8")
+        try:
+            check_property_application(fixture)
+        except VerificationError as error:
+            require("Property hydrogel table must contain exactly ten data rows" in str(error),
+                    "Property missing-table-row fixture failed for another reason")
+            extended.append("property_table_row_loss_rejected_after_consistent_map_update")
+        finally:
+            property_source_path.write_bytes(property_source_original)
+            property_map_path.write_bytes(property_map_original)
+        require("property_table_row_loss_rejected_after_consistent_map_update" in extended,
+                "A consistently updated property map concealed a missing measured data row")
         for path in ("../outside.txt", "/absolute.txt", "C:/outside.txt", "a\\b"):
             try:
                 safe_path(fixture, path)
@@ -1228,7 +1421,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 20, f"Expected 20 extension failure checks, got {len(extended)}")
+    require(len(extended) == 23, f"Expected 23 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
