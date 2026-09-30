@@ -27,6 +27,11 @@ NUCLEAR_DIRECTORY = "data/nuclear_archive"
 PARTICLE_DIRECTORY = "data/particle_archive"
 OPTIONAL_NUCLEAR_VIEW = f"{NUCLEAR_DIRECTORY}/nuclear_states.json"
 REVIEW_PACKET = "data/review_packet_manifest.json"
+REVIEW_PREPARED_DATE = "2026-09-30"
+REVIEW_AUTHORING_FILES = {
+    "builder": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
+    "helper": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
+}
 REVIEW_SOURCE_FILES = frozenset({
     "documents/pdf/provisional_application_draft.pdf", "documents/provisional_application_draft.md",
     "documents/technical_scope_supplement.md", "documents/reference_entry_support.md",
@@ -90,7 +95,8 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     ".github/skills/archive-provenance-code-review/SKILL.md",
     ".github/skills/scientific-evidence-code-review/SKILL.md",
     ".github/skills/github-actions-failure-review/SKILL.md",
-    "documents/consolidated_review_edition.md", REVIEW_PACKET,
+    "documents/consolidated_review_edition.md", "documents/applicant_evidence_intake.md", REVIEW_PACKET,
+    *REVIEW_AUTHORING_FILES.values(),
     "documents/pdf/materials_provisional_review_2026-09-30.pdf",
     "documents/pdf/materials_identity_data_review_annex.pdf",
     "tools/pdf/build_consolidated_review.py", "tools/pdf/build_identity_review_annex.py",
@@ -555,6 +561,10 @@ def check_review_packet(root: Path) -> dict:
     require(type(record.get("schema_version")) is int and record.get("schema_version") == 1 and
             record.get("status") == "review_only_unfiled",
             "Review-packet version/status changed without supported review")
+    # This is a fixed reviewed edition, not a freely mutable date label.
+    # A refreshed outer manifest must not conceal changed preparation history.
+    require(record.get("prepared_date") == REVIEW_PREPARED_DATE,
+            "Review-packet preparation date differs from the reviewed edition")
     sources = record.get("sources")
     require(isinstance(sources, list) and all(isinstance(entry, dict) for entry in sources),
             "Review source records must be a list of objects")
@@ -582,6 +592,15 @@ def check_review_packet(root: Path) -> dict:
         require(entry.get("review_pages") == expected_artifacts[entry["path"]],
                 "Recorded review page count changed; inspect and record the new edition")
     core = record.get("core", {})
+    require(isinstance(core, dict), "Core review record must be an object")
+    for role, relative in REVIEW_AUTHORING_FILES.items():
+        # Preserve the actual authoring bytes separately from maintained tools;
+        # later tool fixes cannot silently revise this artifact provenance.
+        require(core.get(f"authoring_{role}_path") == relative,
+                f"Core authoring {role} must identify its exact retained snapshot")
+        payload = safe_path(root, relative).read_bytes()
+        require(core.get(f"authoring_{role}_sha256") == hashlib.sha256(payload).hexdigest(),
+                f"Core authoring {role} hash differs from retained bytes")
     require(core.get("front_matter_pages") == 2 and core.get("original_numbered_paragraphs") == 80 and
             core.get("candidate_claims") == 199 and core.get("original_application_pages_preserved") == 27,
             "Recorded original-application preservation counts changed")
@@ -615,7 +634,9 @@ def check_review_packet(root: Path) -> dict:
         last = end
     require(last == 795, "Annex recorded page map does not cover this edition")
     return {"source_hash_links_checked": len(sources), "artifact_hash_links_checked": len(artifacts),
-            "recorded_page_maps_checked": 2, "pdf_pages_independently_parsed_by_this_check": False,
+            "recorded_page_maps_checked": 2, "authoring_source_hash_links_checked": 2,
+            "prepared_date_checked": REVIEW_PREPARED_DATE,
+            "pdf_pages_independently_parsed_by_this_check": False,
             "appearance_rechecked_by_this_check": False, "filing_or_enablement_certified": False}
 
 
@@ -715,7 +736,38 @@ def self_test(root: Path) -> dict:
         require("stale_review_source_after_integrity_refresh_rejected" in extended,
                 "A refreshed integrity record concealed a stale review source")
 
+        # Retained authoring bytes are an independent provenance link. A
+        # maintenance refresh must not approve an altered historical builder.
+        for role, relative in REVIEW_AUTHORING_FILES.items():
+            historical = fixture / relative
+            historical_original = historical.read_bytes()
+            historical.write_bytes(historical_original + b"\n# Deliberate historical-source defect.\n")
+            refreshed = json.loads(manifest_original)
+            for entry in refreshed["files"]:
+                if entry["path"] == relative:
+                    payload = historical.read_bytes()
+                    entry["size_bytes"] = len(payload)
+                    entry["sha256"] = hashlib.sha256(payload).hexdigest()
+            manifest_path.write_text(json.dumps(refreshed), encoding="utf-8")
+            check_integrity(fixture)
+            case = f"review_retained_{role}_drift_after_integrity_refresh_rejected"
+            try:
+                check_review_packet(fixture)
+            except VerificationError as error:
+                require(f"{role} hash" in str(error), f"Authoring-byte test failed for an unrelated reason: {role}")
+                extended.append(case)
+            finally:
+                historical.write_bytes(historical_original)
+                manifest_path.write_bytes(manifest_original)
+            require(case in extended, f"Altered retained authoring {role} was accepted")
+
         review_defects = (
+            ("review_preparation_date_changed_rejected", ("prepared_date",), "2026-09-29", "preparation date"),
+            ("review_preparation_date_null_rejected", ("prepared_date",), None, "preparation date"),
+            ("review_builder_hash_changed_rejected", ("core", "authoring_builder_sha256"), "0" * 64, "builder hash"),
+            ("review_builder_path_changed_rejected", ("core", "authoring_builder_path"),
+             "tools/pdf/build_consolidated_review.py", "retained snapshot"),
+            ("review_helper_hash_changed_rejected", ("core", "authoring_helper_sha256"), "0" * 64, "helper hash"),
             ("review_status_promoted_to_filed_rejected", ("status",), "filed", "status"),
             ("review_core_page_overlap_rejected", ("core", "parts", 1, "physical_start"), 29, "gap, overlap"),
             ("review_annex_row_loss_rejected", ("annex", "sections", 6, "printed_record_count"), 5842, "selection count"),
@@ -727,6 +779,14 @@ def self_test(root: Path) -> dict:
                 destination = destination[key]
             destination[address[-1]] = value
             review_path.write_text(json.dumps(changed), encoding="utf-8")
+            refreshed = json.loads(manifest_original)
+            for entry in refreshed["files"]:
+                if entry["path"] == REVIEW_PACKET:
+                    payload = review_path.read_bytes()
+                    entry["size_bytes"] = len(payload)
+                    entry["sha256"] = hashlib.sha256(payload).hexdigest()
+            manifest_path.write_text(json.dumps(refreshed), encoding="utf-8")
+            check_integrity(fixture)
             try:
                 check_review_packet(fixture)
             except VerificationError as error:
@@ -734,7 +794,29 @@ def self_test(root: Path) -> dict:
                 extended.append(case)
             finally:
                 review_path.write_bytes(review_original)
+                manifest_path.write_bytes(manifest_original)
             require(case in extended, f"Review-packet defect was not rejected: {case}")
+
+        changed = json.loads(review_original)
+        del changed["prepared_date"]
+        review_path.write_text(json.dumps(changed), encoding="utf-8")
+        refreshed = json.loads(manifest_original)
+        for entry in refreshed["files"]:
+            if entry["path"] == REVIEW_PACKET:
+                payload = review_path.read_bytes()
+                entry["size_bytes"] = len(payload)
+                entry["sha256"] = hashlib.sha256(payload).hexdigest()
+        manifest_path.write_text(json.dumps(refreshed), encoding="utf-8")
+        check_integrity(fixture)
+        try:
+            check_review_packet(fixture)
+        except VerificationError as error:
+            require("preparation date" in str(error), "Missing preparation-date test failed for an unrelated reason")
+            extended.append("review_preparation_date_missing_rejected")
+        finally:
+            review_path.write_bytes(review_original)
+            manifest_path.write_bytes(manifest_original)
+        require("review_preparation_date_missing_rejected" in extended, "Missing preparation date was accepted")
 
         changed = json.loads(review_original)
         changed["sources"].pop()
@@ -978,7 +1060,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 9, f"Expected 9 extension failure checks, got {len(extended)}")
+    require(len(extended) == 17, f"Expected 17 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,

@@ -3,10 +3,11 @@
 Run from the package root: python -B tools/pdf/test_pdf_outputs.py
 No PDFs are authored, optional PDF libraries are unnecessary, and fixtures stay
 inside the ignored generated_reports/ directory with checked cleanup boundaries.
+Failure handling must retain outputs without stat/unlink cleanup: a separate
+process can replace a pathname between an ownership check and deletion.
 """
 from __future__ import annotations
 
-import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -53,6 +54,27 @@ class OutputSafeguardsTests(unittest.TestCase):
         info = path.stat()
         return info.st_dev, info.st_ino
 
+    def open_with_close_failure(self, failure: OSError):
+        """Close the real fixture handle, then simulate its close error."""
+        real_open = Path.open
+
+        class FailingClose:
+            def __init__(self, stream) -> None:
+                self.stream = stream
+
+            def __getattr__(self, name):
+                return getattr(self.stream, name)
+
+            def close(self) -> None:
+                self.stream.close()
+                raise failure
+
+        def controlled_open(path, *args, **kwargs):
+            stream = real_open(path, *args, **kwargs)
+            return FailingClose(stream) if path == self.pdf else stream
+
+        return controlled_open
+
     def test_existing_destination_is_preserved(self) -> None:
         original = b"Previous edition remains intact"
         self.pdf.write_bytes(original)
@@ -63,7 +85,7 @@ class OutputSafeguardsTests(unittest.TestCase):
         self.assertEqual(self.identity(self.pdf), original_identity)
         self.assertEqual(self.pdf_source.read_bytes(), b"SYNTHETIC PDF PAYLOAD; not a PDF document")
 
-    def test_partial_copy_is_removed_and_original_exception_survives(self) -> None:
+    def test_partial_copy_is_retained_and_original_exception_survives(self) -> None:
         failure = OSError("Injected interruption after a partial write")
 
         def interrupted_copy(stream, target) -> None:
@@ -71,48 +93,63 @@ class OutputSafeguardsTests(unittest.TestCase):
             raise failure
 
         with patch.object(outputs.shutil, "copyfileobj", side_effect=interrupted_copy):
+            # Deletion is forbidden even when a matching ownership check would
+            # succeed: that check cannot close the replacement-before-unlink gap.
+            with patch.object(Path, "stat", side_effect=AssertionError("Path lookup during failure")):
+                with patch.object(Path, "unlink", side_effect=AssertionError("Path deletion during failure")):
+                    with self.assertRaises(OSError) as caught:
+                        outputs.publish_exclusive(self.pdf_source, self.pdf)
+        self.assertIs(caught.exception, failure)
+        self.assertEqual(self.pdf.read_bytes(), self.pdf_source.read_bytes()[:7])
+        self.assertIn("No destination was removed", " ".join(failure.__notes__))
+        self.assertEqual(self.pdf_source.read_bytes(), b"SYNTHETIC PDF PAYLOAD; not a PDF document")
+
+    def test_successful_publication_does_not_inspect_or_delete_destination(self) -> None:
+        with patch.object(Path, "stat", side_effect=AssertionError("Path lookup during publication")):
+            with patch.object(Path, "unlink", side_effect=AssertionError("Path deletion during publication")):
+                self.assertIsNone(outputs.publish_exclusive(self.pdf_source, self.pdf))
+        self.assertEqual(self.pdf.read_bytes(), self.pdf_source.read_bytes())
+
+    def test_missing_source_retains_empty_destination_with_diagnostic(self) -> None:
+        with self.assertRaises(FileNotFoundError) as caught:
+            outputs.publish_exclusive(self.scratch / "missing-source.pdf", self.pdf)
+        self.assertEqual(self.pdf.read_bytes(), b"")
+        self.assertIn("may be incomplete", " ".join(caught.exception.__notes__))
+        self.assertTrue(self.pdf_source.exists())
+
+    def test_sync_failure_retains_output_and_original_exception(self) -> None:
+        failure = OSError("Injected output sync failure")
+        with patch.object(outputs.os, "fsync", side_effect=failure):
             with self.assertRaises(OSError) as caught:
                 outputs.publish_exclusive(self.pdf_source, self.pdf)
         self.assertIs(caught.exception, failure)
-        self.assertFalse(self.pdf.exists())
-        self.assertEqual(self.pdf_source.read_bytes(), b"SYNTHETIC PDF PAYLOAD; not a PDF document")
-
-    def test_returned_identity_is_from_exclusive_open(self) -> None:
-        opened_identities = []
-        real_fstat = os.fstat
-
-        def capture_fstat(descriptor):
-            info = real_fstat(descriptor)
-            opened_identities.append((info.st_dev, info.st_ino))
-            return info
-
-        with patch.object(outputs.os, "fstat", side_effect=capture_fstat):
-            result = outputs.publish_exclusive(self.pdf_source, self.pdf)
-        self.assertEqual(opened_identities, [result])
-        self.assertEqual(result, self.identity(self.pdf))
         self.assertEqual(self.pdf.read_bytes(), self.pdf_source.read_bytes())
+        self.assertIn("No destination was removed", " ".join(failure.__notes__))
 
-    def test_matching_ownership_removes_published_file(self) -> None:
-        owned = outputs.publish_exclusive(self.pdf_source, self.pdf)
-        outputs.remove_owned_output(self.pdf, owned)
-        self.assertFalse(self.pdf.exists())
-        self.assertTrue(self.pdf_source.exists())
+    def test_close_failure_does_not_mask_original_copy_exception(self) -> None:
+        failure = OSError("Injected copy failure")
+        close_failure = OSError("Injected close failure")
 
-    def test_substituted_ownership_preserves_replacement(self) -> None:
-        owned = outputs.publish_exclusive(self.pdf_source, self.pdf)
-        replacement = self.scratch / "replacement.pdf"
-        replacement.write_bytes(b"Replacement from a different owner")
-        self.assertNotEqual(self.identity(replacement), owned)
-        os.replace(replacement, self.pdf)
-        outputs.remove_owned_output(self.pdf, owned)
-        self.assertEqual(self.pdf.read_bytes(), b"Replacement from a different owner")
+        def interrupted_copy(stream, target) -> None:
+            target.write(stream.read(7))
+            raise failure
 
-    def test_missing_owned_output_is_tolerated(self) -> None:
-        owned = outputs.publish_exclusive(self.pdf_source, self.pdf)
-        self.pdf.unlink()
-        outputs.remove_owned_output(self.pdf, owned)
-        self.assertFalse(self.pdf.exists())
-        self.assertTrue(self.pdf_source.exists())
+        with patch.object(Path, "open", new=self.open_with_close_failure(close_failure)):
+            with patch.object(outputs.shutil, "copyfileobj", side_effect=interrupted_copy):
+                with self.assertRaises(OSError) as caught:
+                    outputs.publish_exclusive(self.pdf_source, self.pdf)
+        self.assertIs(caught.exception, failure)
+        self.assertEqual(self.pdf.read_bytes(), self.pdf_source.read_bytes()[:7])
+        self.assertIn("Closing the output also failed", " ".join(failure.__notes__))
+
+    def test_close_failure_after_complete_write_retains_output_and_original_error(self) -> None:
+        failure = OSError("Injected close failure after successful copy and sync")
+        with patch.object(Path, "open", new=self.open_with_close_failure(failure)):
+            with self.assertRaises(OSError) as caught:
+                outputs.publish_exclusive(self.pdf_source, self.pdf)
+        self.assertIs(caught.exception, failure)
+        self.assertEqual(self.pdf.read_bytes(), self.pdf_source.read_bytes())
+        self.assertIn("No destination was removed", " ".join(failure.__notes__))
 
     def test_successful_pair_preserves_both_sources_and_outputs(self) -> None:
         source_bytes = [source.read_bytes() for source, _ in self.pairs]
@@ -120,12 +157,15 @@ class OutputSafeguardsTests(unittest.TestCase):
         self.assertEqual([destination.read_bytes() for _, destination in self.pairs], source_bytes)
         self.assertEqual([source.read_bytes() for source, _ in self.pairs], source_bytes)
 
-    def test_report_collision_removes_only_still_owned_pdf(self) -> None:
+    def test_report_collision_retains_prior_pdf_without_stat_or_unlink(self) -> None:
         self.report.write_bytes(b"Existing report must survive")
         report_identity = self.identity(self.report)
-        with self.assertRaises(FileExistsError):
-            outputs.publish_outputs_exclusive(self.pairs)
-        self.assertFalse(self.pdf.exists())
+        with patch.object(Path, "stat", side_effect=AssertionError("Path lookup during failure")):
+            with patch.object(Path, "unlink", side_effect=AssertionError("Path deletion during failure")):
+                with self.assertRaises(FileExistsError) as caught:
+                    outputs.publish_outputs_exclusive(self.pairs)
+        self.assertEqual(self.pdf.read_bytes(), self.pdf_source.read_bytes())
+        self.assertIn("Output set publication is incomplete", " ".join(caught.exception.__notes__))
         self.assertEqual(self.report.read_bytes(), b"Existing report must survive")
         self.assertEqual(self.identity(self.report), report_identity)
         self.assertTrue(self.pdf_source.exists())
@@ -134,7 +174,7 @@ class OutputSafeguardsTests(unittest.TestCase):
         self.report.write_bytes(b"Existing report must survive")
         real_publish = outputs.publish_exclusive
         report_failures = []
-        opened_pdf_identities = []
+        published_pdf_identities = []
         replacement = self.scratch / "process-replacement.pdf"
         worker = (
             "import os,pathlib,sys; "
@@ -151,14 +191,14 @@ class OutputSafeguardsTests(unittest.TestCase):
                     [sys.executable, "-I", "-B", "-c", worker, str(self.pdf), str(replacement)],
                     check=True, capture_output=True, timeout=15,
                 )
-                self.assertNotEqual(self.identity(self.pdf), opened_pdf_identities[0])
+                self.assertNotEqual(self.identity(self.pdf), published_pdf_identities[0])
             try:
                 result = real_publish(source, destination)
             except FileExistsError as failure:
                 report_failures.append(failure)
                 raise
             if destination == self.pdf:
-                opened_pdf_identities.append(result)
+                published_pdf_identities.append(self.identity(self.pdf))
             return result
 
         with patch.object(outputs, "publish_exclusive", side_effect=replace_then_publish):
@@ -168,8 +208,9 @@ class OutputSafeguardsTests(unittest.TestCase):
         self.assertIs(caught.exception, report_failures[0])
         self.assertEqual(self.pdf.read_bytes(), b"Replacement from a separate process")
         self.assertEqual(self.report.read_bytes(), b"Existing report must survive")
+        self.assertIn("were not removed", " ".join(caught.exception.__notes__))
 
-    def test_pair_rollback_tolerates_pdf_already_removed(self) -> None:
+    def test_pair_failure_tolerates_pdf_already_removed_by_another_writer(self) -> None:
         self.report.write_bytes(b"Existing report must survive")
         real_publish = outputs.publish_exclusive
 
@@ -183,6 +224,26 @@ class OutputSafeguardsTests(unittest.TestCase):
                 outputs.publish_outputs_exclusive(self.pairs)
         self.assertFalse(self.pdf.exists())
         self.assertEqual(self.report.read_bytes(), b"Existing report must survive")
+
+    def test_second_output_copy_failure_retains_both_outputs_and_original_error(self) -> None:
+        failure = OSError("Injected report copy interruption")
+        real_copy = outputs.shutil.copyfileobj
+
+        def interrupted_report_copy(stream, target) -> None:
+            if Path(stream.name) == self.report_source:
+                target.write(stream.read(4))
+                raise failure
+            real_copy(stream, target)
+
+        with patch.object(outputs.shutil, "copyfileobj", side_effect=interrupted_report_copy):
+            with self.assertRaises(OSError) as caught:
+                outputs.publish_outputs_exclusive(self.pairs)
+        self.assertIs(caught.exception, failure)
+        self.assertEqual(self.pdf.read_bytes(), self.pdf_source.read_bytes())
+        self.assertEqual(self.report.read_bytes(), self.report_source.read_bytes()[:4])
+        notes = " ".join(failure.__notes__)
+        self.assertIn("may be incomplete", notes)
+        self.assertIn("Earlier destination paths were not removed", notes)
 
     def test_valid_output_paths_are_resolved_without_writes(self) -> None:
         package = self.scratch / "fixture-package"

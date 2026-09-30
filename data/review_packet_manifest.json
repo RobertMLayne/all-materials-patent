@@ -178,7 +178,7 @@
     "original_pages_pixel_identical_at_72_dpi": 27,
     "new_body_token_omissions": 0,
     "out_of_page_word_boxes": 0,
-    "authoring_builder_sha256": "b3e4ebd84c2da4314f7b28e26e856baf0899f89c671b6e6c47d5f20137c6283a",
+    "authoring_builder_sha256": "f3a2c60b3e6317918ba8533d5caf9bc3985eb9edab21c094d7f843cd418bfec0",
     "font_files": [
       {
         "name": "arial.ttf",
@@ -199,7 +199,21 @@
     ],
     "original_text_geometry_content_streams_unchanged": true,
     "font_repair": "Replaced one unsupported superscript-minus display unit with cm^-1 and rebuilt the core; scientific unit meaning unchanged.",
-    "rebuild_observed_utc": "2026-09-30T08:44:52.306102+00:00"
+    "rebuild_observed_utc": "2026-09-30T08:44:52.306102+00:00",
+    "prior_recorded_authoring_builder_sha256": "b3e4ebd84c2da4314f7b28e26e856baf0899f89c671b6e6c47d5f20137c6283a",
+    "authoring_builder_path": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
+    "authoring_helper_path": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
+    "authoring_helper_sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+    "reproduction": {
+      "observed_utc": "2026-09-30T11:29:37.562552+00:00",
+      "byte_identical_to_previous_review_pdf": true,
+      "same_extracted_text_pages": 66,
+      "same_content_stream_pages": 66,
+      "pixel_identical_pages_at_scale_1_3": 66,
+      "retained_builder_and_helper_equal_used_bytes_before_and_after": true,
+      "all_input_source_hashes_unchanged": true,
+      "scope": "This unchanged core was reproduced with the exact retained builder/helper snapshots. These source links record actual code used; source fidelity, rendering and hashes do not certify physical or legal sufficiency."
+    }
   },
   "annex": {
     "sections": [
@@ -374,7 +388,20 @@
       56,
       66
     ],
-    "core_review_record_updated_utc": "2026-09-30T08:46:30.357280+00:00"
+    "core_review_record_updated_utc": "2026-09-30T08:46:30.357280+00:00",
+    "core_reproduction_review": {
+      "observed_utc": "2026-09-30T11:34:26.776230+00:00",
+      "pages_rendered": 66,
+      "contact_sheets_inspected": 6,
+      "enlarged_pages": [
+        1,
+        2,
+        40,
+        56
+      ],
+      "finding": "No actionable clipping, overlap, missing-glyph or header/footer collision found; all 66 pages also pixel-identical to the previous reviewed core at render scale 1.3.",
+      "limits": "Full-page thumbnails and four enlarged pages; not individual magnified inspection of every character or filing-format certification."
+    }
   },
   "observed_authoring_software": {
     "reportlab": "4.4.9",

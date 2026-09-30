@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 83,
+  "file_count": 86,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 14361,
-      "sha256": "2acb51c418bac5a2c94e0be834a6d04f8844a11483fad7bcb21b08f962257390"
+      "size_bytes": 14676,
+      "sha256": "f195af7cdde446f85f81c9321bb7dc4c30be877b1b17f9ba72be0aba59eeb6e6"
     },
     {
       "path": "data/claim_support_map.json",
@@ -247,14 +247,29 @@
       "sha256": "d682a91e7af133a164861de53964f482faa893392fda653d7071b46c327a2bc1"
     },
     {
+      "path": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
+      "size_bytes": 28420,
+      "sha256": "f3a2c60b3e6317918ba8533d5caf9bc3985eb9edab21c094d7f843cd418bfec0"
+    },
+    {
+      "path": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
       "path": "data/review_packet_manifest.json",
-      "size_bytes": 13036,
-      "sha256": "207ca0847ebf1f862af0208f32f532c819fbc5de51a486366f9bea0af1a47271"
+      "size_bytes": 14671,
+      "sha256": "9037d1632aba8a559df22184912316494a9b523b0c63f0b26ddc43d391650f67"
+    },
+    {
+      "path": "documents/applicant_evidence_intake.md",
+      "size_bytes": 11484,
+      "sha256": "12faebd03a1459627f5a872501fe9318c46534cdfd349c583e6cd108f2794c37"
     },
     {
       "path": "documents/consolidated_review_edition.md",
-      "size_bytes": 10302,
-      "sha256": "0d4b221fd01cfdc8e065dd756f87673e2164ece8224de17a99dca388169c177c"
+      "size_bytes": 12305,
+      "sha256": "4731ea601819b6356a45c1c4cde2c9cbb4c582cf1d384993c54cf8b3d66d46f1"
     },
     {
       "path": "documents/current_status_addendum.md",
@@ -338,8 +353,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 13481,
-      "sha256": "f02258205a0824f4823071b73601203a99e482a7989cc2b958201fadce76ea09"
+      "size_bytes": 15966,
+      "sha256": "b0aab1a69e9fe6782f523b436dd281946fa0041ac31bfc868a41045366a05a52"
     },
     {
       "path": "pyproject.toml",
@@ -408,13 +423,13 @@
     },
     {
       "path": "tools/pdf/build_consolidated_review.py",
-      "size_bytes": 28264,
-      "sha256": "46c195c14f35191ad86f229532a57f389f03c2e51053faa14f5f4aa9dac972ee"
+      "size_bytes": 28420,
+      "sha256": "f3a2c60b3e6317918ba8533d5caf9bc3985eb9edab21c094d7f843cd418bfec0"
     },
     {
       "path": "tools/pdf/build_identity_review_annex.py",
-      "size_bytes": 36756,
-      "sha256": "7df5f5d1f36e2e6fc125dc184ca35371f9e7db274dcff7351c34066e8724fe3c"
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
     },
     {
       "path": "tools/pdf/requirements-pdf.txt",
@@ -423,8 +438,8 @@
     },
     {
       "path": "tools/pdf/test_pdf_outputs.py",
-      "size_bytes": 13063,
-      "sha256": "cf2cdb40a11fca96b98c011e461fe7068b59e79de289ff23ed5eeb8de85fa26d"
+      "size_bytes": 17052,
+      "sha256": "529f077d5efa3db15fd67f4c107bc64e684e3bfab7b71b83d6e81b3162895069"
     },
     {
       "path": "tools/update_manifest.py",
@@ -433,8 +448,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 59437,
-      "sha256": "56e2f78e0ddb3137ea28788186b274c036f5684ab80c98385487141918366630"
+      "size_bytes": 64480,
+      "sha256": "ff12beab7afc448ca7711aca37b20dea56084874f462d9bd9dc6310bf7f687f6"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
