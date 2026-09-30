@@ -1,0 +1,15 @@
+# Current publication and filing status
+
+Status checked: 30 September 2026 UTC. This addendum supersedes historical preparation-stage statements about publication in the original memorandum. It does not change the original PDFs or their preparation dates.
+
+The research package is publicly accessible in [RobertMLayne/all-materials-patent](https://github.com/RobertMLayne/all-materials-patent). The [recorded observation](../data/publication_observation.json) identifies the exact main-branch version and the observed public-access time. The original documents were prepared on 29 September 2026. Neither that preparation date nor a commit's creation time is certified as the earliest public-availability date.
+
+No patent filing, official receipt, accepted priority claim, fee payment, or micro-entity certification is asserted. The package's public disclosure and any future application filing have different legal functions and dates. Public disclosure can potentially qualify as a publicly accessible reference under the applicable rules; it supplies only the actual teachings of the publicly accessible version. It does not create a provisional filing date, establish that every candidate material is enabled, or certify a universal bar. [USPTO MPEP 2152.02](https://www.uspto.gov/web/offices/pac/mpep/s2152.html).
+
+An actual disclosure chronology is necessary before pursuing the applicant's own patent rights. The U.S. inventor-originated disclosure exceptions require their conditions to be established, and foreign rights may be affected even if a U.S. exception applies. A later provisional does not restore a universally prepublication position. This note records the issue without assuming a particular grace-period exception applies. [USPTO provisional application guidance](https://www.uspto.gov/patents/basics/apply/provisional-application).
+
+The original 199 candidate claims remain unassessed for claim-specific novelty, and their physical enablement remains unresolved. Four are independent claims: 1, 139, 186 and 194. With all 199 retained at U.S. national stage, the current illustrative micro excess-claim charges are 179 x USD40 plus 1 x USD120, totaling **USD7,280 before other charges**. This does not apply to the provisional, is not a complete filing quote, and depends on valid micro eligibility and the fee schedule applicable when payment is made. [USPTO fee schedule, 37 CFR1.492(d)-(e)](https://www.uspto.gov/learning-and-resources/fees-and-payment/uspto-fee-schedule).
+
+The intended PCT filing should contain its essential technical disclosure in accepted application contents. Merely referring to this repository, scripts, or a provisional is not a general substitute. Ordinary PCT requests designate the states bound on the international filing date; later national or regional phase decisions select where protection is pursued. [PCT Rule4.9](https://www.wipo.int/en/web/pct-system/texts/rules/r4), [PCT ISPE4.26-4.27](https://www.wipo.int/en/web/pct-system/texts/ispe/4_02_27).
+
+This supplement is drafting and evidence work. No filing action or legal-coverage conclusion is reported.

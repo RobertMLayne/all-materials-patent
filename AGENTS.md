@@ -8,7 +8,7 @@ This repository is a research and drafting package. Its documents do not establi
 - Maintain recognized versus hypothetical element/particle status, source editions, isotope-state provenance, and uncertainty. Do not turn an unobserved label or estimated property into an established result.
 - Keep ESTABLISHED, CALCULATED, PROPOSED, and UNSUPPORTED evidence labels distinct. Never invent experiments, syntheses, yields, measurements, properties, applicant information, inventorship, priority dates, or successful outcomes.
 - Claim-support locations show textual support only. Keep physical enablement, novelty, eligibility, unity and inventorship as separate inquiries. A numerical coverage test does not decide any of them.
-- The executable range model imposes a 10^-19 minimum positive coordinate; the manuscript's broader symbolic domain does not. Preserve this difference unless the implementation is deliberately extended and independently verified.
+- The original `composition_ranges.py` retains its 10^-19 positive floor. The separately extended `unrestricted_compositions.py` implements exact positive rationals without that floor or a domain-wide denominator cap; real irrational coordinates remain symbolic. Preserve this distinction and the independent checks. A numerical witness or integer inventory is not a preparation or property result.
 - Retain exact fraction strings and normalization constraints. Never replace the all-rational domain with the finite decimal grid or treat component interval choices as independent after normalization.
 - Keep claims 1-199, entity counts and local links consistent when editing. Run `python verify_package.py` after changes. Deliberate artifact changes require a reviewed manifest update, not suppression of checksum failures.
 - Do not add unrelated account inventories, repository-review reports, credentials, local absolute paths, temporary renders, or synced private reference files to this package.
@@ -24,9 +24,9 @@ The following items remain open. They describe unresolved work, not performed ex
 | EXP-001 | Not performed in this package | Select specific material embodiments and document materials, equipment, process conditions, isolation and failure boundaries. |
 | EXP-002 | Not performed in this package | Confirm actual composition, structure, phase and measurement uncertainty using appropriate calibrated methods. |
 | EXP-003 | Not performed in this package | Test a defined property scenario and its credible alternative under stated conditions; retain raw evidence and negative outcomes. |
-| DATA-001 | Open | Add versioned isotope/particle data only with source cutoffs, existence status and measured/estimated distinctions; no complete current archive is presently included. |
+| DATA-001 | Partially addressed | Versioned NUBASE2020 source/state parsing and PDG 2026.0 selected identity tables are included with attribution, source hashes, unknowns, and dated scope. They are not complete current/future nuclear or particle universes, and physical existence must not be inferred from table membership or a property marker. |
 | PAT-001 | Open | Conduct claim-specific novelty, support, enablement, eligibility, unity and inventorship review, with composition-specific evidence. |
-| PUB-001 | Evidence required after any actual publication | Preserve the actual public commit/release identity and public-accessibility timing. Do not backdate from a document preparation date or private commit. |
+| PUB-001 | Observed access; earliest availability uncertified | A public repository version/access observation is preserved separately from document preparation dates. Continue preserving actual versions and accessibility evidence; do not certify an earliest date from private commits or this observation alone. |
 | FILE-001 | No filing asserted | If filing is separately authorized and completed, preserve the actual submitted application, receipt, date and official identifier. |
 
 Update statuses only when the corresponding work and evidence exist. State what changed and retain the previous version in repository history.

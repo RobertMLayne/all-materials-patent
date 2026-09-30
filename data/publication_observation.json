@@ -1,0 +1,11 @@
+{
+  "observation_time_utc": "2026-09-30 02:31:40 UTC",
+  "repository": "RobertMLayne/all-materials-patent",
+  "ref": "refs/heads/main",
+  "sha": "1e1d41806d1c5dd2922bbee41f3dd30c702fcaea",
+  "source_url": "https://github.com/RobertMLayne/all-materials-patent",
+  "earliest_public_availability_certified": false,
+  "filing_asserted": false,
+  "method": "Read-only authenticated connector resolves exact public main commit; separate unauthenticated browser displays Public badge and research README.",
+  "public_access_browser_observed": true
+}

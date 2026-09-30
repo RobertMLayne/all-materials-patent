@@ -1,0 +1,21 @@
+{
+  "status": "CALCULATED under stated idealized models; no preparation or measurement",
+  "iid_sampling_model": {
+    "assumptions": "Independent draws from an unchanged effectively unlimited reservoir, perfect detection and classification, known sampled count; not a fixed finite one-atom specimen.",
+    "trace_probability_fraction": "1/10000000000000000000",
+    "sampled_entities": "10000000000000000000",
+    "expected_trace_count": "1",
+    "probability_zero_trace_count": "0.3678794411714423215771297981028887513652685270212542862988505831829147019704941706730301773120079776",
+    "probability_at_least_one": "0.6321205588285576784228702018971112486347314729787457137011494168170852980295058293269698226879920224",
+    "minimum_sampled_count_for_95_percent_at_least_one": "29957322735539909933",
+    "zero_count_one_sided_95_percent_upper_probability": "2.995732273553990992986502983401892579457541507129307258168612562227584545570641939E-19"
+  },
+  "fixed_inventory_one_atom_model": {
+    "assumptions": "Exactly one known trace atom among N atoms; uniform sample of n distinct atoms without replacement; perfect detection and classification.",
+    "total_atoms": "10000000000000000000",
+    "sampled_atoms": "100000000000000000",
+    "probability_detect_trace_atom": "1/100",
+    "probability_miss_trace_atom": "99/100",
+    "minimum_sampled_count_for_95_percent_detection": "9500000000000000000"
+  }
+}

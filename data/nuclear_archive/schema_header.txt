@@ -1,0 +1,25 @@
+# Nubase2020 citation: F.G. Kondev, M. Wang, W.J. Huang, S. Naimi, and G. Audi, Chin. Phys. C45, 030001 (2021)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#                                     Data FORMAT 
+#     column   quantity   format      description
+#       1: 3   AAA           a3       Mass Number (AAA)
+#       5: 8   ZZZi          a4       Atomic Number (ZZZ); i=0 (gs); i=1,2 (isomers); i=3,4 (levels); i=5 (resonance); i=8,9 (IAS)
+#                                     i=3,4,5,6 can also indicate isomers (when more than two isomers are presented in a nuclide)
+#     12: 16   A El          a5       A Element 
+#     17: 17   s             a1       s=m,n (isomers); s=p,q (levels); s=r (reonance); s=i,j (IAS); 
+#                                     s=p,q,r,x can also indicate isomers (when more than two isomers are presented in a nuclide)
+#     19: 31   Mass #     f13.6       Mass Excess in keV (# from systematics)
+#     32: 42   dMass #    f11.6       Mass Excess uncertainty in keV (# from systematics)
+#     43: 54   Exc #      f12.6       Isomer Excitation Energy in keV (# from systematics)
+#     55: 65   dE #       f11.6       Isomer Excitation Energy uncertainty in keV (# from systematics)
+#     66: 67   Orig          a2       Origin of Excitation Energy  
+#     68: 68   Isom.Unc      a1       Isom.Unc = *  (gs and isomer ordering is uncertain) 
+#     69: 69   Isom.Inv      a1       Isom.Inv = &  (the ordering of gs and isomer is reversed compared to ENSDF) 
+#     70: 78   T #         f9.4       Half-life (# from systematics); stbl=stable; p-unst=particle unstable
+#     79: 80   unit T        a2       Half-life unit 
+#     82: 88   dT            a7       Half-life uncertainty 
+#     89:102   Jpi */#/T=    a14      Spin and Parity (* directly measured; # from systematics; T=isospin) 
+#    103:104   Ensdf year    a2       Ensdf update year 
+#    115:118   Discovery     a4       Year of Discovery 
+#    120:209   BR            a90      Decay Modes and their Intensities and Uncertanties in %; IS = Isotopic Abundance in %
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

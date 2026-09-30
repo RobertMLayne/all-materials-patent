@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "import and offline verification with network denied",
+      "passed": true
+    },
+    {
+      "case": "edited source spin rejected by integrity checksum",
+      "passed": true,
+      "observed_failure": "ERROR: Archive checksum mismatch"
+    },
+    {
+      "case": "lost charge-state row rejected even after rehash",
+      "passed": true,
+      "observed_failure": "ERROR: Incomplete pdgparticle: 1169 rather than 1170"
+    },
+    {
+      "case": "lost search groups rejected even after rehash",
+      "passed": true,
+      "observed_failure": "ERROR: Incomplete pdgid: 439 rather than 450"
+    },
+    {
+      "case": "unsupported global discovery assertion rejected",
+      "passed": true,
+      "observed_failure": "ERROR: An unsupported global discovery status was added"
+    },
+    {
+      "case": "rehash cannot hide edited spin from full source comparison",
+      "passed": true,
+      "observed_failure": "ERROR: Export differs from complete selected source tables"
+    }
+  ],
+  "checks_count": 6
+}

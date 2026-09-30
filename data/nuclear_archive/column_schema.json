@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "source_format": "NUBASE2020 nubase_4.mas20.txt header",
+  "column_convention": "one-based inclusive ASCII byte columns",
+  "fields": [
+    {
+      "name": "mass_number",
+      "start": 1,
+      "end": 3,
+      "description": "Mass number"
+    },
+    {
+      "name": "unassigned_004",
+      "start": 4,
+      "end": 4,
+      "description": "Unassigned column"
+    },
+    {
+      "name": "atomic_number_and_state",
+      "start": 5,
+      "end": 8,
+      "description": "Atomic number and edition-specific state index"
+    },
+    {
+      "name": "unassigned_009_011",
+      "start": 9,
+      "end": 11,
+      "description": "Unassigned columns"
+    },
+    {
+      "name": "mass_and_element_label",
+      "start": 12,
+      "end": 16,
+      "description": "Mass number and element label"
+    },
+    {
+      "name": "state_symbol",
+      "start": 17,
+      "end": 17,
+      "description": "Edition-specific state suffix"
+    },
+    {
+      "name": "unassigned_018",
+      "start": 18,
+      "end": 18,
+      "description": "Unassigned column"
+    },
+    {
+      "name": "mass_excess",
+      "start": 19,
+      "end": 31,
+      "description": "Mass excess in keV"
+    },
+    {
+      "name": "mass_excess_uncertainty",
+      "start": 32,
+      "end": 42,
+      "description": "Mass excess uncertainty in keV"
+    },
+    {
+      "name": "excitation_energy",
+      "start": 43,
+      "end": 54,
+      "description": "Excitation energy in keV or source text"
+    },
+    {
+      "name": "excitation_energy_uncertainty",
+      "start": 55,
+      "end": 65,
+      "description": "Excitation energy uncertainty in keV"
+    },
+    {
+      "name": "excitation_origin",
+      "start": 66,
+      "end": 67,
+      "description": "Origin of excitation energy"
+    },
+    {
+      "name": "ordering_uncertainty",
+      "start": 68,
+      "end": 68,
+      "description": "Ground/isomer ordering uncertainty flag"
+    },
+    {
+      "name": "ordering_reversal",
+      "start": 69,
+      "end": 69,
+      "description": "Ordering reversal relative to ENSDF flag"
+    },
+    {
+      "name": "half_life",
+      "start": 70,
+      "end": 78,
+      "description": "Half-life value or source category"
+    },
+    {
+      "name": "half_life_unit",
+      "start": 79,
+      "end": 80,
+      "description": "Source half-life unit"
+    },
+    {
+      "name": "unassigned_081",
+      "start": 81,
+      "end": 81,
+      "description": "Unassigned column"
+    },
+    {
+      "name": "half_life_secondary",
+      "start": 82,
+      "end": 88,
+      "description": "Documented dT field; also bounds or annotations in actual rows"
+    },
+    {
+      "name": "spin_parity_isospin",
+      "start": 89,
+      "end": 102,
+      "description": "Spin, parity, direct measurement/systematics flags, isospin"
+    },
+    {
+      "name": "ensdf_update_year",
+      "start": 103,
+      "end": 104,
+      "description": "Source two-digit ENSDF update year"
+    },
+    {
+      "name": "unassigned_105_114",
+      "start": 105,
+      "end": 114,
+      "description": "Unassigned columns"
+    },
+    {
+      "name": "discovery_year",
+      "start": 115,
+      "end": 118,
+      "description": "Reported discovery year"
+    },
+    {
+      "name": "unassigned_119",
+      "start": 119,
+      "end": 119,
+      "description": "Unassigned column"
+    },
+    {
+      "name": "decay_modes_intensities",
+      "start": 120,
+      "end": 209,
+      "description": "Decay modes, intensities/uncertainties, isotopic abundance in percent"
+    }
+  ],
+  "overflow_policy": "preserve every byte after documented column 209 without inventing a meaning",
+  "trailing_short_record_policy": "preserve actual slices; never pad the source raw record",
+  "state_index_policy": "retain source index and symbol; index 3-6 can also designate isomers; do not infer state type from index alone",
+  "estimation_policy": "a # marks a systematics-derived property, not whether the nucleus/state was observed",
+  "uncertainty_policy": "raw, operator, numerical token and unit are distinct; secondary half-life bounds are not error bars"
+}

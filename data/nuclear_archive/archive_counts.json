@@ -1,0 +1,40 @@
+{
+  "record_count": 5843,
+  "unique_nuclide_count": 3558,
+  "state_index_counts": {
+    "0": 3558,
+    "1": 1378,
+    "2": 463,
+    "3": 201,
+    "4": 42,
+    "5": 11,
+    "6": 4,
+    "8": 162,
+    "9": 24
+  },
+  "minimum_Z": 0,
+  "maximum_Z": 118,
+  "maximum_record_width": 217,
+  "overflow_record_count": 2,
+  "discovery_year_maximum": 2021,
+  "discovery_year_2021_records": [
+    {
+      "id": "NUBASE2020:Z047:A127:S2",
+      "source_line": 2442,
+      "source_byte_offset": 318061,
+      "field_columns": [
+        115,
+        118
+      ],
+      "field_raw": "2021",
+      "raw_line": "127 0472   127Agn -56710#       200#       1938         17             67.5   ms 0.9    (27/2+)                   2021 B-=91.2 8;IT=8.8 8"
+    }
+  ],
+  "excitation_non_exist_token_count": 16,
+  "half_life_secondary_kind_counts": {
+    "auxiliary_bound": 299,
+    "isospin_annotation": 2,
+    "missing": 860,
+    "reported_uncertainty": 4682
+  }
+}

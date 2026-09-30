@@ -1,0 +1,36 @@
+{
+  "record_count": 5843,
+  "unique_nuclides": 3558,
+  "state_index_counts": {
+    "0": 3558,
+    "1": 1378,
+    "2": 463,
+    "3": 201,
+    "4": 42,
+    "5": 11,
+    "6": 4,
+    "8": 162,
+    "9": 24
+  },
+  "all_source_rows_accounted_for": true,
+  "all_raw_columns_reconstruct": true,
+  "manual_sample_ids": [
+    "NUBASE2020:Z000:A001:S0",
+    "NUBASE2020:Z043:A099:S1",
+    "NUBASE2020:Z001:A007:S0",
+    "NUBASE2020:Z005:A018:S0",
+    "NUBASE2020:Z047:A127:S2"
+  ],
+  "deliberate_defects_rejected": [
+    "missing state",
+    "altered source hash",
+    "altered identity",
+    "lost raw field",
+    "false observation classification",
+    "bound presented as uncertainty"
+  ],
+  "source_bytes": 761906,
+  "source_sha256": "1585a5eea86c5e17e90307c7e6e786d060049c4039e392a261ff6db977df9859",
+  "result": "pass",
+  "scope": "faithful dated ASCII archive and conservative parsing, not physical enablement or current/future completeness"
+}
