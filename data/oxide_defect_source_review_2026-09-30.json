@@ -1,0 +1,192 @@
+{
+  "review_date": "2026-09-30",
+  "doi": "10.1038/ncomms6881",
+  "published_date_reported": "2015-01-06",
+  "primary_article": "https://www.nature.com/articles/ncomms6881",
+  "acquired_public_sources": [
+    {
+      "source": "https://www.nature.com/articles/ncomms6881.pdf",
+      "bytes": 1745568,
+      "sha256": "76e0abc8bb230d470386374220efd542745a8337866a332422e9dd61af03851b",
+      "filename": "li_2015_rutile_published_article.pdf",
+      "pages": 10
+    },
+    {
+      "source": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fncomms6881/MediaObjects/41467_2015_BFncomms6881_MOESM84_ESM.pdf",
+      "bytes": 884892,
+      "sha256": "df24cc2a211a253b1a36d4952a23b024a1666e19ceaa8d99c053a922d259c64b",
+      "filename": "li_2015_rutile_supplementary_information.pdf",
+      "pages": 10
+    }
+  ],
+  "inspection": {
+    "main_pdf_pages_visually_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "supplement_pdf_pages_visually_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "publisher_figures_visually_reviewed": [
+      1,
+      4,
+      5
+    ],
+    "points_digitized": false
+  },
+  "source_table_rows": [
+    [
+      "Rutile quantity",
+      "T-1",
+      "T-2",
+      "Source and basis"
+    ],
+    [
+      "TEM size",
+      "8 nm",
+      "27 nm",
+      "Main Table 1; TEM"
+    ],
+    [
+      "BET area",
+      "101 m2/g",
+      "86 m2/g",
+      "Main Table 1; BET"
+    ],
+    [
+      "Visible H2 rate",
+      "932",
+      "372",
+      "Main Results p5/Figure 4; micromol h^-1 g^-1"
+    ],
+    [
+      "UV-Vis gap",
+      "2.74 eV",
+      "2.84 eV",
+      "Supplement Table 2; optical estimate"
+    ]
+  ],
+  "source_table_statuses": [
+    "ESTABLISHED measurement report",
+    "CALCULATED source estimate",
+    "ESTABLISHED measurement report",
+    "CALCULATED source estimate"
+  ],
+  "source_basis": {
+    "OH": "See D[0064] diagnostic basis.",
+    "positron_lifetimes_are_charge_carrier_lifetimes": false,
+    "T2_positron_values_present_in_Figure_1f": false,
+    "whole_product_elemental_inventory_assayed": false,
+    "retained_Pt_fraction_assayed": false,
+    "reported_hydrogen_rate_units": "micromol h^-1 g^-1",
+    "source_conflicts_resolved": false
+  },
+  "unresolved_source_differences": [
+    {
+      "locators": [
+        "Main DFT Methods",
+        "Supplement Table 1 p6"
+      ],
+      "difference": "(100)/(110)"
+    },
+    {
+      "locators": [
+        "Main Figure 5b caption",
+        "Characterization Methods"
+      ],
+      "difference": "5/10 min"
+    },
+    {
+      "locators": [
+        "Main p4 direct-hydrolysis wording",
+        "Methods and Table 1"
+      ],
+      "difference": "T-3 route label"
+    }
+  ],
+  "ideal_host_accounting": {
+    "evidence_status": "CALCULATED present ideal atom-count model; not a source assay",
+    "basis": "Ideal Ti/O host atom counts",
+    "selected_atomic_numbers": [
+      8,
+      22
+    ],
+    "delta_domain": "Rational 0 <= delta < 2; irrational cases symbolic",
+    "x_Ti_formula": "1/(3-delta)",
+    "x_O_formula": "(2-delta)/(3-delta)",
+    "finite_count_rule": "delta=V/N; N positive integer; V integer; 0 <= V < 2N",
+    "charge_model": "Neutral O^2- host compensated only by Ti^3+/Ti^4+: fraction(Ti^3+ among Ti atoms)=2*delta for 0 <= delta <= 1/2",
+    "cases": [
+      {
+        "delta": "0",
+        "x_Ti": "1/3",
+        "x_O": "2/3",
+        "Ti_count": 1,
+        "O_count": 2,
+        "total_atoms": 3,
+        "only_Ti3_Ti4_charge_model_admissible": true
+      },
+      {
+        "delta": "1/100000000000000000000",
+        "x_Ti": "100000000000000000000/299999999999999999999",
+        "x_O": "199999999999999999999/299999999999999999999",
+        "Ti_count": 100000000000000000000,
+        "O_count": 199999999999999999999,
+        "total_atoms": 299999999999999999999,
+        "only_Ti3_Ti4_charge_model_admissible": true
+      },
+      {
+        "delta": "1/4",
+        "x_Ti": "4/11",
+        "x_O": "7/11",
+        "Ti_count": 4,
+        "O_count": 7,
+        "total_atoms": 11,
+        "only_Ti3_Ti4_charge_model_admissible": true
+      },
+      {
+        "delta": "1",
+        "x_Ti": "1/2",
+        "x_O": "1/2",
+        "Ti_count": 1,
+        "O_count": 1,
+        "total_atoms": 2,
+        "only_Ti3_Ti4_charge_model_admissible": false
+      },
+      {
+        "delta": "199999999999999999999/100000000000000000000",
+        "x_Ti": "100000000000000000000/100000000000000000001",
+        "x_O": "1/100000000000000000001",
+        "Ti_count": 100000000000000000000,
+        "O_count": 1,
+        "total_atoms": 100000000000000000001,
+        "only_Ti3_Ti4_charge_model_admissible": false
+      }
+    ],
+    "physical_candidates_prepared": false,
+    "source_OH_or_positron_values_assigned_to_delta": false
+  },
+  "source_provenance_scope": "Original publisher PDFs and graphics reviewed; source bytes and original receipts kept locally outside the package. Source dates do not establish candidate priority or qualifying-reference dates.",
+  "rights": "Main PDF reserved rights and publisher permission link verified; no permissive source or supplementary license established. Bounded independent factual summary; no raw sources or graphics republished.",
+  "applicant_experiment_asserted": false,
+  "physical_enablement_certified": false,
+  "novelty_assessed": false,
+  "filing_asserted": false
+}
