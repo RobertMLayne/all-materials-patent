@@ -378,8 +378,8 @@
     },
     {
       "path": "range_model/claim_clarification_report.json",
-      "size_bytes": 7847,
-      "sha256": "5c785c5c48cbfc5711e9985c52bda6f5ef87f5f5a29854fcf0783ec644755191"
+      "size_bytes": 7514,
+      "sha256": "948df34b4addf65563ad66e0115230cebe76f0ce33863fa8bd8c6d3da9152d43"
     },
     {
       "path": "range_model/composition_range_model.json",
