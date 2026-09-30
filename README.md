@@ -12,6 +12,8 @@ The [dated composite comparator review](documents/composite_comparator_source_re
 
 The [alloy comparison for working claims 1, 4, 5 and 163](documents/alloy_claim_comparison_2026-09-30.md) maps actual inventory, cardinality and equal-fraction requirements to the cited paper's nominal composition and local impurity evidence. Its conditional complete-support analysis explains why impurities and an incomplete exhaustive assay need not exclude an ordinary alloy from broad claim 1. It retains the express-basis, exact-cardinality, equality and sampling questions; statutory outcomes remain open. The original application, reference entry and fixed PDFs remain unchanged.
 
+The [hydrogel property evidence](documents/hydrogel_property_evidence_2026-09-30.md) develops D[0065]'s existing reference into an attributed measured example of increasing and decreasing storage modulus across crosslinker loadings. It checks the supplementary absolute-modulus table, separates normalized response from absolute values and estimated active crosslinks, and retains conditions and extrapolation limits. New applicant studies remain unperformed; the companion is not automatically application content.
+
 ## Read the documents
 
 | Document | Readable PDF | Editable source |

@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 101,
+  "file_count": 102,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 18105,
-      "sha256": "2ae41729bdcaa11fca34c5fac4430900c92c83692c7ddf7605dca68d0c2f500d"
+      "size_bytes": 18622,
+      "sha256": "f3e65bcccaade57f5d39588c05a718ea0eac662521f4a5ad47fccaaca7e84e52"
     },
     {
       "path": "data/claim_support_map.json",
@@ -337,6 +337,11 @@
       "sha256": "db9f5c8c0e017cc268a8d2a8c76b98128a01f92962e04f482d4a4fcbfb283c5e"
     },
     {
+      "path": "documents/hydrogel_property_evidence_2026-09-30.md",
+      "size_bytes": 7627,
+      "sha256": "36d30a8db00a5bb6c6421de3daae7e8f6188d62cf58318bdafcca6d90b4d425e"
+    },
+    {
       "path": "documents/pct_defensive_disclosure_blueprint.md",
       "size_bytes": 37796,
       "sha256": "96e2fc525cce1f8a05a3f301b46096b5031410d517ad70887d00d9eb98974bd1"
@@ -408,8 +413,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 27559,
-      "sha256": "8833374635fed7ead3ce8ab0c352ed7e51df327ee0f20bd7564290a4ae03f0dc"
+      "size_bytes": 28615,
+      "sha256": "06296c483d92b0572082c1c98f6cfb19c48d829196e8cf1728ce2f92cffc8cb7"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -523,8 +528,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 76026,
-      "sha256": "ae9fe81b4f4a9976fe1e37f77e6e5873856980ba5de5499130ce7bf76ca9859c"
+      "size_bytes": 76084,
+      "sha256": "5fb0a5ad3391836c342f52f1b02400b1ea293e15addf2db8610d2d0b81d2d845"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
