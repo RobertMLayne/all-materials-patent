@@ -393,8 +393,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 41639,
-      "sha256": "3eb3cd1becbb1360cc2ea7d3959523db4ac5c25aebbac3d640ccbb0f21410e07"
+      "size_bytes": 49499,
+      "sha256": "e766e05097e95add1652aff3f9b61fe3c0f5cf938d89336702802d126fb5fc65"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
