@@ -34,7 +34,7 @@ The nuclear verifier accounts for every preserved source row and reconstructs ra
 
 The particle verifier reports all selected source rows/columns match the pinned PDG SQLite source. Original nulls, aliases, search groups and ambiguous duplicate names remain. The export contains 1,170 charge-state identity rows and complete declared supporting selections, rather than all measurements or the entire publication. [PDG's API scope and limitations](https://pdgapi.lbl.gov/doc/status.html) remain applicable. Neither the `PART` code nor the database release status is a discovery assessment.
 
-The [reference entries](reference_entry_support.md) develop two literature families into three separately identified records. They supply particular source-backed preparation/characterization details and explicitly retain missing reproduction fields. They remain attributed prior publications; adding them to this package does not create an applicant experiment, newly conceived invention or universal preparation rule.
+The [reference entries](reference_entry_support.md) develop separately identified records across all five material families in the blueprint. They supply particular source-backed preparation/characterization details, quantity-basis conversions and conditional comparisons, and explicitly retain missing reproduction fields. The new molecular/polymer/composite records are mapped to the relevant original claim fields without treating them as evidence for claim 1's exact-zero whole-product inventory. They remain attributed prior publications; adding them to this package does not create an applicant experiment, newly conceived invention or universal preparation rule.
 
 ## Technical fields still missing over the requested physical domain
 

@@ -6,6 +6,8 @@ This package contains a draft materials disclosure, candidate claims, filing ana
 
 Draft preparation date: **29 September 2026**. Dates printed inside the documents are preparation or source-check dates, not filing dates or public-availability dates. Any publication record must use the actual public Git commit/release and evidence of when it became publicly accessible. A pre-existing private commit timestamp alone does not establish public availability. This README assigns no earlier publication date.
 
+The expanded reference catalog now includes molecular crystal, polymer stereocomplex and nanotube/epoxy composite entries alongside the earlier alloy and oxide records. It adds preparation/characterization details, conditional property comparisons, composition-basis conversions, original-claim feature gaps and hypothetical later-claim tests. These are attributed published teachings and proposed follow-up studies; no applicant experiment, new invention or full-scope enablement is asserted.
+
 ## Read the documents
 
 | Document | Readable PDF | Editable source |
@@ -13,8 +15,12 @@ Draft preparation date: **29 September 2026**. Dates printed inside the document
 | Application working draft - 27 review pages, 80 numbered paragraphs, 199 complete candidate claims | [Application PDF](documents/pdf/provisional_application_draft.pdf) | [Application Markdown](documents/provisional_application_draft.md) |
 | Provisional/PCT filing review memorandum - five review pages | [Filing memorandum PDF](documents/pdf/provisional_filing_strategy.pdf) | [Filing memorandum Markdown](documents/provisional_filing_strategy.md) |
 | Earlier defensive-disclosure blueprint - retained as an earlier planning artifact | [Blueprint PDF](documents/pdf/pct_defensive_disclosure_blueprint.pdf) | [Blueprint Markdown](documents/pct_defensive_disclosure_blueprint.md) |
+| Consolidated provisional review edition - 66 pages, including unchanged original application and current technical/reference appendices | [Consolidated review PDF](documents/pdf/materials_provisional_review_2026-09-30.pdf) | [Edition and build guide](documents/consolidated_review_edition.md) |
+| Companion identity-data review annex - 795 pages, complete retained nuclear snapshot and selected particle identity tables | [Identity review annex](documents/pdf/materials_identity_data_review_annex.pdf) | [Scoped sources and page map](data/review_packet_manifest.json) |
 
 The application and companion memorandum remain working drafts; the earlier blueprint is retained for provenance. Review page counts are not PCT chargeable-sheet determinations. All supplied PDFs were visually reviewed before packaging; this repository's automated checks do not replace that review.
+
+The consolidated edition prints the actual new technical definitions, five literature families and five proposed study cards. Its separate identity annex prints the complete scoped source records rather than relying on a live repository link for their contents. Read the [edition guide](documents/consolidated_review_edition.md) for the included-content boundary, preservation checks, optional authoring tools and unresolved applicant/technical facts. The [review-packet manifest](data/review_packet_manifest.json) links the exact PDFs to their included source hashes; a future source edit requires a deliberately reviewed new edition. Neither PDF is a filed or ready-to-submit certification.
 
 The **30 September 2026 extension** adds an [unrestricted technical supplement](documents/technical_scope_supplement.md), [full-scope completion audit](documents/full_scope_completion_audit.md), and [source-supported reference entries](documents/reference_entry_support.md). Read the [current-status addendum](documents/current_status_addendum.md) alongside the older filing memorandum: the package is publicly accessible, and the older memorandum's statement about publication is historical. The [access observation](data/publication_observation.json) records an observed repository version without certifying its earliest public-availability date. The original 80 paragraphs, 199 candidate claims, and three review PDFs are preserved unchanged by this extension.
 
@@ -44,7 +50,7 @@ python verify_package.py
 
 This checks [SHA-256 integrity records](integrity_manifest.json), the expected artifact inventory, paragraph and claim numbering, claim dependencies, registry counts and status, local Markdown links, and exact regeneration of the mathematical JSON artifacts in memory. It reruns the original 27 finite groups, the unrestricted module's finite checks, independent numerical checks, and trace-sampling calculations. It checks the nuclear source reconstruction and selected particle archive offline; the particle archive's documented original full-SQLite comparison is distinct from that offline check. It writes no repository files.
 
-Use `python verify_package.py --self-test` to also check ten baseline and four extension deliberate failure cases, including altered/missing artifacts, unreviewed extra files, report drift, unsafe paths, and unsupported observation/discovery status. This optional mode creates and removes temporary copies under the ignored `generated_reports/` directory; it leaves the supplied artifacts unchanged and checks fixture import isolation.
+Use `python verify_package.py --self-test` to also check ten baseline and nine extension deliberate failure cases, including altered/missing artifacts, unreviewed extra files, report drift, unsafe paths, unsupported observation/discovery status, and stale review-PDF sources after an integrity refresh. The new cases also reject a promoted filing status, overlapping page map, lost annex record count and missing source link. This optional mode creates and removes temporary copies under the ignored `generated_reports/` directory; it leaves the supplied artifacts unchanged and checks fixture import isolation.
 
 To run only the mathematical verifier, use its `verify` subcommand:
 

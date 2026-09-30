@@ -26,6 +26,20 @@ RANGE_REPORT = "range_model/verification_report.json"
 NUCLEAR_DIRECTORY = "data/nuclear_archive"
 PARTICLE_DIRECTORY = "data/particle_archive"
 OPTIONAL_NUCLEAR_VIEW = f"{NUCLEAR_DIRECTORY}/nuclear_states.json"
+REVIEW_PACKET = "data/review_packet_manifest.json"
+REVIEW_SOURCE_FILES = frozenset({
+    "documents/pdf/provisional_application_draft.pdf", "documents/provisional_application_draft.md",
+    "documents/technical_scope_supplement.md", "documents/reference_entry_support.md",
+    "documents/current_status_addendum.md", "documents/full_scope_completion_audit.md",
+    "data/claim_support_map.json", "documents/drawings/composition_simplex.svg",
+    "documents/drawings/material_record_sequence.svg", "data/entity_register.json",
+    "data/entity_register_notes.md", "data/nuclear_archive/nubase_4.mas20.txt",
+    "data/nuclear_archive/schema_header.txt", "data/nuclear_archive/column_schema.json",
+    "data/nuclear_archive/source_metadata.json", "data/nuclear_archive/license_attribution.md",
+    "data/nuclear_archive/archive_counts.json", "data/nuclear_archive/README.md",
+    "data/particle_archive/pdg2026_identity_archive.json",
+    "data/particle_archive/pdg2026_identity_metadata.json", "data/particle_archive/README.md",
+})
 NUCLEAR_FILES = frozenset({
     "archive_counts.json", "column_schema.json", "license_attribution.md",
     "nubase_4.mas20.txt", "parse_nubase.py", "portability_report.json",
@@ -76,6 +90,11 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     ".github/skills/archive-provenance-code-review/SKILL.md",
     ".github/skills/scientific-evidence-code-review/SKILL.md",
     ".github/skills/github-actions-failure-review/SKILL.md",
+    "documents/consolidated_review_edition.md", REVIEW_PACKET,
+    "documents/pdf/materials_provisional_review_2026-09-30.pdf",
+    "documents/pdf/materials_identity_data_review_annex.pdf",
+    "tools/pdf/build_consolidated_review.py", "tools/pdf/build_identity_review_annex.py",
+    "tools/pdf/requirements-pdf.txt",
 }
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
@@ -523,6 +542,82 @@ def check_workflow(root: Path) -> None:
                                          for ref in references), f"Unpinned action in {relative}")
 
 
+def check_review_packet(root: Path) -> dict:
+    """Reject stale linked sources and inconsistent recorded navigation.
+
+    Source freshness is separate from refreshing the package hash manifest.
+    These offline checks do not extract or render PDFs; the recorded counts
+    and appearance findings are review evidence, not independently measured
+    page counts or a physical/legal enablement conclusion.
+    """
+    record = load_json(root / REVIEW_PACKET)
+    require(type(record.get("schema_version")) is int and record.get("schema_version") == 1 and
+            record.get("status") == "review_only_unfiled",
+            "Review-packet version/status changed without supported review")
+    sources = record.get("sources")
+    require(isinstance(sources, list) and all(isinstance(entry, dict) for entry in sources),
+            "Review source records must be a list of objects")
+    names = [entry.get("path") for entry in sources]
+    require(all(isinstance(name, str) for name in names) and
+            len(names) == len(REVIEW_SOURCE_FILES) and set(names) == REVIEW_SOURCE_FILES,
+            "Review packet must link every exact included source once")
+    for entry in sources:
+        payload = safe_path(root, entry["path"]).read_bytes()
+        require(entry.get("bytes") == len(payload) and entry.get("sha256") == hashlib.sha256(payload).hexdigest(),
+                f"Review PDF source is stale: {entry['path']}; prepare and review a new edition")
+    artifacts = record.get("artifacts")
+    require(isinstance(artifacts, list) and all(isinstance(entry, dict) for entry in artifacts),
+            "Review artifact records must be a list of objects")
+    expected_artifacts = {
+        "documents/pdf/materials_provisional_review_2026-09-30.pdf": 66,
+        "documents/pdf/materials_identity_data_review_annex.pdf": 795,
+    }
+    require(len(artifacts) == 2 and {entry.get("path") for entry in artifacts} == set(expected_artifacts),
+            "Review-packet artifact identities changed")
+    for entry in artifacts:
+        payload = safe_path(root, entry["path"]).read_bytes()
+        require(entry.get("bytes") == len(payload) and entry.get("sha256") == hashlib.sha256(payload).hexdigest(),
+                f"Review-packet artifact differs: {entry['path']}")
+        require(entry.get("review_pages") == expected_artifacts[entry["path"]],
+                "Recorded review page count changed; inspect and record the new edition")
+    core = record.get("core", {})
+    require(core.get("front_matter_pages") == 2 and core.get("original_numbered_paragraphs") == 80 and
+            core.get("candidate_claims") == 199 and core.get("original_application_pages_preserved") == 27,
+            "Recorded original-application preservation counts changed")
+    parts = core.get("parts", [])
+    require(isinstance(parts, list) and all(isinstance(part, dict) for part in parts) and
+            [part.get("label") for part in parts] == list("ABCDEF"), "Core part map changed")
+    last = 2
+    for part in parts:
+        first, end, count = (part.get(key) for key in ("physical_start", "physical_end", "page_count"))
+        require(all(type(number) is int for number in (first, end, count)) and
+                first == last + 1 and end >= first and count == end - first + 1,
+                "Core recorded page map has a gap, overlap or inconsistent count")
+        last = end
+    require(last == 66 and parts[0]["page_count"] == 27, "Core recorded page map does not cover this edition")
+    expected_sections = {
+        "scope": 12, "register-context": 2, "elements": 138, "particle-categories": 17,
+        "nuclear-provenance": 4, "nuclear-schema": 2, "nuclear-rows": 5843,
+        "pdg-provenance": 3, "pdginfo": 10, "pdgparticle": 1170, "pdgid": 450,
+        "pdgitem": 3270, "pdgitem_map": 1341, "pdgdoc": 71,
+    }
+    sections = record.get("annex", {}).get("sections", [])
+    require(isinstance(sections, list) and all(isinstance(section, dict) for section in sections) and
+            [section.get("key") for section in sections] == list(expected_sections), "Annex selection/page map changed")
+    last = 0
+    for section in sections:
+        first, end = section.get("first_page"), section.get("last_page")
+        require(type(first) is int and type(end) is int and first == last + 1 and end >= first,
+                "Annex recorded page map has a gap or overlap")
+        require(section.get("printed_record_count") == expected_sections[section["key"]],
+                "Recorded annex selection count differs from the reviewed source scope")
+        last = end
+    require(last == 795, "Annex recorded page map does not cover this edition")
+    return {"source_hash_links_checked": len(sources), "artifact_hash_links_checked": len(artifacts),
+            "recorded_page_maps_checked": 2, "pdf_pages_independently_parsed_by_this_check": False,
+            "appearance_rechecked_by_this_check": False, "filing_or_enablement_certified": False}
+
+
 def run(root: Path) -> dict:
     require(__debug__, "Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     file_count = check_inventory(root)
@@ -540,6 +635,7 @@ def run(root: Path) -> dict:
     nuclear_result = check_nuclear_archive(root)
     particle_result = check_particle_archive(root)
     publication_result = check_publication_record(root)
+    review_result = check_review_packet(root)
     check_workflow(root)
     return {"status": "passed", "package_files": file_count, "sha256_records_checked": hashed,
             **claim_result, **registry_result, "local_markdown_links_checked": links, **math_result,
@@ -547,7 +643,9 @@ def run(root: Path) -> dict:
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
-            "pdf_binary_integrity_checked": 3, "pdf_layout_rechecked_by_this_script": False,
+            "review_packet_source_and_navigation_verification": review_result,
+            "pdf_binary_integrity_checked": sum(path.endswith(".pdf") for path in EXPECTED_HASHED),
+            "pdf_layout_rechecked_by_this_script": False,
             "workflow_controls_checked": True, "github_actions_run_observed": False,
             "supplied_artifacts_modified_by_verifier": 0,
             "limitations": ["Checksums are not authentication or a trusted publication timestamp.",
@@ -587,6 +685,67 @@ def self_test(root: Path) -> dict:
         # unrelated, pre-existing checksum or inventory failure.
         check_inventory(fixture)
         check_integrity(fixture)
+        check_review_packet(fixture)
+
+        # A refreshed global integrity record must not conceal a PDF whose
+        # linked source is older. Exercise this separate provenance boundary.
+        review_path = fixture / REVIEW_PACKET
+        review_original = review_path.read_bytes()
+        manifest_path = fixture / MANIFEST
+        manifest_original = manifest_path.read_bytes()
+        linked = fixture / "documents/reference_entry_support.md"
+        linked_original = linked.read_bytes()
+        linked.write_bytes(linked_original + b"\nNew unresolved preparation field.\n")
+        refreshed = json.loads(manifest_original)
+        for entry in refreshed["files"]:
+            if entry["path"] == "documents/reference_entry_support.md":
+                entry["size_bytes"] = linked.stat().st_size
+                entry["sha256"] = hashlib.sha256(linked.read_bytes()).hexdigest()
+        manifest_path.write_text(json.dumps(refreshed), encoding="utf-8")
+        check_integrity(fixture)
+        try:
+            check_review_packet(fixture)
+        except VerificationError as error:
+            require("source is stale" in str(error), "Stale review-source test failed for an unrelated reason")
+            extended.append("stale_review_source_after_integrity_refresh_rejected")
+        finally:
+            linked.write_bytes(linked_original)
+            manifest_path.write_bytes(manifest_original)
+        require("stale_review_source_after_integrity_refresh_rejected" in extended,
+                "A refreshed integrity record concealed a stale review source")
+
+        review_defects = (
+            ("review_status_promoted_to_filed_rejected", ("status",), "filed", "status"),
+            ("review_core_page_overlap_rejected", ("core", "parts", 1, "physical_start"), 29, "gap, overlap"),
+            ("review_annex_row_loss_rejected", ("annex", "sections", 6, "printed_record_count"), 5842, "selection count"),
+        )
+        for case, address, value, expected_error in review_defects:
+            changed = json.loads(review_original)
+            destination = changed
+            for key in address[:-1]:
+                destination = destination[key]
+            destination[address[-1]] = value
+            review_path.write_text(json.dumps(changed), encoding="utf-8")
+            try:
+                check_review_packet(fixture)
+            except VerificationError as error:
+                require(expected_error in str(error), f"Review failure case caught an unrelated error: {case}")
+                extended.append(case)
+            finally:
+                review_path.write_bytes(review_original)
+            require(case in extended, f"Review-packet defect was not rejected: {case}")
+
+        changed = json.loads(review_original)
+        changed["sources"].pop()
+        review_path.write_text(json.dumps(changed), encoding="utf-8")
+        try:
+            check_review_packet(fixture)
+        except VerificationError as error:
+            require("every exact included source" in str(error), "Missing source test failed for an unrelated reason")
+            extended.append("review_missing_source_link_rejected")
+        finally:
+            review_path.write_bytes(review_original)
+        require("review_missing_source_link_rejected" in extended, "Missing review source link was accepted")
         # An optimized subprocess must fail before claiming that assertion-based
         # math checks passed. It receives no self-test flag, preventing recursion.
         optimized = subprocess.run(
@@ -818,7 +977,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 4, f"Expected 4 extension failure checks, got {len(extended)}")
+    require(len(extended) == 9, f"Expected 9 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
