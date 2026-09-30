@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 100,
+  "file_count": 101,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 17516,
-      "sha256": "a1d000960f6c94c9f704aaff692f32eeaffb402432b33f8bddd259c36f4706b7"
+      "size_bytes": 17984,
+      "sha256": "d4ebe7e79a6e50f5441768d22e3f2136b38a7da25ab9f6e425a8de7a14dbbddd"
     },
     {
       "path": "data/claim_support_map.json",
@@ -287,6 +287,11 @@
       "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
     },
     {
+      "path": "documents/alloy_claim_comparison_2026-09-30.md",
+      "size_bytes": 8518,
+      "sha256": "db87c2bfd69e75fb5002dc37e705878bf909241b53c34617429fb546507f9eea"
+    },
+    {
       "path": "documents/applicant_evidence_intake.md",
       "size_bytes": 11484,
       "sha256": "12faebd03a1459627f5a872501fe9318c46534cdfd349c583e6cd108f2794c37"
@@ -403,8 +408,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 25571,
-      "sha256": "7a4ff4657cb0216149887bbf7fbd5c4fbed293629128c77ead8a34fed2a77c21"
+      "size_bytes": 26567,
+      "sha256": "90f4d206489f443c35b1cea67eb97bdc5988694bae8974c951c9dc877066ef81"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -518,8 +523,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 75972,
-      "sha256": "16b5715ee07c93df1401b4c228fe10ffa91d90cbd82b9482fc4a9e4b3f4a33bb"
+      "size_bytes": 76026,
+      "sha256": "ae9fe81b4f4a9976fe1e37f77e6e5873856980ba5de5499130ce7bf76ca9859c"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
