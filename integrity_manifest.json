@@ -93,13 +93,13 @@
     },
     {
       "path": ".github/workflows/copilot-setup-steps.yml",
-      "size_bytes": 713,
-      "sha256": "36c8909a936fc45a51473ec8cece8ea514539699fe864ec31d1837e308d76047"
+      "size_bytes": 715,
+      "sha256": "be32d18775e4ea8d3a4ef860b07d1549885c81177d29d45ade9c31fbc26978d9"
     },
     {
       "path": ".github/workflows/verify.yml",
-      "size_bytes": 1620,
-      "sha256": "d9379cf9d20f3e22b4315bb5c8f81e5e8e3ee0ba3d71fe749693b1ea8adc4f74"
+      "size_bytes": 1622,
+      "sha256": "4b8900bfec8811c243f5b7c25d12d76efe1f136ccd4891fbac3f09374955d154"
     },
     {
       "path": ".gitignore",
