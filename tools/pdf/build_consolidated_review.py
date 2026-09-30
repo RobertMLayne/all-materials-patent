@@ -1,7 +1,7 @@
 """Create a read-only, separately dated review consolidation; never edit sources.
 
 This optional local authoring tool is separate from the package's offline
-standard-library verifier. It requires ReportLab 4.4.9 and pypdf 6.10.0.
+standard-library verifier. It uses ReportLab 4.4.9 and pypdf 6.19.0.
 The original application PDF is appended without overlays or reflow.
 Outputs are created exclusively in sequence. On failure, partial or earlier
 outputs are retained with exception diagnostics; the output pair is not atomic.
