@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 87,
+  "file_count": 88,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 15090,
-      "sha256": "137779225cf79afdde030e592d88388a7511187a681f4d4f3dad585b4b13e6d1"
+      "size_bytes": 15485,
+      "sha256": "6661bbea1e48a708759cc52712cce3f3037a42c1e7c5584178138d65d7c4479c"
     },
     {
       "path": "data/claim_support_map.json",
@@ -332,6 +332,11 @@
       "sha256": "01d614ed448f385414997e788e749e1f1961fc5d2380e91b6640fa742c9cbe95"
     },
     {
+      "path": "documents/proposed_claim_clarifications.md",
+      "size_bytes": 17629,
+      "sha256": "7c4a3e12ec8235eb047335f94855cce182724add6ed873f752b077088a7d4f41"
+    },
+    {
       "path": "documents/provisional_application_draft.md",
       "size_bytes": 73191,
       "sha256": "3c3a6f9b42ca87ffedfd97435ac0476d3301f7f1d650b4c2b9f0fb0b66b15949"
@@ -358,8 +363,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 20183,
-      "sha256": "196b26a466dbd0d92bd763e8e51c7888027523138ddaf48b0ca465a9a0cdee38"
+      "size_bytes": 22034,
+      "sha256": "fb8ec9f273050f9964919f56fc60abdaf9146c5a8bda807e4b638c66f5025fb8"
     },
     {
       "path": "pyproject.toml",
@@ -453,8 +458,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 64525,
-      "sha256": "b25dd9233c20447df136a45a7ed8cc29cb27874433d38c27d63432ab87712cb6"
+      "size_bytes": 64575,
+      "sha256": "dc5f97e3a21a14fc37cfa2572a01f6f82a8dbbe98209fddfce7f755b4b00d620"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
