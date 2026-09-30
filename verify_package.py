@@ -13,6 +13,7 @@ import hashlib
 import importlib.util
 import io
 import json
+import os
 from pathlib import Path, PurePosixPath
 import re
 import sys
@@ -61,6 +62,21 @@ EXPECTED_HASHED = frozenset({
 }) | {f"{NUCLEAR_DIRECTORY}/{name}" for name in NUCLEAR_FILES} | {
     f"{PARTICLE_DIRECTORY}/{name}" for name in PARTICLE_FILES
 }
+EXPECTED_HASHED = EXPECTED_HASHED | {
+    ".editorconfig", ".vscode/settings.json", ".vscode/extensions.json", ".vscode/tasks.json",
+    "CONTRIBUTING.md", "documents/workflow_decisions.md", "documents/restart_checkpoint.md",
+    "documents/github_settings.md", "tools/update_manifest.py", "pyproject.toml", "requirements-dev.txt",
+    ".github/CODEOWNERS", ".github/pull_request_template.md", ".github/dependabot.yml",
+    ".github/workflows/codeql.yml", ".github/workflows/copilot-setup-steps.yml",
+    ".github/copilot-instructions.md",
+    ".github/agents/exact-math-reviewer.agent.md",
+    ".github/agents/archive-provenance-reviewer.agent.md",
+    ".github/agents/scientific-evidence-reviewer.agent.md",
+    ".github/skills/exact-math-code-review/SKILL.md",
+    ".github/skills/archive-provenance-code-review/SKILL.md",
+    ".github/skills/scientific-evidence-code-review/SKILL.md",
+    ".github/skills/github-actions-failure-review/SKILL.md",
+}
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
     "composition_ranges", "unrestricted_compositions", "independent_unrestricted_checks",
@@ -98,7 +114,7 @@ def safe_path(root: Path, relative: str) -> Path:
 def ignored(relative: str) -> bool:
     parts = PurePosixPath(relative).parts
     return (".git" in parts or "__pycache__" in parts or
-            parts[0] == "generated_reports" or
+            parts[0] in {"generated_reports", ".venv", ".ruff_cache"} or
             relative == "package_verification_report.json" or
             relative == OPTIONAL_NUCLEAR_VIEW or
             relative.endswith((".pyc", ".pyo")))
@@ -106,13 +122,25 @@ def ignored(relative: str) -> bool:
 
 def check_inventory(root: Path) -> int:
     actual = set()
-    for path in root.rglob("*"):
-        relative = path.relative_to(root).as_posix()
-        if ignored(relative):
-            continue
-        require(not path.is_symlink(), f"Package contains a symbolic link: {relative}")
-        if path.is_file():
-            actual.add(relative)
+    def reject_walk_error(error: OSError) -> None:
+        raise VerificationError("Cannot inspect the complete package inventory") from error
+    # Prune local environments and caches before traversal. Walking a full
+    # interpreter installation adds no evidence about the reviewed package.
+    for directory, directories, filenames in os.walk(root, followlinks=False, onerror=reject_walk_error):
+        parent = Path(directory)
+        for name in directories[:]:
+            path = parent / name
+            relative = path.relative_to(root).as_posix()
+            if ignored(relative):
+                directories.remove(name)
+            else:
+                require(not path.is_symlink(), f"Package contains a symbolic link: {relative}")
+        for name in filenames:
+            path = parent / name
+            relative = path.relative_to(root).as_posix()
+            if not ignored(relative):
+                require(not path.is_symlink(), f"Package contains a symbolic link: {relative}")
+                actual.add(relative)
     require(actual == EXPECTED_FILES,
             f"Inventory mismatch; missing={sorted(EXPECTED_FILES - actual)}, "
             f"unexpected={sorted(actual - EXPECTED_FILES)}")
@@ -479,13 +507,22 @@ def check_workflow(root: Path) -> None:
     content = (root / ".github/workflows/verify.yml").read_text(encoding="utf-8")
     for fragment in ("permissions:\n  contents: read", "timeout-minutes: 10",
                      "cancel-in-progress: true", "python-version: '3.12'",
-                     "persist-credentials: false", "run: python verify_package.py",
-                     "actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
-                     "actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065"):
+                     "os: [ubuntu-24.04, windows-2025]", "fail-fast: false",
+                     "persist-credentials: false", "run: python -B verify_package.py --self-test",
+                     "run: python -m ruff check --no-cache ."):
         require(fragment in content, f"Reviewed workflow control missing: {fragment}")
+    # SHA syntax is checked here; release identities are reviewed before a
+    # manifest update. This permits reviewed Dependabot pin updates.
+    for relative in (".github/workflows/verify.yml", ".github/workflows/codeql.yml", ".github/workflows/copilot-setup-steps.yml"):
+        workflow = (root / relative).read_text(encoding="utf-8")
+        require("pull_request_target" not in workflow, f"Privileged PR trigger in {relative}")
+        references = re.findall(r"uses:\s*(\S+)", workflow)
+        require(bool(references) and all(re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_./-]+@[0-9a-f]{40}", ref)
+                                         for ref in references), f"Unpinned action in {relative}")
 
 
 def run(root: Path) -> dict:
+    require(__debug__, "Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     file_count = check_inventory(root)
     hashed = check_integrity(root)
     application = (root / "documents/provisional_application_draft.md").read_text(encoding="utf-8")
@@ -517,7 +554,9 @@ def run(root: Path) -> dict:
 
 def self_test(root: Path) -> dict:
     """Exercise failure paths using temporary copies; preserve the package."""
+    require(__debug__, "Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     import shutil
+    import subprocess
     import uuid
 
     caught = []
@@ -540,11 +579,22 @@ def self_test(root: Path) -> dict:
 
     with temporary_fixture() as temporary:
         fixture = Path(temporary) / "package"
-        shutil.copytree(root, fixture, ignore=shutil.ignore_patterns(".git", "__pycache__", "generated_reports"))
+        shutil.copytree(root, fixture, ignore=shutil.ignore_patterns(".git", "__pycache__", "generated_reports", ".venv", ".ruff_cache"))
         # Reject a stale starting fixture so a test cannot pass by catching an
         # unrelated, pre-existing checksum or inventory failure.
         check_inventory(fixture)
         check_integrity(fixture)
+        # An optimized subprocess must fail before claiming that assertion-based
+        # math checks passed. It receives no self-test flag, preventing recursion.
+        optimized = subprocess.run(
+            [sys.executable, "-B", "-O", str(fixture / "verify_package.py")],
+            cwd=fixture, capture_output=True, text=True, timeout=30, check=False,
+        )
+        require(optimized.returncode == 1, "Optimized interpreter did not reject verification")
+        optimized_error = json.loads(optimized.stderr)
+        require(optimized_error.get("status") == "failed" and
+                "requires enabled assertions" in optimized_error.get("error", ""),
+                "Optimized interpreter failed for an unrelated reason")
         sample = fixture / "README.md"
         original = sample.read_bytes()
         sample.write_bytes(original + b"\nchanged\n")
@@ -662,7 +712,8 @@ def self_test(root: Path) -> dict:
     require(len(extended) == 4, f"Expected 4 extension failure checks, got {len(extended)}")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
-            "fixture_import_isolation_checked": True}
+            "fixture_import_isolation_checked": True,
+            "optimized_interpreter_rejection_checked": True}
 
 
 def main() -> int:

@@ -314,7 +314,12 @@ def download(args: argparse.Namespace) -> None:
         for chunk in iter(lambda: response.read(1024 * 1024), b""):
             output.write(chunk)
     check_source(partial)
-    partial.rename(destination)
+    # Publish the verified sibling file without replacing a concurrent writer.
+    # This requires same-filesystem hard-link support; unsupported filesystems
+    # fail closed and retain the partial for review rather than falling back to
+    # a Unix rename that could overwrite an existing destination.
+    destination.hardlink_to(partial)
+    partial.unlink()
     observation = {
         "url": SOURCE_URL,
         "retrieved_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),

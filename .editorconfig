@@ -1,0 +1,23 @@
+# Do not normalize existing records: their exact bytes are verified.
+# Encoding and line-ending changes require a separate reviewed change.
+root = true
+
+[*]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = false
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.{json,yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# The fixed-width source includes meaningful spacing and original line endings.
+[data/nuclear_archive/{nubase_4.mas20.txt,schema_header.txt}]
+indent_style = unset
+indent_size = unset
+tab_width = unset

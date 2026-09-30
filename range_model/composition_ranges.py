@@ -414,7 +414,7 @@ def build_examples() -> dict:
             "sum_exact": "1", "domain": "real continuous; not rational; symbolic only", "numerically_evaluated": False,
         },
         "box_examples": {
-            "feasible": {"bounds": [interval_record((exact(l), exact(u))) for l, u in feasible],
+            "feasible": {"bounds": [interval_record((exact(lower), exact(upper))) for lower, upper in feasible],
                          "witness": composition_record([1, 6, 8], witness)},
             "lower_sum_too_large": {"bounds_fraction_exact": [["2/5", "1/2"]] * 3, "feasible": False},
             "upper_sum_too_small": {"bounds_fraction_exact": [["1/10", "1/5"]] * 3, "feasible": False},
@@ -425,6 +425,8 @@ def build_examples() -> dict:
 
 def verify() -> dict:
     """Independent exhaustive toy checks plus exact production-domain boundaries."""
+    if not __debug__:
+        raise ValueError("Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     results = []
 
     def check(name, predicate, evidence):

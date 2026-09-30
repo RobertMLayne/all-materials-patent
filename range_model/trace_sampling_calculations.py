@@ -5,6 +5,8 @@ import json
 
 
 def calculate():
+    if not __debug__:
+        raise ValueError("Calculation validation requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     with localcontext() as context:
         context.prec = 100
         p = Decimal(1) / Decimal(10**19)
