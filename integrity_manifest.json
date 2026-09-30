@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 88,
+  "file_count": 90,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 15485,
-      "sha256": "6661bbea1e48a708759cc52712cce3f3037a42c1e7c5584178138d65d7c4479c"
+      "size_bytes": 15920,
+      "sha256": "6e356a4c35cb3b21562e68489639b6ab12780b652ad017cbc02320137a1e1818"
     },
     {
       "path": "data/claim_support_map.json",
@@ -333,8 +333,8 @@
     },
     {
       "path": "documents/proposed_claim_clarifications.md",
-      "size_bytes": 17629,
-      "sha256": "7c4a3e12ec8235eb047335f94855cce182724add6ed873f752b077088a7d4f41"
+      "size_bytes": 18739,
+      "sha256": "c78a97fd2689469440b2ae396bc6c51a0d5e42b77cc490564d7f2786ed190265"
     },
     {
       "path": "documents/provisional_application_draft.md",
@@ -363,13 +363,23 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 22034,
-      "sha256": "fb8ec9f273050f9964919f56fc60abdaf9146c5a8bda807e4b638c66f5025fb8"
+      "size_bytes": 23058,
+      "sha256": "4701e3a97c84a298f125161c11186e9064541793d791e61552af35c8b8027c27"
     },
     {
       "path": "pyproject.toml",
       "size_bytes": 338,
       "sha256": "948f71a406b376ed19c4f3440cd53df426dc709f360e35f4d1eb9ce84f41cc18"
+    },
+    {
+      "path": "range_model/claim_clarification_checks.py",
+      "size_bytes": 19732,
+      "sha256": "6188d965955058a3bac6f4e8d199b7ebc97f9355e56edee7949d736a58a68f01"
+    },
+    {
+      "path": "range_model/claim_clarification_report.json",
+      "size_bytes": 7847,
+      "sha256": "5c785c5c48cbfc5711e9985c52bda6f5ef87f5f5a29854fcf0783ec644755191"
     },
     {
       "path": "range_model/composition_range_model.json",
@@ -458,8 +468,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 64575,
-      "sha256": "dc5f97e3a21a14fc37cfa2572a01f6f82a8dbbe98209fddfce7f755b4b00d620"
+      "size_bytes": 66578,
+      "sha256": "444515315591fc49ffa949c36f1f93fea2959c0ed7f723809aab8623a438bbc7"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
