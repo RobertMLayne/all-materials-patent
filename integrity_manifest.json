@@ -323,8 +323,8 @@
     },
     {
       "path": "documents/application_property_evidence_2026-09-30.md",
-      "size_bytes": 6310,
-      "sha256": "2e1c2f95aa377dd99d0f5ca80092f24c1d4982417f5351525b459ff13d5ce430"
+      "size_bytes": 6790,
+      "sha256": "c4d4b140e7ecf79572b347e175f0af35d6208b50fd5a813ddd061f36f9b3264a"
     },
     {
       "path": "documents/claim_group_review_brief.md",
@@ -548,8 +548,8 @@
     },
     {
       "path": "tools/pdf/build_working_application.py",
-      "size_bytes": 14807,
-      "sha256": "673a12db13de2cd1187a9cf65db573e60f8e06526b7948ca10d49b210eee4cb7"
+      "size_bytes": 14973,
+      "sha256": "db1e6566340836f726e2bd4c10bb4f1fa229bc593b95c2dc80e135dd209ae159"
     },
     {
       "path": "tools/pdf/requirements-pdf.txt",

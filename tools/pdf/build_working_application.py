@@ -28,10 +28,11 @@ from build_identity_review_annex import (
 EDITIONS = {
     "working": ("provisional_application_working_2026-09-30",
                 "claim_support_map_working_2026-09-30",
-                "Working application 2026-09-30"),
+                "Working application 2026-09-30", "prospective unfiled working edition"),
     "property-evidence": ("provisional_application_property_evidence_2026-09-30",
                          "claim_support_map_property_evidence_2026-09-30",
-                         "Property evidence application 2026-09-30"),
+                         "Property evidence application 2026-09-30",
+                         "prospective unfiled property-evidence edition"),
 }
 DRAWINGS = ("documents/drawings/composition_simplex.svg",
             "documents/drawings/material_record_sequence.svg")
@@ -173,7 +174,7 @@ def main() -> int:
     args = parser.parse_args()
     root = args.package_root.resolve()
     baseline = validate_baseline(args.baseline_commit)
-    stem, map_stem, label = EDITIONS[args.edition]
+    stem, map_stem, label, edition_status = EDITIONS[args.edition]
     source_path, map_path = f"documents/{stem}.md", f"data/{map_stem}.json"
     names = (source_path, map_path, *DRAWINGS, *AUTHORING)
     captured = {name: (root/name).read_bytes() for name in names}
@@ -190,6 +191,7 @@ def main() -> int:
         SourceDrawing(data)
     if args.check:
         print(json.dumps({"status": "inputs checked", "source_sha256": digest(captured[source_path]),
+                          "edition_status": edition_status,
                           "authoring_versions": versions, "fonts": fonts,
                           "pdf_created": False}, indent=2))
         return 0
@@ -254,7 +256,7 @@ def main() -> int:
                     require(canonical(node.text or "") in full, "Rendered SVG text was lost")
         for name, data in captured.items():
             require((root/name).read_bytes() == data, "Authoring input changed during render")
-        result = {"prepared_date": "2026-09-30", "edition_status": "prospective unfiled working edition",
+        result = {"prepared_date": "2026-09-30", "edition_status": edition_status,
                   "repository_baseline": baseline, "authoring_versions": versions, "fonts": fonts,
                   "sources": [{"path": name, "sha256": digest(data)} for name, data in captured.items()],
                   "pdf": {"path": report_path_label(output, root),
