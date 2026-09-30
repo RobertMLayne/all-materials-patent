@@ -47,16 +47,15 @@ Run the offline archive checks from this directory:
 python extract_pdg_identities.py verify
 ```
 
-To reproduce against the official raw file, choose a scratch destination outside the published package:
+For the following reproduction commands, first change to the **repository root**. The sibling `../materials-archive-scratch/` holds the downloaded database, observation and regenerated output outside the repository; it is not a directory inside this archive. Replace it with another outside-repository location if needed:
 
 ```console
-mkdir -p /tmp/pdg2026.0-scratch
-python extract_pdg_identities.py download --destination /tmp/pdg2026.0-scratch/pdg-2026.0.sqlite --observation /tmp/pdg2026.0-scratch/download_observation.json
-python extract_pdg_identities.py extract --database /tmp/pdg2026.0-scratch/pdg-2026.0.sqlite --download-observation /tmp/pdg2026.0-scratch/download_observation.json --output-directory /tmp/pdg2026.0-regenerated
-python extract_pdg_identities.py verify --database /tmp/pdg2026.0-scratch/pdg-2026.0.sqlite
+python data/particle_archive/extract_pdg_identities.py download --destination ../materials-archive-scratch/pdg-2026.0.sqlite --observation ../materials-archive-scratch/download_observation.json
+python data/particle_archive/extract_pdg_identities.py extract --database ../materials-archive-scratch/pdg-2026.0.sqlite --download-observation ../materials-archive-scratch/download_observation.json --output-directory ../materials-archive-scratch/regenerated
+python data/particle_archive/extract_pdg_identities.py verify --database ../materials-archive-scratch/pdg-2026.0.sqlite
 ```
 
-The downloader refuses an existing destination and preserves an unexpected partial download for inspection. The extractor refuses a database with a different size, hash, edition, schema or license. A changed upstream release needs explicit review rather than a silent regeneration. The raw SQLite file remains scratch material and is not part of this text archive.
+The downloader requires distinct database, partial and observation paths, refuses existing output files, and preserves an unexpected partial download for inspection. The extractor refuses a database with a different size, hash, edition, schema or license. A changed upstream release needs explicit review rather than a silent regeneration. The raw SQLite file remains scratch material and is not part of this text archive.
 
 [Recorded verification](verification_report.json) passed complete selected-table comparison against the pinned SQLite file, including every selected source row/column, null and repeated name. The source passed SQLite integrity and foreign-key checks. Exported references, row counts, source schema, deterministic bytes and source/derived hashes were also checked. Checksums demonstrate consistency with the recorded source snapshot; they do not prove scientific existence, legal effect or a trusted publication timestamp.
 

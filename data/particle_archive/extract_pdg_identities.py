@@ -290,18 +290,21 @@ def verify(args: argparse.Namespace) -> None:
 
 def download(args: argparse.Namespace) -> None:
     """Fetch one pinned database; never bulk-crawl REST or overwrite a file."""
-    destination = args.destination
-    observation_path = args.observation
-    partial = destination.with_suffix(destination.suffix + ".part")
-    paths = (destination.resolve(), partial.resolve(), observation_path.resolve())
-    require(len(set(paths)) == len(paths), "Destination, partial download, and observation paths must be distinct")
-    require(
-        not observation_path.exists() and not observation_path.is_symlink(),
-        "Observation already exists; verify/reuse it instead of overwriting",
-    )
-    require(not destination.exists(), "Destination already exists; verify/reuse it instead of overwriting")
+    destination = args.destination.resolve()
+    requested_partial = destination.with_suffix(destination.suffix + ".part")
+    partial = requested_partial.resolve()
+    observation_path = args.observation.resolve()
+    # Resolve aliases and validate every output before creating directories or
+    # fetching bytes: metadata must never replace the database or its partial.
+    require(len({destination, partial, observation_path}) == 3,
+            "Destination, partial download and observation must be distinct paths")
+    require(not (args.destination.exists() or args.destination.is_symlink() or destination.exists()),
+            "Destination already exists; verify/reuse it instead of overwriting")
+    require(not (requested_partial.exists() or requested_partial.is_symlink() or partial.exists()),
+            "Unreviewed partial download already exists")
+    require(not (args.observation.exists() or args.observation.is_symlink() or observation_path.exists()),
+            "Observation already exists; preserve and review it instead of overwriting")
     destination.parent.mkdir(parents=True, exist_ok=True)
-    require(not partial.exists(), "Unreviewed partial download already exists")
     request = urllib.request.Request(SOURCE_URL, headers={"User-Agent": "PDGIdentityArchive/1.0"})
     with urllib.request.urlopen(request, timeout=60) as response, partial.open("xb") as output:
         status_code = response.status
@@ -322,7 +325,10 @@ def download(args: argparse.Namespace) -> None:
         "length_bytes": SOURCE_BYTES,
         "sha256": SOURCE_SHA256,
     }
-    observation_path.write_bytes(encoded_json(observation))
+    # Another writer can create the observation after preflight. Exclusive
+    # creation preserves that file rather than overwriting its provenance.
+    with observation_path.open("xb") as output:
+        output.write(encoded_json(observation))
     print(json.dumps(observation, indent=2))
 
 

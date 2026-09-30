@@ -123,8 +123,8 @@
     },
     {
       "path": "data/particle_archive/README.md",
-      "size_bytes": 8482,
-      "sha256": "1fc0b9f57d241ea67981b53dc62e0a584e9f68ddfc334d667a827d28cd1748d9"
+      "size_bytes": 8836,
+      "sha256": "7dfbf4c430a19cb5467166ffd3b46946c1616da8927f3e37e35ee63d3836d034"
     },
     {
       "path": "data/particle_archive/adversarial_verification_report.json",
@@ -133,8 +133,8 @@
     },
     {
       "path": "data/particle_archive/extract_pdg_identities.py",
-      "size_bytes": 20338,
-      "sha256": "7d24c323ce20b2b09b783b1ca16678861427045f5e371e0931ee00a1d1b57acf"
+      "size_bytes": 20879,
+      "sha256": "10d3a9d7ca9442a0db142172ccdb34f9a4bc897fe0c613710cdf7f68bd4cf178"
     },
     {
       "path": "data/particle_archive/pdg2026_identity_archive.json",
@@ -158,8 +158,8 @@
     },
     {
       "path": "documents/current_status_addendum.md",
-      "size_bytes": 3121,
-      "sha256": "009258151a73137d5662c8e1c226926eeff80d515c847f85864bd043a1222d43"
+      "size_bytes": 3220,
+      "sha256": "a0e9452ae97926f07e7c9dfc681e9612ee1ddece4ed53ce7862972e1750fccf6"
     },
     {
       "path": "documents/drawings/composition_simplex.svg",
