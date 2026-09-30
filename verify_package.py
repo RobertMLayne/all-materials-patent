@@ -77,6 +77,7 @@ EXPECTED_HASHED = frozenset({
     "range_model/unrestricted_verification_report.json",
     "range_model/independent_unrestricted_checks.py",
     "range_model/independent_unrestricted_report.json",
+    "range_model/claim_clarification_checks.py", "range_model/claim_clarification_report.json",
     "range_model/trace_sampling_calculations.py", "range_model/trace_sampling_report.json",
 }) | {f"{NUCLEAR_DIRECTORY}/{name}" for name in NUCLEAR_FILES} | {
     f"{PARTICLE_DIRECTORY}/{name}" for name in PARTICLE_FILES
@@ -96,7 +97,8 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     ".github/skills/scientific-evidence-code-review/SKILL.md",
     ".github/skills/github-actions-failure-review/SKILL.md",
     "documents/consolidated_review_edition.md", "documents/applicant_evidence_intake.md",
-    "documents/claim_group_review_brief.md", REVIEW_PACKET,
+    "documents/claim_group_review_brief.md", "documents/proposed_claim_clarifications.md",
+    REVIEW_PACKET,
     *REVIEW_AUTHORING_FILES.values(),
     "documents/pdf/materials_provisional_review_2026-09-30.pdf",
     "documents/pdf/materials_identity_data_review_annex.pdf",
@@ -106,7 +108,7 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
     "composition_ranges", "unrestricted_compositions", "independent_unrestricted_checks",
-    "trace_sampling_calculations", "parse_nubase", "verify_nuclear_archive",
+    "trace_sampling_calculations", "claim_clarification_checks", "parse_nubase", "verify_nuclear_archive",
     "extract_pdg_identities",
 })
 
@@ -401,6 +403,22 @@ def check_unrestricted_math(root: Path) -> dict:
     }
 
 
+def check_claim_clarifications(root: Path) -> dict:
+    """Reproduce the scoped claim-proposal mathematics from this exact fixture."""
+    directory = root / "range_model"
+    with module_environment(directory):
+        import_local("composition_ranges", directory / "composition_ranges.py")
+        unrestricted = import_local("unrestricted_compositions", directory / "unrestricted_compositions.py")
+        checker = import_local("claim_clarification_checks", directory / "claim_clarification_checks.py")
+        require(checker.target is unrestricted, "Claim checker imported a different unrestricted module")
+        report = checker.verify()
+    require(no_floats(report) and report.get("status") == "passed",
+            "Claim-clarification checks did not pass with exact results")
+    require(report == load_json(directory / "claim_clarification_report.json"),
+            "Recorded claim-clarification report differs from fresh result")
+    return {"recorded_report_reproduced": True, **report}
+
+
 def check_nuclear_archive(root: Path) -> dict:
     directory = root / NUCLEAR_DIRECTORY
     bundle = load_json(directory / "portable_bundle_manifest.json")
@@ -655,6 +673,7 @@ def run(root: Path) -> dict:
             require(data.startswith(b"%PDF-") and b"%%EOF" in data[-1024:], f"Invalid PDF envelope: {relative}")
     math_result = check_math(root)
     unrestricted_result = check_unrestricted_math(root)
+    clarification_result = check_claim_clarifications(root)
     nuclear_result = check_nuclear_archive(root)
     particle_result = check_particle_archive(root)
     publication_result = check_publication_record(root)
@@ -663,6 +682,7 @@ def run(root: Path) -> dict:
     return {"status": "passed", "package_files": file_count, "sha256_records_checked": hashed,
             **claim_result, **registry_result, "local_markdown_links_checked": links, **math_result,
             "unrestricted_domain_verification": unrestricted_result,
+            "claim_clarification_verification": clarification_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -872,6 +892,18 @@ def self_test(root: Path) -> dict:
         except VerificationError:
             caught.append("unhashed_report_drift_rejected")
         report_path.write_bytes(report_original)
+        clarification_path = fixture / "range_model/claim_clarification_report.json"
+        clarification_original = clarification_path.read_bytes()
+        clarification_report = json.loads(clarification_original)
+        clarification_report["status"] = "not run"
+        clarification_path.write_text(json.dumps(clarification_report), encoding="utf-8")
+        try:
+            check_claim_clarifications(fixture)
+        except VerificationError as error:
+            require("differs from fresh result" in str(error),
+                    "Claim-report drift fixture failed for an unrelated reason")
+            extended.append("claim_clarification_report_drift_rejected")
+        clarification_path.write_bytes(clarification_original)
         for path in ("../outside.txt", "/absolute.txt", "C:/outside.txt", "a\\b"):
             try:
                 safe_path(fixture, path)
@@ -1061,7 +1093,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 17, f"Expected 17 extension failure checks, got {len(extended)}")
+    require(len(extended) == 18, f"Expected 18 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,

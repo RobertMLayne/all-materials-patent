@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 87,
+  "file_count": 90,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 15090,
-      "sha256": "137779225cf79afdde030e592d88388a7511187a681f4d4f3dad585b4b13e6d1"
+      "size_bytes": 15920,
+      "sha256": "6e356a4c35cb3b21562e68489639b6ab12780b652ad017cbc02320137a1e1818"
     },
     {
       "path": "data/claim_support_map.json",
@@ -332,6 +332,11 @@
       "sha256": "01d614ed448f385414997e788e749e1f1961fc5d2380e91b6640fa742c9cbe95"
     },
     {
+      "path": "documents/proposed_claim_clarifications.md",
+      "size_bytes": 18739,
+      "sha256": "c78a97fd2689469440b2ae396bc6c51a0d5e42b77cc490564d7f2786ed190265"
+    },
+    {
       "path": "documents/provisional_application_draft.md",
       "size_bytes": 73191,
       "sha256": "3c3a6f9b42ca87ffedfd97435ac0476d3301f7f1d650b4c2b9f0fb0b66b15949"
@@ -358,13 +363,23 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 20183,
-      "sha256": "196b26a466dbd0d92bd763e8e51c7888027523138ddaf48b0ca465a9a0cdee38"
+      "size_bytes": 23058,
+      "sha256": "4701e3a97c84a298f125161c11186e9064541793d791e61552af35c8b8027c27"
     },
     {
       "path": "pyproject.toml",
       "size_bytes": 338,
       "sha256": "948f71a406b376ed19c4f3440cd53df426dc709f360e35f4d1eb9ce84f41cc18"
+    },
+    {
+      "path": "range_model/claim_clarification_checks.py",
+      "size_bytes": 19732,
+      "sha256": "6188d965955058a3bac6f4e8d199b7ebc97f9355e56edee7949d736a58a68f01"
+    },
+    {
+      "path": "range_model/claim_clarification_report.json",
+      "size_bytes": 7514,
+      "sha256": "948df34b4addf65563ad66e0115230cebe76f0ce33863fa8bd8c6d3da9152d43"
     },
     {
       "path": "range_model/composition_range_model.json",
@@ -453,8 +468,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 64525,
-      "sha256": "b25dd9233c20447df136a45a7ed8cc29cb27874433d38c27d63432ab87712cb6"
+      "size_bytes": 66578,
+      "sha256": "444515315591fc49ffa949c36f1f93fea2959c0ed7f723809aab8623a438bbc7"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
