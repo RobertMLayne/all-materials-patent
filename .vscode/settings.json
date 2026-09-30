@@ -1,0 +1,28 @@
+{
+  "files.autoSave": "off",
+  "files.eol": "auto",
+  "files.trimTrailingWhitespace": false,
+  "files.insertFinalNewline": false,
+  "files.trimFinalNewlines": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "files.readonlyInclude": {
+    "data/nuclear_archive/nubase_4.mas20.txt": true,
+    "data/nuclear_archive/schema_header.txt": true
+  },
+  "search.exclude": {
+    "**/__pycache__/**": true,
+    "generated_reports/**": true,
+    "data/nuclear_archive/nuclear_states.json": true,
+    ".venv/**": true,
+    ".ruff_cache/**": true
+  },
+  "files.watcherExclude": {
+    "**/__pycache__/**": true,
+    "generated_reports/**": true,
+    "data/nuclear_archive/nuclear_states.json": true,
+    ".venv/**": true,
+    ".ruff_cache/**": true
+  }
+}

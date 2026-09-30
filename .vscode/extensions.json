@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "EditorConfig.EditorConfig",
+    "GitHub.copilot-chat",
+    "charliermarsh.ruff",
+    "github.vscode-github-actions",
+    "redhat.vscode-yaml"
+  ]
+}

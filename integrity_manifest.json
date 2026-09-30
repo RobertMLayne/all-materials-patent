@@ -19,22 +19,107 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 51,
+  "file_count": 75,
   "files": [
     {
+      "path": ".editorconfig",
+      "size_bytes": 560,
+      "sha256": "34eda2c573543141e33ca98570b10fbe357b0ec330681b5fd2650d5206bf27bf"
+    },
+    {
       "path": ".gitattributes",
-      "size_bytes": 59,
-      "sha256": "5ff2052a51ef7fac3e1128b1e75df2840633fed14be4b3a7a596d0576110ac06"
+      "size_bytes": 353,
+      "sha256": "b871c846c463863a24ead77ad773467ead41a3ecdcb4e928bf7f5f6ab7ab4305"
+    },
+    {
+      "path": ".github/CODEOWNERS",
+      "size_bytes": 100,
+      "sha256": "dc5a9faec4e7ad8545ad3883f3d3833476a8f3a453f7f3400a3885e6a265fb61"
+    },
+    {
+      "path": ".github/agents/archive-provenance-reviewer.agent.md",
+      "size_bytes": 1083,
+      "sha256": "c70d1fe771472d9315a92992fb353730749d723b0a2a68cb04a5e14ab5510b3a"
+    },
+    {
+      "path": ".github/agents/exact-math-reviewer.agent.md",
+      "size_bytes": 1052,
+      "sha256": "67f4a6165bb8407164e3482dc7f62780ce0a5a5f9b113533b6453df6482cfeca"
+    },
+    {
+      "path": ".github/agents/scientific-evidence-reviewer.agent.md",
+      "size_bytes": 1104,
+      "sha256": "0c263db2887f20d99de69b481689a8a92477687adc078a82c4a73979a903c3b4"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "size_bytes": 1823,
+      "sha256": "fffcec4d7df9b0548ff3caba6e077ef6c7b707873b29b19a576c42408708a258"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "size_bytes": 385,
+      "sha256": "81d0cdb27f49972d364e1e69cddd06c3cf7042cecc8e9d0552d60829ea66c9fa"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "size_bytes": 656,
+      "sha256": "87821b434eb057580c8828115a1b73dcc1f44775d3a2c1627d91a229d75f9d62"
+    },
+    {
+      "path": ".github/skills/archive-provenance-code-review/SKILL.md",
+      "size_bytes": 2357,
+      "sha256": "343d6357489257aaf587d5780bf595df24d7670f9ba27d89011ba1cfe234b1da"
+    },
+    {
+      "path": ".github/skills/exact-math-code-review/SKILL.md",
+      "size_bytes": 2467,
+      "sha256": "b336e9a354533673386b20962357f1c6aa13bff092bb7be37e1b9442dbeed6ad"
+    },
+    {
+      "path": ".github/skills/github-actions-failure-review/SKILL.md",
+      "size_bytes": 2482,
+      "sha256": "3583aec943d46927d05003ba1b647bccb5b75efe21a847c03fffeda850bdba17"
+    },
+    {
+      "path": ".github/skills/scientific-evidence-code-review/SKILL.md",
+      "size_bytes": 2564,
+      "sha256": "f8075c889faba2fb8f0037a99a66f7bfc12933a3746d94478ee209f6bb2d5cd5"
+    },
+    {
+      "path": ".github/workflows/codeql.yml",
+      "size_bytes": 1128,
+      "sha256": "4588cebaea0caf7b7aa90cd00ecf4c115a7bbb2fa4f38d5fe607b4bcc9160498"
+    },
+    {
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "size_bytes": 715,
+      "sha256": "be32d18775e4ea8d3a4ef860b07d1549885c81177d29d45ade9c31fbc26978d9"
     },
     {
       "path": ".github/workflows/verify.yml",
-      "size_bytes": 707,
-      "sha256": "4c7fbbe074d2fc5da5b93382e699d8641ac09bf282517a39ead7055bcd1bce3d"
+      "size_bytes": 1643,
+      "sha256": "9129eb9640a167cdda2cd93fe944fcc7836dcdbe204e7dd468188960aca79bbc"
     },
     {
       "path": ".gitignore",
-      "size_bytes": 116,
-      "sha256": "751392b25f5965f4b18d740d49700b4ffca500a209acf6baf93a2eb190d3d2c1"
+      "size_bytes": 165,
+      "sha256": "89f4a0502a31af335692e6ae971a7fa3df5703dd585880c9645d3245e98fa040"
+    },
+    {
+      "path": ".vscode/extensions.json",
+      "size_bytes": 234,
+      "sha256": "701bc0b709084fca1c64476b20ac4d0a8beaec827b41ccd040765d0cf9964467"
+    },
+    {
+      "path": ".vscode/settings.json",
+      "size_bytes": 798,
+      "sha256": "f1d6f87d70e0cd738646ba8c2acbb6f0a2fb3ba17980118a30d60a1019fe2b13"
+    },
+    {
+      "path": ".vscode/tasks.json",
+      "size_bytes": 1487,
+      "sha256": "ab9a94ce7c3abbda3c6e9593bbbd085402472e79e3705011d566148708a1e11b"
     },
     {
       "path": "AGENTS.md",
@@ -42,9 +127,14 @@
       "sha256": "895d8d9f9f51c6e5b5a278cf8dbdc7b12f7d80ee517eb7ee526290fef1d09663"
     },
     {
+      "path": "CONTRIBUTING.md",
+      "size_bytes": 9353,
+      "sha256": "c1bd824c51d9312d0a3fab174c0276f946d8f012554a23b9c74f81f3314e650d"
+    },
+    {
       "path": "README.md",
-      "size_bytes": 11098,
-      "sha256": "49341d4382adbf819bec96673d7304565101084fc88d379270b46f8417582828"
+      "size_bytes": 12011,
+      "sha256": "f11ce43c9c280da777afdd7238b8348eb8a13cf6fd3d7777ddd7748a9419724c"
     },
     {
       "path": "data/claim_support_map.json",
@@ -123,8 +213,8 @@
     },
     {
       "path": "data/particle_archive/README.md",
-      "size_bytes": 8836,
-      "sha256": "7dfbf4c430a19cb5467166ffd3b46946c1616da8927f3e37e35ee63d3836d034"
+      "size_bytes": 9095,
+      "sha256": "06c93eeae4d6316b8d3acfaafa68753433658ee6c97c9d4ac1ebe415275519d4"
     },
     {
       "path": "data/particle_archive/adversarial_verification_report.json",
@@ -133,8 +223,8 @@
     },
     {
       "path": "data/particle_archive/extract_pdg_identities.py",
-      "size_bytes": 20879,
-      "sha256": "10d3a9d7ca9442a0db142172ccdb34f9a4bc897fe0c613710cdf7f68bd4cf178"
+      "size_bytes": 21209,
+      "sha256": "93c62fd424bb602cd3f6e01f931e81f4c9e4def3da59d2621b406fb89c9aba20"
     },
     {
       "path": "data/particle_archive/pdg2026_identity_archive.json",
@@ -177,6 +267,11 @@
       "sha256": "339a0ed0712f5f1e938f10b9040f24dd8e2c9e7cb82a17ed1148aaaca44e7b2a"
     },
     {
+      "path": "documents/github_settings.md",
+      "size_bytes": 7451,
+      "sha256": "db9f5c8c0e017cc268a8d2a8c76b98128a01f92962e04f482d4a4fcbfb283c5e"
+    },
+    {
       "path": "documents/pct_defensive_disclosure_blueprint.md",
       "size_bytes": 37796,
       "sha256": "96e2fc525cce1f8a05a3f301b46096b5031410d517ad70887d00d9eb98974bd1"
@@ -212,9 +307,24 @@
       "sha256": "d046e64524b88f54190d8dde0633226b22c5ef077637c09c370fab69f6392ea6"
     },
     {
+      "path": "documents/restart_checkpoint.md",
+      "size_bytes": 5307,
+      "sha256": "0cc890470ff769554eddffe6f9baea17de463434f2bf455ddf8fb64df24ce130"
+    },
+    {
       "path": "documents/technical_scope_supplement.md",
       "size_bytes": 20132,
       "sha256": "f59e61f87096326d99447847a9f7161c8a6f72ca92b8d53ce45029ad419c53df"
+    },
+    {
+      "path": "documents/workflow_decisions.md",
+      "size_bytes": 9332,
+      "sha256": "53ce621fa63c1c0ccaa9eb54f18598d82a606223db29f589804baa9572ba385f"
+    },
+    {
+      "path": "pyproject.toml",
+      "size_bytes": 338,
+      "sha256": "948f71a406b376ed19c4f3440cd53df426dc709f360e35f4d1eb9ce84f41cc18"
     },
     {
       "path": "range_model/composition_range_model.json",
@@ -223,13 +333,13 @@
     },
     {
       "path": "range_model/composition_ranges.py",
-      "size_bytes": 34341,
-      "sha256": "3e296aca025a5035fe46c8f604a83e41261d84fa7b1f70041446798d806bf82c"
+      "size_bytes": 34495,
+      "sha256": "68eea3f73d53a6e828e8171f817c293cf8e0f677de9773066acbcac45ff96cae"
     },
     {
       "path": "range_model/independent_unrestricted_checks.py",
-      "size_bytes": 9528,
-      "sha256": "11361c6e77208f63369b189c04b3456b9b83edefb83f4ae2eb7a17fcfbf6e2cf"
+      "size_bytes": 9764,
+      "sha256": "07278d039ea44c401b80ab0175d6611039bc84da506bcbf8ccf87290d5527218"
     },
     {
       "path": "range_model/independent_unrestricted_report.json",
@@ -243,8 +353,8 @@
     },
     {
       "path": "range_model/trace_sampling_calculations.py",
-      "size_bytes": 2186,
-      "sha256": "423a25158e56bb3709d90b9aa165310819669eca1f05b9fe1ee735989d0b35b4"
+      "size_bytes": 2334,
+      "sha256": "ec95c3716ba35e919255f8923969b8df0f4948d8bb1a4cab6ee8e20b2ce9d08a"
     },
     {
       "path": "range_model/trace_sampling_report.json",
@@ -258,8 +368,8 @@
     },
     {
       "path": "range_model/unrestricted_compositions.py",
-      "size_bytes": 20721,
-      "sha256": "5d91f60b602f1468857be4dc60e188f9cdbd792a99d7aa029f3b83ad9d073b12"
+      "size_bytes": 20859,
+      "sha256": "38d1ae4e5ba015c9ed3476176e654056af42afad14d1cf16ef5682308be459e2"
     },
     {
       "path": "range_model/unrestricted_numeric_examples.json",
@@ -272,9 +382,19 @@
       "sha256": "b026ecea730f225ee234b2ca771d1a1bd38b32de4b17dadee767f7135e05b99d"
     },
     {
+      "path": "requirements-dev.txt",
+      "size_bytes": 96,
+      "sha256": "8cc409fd345cfcc3cbbc92f6132d101d884516d6059585f5ab720d077761bc71"
+    },
+    {
+      "path": "tools/update_manifest.py",
+      "size_bytes": 4785,
+      "sha256": "196a2def8e20b8e31bf14f4ff3f2b3dc162472eba45766db9e370eeb5b9ec0e4"
+    },
+    {
       "path": "verify_package.py",
-      "size_bytes": 38133,
-      "sha256": "7bbbfa8a72d5c1ee56c99841862f04fd84b7ee565c0f7ba5b9ebcd6006380308"
+      "size_bytes": 49499,
+      "sha256": "e766e05097e95add1652aff3f9b61fe3c0f5cf938d89336702802d126fb5fc65"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

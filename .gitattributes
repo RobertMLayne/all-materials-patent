@@ -1,2 +1,11 @@
+# Preserve checksum-covered artifact bytes, including historical CRLF drafts.
+* -text
+# Executable source and workflow files were reviewed as LF and stay portable.
+*.py text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf
+.editorconfig text eol=lf
 *.pdf binary
 data/nuclear_archive/nubase_4.mas20.txt -text

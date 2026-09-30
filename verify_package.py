@@ -13,6 +13,7 @@ import hashlib
 import importlib.util
 import io
 import json
+import os
 from pathlib import Path, PurePosixPath
 import re
 import sys
@@ -61,6 +62,21 @@ EXPECTED_HASHED = frozenset({
 }) | {f"{NUCLEAR_DIRECTORY}/{name}" for name in NUCLEAR_FILES} | {
     f"{PARTICLE_DIRECTORY}/{name}" for name in PARTICLE_FILES
 }
+EXPECTED_HASHED = EXPECTED_HASHED | {
+    ".editorconfig", ".vscode/settings.json", ".vscode/extensions.json", ".vscode/tasks.json",
+    "CONTRIBUTING.md", "documents/workflow_decisions.md", "documents/restart_checkpoint.md",
+    "documents/github_settings.md", "tools/update_manifest.py", "pyproject.toml", "requirements-dev.txt",
+    ".github/CODEOWNERS", ".github/pull_request_template.md", ".github/dependabot.yml",
+    ".github/workflows/codeql.yml", ".github/workflows/copilot-setup-steps.yml",
+    ".github/copilot-instructions.md",
+    ".github/agents/exact-math-reviewer.agent.md",
+    ".github/agents/archive-provenance-reviewer.agent.md",
+    ".github/agents/scientific-evidence-reviewer.agent.md",
+    ".github/skills/exact-math-code-review/SKILL.md",
+    ".github/skills/archive-provenance-code-review/SKILL.md",
+    ".github/skills/scientific-evidence-code-review/SKILL.md",
+    ".github/skills/github-actions-failure-review/SKILL.md",
+}
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
     "composition_ranges", "unrestricted_compositions", "independent_unrestricted_checks",
@@ -98,7 +114,7 @@ def safe_path(root: Path, relative: str) -> Path:
 def ignored(relative: str) -> bool:
     parts = PurePosixPath(relative).parts
     return (".git" in parts or "__pycache__" in parts or
-            parts[0] == "generated_reports" or
+            parts[0] in {"generated_reports", ".venv", ".ruff_cache"} or
             relative == "package_verification_report.json" or
             relative == OPTIONAL_NUCLEAR_VIEW or
             relative.endswith((".pyc", ".pyo")))
@@ -106,13 +122,27 @@ def ignored(relative: str) -> bool:
 
 def check_inventory(root: Path) -> int:
     actual = set()
-    for path in root.rglob("*"):
-        relative = path.relative_to(root).as_posix()
-        if ignored(relative):
-            continue
-        require(not path.is_symlink(), f"Package contains a symbolic link: {relative}")
-        if path.is_file():
-            actual.add(relative)
+    def reject_walk_error(error: OSError) -> None:
+        raise VerificationError("Cannot inspect the complete package inventory") from error
+    # Prune local environments and caches before traversal. Walking a full
+    # interpreter installation adds no evidence about the reviewed package.
+    for directory, directories, filenames in os.walk(root, followlinks=False, onerror=reject_walk_error):
+        parent = Path(directory)
+        for name in directories[:]:
+            path = parent / name
+            relative = path.relative_to(root).as_posix()
+            if ignored(relative):
+                directories.remove(name)
+            else:
+                require(not (path.is_symlink() or path.is_junction()),
+                        f"Package contains a symbolic link or directory junction: {relative}")
+        for name in filenames:
+            path = parent / name
+            relative = path.relative_to(root).as_posix()
+            if not ignored(relative):
+                require(not (path.is_symlink() or path.is_junction()),
+                        f"Package contains a symbolic link or directory junction: {relative}")
+                actual.add(relative)
     require(actual == EXPECTED_FILES,
             f"Inventory mismatch; missing={sorted(EXPECTED_FILES - actual)}, "
             f"unexpected={sorted(actual - EXPECTED_FILES)}")
@@ -479,13 +509,22 @@ def check_workflow(root: Path) -> None:
     content = (root / ".github/workflows/verify.yml").read_text(encoding="utf-8")
     for fragment in ("permissions:\n  contents: read", "timeout-minutes: 10",
                      "cancel-in-progress: true", "python-version: '3.12'",
-                     "persist-credentials: false", "run: python verify_package.py",
-                     "actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
-                     "actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065"):
+                     "os: [ubuntu-24.04, windows-2025]", "fail-fast: false",
+                     "persist-credentials: false", "run: python -B verify_package.py --self-test",
+                     "run: python -m ruff check --no-cache ."):
         require(fragment in content, f"Reviewed workflow control missing: {fragment}")
+    # SHA syntax is checked here; release identities are reviewed before a
+    # manifest update. This permits reviewed Dependabot pin updates.
+    for relative in (".github/workflows/verify.yml", ".github/workflows/codeql.yml", ".github/workflows/copilot-setup-steps.yml"):
+        workflow = (root / relative).read_text(encoding="utf-8")
+        require("pull_request_target" not in workflow, f"Privileged PR trigger in {relative}")
+        references = re.findall(r"uses:\s*(\S+)", workflow)
+        require(bool(references) and all(re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_./-]+@[0-9a-f]{40}", ref)
+                                         for ref in references), f"Unpinned action in {relative}")
 
 
 def run(root: Path) -> dict:
+    require(__debug__, "Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     file_count = check_inventory(root)
     hashed = check_integrity(root)
     application = (root / "documents/provisional_application_draft.md").read_text(encoding="utf-8")
@@ -517,7 +556,10 @@ def run(root: Path) -> dict:
 
 def self_test(root: Path) -> dict:
     """Exercise failure paths using temporary copies; preserve the package."""
+    require(__debug__, "Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     import shutil
+    import subprocess
+    from unittest.mock import patch
     import uuid
 
     caught = []
@@ -540,11 +582,22 @@ def self_test(root: Path) -> dict:
 
     with temporary_fixture() as temporary:
         fixture = Path(temporary) / "package"
-        shutil.copytree(root, fixture, ignore=shutil.ignore_patterns(".git", "__pycache__", "generated_reports"))
+        shutil.copytree(root, fixture, ignore=shutil.ignore_patterns(".git", "__pycache__", "generated_reports", ".venv", ".ruff_cache"))
         # Reject a stale starting fixture so a test cannot pass by catching an
         # unrelated, pre-existing checksum or inventory failure.
         check_inventory(fixture)
         check_integrity(fixture)
+        # An optimized subprocess must fail before claiming that assertion-based
+        # math checks passed. It receives no self-test flag, preventing recursion.
+        optimized = subprocess.run(
+            [sys.executable, "-B", "-O", str(fixture / "verify_package.py")],
+            cwd=fixture, capture_output=True, text=True, timeout=30, check=False,
+        )
+        require(optimized.returncode == 1, "Optimized interpreter did not reject verification")
+        optimized_error = json.loads(optimized.stderr)
+        require(optimized_error.get("status") == "failed" and
+                "requires enabled assertions" in optimized_error.get("error", ""),
+                "Optimized interpreter failed for an unrelated reason")
         sample = fixture / "README.md"
         original = sample.read_bytes()
         sample.write_bytes(original + b"\nchanged\n")
@@ -640,6 +693,112 @@ def self_test(root: Path) -> dict:
         else:
             optional_path.write_bytes(optional_original)
 
+        # These literal test bytes have their own pinned hash. They exercise the
+        # real download-integrity and publication code without distributing the
+        # raw PDG SQLite file or asserting another official-source comparison.
+        download_bytes = b"Offline pinned downloader regression bytes, not PDG SQLite.\n"
+        download_sha = "91974da12e56c858e6079db36b012ef42b3dcdd769925b58c3949accdc7ca476"
+        require(hashlib.sha256(download_bytes).hexdigest() == download_sha, "Downloader test fixture hash changed")
+        download_root = fixture / "generated_reports" / "downloader-tests"
+        download_root.mkdir(parents=True)
+        downloader_cases = []
+        class OfflineResponse(io.BytesIO):
+            status = 200
+            headers = {"Content-Type": "application/octet-stream", "ETag": "offline test fixture"}
+
+        directory = fixture / PARTICLE_DIRECTORY
+        with module_environment(directory):
+            downloader = import_local("extract_pdg_identities", directory / "extract_pdg_identities.py")
+            with patch.object(downloader, "SOURCE_BYTES", len(download_bytes)), \
+                    patch.object(downloader, "SOURCE_SHA256", download_sha):
+                destination = download_root / "success.bin"
+                observation = download_root / "success.json"
+                with patch.object(downloader.urllib.request, "urlopen", return_value=OfflineResponse(download_bytes)) as response, \
+                        redirect_stdout(io.StringIO()):
+                    downloader.download(argparse.Namespace(destination=destination, observation=observation))
+                require(response.call_count == 1, "Mock downloader did not use exactly one mocked request")
+                downloader.check_source(destination)
+                require(destination.read_bytes() == download_bytes and not destination.with_suffix(".bin.part").exists(),
+                        "Successful exclusive publication did not preserve bytes or remove its partial")
+                require(load_json(observation)["sha256"] == download_sha, "Successful observation lacks the pinned test hash")
+                downloader_cases.append("mocked_pinned_test_bytes_exclusive_publication")
+
+                destination = download_root / "competing.bin"
+                observation = download_root / "competing.json"
+                competitor_bytes = b"Preserve this concurrent destination.\n"
+                real_check_source = downloader.check_source
+                def appear_before_publication(partial: Path) -> None:
+                    real_check_source(partial)
+                    destination.write_bytes(competitor_bytes)
+
+                with patch.object(downloader.urllib.request, "urlopen", return_value=OfflineResponse(download_bytes)) as response, \
+                        patch.object(downloader, "check_source", side_effect=appear_before_publication), \
+                        redirect_stdout(io.StringIO()):
+                    try:
+                        downloader.download(argparse.Namespace(destination=destination, observation=observation))
+                    except FileExistsError:
+                        pass
+                    else:
+                        raise VerificationError("Concurrent downloader destination was replaced")
+                require(response.call_count == 1 and destination.read_bytes() == competitor_bytes,
+                        "Concurrent destination bytes were not preserved")
+                partial = destination.with_suffix(".bin.part")
+                real_check_source(partial)
+                require(partial.read_bytes() == download_bytes and not observation.exists(),
+                        "Refused publication lost its verified partial or wrote a success observation")
+                downloader_cases.append("concurrent_destination_preserved_partial_retained_no_observation")
+
+        # The parent owns the real marker before launching the competing helper,
+        # so contention is deterministic and requires no timing assumptions.
+        helper_path = fixture / "tools/update_manifest.py"
+        specification = importlib.util.spec_from_file_location("manifest_lock_selftest", helper_path)
+        require(specification is not None and specification.loader is not None, "Could not load manifest lock helper")
+        helper = importlib.util.module_from_spec(specification)
+        specification.loader.exec_module(helper)
+        lock = fixture / "generated_reports" / "manifest-update.lock"
+        manifest_before = (fixture / MANIFEST).read_bytes()
+        with helper.manifest_write_lock():
+            lock_before = lock.read_bytes()
+            competing_writer = subprocess.run(
+                [sys.executable, "-B", str(helper_path), "--write"],
+                cwd=fixture, capture_output=True, text=True, timeout=30, check=False,
+            )
+            require(competing_writer.returncode != 0 and "Manifest update lock already exists" in competing_writer.stderr,
+                    "Competing manifest writer was not rejected by the held lock")
+            require(lock.read_bytes() == lock_before and (fixture / MANIFEST).read_bytes() == manifest_before,
+                    "Competing manifest writer changed the held lock or manifest")
+        require(not lock.exists(), "Manifest lock regression left its owned lock behind")
+
+        # A Windows junction is not a symlink. Model that classification on every
+        # platform and make any descent into its outside target observable.
+        junction = fixture / "junction-regression"
+        junction.mkdir()
+        outside = Path(temporary) / "outside-junction-target"
+        outside.mkdir()
+        (outside / "sentinel.txt").write_text("Must never be traversed", encoding="utf-8")
+        traversal = {"outside_visited": False}
+        real_is_junction = Path.is_junction
+        def classify_junction(path: Path) -> bool:
+            return path == junction or real_is_junction(path)
+        def junction_walk(*args, **kwargs):
+            directories = [junction.name]
+            yield str(fixture), directories, []
+            if junction.name in directories:
+                traversal["outside_visited"] = True
+                yield str(outside), [], ["sentinel.txt"]
+
+        require(not junction.is_symlink(), "Junction regression must cover the non-symlink classification")
+        with patch.object(Path, "is_junction", classify_junction), patch.object(os, "walk", junction_walk):
+            try:
+                check_inventory(fixture)
+            except VerificationError as error:
+                require("directory junction" in str(error) and junction.name in str(error),
+                        "Junction fixture failed for an unrelated inventory reason")
+            else:
+                raise VerificationError("Inventory accepted a directory junction")
+        require(not traversal["outside_visited"], "Inventory descended into a junction's outside target")
+        junction.rmdir()
+
         # Simulate a caller that has already imported the original package.
         # A fixture must still execute its own module and restore that caller.
         import types
@@ -660,14 +819,22 @@ def self_test(root: Path) -> dict:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
     require(len(extended) == 4, f"Expected 4 extension failure checks, got {len(extended)}")
+    require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
-            "fixture_import_isolation_checked": True}
+            "downloader_regression_case_count": len(downloader_cases), "downloader_regression_cases": downloader_cases,
+            "downloader_regression_real_network_calls": 0,
+            "downloader_fixture_scope": "Mock transfer of fixed test bytes with pinned test hash; no raw PDG SQLite comparison.",
+            "cooperating_manifest_lock_contention_checked": True,
+            "workflow_regression_checks": {"cooperating_manifest_lock_contention": True,
+                                           "directory_junction_rejected_before_descent": True},
+            "fixture_import_isolation_checked": True,
+            "optimized_interpreter_rejection_checked": True}
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--self-test", action="store_true", help="Also exercise 10 baseline and 4 extension failure cases in temporary copies")
+    parser.add_argument("--self-test", action="store_true", help="Also exercise failure paths and offline publication/locking regressions in temporary copies")
     args = parser.parse_args()
     try:
         root = Path(__file__).resolve().parent

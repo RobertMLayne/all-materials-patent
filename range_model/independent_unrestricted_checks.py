@@ -8,7 +8,8 @@ import sys
 
 MODULE_ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(MODULE_ROOT))
-import unrestricted_compositions as target
+# The direct-script CLI must resolve its sibling rather than an installed namesake.
+import unrestricted_compositions as target  # noqa: E402
 
 
 def vertices(bounds):
@@ -46,6 +47,8 @@ def positive_integer_rows(q, k):
 
 
 def run():
+    if not __debug__:
+        raise ValueError("Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     rng = random.Random(20260930)
     continuous_cases = lattice_cases = enumeration_cases = 0
     regressions = [

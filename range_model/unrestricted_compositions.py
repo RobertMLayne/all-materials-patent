@@ -231,6 +231,8 @@ def examples() -> dict:
 
 
 def verify() -> dict:
+    if not __debug__:
+        raise ValueError("Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     groups = []
 
     def passed(name: str, detail: str) -> None:
