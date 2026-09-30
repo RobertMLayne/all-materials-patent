@@ -8,6 +8,8 @@ Draft preparation date: **29 September 2026**. Dates printed inside the document
 
 The expanded reference catalog now includes molecular crystal, polymer stereocomplex and nanotube/epoxy composite entries alongside the earlier alloy and oxide records. It adds preparation/characterization details, conditional property comparisons, composition-basis conversions, original-claim feature gaps and hypothetical later-claim tests. These are attributed published teachings and proposed follow-up studies; no applicant experiment, new invention or full-scope enablement is asserted.
 
+The [dated composite comparator review](documents/composite_comparator_source_review_2026-09-30.md) checks the author manuscript behind the earlier abstract-only comparison. It records sequential shaking/sonication, the radiometric denominator and recovery method, and unresolved conflicts between the manuscript's percentages, units and denominators. Consult it alongside the unchanged original reference entry; no corrected numerical result or applicant reproduction is asserted.
+
 ## Read the documents
 
 | Document | Readable PDF | Editable source |
@@ -16,7 +18,7 @@ The expanded reference catalog now includes molecular crystal, polymer stereocom
 | Preserved 29 September draft - 27 pages, 80 numbered paragraphs, 199 complete candidate claims | [Original application PDF](documents/pdf/provisional_application_draft.pdf) | [Original application Markdown](documents/provisional_application_draft.md) |
 | Provisional/PCT filing review memorandum - five review pages | [Filing memorandum PDF](documents/pdf/provisional_filing_strategy.pdf) | [Filing memorandum Markdown](documents/provisional_filing_strategy.md) |
 | Earlier defensive-disclosure blueprint - retained as an earlier planning artifact | [Blueprint PDF](documents/pdf/pct_defensive_disclosure_blueprint.pdf) | [Blueprint Markdown](documents/pct_defensive_disclosure_blueprint.md) |
-| Consolidated provisional review edition - 66 pages, including unchanged original application and current technical/reference appendices | [Consolidated review PDF](documents/pdf/materials_provisional_review_2026-09-30.pdf) | [Edition and build guide](documents/consolidated_review_edition.md) |
+| Consolidated provisional review edition - 66 pages, including unchanged original application and technical/reference appendices captured in that edition | [Consolidated review PDF](documents/pdf/materials_provisional_review_2026-09-30.pdf) | [Edition and build guide](documents/consolidated_review_edition.md) |
 | Companion identity-data review annex - 795 pages, complete retained nuclear snapshot and selected particle identity tables | [Identity review annex](documents/pdf/materials_identity_data_review_annex.pdf) | [Scoped sources and page map](data/review_packet_manifest.json) |
 
 The application and companion memorandum remain working drafts; the earlier blueprint is retained for provenance. Review page counts are not PCT chargeable-sheet determinations. All supplied PDFs were visually reviewed before packaging; this repository's automated checks do not replace that review.
