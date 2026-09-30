@@ -10,7 +10,7 @@ The expanded reference catalog now includes molecular crystal, polymer stereocom
 
 The [dated composite comparator review](documents/composite_comparator_source_review_2026-09-30.md) checks the author manuscript behind the earlier abstract-only comparison. It records sequential shaking/sonication, the radiometric denominator and recovery method, and unresolved conflicts between the manuscript's percentages, units and denominators. Consult it alongside the unchanged original reference entry; no corrected numerical result or applicant reproduction is asserted.
 
-The [alloy comparison for working claims 1, 4, 5 and 163](documents/alloy_claim_comparison_2026-09-30.md) maps actual inventory, cardinality and equal-fraction requirements to the cited paper's nominal composition and local impurity evidence. It distinguishes broad-genus exposure from exact-species questions, retains atomic/mass and sampling boundaries, and leaves statutory outcomes open. The original application, reference entry and fixed PDFs remain unchanged.
+The [alloy comparison for working claims 1, 4, 5 and 163](documents/alloy_claim_comparison_2026-09-30.md) maps actual inventory, cardinality and equal-fraction requirements to the cited paper's nominal composition and local impurity evidence. Its conditional complete-support analysis explains why impurities and an incomplete exhaustive assay need not exclude an ordinary alloy from broad claim 1. It retains the express-basis, exact-cardinality, equality and sampling questions; statutory outcomes remain open. The original application, reference entry and fixed PDFs remain unchanged.
 
 ## Read the documents
 
