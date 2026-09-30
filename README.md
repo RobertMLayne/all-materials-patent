@@ -16,6 +16,8 @@ The [hydrogel property evidence](documents/hydrogel_property_evidence_2026-09-30
 
 The [current preparation-evidence edition](documents/application_preparation_evidence_2026-09-30.md) adds source-specific monomer connectivities, reported preparation operations and an exact ideal monomer-feed balance to the actual description. It retains unresolved identities and source conflicts, distinguishes feed amounts from incorporated material composition, and preserves the property evidence and all 199 candidate claims. Its [source review](data/hydrogel_preparation_source_review_2026-09-30.json) records primary locators and acquisition limits. The preceding editions remain distinct historical artifacts; no applicant preparation or universal physical/legal coverage is asserted.
 
+The [hydrogel comparison against actual claims](documents/hydrogel_claim_comparison_2026-09-30.md) maps claims 1, 5, 177, 186 and 197-199, with whole-specimen and monomer-feed constructions kept separate. A [worked candidate record](data/hydrogel_candidate_record_review_2026-09-30.json) performs present target assignment and evidence recording; source-gel measurements are not assigned to the monomer feed or a new candidate. Four illustrative later-claim tests address a matched source material, changed ratio/structure, large-list selection and added method/use. These are preliminary comparisons, not completed novelty opinions or additions silently included in the application PDF.
+
 ## Read the documents
 
 | Document | Readable PDF | Editable source |
