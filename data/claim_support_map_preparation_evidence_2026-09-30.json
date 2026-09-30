@@ -1,0 +1,2900 @@
+{
+  "claim_count": 199,
+  "claims": [
+    {
+      "claim_number": 1,
+      "text": "A material comprising a closed elemental inventory of k distinct elemental constituents selected from atomic numbers 1 through 138, wherein k is an integer from 2 through 138, each selected constituent has a positive normalized fraction x_i on an expressly identified atomic-fraction or mass-fraction basis, the fractions of the selected constituents sum to one, and constituents outside the selected inventory have zero fraction on that basis.",
+      "textual_support_paragraphs": [
+        "0010",
+        "0011",
+        "0014",
+        "0015",
+        "0016",
+        "0080"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 2,
+      "text": "The material of claim 1, wherein k is exactly 2.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 3,
+      "text": "The material of claim 1, wherein k is exactly 3.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 4,
+      "text": "The material of claim 1, wherein k is exactly 4.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 5,
+      "text": "The material of claim 1, wherein k is exactly 5.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 6,
+      "text": "The material of claim 1, wherein k is exactly 6.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 7,
+      "text": "The material of claim 1, wherein k is exactly 7.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 8,
+      "text": "The material of claim 1, wherein k is exactly 8.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 9,
+      "text": "The material of claim 1, wherein k is exactly 9.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 10,
+      "text": "The material of claim 1, wherein k is exactly 10.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 11,
+      "text": "The material of claim 1, wherein k is exactly 11.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 12,
+      "text": "The material of claim 1, wherein k is exactly 12.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 13,
+      "text": "The material of claim 1, wherein k is exactly 13.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 14,
+      "text": "The material of claim 1, wherein k is exactly 14.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 15,
+      "text": "The material of claim 1, wherein k is exactly 15.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 16,
+      "text": "The material of claim 1, wherein k is exactly 16.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 17,
+      "text": "The material of claim 1, wherein k is exactly 17.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 18,
+      "text": "The material of claim 1, wherein k is exactly 18.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 19,
+      "text": "The material of claim 1, wherein k is exactly 19.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 20,
+      "text": "The material of claim 1, wherein k is exactly 20.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 21,
+      "text": "The material of claim 1, wherein k is exactly 21.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 22,
+      "text": "The material of claim 1, wherein k is exactly 22.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 23,
+      "text": "The material of claim 1, wherein k is exactly 23.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 24,
+      "text": "The material of claim 1, wherein k is exactly 24.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 25,
+      "text": "The material of claim 1, wherein k is exactly 25.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 26,
+      "text": "The material of claim 1, wherein k is exactly 26.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 27,
+      "text": "The material of claim 1, wherein k is exactly 27.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 28,
+      "text": "The material of claim 1, wherein k is exactly 28.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 29,
+      "text": "The material of claim 1, wherein k is exactly 29.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 30,
+      "text": "The material of claim 1, wherein k is exactly 30.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 31,
+      "text": "The material of claim 1, wherein k is exactly 31.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 32,
+      "text": "The material of claim 1, wherein k is exactly 32.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 33,
+      "text": "The material of claim 1, wherein k is exactly 33.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 34,
+      "text": "The material of claim 1, wherein k is exactly 34.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 35,
+      "text": "The material of claim 1, wherein k is exactly 35.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 36,
+      "text": "The material of claim 1, wherein k is exactly 36.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 37,
+      "text": "The material of claim 1, wherein k is exactly 37.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 38,
+      "text": "The material of claim 1, wherein k is exactly 38.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 39,
+      "text": "The material of claim 1, wherein k is exactly 39.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 40,
+      "text": "The material of claim 1, wherein k is exactly 40.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 41,
+      "text": "The material of claim 1, wherein k is exactly 41.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 42,
+      "text": "The material of claim 1, wherein k is exactly 42.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 43,
+      "text": "The material of claim 1, wherein k is exactly 43.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 44,
+      "text": "The material of claim 1, wherein k is exactly 44.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 45,
+      "text": "The material of claim 1, wherein k is exactly 45.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 46,
+      "text": "The material of claim 1, wherein k is exactly 46.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 47,
+      "text": "The material of claim 1, wherein k is exactly 47.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 48,
+      "text": "The material of claim 1, wherein k is exactly 48.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 49,
+      "text": "The material of claim 1, wherein k is exactly 49.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 50,
+      "text": "The material of claim 1, wherein k is exactly 50.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 51,
+      "text": "The material of claim 1, wherein k is exactly 51.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 52,
+      "text": "The material of claim 1, wherein k is exactly 52.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 53,
+      "text": "The material of claim 1, wherein k is exactly 53.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 54,
+      "text": "The material of claim 1, wherein k is exactly 54.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 55,
+      "text": "The material of claim 1, wherein k is exactly 55.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 56,
+      "text": "The material of claim 1, wherein k is exactly 56.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 57,
+      "text": "The material of claim 1, wherein k is exactly 57.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 58,
+      "text": "The material of claim 1, wherein k is exactly 58.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 59,
+      "text": "The material of claim 1, wherein k is exactly 59.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 60,
+      "text": "The material of claim 1, wherein k is exactly 60.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 61,
+      "text": "The material of claim 1, wherein k is exactly 61.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 62,
+      "text": "The material of claim 1, wherein k is exactly 62.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 63,
+      "text": "The material of claim 1, wherein k is exactly 63.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 64,
+      "text": "The material of claim 1, wherein k is exactly 64.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 65,
+      "text": "The material of claim 1, wherein k is exactly 65.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 66,
+      "text": "The material of claim 1, wherein k is exactly 66.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 67,
+      "text": "The material of claim 1, wherein k is exactly 67.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 68,
+      "text": "The material of claim 1, wherein k is exactly 68.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 69,
+      "text": "The material of claim 1, wherein k is exactly 69.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 70,
+      "text": "The material of claim 1, wherein k is exactly 70.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 71,
+      "text": "The material of claim 1, wherein k is exactly 71.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 72,
+      "text": "The material of claim 1, wherein k is exactly 72.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 73,
+      "text": "The material of claim 1, wherein k is exactly 73.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 74,
+      "text": "The material of claim 1, wherein k is exactly 74.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 75,
+      "text": "The material of claim 1, wherein k is exactly 75.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 76,
+      "text": "The material of claim 1, wherein k is exactly 76.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 77,
+      "text": "The material of claim 1, wherein k is exactly 77.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 78,
+      "text": "The material of claim 1, wherein k is exactly 78.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 79,
+      "text": "The material of claim 1, wherein k is exactly 79.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 80,
+      "text": "The material of claim 1, wherein k is exactly 80.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 81,
+      "text": "The material of claim 1, wherein k is exactly 81.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 82,
+      "text": "The material of claim 1, wherein k is exactly 82.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 83,
+      "text": "The material of claim 1, wherein k is exactly 83.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 84,
+      "text": "The material of claim 1, wherein k is exactly 84.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 85,
+      "text": "The material of claim 1, wherein k is exactly 85.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 86,
+      "text": "The material of claim 1, wherein k is exactly 86.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 87,
+      "text": "The material of claim 1, wherein k is exactly 87.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 88,
+      "text": "The material of claim 1, wherein k is exactly 88.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 89,
+      "text": "The material of claim 1, wherein k is exactly 89.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 90,
+      "text": "The material of claim 1, wherein k is exactly 90.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 91,
+      "text": "The material of claim 1, wherein k is exactly 91.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 92,
+      "text": "The material of claim 1, wherein k is exactly 92.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 93,
+      "text": "The material of claim 1, wherein k is exactly 93.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 94,
+      "text": "The material of claim 1, wherein k is exactly 94.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 95,
+      "text": "The material of claim 1, wherein k is exactly 95.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 96,
+      "text": "The material of claim 1, wherein k is exactly 96.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 97,
+      "text": "The material of claim 1, wherein k is exactly 97.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 98,
+      "text": "The material of claim 1, wherein k is exactly 98.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 99,
+      "text": "The material of claim 1, wherein k is exactly 99.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 100,
+      "text": "The material of claim 1, wherein k is exactly 100.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 101,
+      "text": "The material of claim 1, wherein k is exactly 101.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 102,
+      "text": "The material of claim 1, wherein k is exactly 102.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 103,
+      "text": "The material of claim 1, wherein k is exactly 103.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 104,
+      "text": "The material of claim 1, wherein k is exactly 104.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 105,
+      "text": "The material of claim 1, wherein k is exactly 105.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 106,
+      "text": "The material of claim 1, wherein k is exactly 106.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 107,
+      "text": "The material of claim 1, wherein k is exactly 107.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 108,
+      "text": "The material of claim 1, wherein k is exactly 108.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 109,
+      "text": "The material of claim 1, wherein k is exactly 109.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 110,
+      "text": "The material of claim 1, wherein k is exactly 110.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 111,
+      "text": "The material of claim 1, wherein k is exactly 111.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 112,
+      "text": "The material of claim 1, wherein k is exactly 112.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 113,
+      "text": "The material of claim 1, wherein k is exactly 113.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 114,
+      "text": "The material of claim 1, wherein k is exactly 114.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 115,
+      "text": "The material of claim 1, wherein k is exactly 115.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 116,
+      "text": "The material of claim 1, wherein k is exactly 116.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 117,
+      "text": "The material of claim 1, wherein k is exactly 117.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 118,
+      "text": "The material of claim 1, wherein k is exactly 118.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Exact component count is mathematically specified; it does not identify or enable every physical material having that count."
+    },
+    {
+      "claim_number": 119,
+      "text": "The material of claim 1, wherein k is exactly 119.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 120,
+      "text": "The material of claim 1, wherein k is exactly 120.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 121,
+      "text": "The material of claim 1, wherein k is exactly 121.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 122,
+      "text": "The material of claim 1, wherein k is exactly 122.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 123,
+      "text": "The material of claim 1, wherein k is exactly 123.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 124,
+      "text": "The material of claim 1, wherein k is exactly 124.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 125,
+      "text": "The material of claim 1, wherein k is exactly 125.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 126,
+      "text": "The material of claim 1, wherein k is exactly 126.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 127,
+      "text": "The material of claim 1, wherein k is exactly 127.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 128,
+      "text": "The material of claim 1, wherein k is exactly 128.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 129,
+      "text": "The material of claim 1, wherein k is exactly 129.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 130,
+      "text": "The material of claim 1, wherein k is exactly 130.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 131,
+      "text": "The material of claim 1, wherein k is exactly 131.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 132,
+      "text": "The material of claim 1, wherein k is exactly 132.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 133,
+      "text": "The material of claim 1, wherein k is exactly 133.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 134,
+      "text": "The material of claim 1, wherein k is exactly 134.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 135,
+      "text": "The material of claim 1, wherein k is exactly 135.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 136,
+      "text": "The material of claim 1, wherein k is exactly 136.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 137,
+      "text": "The material of claim 1, wherein k is exactly 137.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 138,
+      "text": "The material of claim 1, wherein k is exactly 138.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022",
+        "0073"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Includes hypothetical constituents necessarily because the count exceeds 118; existence and preparation are unsupported."
+    },
+    {
+      "claim_number": 139,
+      "text": "A single-element material having a closed elemental inventory consisting of one constituent selected from atomic numbers 1 through 138, wherein the constituent has normalized atomic fraction one and every other elemental constituent has fraction zero.",
+      "textual_support_paragraphs": [
+        "0013",
+        "0015",
+        "0016"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Unary scope includes known materials and hypothetical elements. No novelty or preparation finding is made."
+    },
+    {
+      "claim_number": 140,
+      "text": "The material of claim 1, wherein every selected constituent has atomic number from 1 through 118.",
+      "textual_support_paragraphs": [
+        "0004",
+        "0015"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 141,
+      "text": "The material of claim 1, wherein at least one selected constituent is selected from atomic numbers 119 through 138.",
+      "textual_support_paragraphs": [
+        "0004",
+        "0015",
+        "0041"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 142,
+      "text": "The material of claim 1, wherein k is 118 and the inventory includes each atomic number from 1 through 118.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0016",
+        "0022"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 143,
+      "text": "The material of claim 1, wherein k is 138 and the inventory includes each atomic number from 1 through 138.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0019",
+        "0022"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 144,
+      "text": "The material of claim 1, wherein each x_i is the number of atoms of constituent i divided by the total number of atoms in the specified inventory.",
+      "textual_support_paragraphs": [
+        "0010"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 145,
+      "text": "The material of claim 1, wherein the proportions are specified as mole-of-atoms fractions using the same atom inventory as an atomic-fraction description.",
+      "textual_support_paragraphs": [
+        "0010"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 146,
+      "text": "The material of claim 1, wherein each x_i is the mass of constituent i divided by the total mass of the specified inventory.",
+      "textual_support_paragraphs": [
+        "0011"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 147,
+      "text": "The material of claim 1, wherein an isotope-qualified positive finite effective mass M_i is specified for every selected constituent under a stated mass-allocation and compatible-unit convention, elemental atomic fractions a_i and elemental mass fractions w_i satisfy w_i = a_i M_i/sum_j(a_j M_j) and a_i = (w_i/M_i)/sum_j(w_j/M_j), and the fractions x_i of claim 1 equal a_i when the expressly identified basis is atomic fraction or w_i when it is mass fraction.",
+      "textual_support_paragraphs": [
+        "0010",
+        "0011",
+        "0047"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 148,
+      "text": "The material of claim 1, wherein x_i = n_i/q for a positive integer q and positive integers n_i whose sum is q, with q unrestricted except that q is at least k.",
+      "textual_support_paragraphs": [
+        "0017",
+        "0073",
+        "0074"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 149,
+      "text": "The material of claim 148, wherein gcd(q,n_1,...,n_k) = 1.",
+      "textual_support_paragraphs": [
+        "0017",
+        "0074"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 150,
+      "text": "The material of claim 1, wherein x_i = n_i/D with D = 10^19, each n_i is a positive integer, and sum(n_i) = D.",
+      "textual_support_paragraphs": [
+        "0018",
+        "0031"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 151,
+      "text": "The material of claim 150, wherein k-1 constituents each have fraction 1/D and the remaining constituent has fraction (D-k+1)/D.",
+      "textual_support_paragraphs": [
+        "0019",
+        "0072"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 152,
+      "text": "The material of claim 1, wherein each fraction satisfies a selected closed interval [L_i,U_i], with 0 <= L_i <= U_i <= 1, and the joint composition satisfies sum(x_i) = 1 and x_i > 0.",
+      "textual_support_paragraphs": [
+        "0029",
+        "0030"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 153,
+      "text": "The material of claim 152, wherein each interval is selected by integers p,l,u with 0 <= p <= 19 and 0 <= l <= u <= 10^p, its endpoints being l/10^p and u/10^p.",
+      "textual_support_paragraphs": [
+        "0023"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 154,
+      "text": "The material of claim 153, wherein at least one interval is an elementary cell [j/10^p,(j+1)/10^p] for an integer j with 0 <= j < 10^p.",
+      "textual_support_paragraphs": [
+        "0023",
+        "0024"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 155,
+      "text": "The material of claim 1, wherein k = 2 and fractions x_A and x_B obey x_A in [L,U] and x_B = 1-x_A in [1-U,1-L], with 0 < x_A < 1.",
+      "textual_support_paragraphs": [
+        "0024",
+        "0029",
+        "0069"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 156,
+      "text": "The material of claim 155, wherein 10^-18 <= x_A <= 10^-17, corresponding to 10^-16% through 10^-15%, inclusive.",
+      "textual_support_paragraphs": [
+        "0025",
+        "0026",
+        "0070"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 157,
+      "text": "The material of claim 156, wherein x_A is exactly 10^-18 and x_B is exactly 1-10^-18.",
+      "textual_support_paragraphs": [
+        "0070"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 158,
+      "text": "The material of claim 156, wherein x_A is exactly 10^-17 and x_B is exactly 1-10^-17.",
+      "textual_support_paragraphs": [
+        "0070"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 159,
+      "text": "The material of claim 156, wherein x_A = n/10^19 for an integer n from 10 through 100 and x_B = 1-x_A.",
+      "textual_support_paragraphs": [
+        "0070"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 160,
+      "text": "The material of claim 159, wherein x_A lies in a selected subrange [l/10^19,u/10^19] for integers 10 <= l <= u <= 100.",
+      "textual_support_paragraphs": [
+        "0070"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 161,
+      "text": "The material of claim 1, wherein k = 2 and each constituent has fraction 1/2, corresponding to 50% each.",
+      "textual_support_paragraphs": [
+        "0027"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 162,
+      "text": "The material of claim 1, wherein k = 2 and the constituent fractions are exactly 1/3 and 2/3.",
+      "textual_support_paragraphs": [
+        "0017",
+        "0071"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 163,
+      "text": "The material of claim 1, wherein every constituent has fraction 1/k.",
+      "textual_support_paragraphs": [
+        "0072"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 164,
+      "text": "The material of claim 1, wherein every constituent has fraction at least 10^-19.",
+      "textual_support_paragraphs": [
+        "0018",
+        "0020"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 165,
+      "text": "The material of claim 1, wherein at least one constituent has positive fraction less than 10^-19.",
+      "textual_support_paragraphs": [
+        "0020"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 166,
+      "text": "The material of claim 152, wherein at least one interval is [j times 10^(e-r),(j+1) times 10^(e-r)], with integer e from -19 through -1, nonnegative integer r, and integer j from 10^r through 10^(r+1)-1.",
+      "textual_support_paragraphs": [
+        "0028"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 167,
+      "text": "The material of claim 152, wherein at least one interval has arbitrary rational endpoints r and s satisfying 0 <= r <= s <= 1.",
+      "textual_support_paragraphs": [
+        "0027"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 168,
+      "text": "The material of claim 152, wherein the endpoints are specified as real target values and the selected fractions satisfy their interval constraints and exact normalization.",
+      "textual_support_paragraphs": [
+        "0016",
+        "0027"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 169,
+      "text": "The material of claim 1, wherein each selected element i has a conditional atom-count isotope-state distribution y_i,a,s with nonnegative entries summing to one over its specified isotope-state inventory, and wherein the whole-inventory nuclide-state fractions are specified on the same basis as the fractions x_i of claim 1: on an atomic-fraction basis, the nuclide-state fraction is x_i y_i,a,s; and on a mass-fraction basis, for each positively populated isotope-state entry the nuclide-state fraction is x_i y_i,a,s mu_i,a,s/M_i, where mu_i,a,s is a qualified positive mass per counted atom under an expressly identified mass-allocation convention and M_i is the positive finite sum of y_i,a,s mu_i,a,s over the positively populated entries of element i; a zero-population entry has whole-inventory fraction zero on either basis.",
+      "textual_support_paragraphs": [
+        "0010",
+        "0011",
+        "0046",
+        "0047",
+        "0050"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 170,
+      "text": "The material of claim 169, wherein at least one constituent is specified by a single mass number and nuclear state with conditional fraction one.",
+      "textual_support_paragraphs": [
+        "0046",
+        "0047"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 171,
+      "text": "The material of claim 169, wherein at least one constituent has two or more specified isotope-state entries of positive conditional fraction.",
+      "textual_support_paragraphs": [
+        "0047"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 172,
+      "text": "The material of claim 169, wherein each specified nuclear state has a source-qualified identifier that distinguishes a ground state from any specified isomer or excited state.",
+      "textual_support_paragraphs": [
+        "0048",
+        "0049"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 173,
+      "text": "The material of claim 169, wherein a radioactive inventory is identified at a specified time and includes daughter constituents that fall within its stated denominator.",
+      "textual_support_paragraphs": [
+        "0050"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 174,
+      "text": "The material of claim 1, wherein a crystalline constituent phase has a specified structural model, site occupations, substitution rules and charge-balance constraints.",
+      "textual_support_paragraphs": [
+        "0033",
+        "0034"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 175,
+      "text": "The material of claim 1, wherein an amorphous constituent phase is identified by a stated preparation history and a specified characterization convention for detectable crystalline fraction.",
+      "textual_support_paragraphs": [
+        "0035"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 176,
+      "text": "The material of claim 1, wherein molecular identity includes specified connectivity, stereochemistry, salt or solvate state, and hydration state where present.",
+      "textual_support_paragraphs": [
+        "0035"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 177,
+      "text": "The material of claim 1, wherein the material is a polymer specified by repeat units, incorporated ratios, sequence distribution, molecular-weight distribution and network architecture.",
+      "textual_support_paragraphs": [
+        "0036"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 178,
+      "text": "The material of claim 1, wherein the material is a composite specified by constituent identities, dimensions, orientations, interfaces and dispersion.",
+      "textual_support_paragraphs": [
+        "0036"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 179,
+      "text": "The material of claim 1, wherein the material has a specified layer order and layer dimensions, with local composition distinguished from whole-specimen composition.",
+      "textual_support_paragraphs": [
+        "0013",
+        "0037"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 180,
+      "text": "The material of claim 1, wherein the material has a specified spatial composition field x_i(r,t) and a density-weighted inventory convention for deriving the whole-specimen fractions.",
+      "textual_support_paragraphs": [
+        "0037"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 181,
+      "text": "The material of claim 1, wherein the stated elemental inventory describes a specified single phase.",
+      "textual_support_paragraphs": [
+        "0033",
+        "0034"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 182,
+      "text": "The material of claim 1, wherein the stated elemental inventory describes a specified multiphase assemblage and each phase is separately identified.",
+      "textual_support_paragraphs": [
+        "0033",
+        "0036"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 183,
+      "text": "The material of claim 178, wherein constituent volume fractions and void fraction are specified separately from elemental atomic fractions under stated temperature, pressure, density and volume-assignment conventions.",
+      "textual_support_paragraphs": [
+        "0012",
+        "0036"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 184,
+      "text": "The material of claim 1, wherein a nominal target fraction is accompanied by a separately specified measurement uncertainty or tolerance and the associated sampling convention.",
+      "textual_support_paragraphs": [
+        "0042",
+        "0043"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 185,
+      "text": "The material of claim 1, wherein the product composition is specified separately from its feed proportions and from local measured composition.",
+      "textual_support_paragraphs": [
+        "0013",
+        "0038"
+      ],
+      "category": "material",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Full claimed physical scope is not demonstrated as enabled. Individual material identity, preparation, availability and use remain to be established.",
+      "review_issue": "Universal or generic composition coverage lacks composition-specific preparation and structure support; known embodiments may defeat novelty."
+    },
+    {
+      "claim_number": 186,
+      "text": "A method of constructing a candidate-material record, comprising selecting a constituent support and composition basis; assigning positive normalized target fractions whose sum is one; recording structural, preparation, measurement and property fields; and recording an evidence status for each field without treating an unresolved field as a successful preparation.",
+      "textual_support_paragraphs": [
+        "0005",
+        "0007",
+        "0073",
+        "0074",
+        "0075"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 187,
+      "text": "The method of claim 186, comprising enumerating every increasing k-tuple of selected atomic numbers for a specified k from 1 through 138 and attaching a recognized or hypothetical status to each label.",
+      "textual_support_paragraphs": [
+        "0015",
+        "0073"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 188,
+      "text": "The method of claim 186, comprising enumerating positive integer tuples with sum q for successive unrestricted positive denominators q, and retaining primitive common-denominator representations.",
+      "textual_support_paragraphs": [
+        "0017",
+        "0073",
+        "0074"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 189,
+      "text": "The method of claim 186, comprising enumerating positive integer tuples with sum D = 10^19 and storing their normalized fractions as exact integer numerator and denominator strings.",
+      "textual_support_paragraphs": [
+        "0018",
+        "0070",
+        "0073"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 190,
+      "text": "The method of claim 186, comprising selecting every endpoint pair l,u with 0 <= l <= u <= 10^p for each p from 0 through 19, forming correlated component boxes, and rejecting boxes that fail the applicable normalization and positivity tests.",
+      "textual_support_paragraphs": [
+        "0023",
+        "0029",
+        "0032",
+        "0074"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 191,
+      "text": "The method of claim 186, comprising selecting component bounds L_i and U_i for the selected support; testing 0 <= L_i <= U_i <= 1 for every component and sum_i(L_i) <= 1 <= sum_i(U_i); when those tests are satisfied, constructing a preliminary nonnegative normalized witness z_i within the bounds by starting at z_i = L_i and allocating the residual 1-sum_i(L_i) in support order without exceeding any U_i until sum_i(z_i) = 1; and assigning as the positive target fractions of claim 186 a strictly positive normalized witness within those bounds, using the preliminary witness as that target only when every coordinate is positive and otherwise constructing a separate strictly positive witness before target assignment.",
+      "textual_support_paragraphs": [
+        "0029",
+        "0030",
+        "0032",
+        "0075"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 192,
+      "text": "The method of claim 191, further comprising, for a box satisfying the tests of claim 191, determining strictly positive feasibility for the selected support by requiring U_i > 0 for every component; when sum_i(L_i) = 1, additionally requiring L_i > 0 for every component and using the lower-bound vector as the positive witness; and when sum_i(L_i) < 1, setting epsilon = min(min_i(U_i), (1-sum_i(L_i))/(2k)), replacing each lower bound by L'_i = max(L_i, epsilon), and constructing a strictly positive normalized witness by allocating the residual 1-sum_i(L'_i) within the unchanged upper bounds; and assigning the resulting positive witness as the target fractions of claim 186.",
+      "textual_support_paragraphs": [
+        "0029",
+        "0030",
+        "0032"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 193,
+      "text": "The method of claim 186, comprising selecting a k-component box with 0 <= L_i <= U_i <= 1; calculating b_i = max(1, ceiling(D L_i)) and c_i = min(D-k+1, floor(D U_i)) for D = 10^19; accepting the box as numerically feasible on the positive D-grid only when b_i <= c_i for every component and sum_i(b_i) <= D <= sum_i(c_i); and, on acceptance, constructing integers n_i within those bounds with sum_i(n_i) = D by residual allocation and assigning x_i = n_i/D as the positive normalized target fractions of claim 186.",
+      "textual_support_paragraphs": [
+        "0018",
+        "0029",
+        "0031",
+        "0032"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 194,
+      "text": "A method of constructing a particle-system record, comprising identifying a species or model-qualified candidate, experimental status, quantum numbers, population or occupation convention, energy conditions, host or confinement, lifetime information, preparation and observation fields, while specifying a construction level that avoids counting a particle and its containing composite as independent copies of the same inventory.",
+      "textual_support_paragraphs": [
+        "0051",
+        "0052",
+        "0053",
+        "0056"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 195,
+      "text": "The method of claim 194, wherein the record concerns a host-dependent excitation and specifies the host material, excitation mechanism, conditions, lifetime or linewidth, and observable.",
+      "textual_support_paragraphs": [
+        "0054"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 196,
+      "text": "The method of claim 194, wherein an unconfirmed entity is marked hypothetical, with a model identifier, parameter assumptions, conservation constraints and experimental-search status, without assigning unsupported measured properties.",
+      "textual_support_paragraphs": [
+        "0055",
+        "0056"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 197,
+      "text": "The method of claim 186, comprising recording a property scenario with a baseline material and state, controlled change, proposed response, mechanism, conditions, discriminating test and evidence status.",
+      "textual_support_paragraphs": [
+        "0057",
+        "0058",
+        "0059",
+        "0060"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 198,
+      "text": "The method of claim 197, comprising recording a credible alternative response and its mechanism as a separate conditional hypothesis, rather than asserting opposite responses for the same specimen under identical conditions.",
+      "textual_support_paragraphs": [
+        "0057",
+        "0061",
+        "0062",
+        "0063",
+        "0064",
+        "0065",
+        "0066",
+        "0067",
+        "0068"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    },
+    {
+      "claim_number": 199,
+      "text": "The method of claim 186, comprising labeling attributed source teachings ESTABLISHED, stated mathematical or model results CALCULATED, unperformed tests or preparations PROPOSED, and possibilities without adequate support UNSUPPORTED, and retaining source and condition information with the labels.",
+      "textual_support_paragraphs": [
+        "0005",
+        "0041",
+        "0042",
+        "0075"
+      ],
+      "category": "method",
+      "novelty_assessed": false,
+      "textual_support_status": "Mapped to the stated paragraphs; textual mapping is not an enablement opinion.",
+      "enablement_status": "Mathematical record operations are described. Full legal enablement, eligibility and novelty are not determined; no material preparation is established by these operations.",
+      "review_issue": "The record-operation scope requires separate novelty, eligibility and inventorship review; record generation does not supply missing physical preparation."
+    }
+  ],
+  "overall_status": "Textual support mapped; full-scope physical enablement unestablished; novelty not assessed for every claim. No filing or experiments performed.",
+  "source_paragraph_count": 80,
+  "edition": "preparation-evidence application 2026-09-30",
+  "prepared_date": "2026-09-30",
+  "source_path": "documents/provisional_application_preparation_evidence_2026-09-30.md",
+  "source_sha256": "c9b8f44b79f970379054cf89508cb81853906dbb825a6bca476eb4b0216f575e",
+  "derived_from": {
+    "path": "documents/provisional_application_property_evidence_2026-09-30.md",
+    "sha256": "b311bc0f86eb4b15955a275ba0539bcc8753a59052411739288a645f7ee2476e",
+    "repository_baseline": "b31593f84ccb26a19cf1642d4a6115cb6a1543f0"
+  },
+  "changed_claims": [],
+  "changed_paragraphs": [
+    "0065"
+  ]
+}
