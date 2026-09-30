@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 82,
+  "file_count": 83,
   "files": [
     {
       "path": ".editorconfig",
@@ -98,8 +98,8 @@
     },
     {
       "path": ".github/workflows/verify.yml",
-      "size_bytes": 1643,
-      "sha256": "9129eb9640a167cdda2cd93fe944fcc7836dcdbe204e7dd468188960aca79bbc"
+      "size_bytes": 1772,
+      "sha256": "8d60ec70bd65167b3caaf3c8ab98f32279064cb81d5ce8a456e33ba961349571"
     },
     {
       "path": ".gitignore",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 13948,
-      "sha256": "8da03132ef6e0fc45212284173f10b4ad3451eee26365abbd6825ef7676025fe"
+      "size_bytes": 14361,
+      "sha256": "2acb51c418bac5a2c94e0be834a6d04f8844a11483fad7bcb21b08f962257390"
     },
     {
       "path": "data/claim_support_map.json",
@@ -253,8 +253,8 @@
     },
     {
       "path": "documents/consolidated_review_edition.md",
-      "size_bytes": 9803,
-      "sha256": "f34619340ae8dd5f1907680ab0bada814a4bc870814574241f663b3c0c7863ee"
+      "size_bytes": 10302,
+      "sha256": "0d4b221fd01cfdc8e065dd756f87673e2164ece8224de17a99dca388169c177c"
     },
     {
       "path": "documents/current_status_addendum.md",
@@ -338,8 +338,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 13048,
-      "sha256": "87d20881cc6513c4acc17905562e7ba2354ebc1c020bb385110ddfd455174180"
+      "size_bytes": 13481,
+      "sha256": "f02258205a0824f4823071b73601203a99e482a7989cc2b958201fadce76ea09"
     },
     {
       "path": "pyproject.toml",
@@ -422,14 +422,19 @@
       "sha256": "8c745ef93c7846d51072adf5ee376174c567feb1405bfa3a9dda94533777f0ed"
     },
     {
+      "path": "tools/pdf/test_pdf_outputs.py",
+      "size_bytes": 13063,
+      "sha256": "cf2cdb40a11fca96b98c011e461fe7068b59e79de289ff23ed5eeb8de85fa26d"
+    },
+    {
       "path": "tools/update_manifest.py",
       "size_bytes": 4785,
       "sha256": "196a2def8e20b8e31bf14f4ff3f2b3dc162472eba45766db9e370eeb5b9ec0e4"
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 59335,
-      "sha256": "7b862cf802ddef4bf984172c5c889ad902ccbbafd9517a8c8422f038b77c30ed"
+      "size_bytes": 59437,
+      "sha256": "56e2f78e0ddb3137ea28788186b274c036f5684ab80c98385487141918366630"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

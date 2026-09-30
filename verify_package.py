@@ -94,7 +94,7 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     "documents/pdf/materials_provisional_review_2026-09-30.pdf",
     "documents/pdf/materials_identity_data_review_annex.pdf",
     "tools/pdf/build_consolidated_review.py", "tools/pdf/build_identity_review_annex.py",
-    "tools/pdf/requirements-pdf.txt",
+    "tools/pdf/requirements-pdf.txt", "tools/pdf/test_pdf_outputs.py",
 }
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
@@ -530,7 +530,8 @@ def check_workflow(root: Path) -> None:
                      "cancel-in-progress: true", "python-version: '3.12'",
                      "os: [ubuntu-24.04, windows-2025]", "fail-fast: false",
                      "persist-credentials: false", "run: python -B verify_package.py --self-test",
-                     "run: python -m ruff check --no-cache ."):
+                     "run: python -m ruff check --no-cache .",
+                     "run: python -B tools/pdf/test_pdf_outputs.py"):
         require(fragment in content, f"Reviewed workflow control missing: {fragment}")
     # SHA syntax is checked here; release identities are reviewed before a
     # manifest update. This permits reviewed Dependabot pin updates.

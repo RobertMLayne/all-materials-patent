@@ -52,6 +52,8 @@ This checks [SHA-256 integrity records](integrity_manifest.json), the expected a
 
 Use `python verify_package.py --self-test` to also check ten baseline and nine extension deliberate failure cases, including altered/missing artifacts, unreviewed extra files, report drift, unsafe paths, unsupported observation/discovery status, and stale review-PDF sources after an integrity refresh. The new cases also reject a promoted filing status, overlapping page map, lost annex record count and missing source link. This optional mode creates and removes temporary copies under the ignored `generated_reports/` directory; it leaves the supplied artifacts unchanged and checks fixture import isolation.
 
+The [output-safeguard regressions](tools/pdf/test_pdf_outputs.py) run separately with `python -B tools/pdf/test_pdf_outputs.py`. They use standard-library synthetic-file fixtures to verify exclusive publication, ownership-aware rollback and preservation of a substituted output; no PDF authoring dependencies or real PDF generation are required. CI is configured to run them on both supported operating systems.
+
 To run only the mathematical verifier, use its `verify` subcommand:
 
 ```console
