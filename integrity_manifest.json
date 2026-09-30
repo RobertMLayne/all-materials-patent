@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 17984,
-      "sha256": "d4ebe7e79a6e50f5441768d22e3f2136b38a7da25ab9f6e425a8de7a14dbbddd"
+      "size_bytes": 18105,
+      "sha256": "2ae41729bdcaa11fca34c5fac4430900c92c83692c7ddf7605dca68d0c2f500d"
     },
     {
       "path": "data/claim_support_map.json",
@@ -288,8 +288,8 @@
     },
     {
       "path": "documents/alloy_claim_comparison_2026-09-30.md",
-      "size_bytes": 8518,
-      "sha256": "db87c2bfd69e75fb5002dc37e705878bf909241b53c34617429fb546507f9eea"
+      "size_bytes": 12527,
+      "sha256": "d6cd6ca3a7303bcb88505f6aaa6c0a0cdad8d72959406c6df7c06be839b7cb30"
     },
     {
       "path": "documents/applicant_evidence_intake.md",
@@ -408,8 +408,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 26567,
-      "sha256": "90f4d206489f443c35b1cea67eb97bdc5988694bae8974c951c9dc877066ef81"
+      "size_bytes": 27559,
+      "sha256": "8833374635fed7ead3ce8ab0c352ed7e51df327ee0f20bd7564290a4ae03f0dc"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
