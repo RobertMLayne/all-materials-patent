@@ -61,6 +61,18 @@ PREPARATION_AUTHORING = {
     "tools/pdf/build_consolidated_review.py": "data/application_preparation_evidence_authoring_2026-09-30/layout.py.txt",
     "tools/pdf/build_identity_review_annex.py": "data/application_preparation_evidence_authoring_2026-09-30/output_helper.py.txt",
 }
+ELECTRICAL_SOURCE = "documents/provisional_application_electrical_evidence_2026-09-30.md"
+ELECTRICAL_MAP = "data/claim_support_map_electrical_evidence_2026-09-30.json"
+ELECTRICAL_EDITION = "data/application_electrical_evidence_2026-09-30.json"
+ELECTRICAL_PDF = "documents/pdf/provisional_application_electrical_evidence_2026-09-30.pdf"
+ELECTRICAL_REVIEW = "data/electrical_source_review_2026-09-30.json"
+ELECTRICAL_BASELINE = "e9471e2dc71560e930d062a16b40ae4732d1e90a"
+ELECTRICAL_HEADING = "### Electrical evidence associated with [0066]: preparation, coordinates and conditional response"
+ELECTRICAL_AUTHORING = {
+    "tools/pdf/build_working_application.py": "data/application_electrical_evidence_authoring_2026-09-30/builder.py.txt",
+    "tools/pdf/build_consolidated_review.py": "data/application_electrical_evidence_authoring_2026-09-30/layout.py.txt",
+    "tools/pdf/build_identity_review_annex.py": "data/application_electrical_evidence_authoring_2026-09-30/output_helper.py.txt",
+}
 REVIEW_AUTHORING_FILES = {
     "builder": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
     "helper": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
@@ -150,6 +162,8 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     "documents/application_property_evidence_2026-09-30.md", *PROPERTY_AUTHORING.values(),
     PREPARATION_SOURCE, PREPARATION_MAP, PREPARATION_EDITION, PREPARATION_PDF, PREPARATION_REVIEW,
     "documents/application_preparation_evidence_2026-09-30.md", *PREPARATION_AUTHORING.values(),
+    ELECTRICAL_SOURCE, ELECTRICAL_MAP, ELECTRICAL_EDITION, ELECTRICAL_PDF, ELECTRICAL_REVIEW,
+    "documents/application_electrical_evidence_2026-09-30.md", *ELECTRICAL_AUTHORING.values(),
 }
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
@@ -649,6 +663,169 @@ def check_preparation_application(root: Path) -> dict:
             "filing_or_earlier_entitlement_or_enablement_certified": False}
 
 
+def evidence_block(source: str, heading: str, next_paragraph: str) -> str:
+    """Bound an unnumbered addition by a unique heading and paragraph start."""
+    require(source.count(heading) == 1 and re.search(r"^" + re.escape(heading) + r"$", source, re.M),
+            "Missing or ambiguous evidence-block heading")
+    remaining = source.split(heading, 1)[1]
+    boundaries = list(re.finditer(r"^\[" + re.escape(next_paragraph) + r"\] ", remaining, re.M))
+    require(len(boundaries) == 1, "Missing or ambiguous evidence-block terminator")
+    return remaining[:boundaries[0].start()]
+
+
+def evidence_block_counts(block: str) -> dict:
+    """Count displayed source blocks using the Markdown table convention."""
+    prose, rows = 0, 0
+    for raw in block.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if line.startswith("|"):
+            cells = [cell.strip() for cell in line.strip("|").split("|")]
+            if all(re.fullmatch(r":?-+:?", cell.replace(" ", "")) for cell in cells):
+                continue
+            rows += 1
+        else:
+            prose += 1
+    return {"complete_prose_blocks": prose, "complete_table_rows_including_headers": rows,
+            "checked_in_order": True}
+
+
+def check_electrical_application(root: Path) -> dict:
+    """Bind the new electrical edition to its preserved predecessor and inputs.
+
+    A numerical wt% fit coordinate differs from a normalized mass fraction.
+    Captured rendering checks do not repeat PDF parsing or establish enablement.
+    """
+    preceding_bytes = (root / PREPARATION_SOURCE).read_bytes()
+    source_bytes = (root / ELECTRICAL_SOURCE).read_bytes()
+    preceding, application = preceding_bytes.decode("utf-8"), source_bytes.decode("utf-8")
+    support = load_json(root / ELECTRICAL_MAP)
+    require(support.get("source_path") == ELECTRICAL_SOURCE and support.get("source_sha256")
+            == hashlib.sha256(source_bytes).hexdigest(), "Electrical source/map hash differs")
+    require(support.get("prepared_date") == "2026-09-30" and support.get("derived_from") == {
+        "path": PREPARATION_SOURCE, "sha256": hashlib.sha256(preceding_bytes).hexdigest(),
+        "repository_baseline": ELECTRICAL_BASELINE,
+    }, "Electrical source derivation differs")
+    require(support.get("changed_paragraphs") == ["0066"] and support.get("changed_claims") == [],
+            "Electrical change inventory differs")
+    require(support.get("claims") == load_json(root / PREPARATION_MAP).get("claims"),
+            "Electrical map changed individual claim records")
+    claim_result = check_claims(application, support)
+    require(re.findall(r"^\*\*Claim (\d+)\.\*\* (.+)$", application, re.M)
+            == re.findall(r"^\*\*Claim (\d+)\.\*\* (.+)$", preceding, re.M),
+            "Electrical candidate claims differ from preparation edition")
+    old_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", preceding, re.M))
+    new_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", application, re.M))
+    require(old_paragraphs.keys() == new_paragraphs.keys()
+            and {n for n in old_paragraphs if old_paragraphs[n] != new_paragraphs[n]} == {"0066"},
+            "Unexpected electrical paragraph changes")
+    boundary = "## 1 Technical field\n"
+    require(application.count(boundary) == preceding.count(boundary) == 1,
+            "Electrical technical-field boundary differs")
+    preface, body = application.split(boundary)
+    lines = [line for line in preface.splitlines() if line]
+    require(len(lines) == 4 and lines[0]
+            == "# Provisional materials disclosure with attributed electrical evidence - 30 September 2026"
+            and lines[1] == "Prepared **30 September 2026** | **Prospective unfiled electrical-evidence edition** for applicant and patent counsel.",
+            "Electrical edition preface differs")
+    block = evidence_block(body, ELECTRICAL_HEADING, "0067")
+    old_body = preceding.split(boundary, 1)[1]
+    old_body = old_body.replace("[0066] " + old_paragraphs["0066"], "[0066] " + new_paragraphs["0066"], 1)
+    old_reference, new_reference = PurePosixPath(PREPARATION_MAP).name, PurePosixPath(ELECTRICAL_MAP).name
+    require(old_body.count(old_reference) == body.count(new_reference) == 1
+            and old_reference not in body, "Electrical companion-map reference differs")
+    old_body = old_body.replace(old_reference, new_reference, 1)
+    require(body.replace(ELECTRICAL_HEADING + block, "", 1) == old_body,
+            "Electrical source changed outside the identified additions")
+    check_registry(load_json(root / "data/entity_register.json"), application)
+
+    review = load_json(root / ELECTRICAL_REVIEW)
+    threshold = review.get("threshold_coordinate", {})
+    require(threshold.get("reported_percent") == "0.443"
+            and threshold.get("calculated_fraction") == str(Fraction("0.443") / 100)
+            and threshold.get("evidence_status") == "CALCULATED representation of source-reported given threshold"
+            and threshold.get("exact_product_assay") is False,
+            "Electrical threshold coordinate or basis differs")
+    require(review.get("fit_convention") == {
+        "x": "Numerical PEDOT:PSS wt%", "y": "log10 conductivity in S/m", "t": "1.92",
+        "sigma_0": "0.952", "fraction_prefactor_rescaling": "sigma0_fraction=sigma0_percent*100^t",
+        "new_curve_generated": False,
+    }, "Electrical fit convention or prefactor rescaling differs")
+    table_rows = review.get("source_table_rows")
+    require(table_rows == [
+        ["Electrical quantity", "Reported value", "Basis and source", "Evidence"],
+        ["Fixed SWCNT loading", "0.35 wt%; 0.26 vol%", "Figure 2 composite loading", "ESTABLISHED report"],
+        ["PEDOT:PSS threshold", "0.443 wt%", "Figure 2 given threshold; numerical wt%", "ESTABLISHED source coordinate"],
+        ["Exponent t", "1.92", "Figure 2 fitted exponent", "CALCULATED source fit"],
+        ["Prefactor sigma_0", "0.952", "Figure 2; S/m in numerical wt% convention", "CALCULATED source fit"],
+        ["Moulding temperature", "453 K", "Supplement page 3", "ESTABLISHED report"],
+        ["xi_rr; xi_ss; xi_sr", "About 1; 10; 5 nm", "Supplement page 3 effective coupling lengths", "CALCULATED model"],
+    ], "Electrical reviewed source table differs")
+    table = ["| " + " | ".join(table_rows[0]) + " |", "| --- | --- | --- | --- |"]
+    table.extend("| " + " | ".join(row) + " |" for row in table_rows[1:])
+    require(block.count("\n".join(table)) == 1, "Electrical source table differs from reviewed rows")
+    require(all(fragment in block for fragment in (
+        "p_c/100 = 443/100000", "sigma_0,f = sigma_0,p 100^t",
+        "PROPOSED present verification:", "UNSUPPORTED extensions",
+    )), "Electrical coordinate conversion or conditional evidence boundary differs")
+    require(review.get("review_date") == "2026-09-30" and review.get("doi") == "10.1038/nnano.2011.40"
+            and all(review.get(key) is False for key in
+                    ("applicant_experiment_asserted", "physical_enablement_certified", "filing_asserted")),
+            "Electrical source factual status differs")
+
+    edition = load_json(root / ELECTRICAL_EDITION)
+    require(edition.get("prepared_date") == "2026-09-30"
+            and edition.get("edition_status") == "prospective unfiled electrical-evidence edition"
+            and edition.get("repository_baseline") == ELECTRICAL_BASELINE
+            and edition.get("filing_asserted") is False and edition.get("physical_enablement_certified") is False,
+            "Electrical edition baseline or factual status differs")
+    expected_sources = {ELECTRICAL_SOURCE, ELECTRICAL_MAP, ELECTRICAL_REVIEW, PREPARATION_REVIEW,
+                        *ELECTRICAL_AUTHORING, "documents/drawings/composition_simplex.svg",
+                        "documents/drawings/material_record_sequence.svg"}
+    entries = edition.get("sources", [])
+    require(len(entries) == len(expected_sources) and {entry["path"] for entry in entries} == expected_sources,
+            "Electrical PDF source inventory differs")
+    for entry in entries:
+        snapshot = ELECTRICAL_AUTHORING.get(entry["path"])
+        require(entry.get("snapshot_path") == snapshot, "Electrical authoring snapshot identity differs")
+        require(hashlib.sha256(safe_path(root, snapshot or entry["path"]).read_bytes()).hexdigest() == entry["sha256"],
+                "Electrical PDF captured-source hash differs")
+    pdf = edition.get("pdf", {})
+    require(pdf.get("path") == ELECTRICAL_PDF and type(pdf.get("page_count")) is int
+            and pdf["page_count"] > 0, "Invalid electrical PDF identity")
+    data = safe_path(root, pdf["path"]).read_bytes()
+    require(len(data) == pdf.get("size_bytes") and hashlib.sha256(data).hexdigest() == pdf.get("sha256"),
+            "Electrical PDF bytes differ from record")
+    locations = edition.get("location_map", {})
+    expected_locations = {f"paragraph_{n:04d}" for n in range(1, 81)} | {f"claim_{n}" for n in range(1, 200)}
+    require(locations.keys() == expected_locations
+            and all(type(page) is int and 1 <= page <= pdf["page_count"] for page in locations.values()),
+            "Electrical recorded PDF locations differ")
+    require(edition.get("complete_numbered_text_checked") == {"paragraphs": 80, "claims": 199}
+            and edition.get("vector_drawings_checked") == 2
+            and edition.get("complete_property_table_checked") == {
+                "data_rows": 10, "columns": 4, "headers_and_complete_rows_checked_in_order": True},
+            "Electrical recorded application content checks differ")
+    preparation = evidence_block(body, PREPARATION_HEADING, "0066")
+    require(edition.get("complete_preparation_text_checked") == evidence_block_counts(preparation),
+            "Electrical inherited preparation coverage differs")
+    require(edition.get("complete_electrical_text_checked") == evidence_block_counts(block),
+            "Electrical complete rendered block checks differ")
+    visual = edition.get("visual_review", {})
+    require(isinstance(visual, dict) and visual.get("status") == "completed"
+            and visual.get("pages_reviewed") == list(range(1, pdf["page_count"] + 1))
+            and visual.get("remaining_actionable_visual_findings") == 0,
+            "Electrical recorded appearance review is incomplete")
+    return {**claim_result, "changed_paragraphs": ["0066"], "changed_claims": [],
+            "recorded_pdf_pages": pdf["page_count"], "recorded_pdf_locations_checked": len(locations),
+            "captured_sources_checked": len(entries), "source_table_data_rows_checked": len(table_rows) - 1,
+            "threshold_mass_fraction_recomputed": str(Fraction("0.443") / 100),
+            "preceding_hydrogel_blocks_and_remaining_body_preserved": True,
+            "pdf_parsed_or_appearance_rechecked_by_this_check": False,
+            "filing_or_earlier_entitlement_or_enablement_certified": False}
+
+
 def check_local_links(root: Path) -> int:
     checked = 0
     for relative in EXPECTED_FILES:
@@ -1047,6 +1224,7 @@ def run(root: Path) -> dict:
     working_result = check_working_application(root)
     property_result = check_property_application(root)
     preparation_result = check_preparation_application(root)
+    electrical_result = check_electrical_application(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -1068,6 +1246,7 @@ def run(root: Path) -> dict:
             "working_application_edition_verification": working_result,
             "property_application_edition_verification": property_result,
             "preparation_application_edition_verification": preparation_result,
+            "electrical_application_edition_verification": electrical_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -1422,6 +1601,54 @@ def self_test(root: Path) -> dict:
             finally:
                 for path, data in originals.items():
                     path.write_bytes(data)
+        electrical_path, electrical_map_path = fixture / ELECTRICAL_SOURCE, fixture / ELECTRICAL_MAP
+        electrical_review_path = fixture / ELECTRICAL_REVIEW
+        originals = {path: path.read_bytes() for path in
+                     (electrical_path, electrical_map_path, electrical_review_path)}
+        check_electrical_application(fixture)
+        for case, expected_error in (
+            ("electrical_source_map_drift_rejected", "Electrical source/map hash differs"),
+            ("electrical_claim_drift_rejected_after_consistent_map_update", "Electrical map changed individual claim records"),
+            ("electrical_inherited_hydrogel_drift_rejected_after_consistent_map_update", "Electrical source changed outside the identified additions"),
+            ("electrical_threshold_basis_drift_rejected_after_consistent_records", "Electrical threshold coordinate or basis differs"),
+        ):
+            try:
+                text = originals[electrical_path].decode("utf-8")
+                support = json.loads(originals[electrical_map_path])
+                if case == "electrical_source_map_drift_rejected":
+                    electrical_path.write_bytes(originals[electrical_path] + b"\nUnadopted addition.\n")
+                else:
+                    if "claim_drift" in case:
+                        old_claim = support["claims"][0]["text"]
+                        new_claim = old_claim.replace("positive normalized fraction", "nonnegative normalized fraction", 1)
+                        require(old_claim != new_claim, "Electrical claim fixture lost its target")
+                        text = text.replace("**Claim 1.** " + old_claim, "**Claim 1.** " + new_claim, 1)
+                        support["claims"][0]["text"] = new_claim
+                    elif "hydrogel_drift" in case:
+                        row = "| 1.25 | 65.1 | 184 | 95 |"
+                        require(text.count(row) == 1, "Electrical hydrogel fixture lost its target")
+                        text = text.replace(row, row.replace("| 95 |", "| 96 |"), 1)
+                    else:
+                        # Keep the edited prose, map and review mutually
+                        # consistent while confusing percent with fraction.
+                        conversion = "p_c/100 = 443/100000"
+                        require(text.count(conversion) == 1, "Electrical threshold fixture lost its target")
+                        text = text.replace(conversion, "p_c/100 = 443/1000", 1)
+                        review = json.loads(originals[electrical_review_path])
+                        review["threshold_coordinate"]["calculated_fraction"] = "443/1000"
+                        electrical_review_path.write_text(json.dumps(review), encoding="utf-8")
+                    electrical_path.write_text(text, encoding="utf-8", newline="\n")
+                    support["source_sha256"] = hashlib.sha256(electrical_path.read_bytes()).hexdigest()
+                    electrical_map_path.write_text(json.dumps(support), encoding="utf-8")
+                try:
+                    check_electrical_application(fixture)
+                except VerificationError as error:
+                    require(expected_error in str(error), "Electrical mutation failed for another reason: " + str(error))
+                    extended.append(case)
+                require(case in extended, "Electrical mutation was accepted: " + case)
+            finally:
+                for path, data in originals.items():
+                    path.write_bytes(data)
         for path in ("../outside.txt", "/absolute.txt", "C:/outside.txt", "a\\b"):
             try:
                 safe_path(fixture, path)
@@ -1611,7 +1838,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 26, f"Expected 26 extension failure checks, got {len(extended)}")
+    require(len(extended) == 30, f"Expected 30 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,

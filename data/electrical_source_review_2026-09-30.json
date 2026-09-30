@@ -1,0 +1,138 @@
+{
+  "review_date": "2026-09-30",
+  "doi": "10.1038/nnano.2011.40",
+  "published_date_reported": "2011-04-10",
+  "primary_article": "https://www.nature.com/articles/nnano.2011.40",
+  "acquired_public_sources": [
+    {
+      "source": "https://www.nature.com/articles/nnano.2011.40",
+      "bytes": 313461,
+      "sha256": "a4827d16f7fceacad47813c10503f2fa3f9ce50ea9680a1ffda96b44b3385804",
+      "path": "kyrylyuk_2011_publisher_page.html"
+    },
+    {
+      "source": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fnnano.2011.40/MediaObjects/41565_2011_BFnnano201140_MOESM583_ESM.pdf",
+      "bytes": 406286,
+      "sha256": "57fdfb8120b8fc48d768a4fe5a0014b650dc90ba141c757e053a06882058dcb3",
+      "path": "kyrylyuk_2011_supplementary_information.pdf"
+    },
+    {
+      "source": "https://www.nature.com/articles/nnano.2011.40/figures/2",
+      "bytes": 170262,
+      "sha256": "b91982dbf77ad69ec16bd9c63eb103284d68cd798cc2b54c8c1d9708568af56b",
+      "path": "kyrylyuk_2011_figure_2_page.html"
+    },
+    {
+      "source": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fnnano.2011.40/MediaObjects/41565_2011_Article_BFnnano201140_Fig2_HTML.jpg",
+      "bytes": 29966,
+      "sha256": "5e48c1a783010d2591b3103bd98a8efd0ade1a7f0c614f57298af76053449855",
+      "path": "kyrylyuk_2011_figure_2.jpg"
+    }
+  ],
+  "main_text_access": {
+    "url": "https://www.researchgate.net/publication/51037816_Controlling_electrical_percolation_in_multicomponent_carbon_nanotube_dispersions",
+    "identity": "Original journal text uploaded by coauthor Paul van der Schoot; title, authors, DOI, journal and pages match.",
+    "locator": "Printed page 368, Methods: Materials, SWCNT dispersions, SWCNT-polymer composite preparation, Analysis; printed page 365, fabrication and Figure 2.",
+    "access": "Cached primary text inspected; native public GET 403, PDF click internal error. No raw main PDF bytes/hash or whole-page visual verification.",
+    "upload_date_reported": "2015-05-14",
+    "upload_date_is_original_publication_date": false
+  },
+  "inspection": {
+    "supplementary_pdf_pages": 5,
+    "supplementary_relevant_pages_visually_reviewed": [
+      1,
+      2,
+      3
+    ],
+    "supplementary_all_pages_text_reviewed": true,
+    "figure_2_graphic_visually_reviewed": true,
+    "figure_2_pixels": [
+      946,
+      692
+    ],
+    "points_digitized": false
+  },
+  "source_table_rows": [
+    [
+      "Electrical quantity",
+      "Reported value",
+      "Basis and source",
+      "Evidence"
+    ],
+    [
+      "Fixed SWCNT loading",
+      "0.35 wt%; 0.26 vol%",
+      "Figure 2 composite loading",
+      "ESTABLISHED report"
+    ],
+    [
+      "PEDOT:PSS threshold",
+      "0.443 wt%",
+      "Figure 2 given threshold; numerical wt%",
+      "ESTABLISHED source coordinate"
+    ],
+    [
+      "Exponent t",
+      "1.92",
+      "Figure 2 fitted exponent",
+      "CALCULATED source fit"
+    ],
+    [
+      "Prefactor sigma_0",
+      "0.952",
+      "Figure 2; S/m in numerical wt% convention",
+      "CALCULATED source fit"
+    ],
+    [
+      "Moulding temperature",
+      "453 K",
+      "Supplement page 3",
+      "ESTABLISHED report"
+    ],
+    [
+      "xi_rr; xi_ss; xi_sr",
+      "About 1; 10; 5 nm",
+      "Supplement page 3 effective coupling lengths",
+      "CALCULATED model"
+    ]
+  ],
+  "threshold_coordinate": {
+    "reported_percent": "0.443",
+    "calculated_fraction": "443/100000",
+    "evidence_status": "CALCULATED representation of source-reported given threshold",
+    "exact_product_assay": false
+  },
+  "fit_convention": {
+    "x": "Numerical PEDOT:PSS wt%",
+    "y": "log10 conductivity in S/m",
+    "t": "1.92",
+    "sigma_0": "0.952",
+    "fraction_prefactor_rescaling": "sigma0_fraction=sigma0_percent*100^t",
+    "new_curve_generated": false
+  },
+  "scope_boundaries": [
+    "Component loading is not complete elemental inventory.",
+    "Fitted parameters and effective coupling lengths are derived/model quantities.",
+    "Experimental mixtures were cooperative; antagonistic percolation was theory/Monte Carlo, with experimental confirmation outside the reported scope.",
+    "New verification and credible alternative remain PROPOSED and unperformed.",
+    "Whole-product composition and new response remain UNSUPPORTED."
+  ],
+  "remaining_gaps": [
+    "Lot identifiers, impurity chemical identities and retained-product amounts despite reported grades/levels",
+    "Resolved blend denominator and retained composition",
+    "Contact spacing and film thickness",
+    "Applied current and complete thermal protocol",
+    "Raw values, replicate uncertainty and fit domain"
+  ],
+  "rights": "No permissive license established for this source; bounded factual summaries only. Raw copyrighted files/graphics stay in ignored local source review.",
+  "applicant_experiment_asserted": false,
+  "physical_enablement_certified": false,
+  "filing_asserted": false,
+  "reported_materials": {
+    "locator": "Cached original Methods, printed page 368",
+    "SDS": "Merck, 90%",
+    "PEDOT_PSS_stock": "H.C. Starck Clevios P; 0.4 wt% PEDOT, 0.8 wt% PSS in stock dispersion",
+    "HiPCO_received": "10-15 wt% organic impurities; 5 wt% metal catalyst in reported received batch",
+    "stock_percentages_are_dry_composite_loadings": false
+  }
+}
