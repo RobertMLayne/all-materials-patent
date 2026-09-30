@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 121,
+  "file_count": 130,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,28 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 21075,
-      "sha256": "9b7618d58cefb8cd93515ea2347609589afaeeaf356548e57124bbf36ef6d150"
+      "size_bytes": 22173,
+      "sha256": "8bdcf19e22f84f45e2ca619b127c4c7ca39e601e3d59c217eb6cd479ea735e8c"
+    },
+    {
+      "path": "data/application_electrical_evidence_2026-09-30.json",
+      "size_bytes": 13575,
+      "sha256": "2a2ae48cd453299997d8bbf6b626f3b674b7298b9b4daf5cb853817bea9ea392"
+    },
+    {
+      "path": "data/application_electrical_evidence_authoring_2026-09-30/builder.py.txt",
+      "size_bytes": 18888,
+      "sha256": "eca63b8c6ccc3a8e62ebd133e7f4198d27998bf5acd844db88b926982134340f"
+    },
+    {
+      "path": "data/application_electrical_evidence_authoring_2026-09-30/layout.py.txt",
+      "size_bytes": 28711,
+      "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8"
+    },
+    {
+      "path": "data/application_electrical_evidence_authoring_2026-09-30/output_helper.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
     },
     {
       "path": "data/application_preparation_evidence_2026-09-30.json",
@@ -182,6 +202,11 @@
       "sha256": "b75a45d1a92705eb2f45fcea18e9817f8fb75d86c3661cff0d1b3ae43a8bf87e"
     },
     {
+      "path": "data/claim_support_map_electrical_evidence_2026-09-30.json",
+      "size_bytes": 153968,
+      "sha256": "764df80922ef6a6e69dbd43872ac1463df34a7955ff575499436f84770603eb2"
+    },
+    {
       "path": "data/claim_support_map_preparation_evidence_2026-09-30.json",
       "size_bytes": 153967,
       "sha256": "846c73ab7868daa8e83bcbfe8f577650651f09eaaec65321a618f22f62b66f66"
@@ -195,6 +220,11 @@
       "path": "data/claim_support_map_working_2026-09-30.json",
       "size_bytes": 154073,
       "sha256": "2f91092c37f1c730cbd930a38e539cf89f33347fc36c4843bb782d971fad8f4d"
+    },
+    {
+      "path": "data/electrical_source_review_2026-09-30.json",
+      "size_bytes": 5312,
+      "sha256": "47e7e9bc747814f736adaf889910d67a15915dbcf6635c6c7d341d4ea1f077b1"
     },
     {
       "path": "data/entity_register.json",
@@ -357,6 +387,11 @@
       "sha256": "12faebd03a1459627f5a872501fe9318c46534cdfd349c583e6cd108f2794c37"
     },
     {
+      "path": "documents/application_electrical_evidence_2026-09-30.md",
+      "size_bytes": 7316,
+      "sha256": "6423b64e8234c89b092cf360248de6f34594675945b707fd0ada7fefe17121e5"
+    },
+    {
       "path": "documents/application_preparation_evidence_2026-09-30.md",
       "size_bytes": 7015,
       "sha256": "b61789e2564515a60e170b8c9e52a7afe74b60c3c25e61e334f262cf72e2dfcb"
@@ -442,6 +477,11 @@
       "sha256": "a8306290a92c9433271dd1711e1bdabfd1c79779877897c99186638f3d6e0d7f"
     },
     {
+      "path": "documents/pdf/provisional_application_electrical_evidence_2026-09-30.pdf",
+      "size_bytes": 172615,
+      "sha256": "1bbc26fd640e202b701f792de316865d964634e231bcc4f6958cbf9a91b78959"
+    },
+    {
       "path": "documents/pdf/provisional_application_preparation_evidence_2026-09-30.pdf",
       "size_bytes": 167520,
       "sha256": "8fe0a7d5c093548da2034b1648432b27504c793ab55f90fc739b3dd6fe917c0b"
@@ -470,6 +510,11 @@
       "path": "documents/provisional_application_draft.md",
       "size_bytes": 73191,
       "sha256": "3c3a6f9b42ca87ffedfd97435ac0476d3301f7f1d650b4c2b9f0fb0b66b15949"
+    },
+    {
+      "path": "documents/provisional_application_electrical_evidence_2026-09-30.md",
+      "size_bytes": 96305,
+      "sha256": "36125cd499bd20cd64bdad9ca599d65f2e637fc2a130a552471f9c83c7f3284a"
     },
     {
       "path": "documents/provisional_application_preparation_evidence_2026-09-30.md",
@@ -508,8 +553,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 33754,
-      "sha256": "4df9d2eafee26c3f27ae45ae3a00e285a6dda98039e89b7ff459da9a60dae774"
+      "size_bytes": 35798,
+      "sha256": "e6a7aaf4ee53dfe9942d1c7c853992b81fd9074eb86c49e3a70993e1deb799c8"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -603,8 +648,8 @@
     },
     {
       "path": "tools/pdf/build_working_application.py",
-      "size_bytes": 17299,
-      "sha256": "b89217f330dc4d1d10eafdaadd178a5f434f99e8102469532a79899661519639"
+      "size_bytes": 18888,
+      "sha256": "eca63b8c6ccc3a8e62ebd133e7f4198d27998bf5acd844db88b926982134340f"
     },
     {
       "path": "tools/pdf/requirements-pdf.txt",
@@ -623,8 +668,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 102922,
-      "sha256": "a8fd62ea76a5bfcf2d2782c36e6b664279e9673e56149a32a09cefd5959d077b"
+      "size_bytes": 118741,
+      "sha256": "fa4c3c3a5be26d2eb44ad6146404f10ba1736af840157e9f4bf286ac3545eba5"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
