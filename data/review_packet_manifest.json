@@ -1,0 +1,419 @@
+{
+  "schema_version": 1,
+  "prepared_date": "2026-09-30",
+  "status": "review_only_unfiled",
+  "recorded_utc": "2026-09-30T07:46:01.325676+00:00",
+  "baseline_commit": "2a066f181152a61f8bd9c2b1e168f1a00c5c1648",
+  "date_meaning": "Preparation/review record only; no filing or earliest public-availability date certified.",
+  "artifacts": [
+    {
+      "path": "documents/pdf/materials_provisional_review_2026-09-30.pdf",
+      "bytes": 714484,
+      "sha256": "ec4af77607dec8c4c9d6916d194fd26b10d3edbb15a37d64e8ea5cbd232d3f3b",
+      "review_pages": 66
+    },
+    {
+      "path": "documents/pdf/materials_identity_data_review_annex.pdf",
+      "bytes": 1392801,
+      "sha256": "a808672808c7861f03b94a06771996b5fcaf8f94973b94612b131a1df37ba8fd",
+      "review_pages": 795
+    }
+  ],
+  "sources": [
+    {
+      "path": "data/claim_support_map.json",
+      "bytes": 154015,
+      "sha256": "b75a45d1a92705eb2f45fcea18e9817f8fb75d86c3661cff0d1b3ae43a8bf87e"
+    },
+    {
+      "path": "data/entity_register.json",
+      "bytes": 78047,
+      "sha256": "289802cadf603fbda5e95b68249ab8e7eda5447b995e060449e76cd93bebf60a"
+    },
+    {
+      "path": "data/entity_register_notes.md",
+      "bytes": 5860,
+      "sha256": "20f4d9ad36b44714bbd2c7dc52b3ee782fda15f1802061521706aaf1a645521d"
+    },
+    {
+      "path": "data/nuclear_archive/README.md",
+      "bytes": 5016,
+      "sha256": "79239e699e93637fc182f2aae2e2f8928608a62ff62578a7acb168bc63ed1d69"
+    },
+    {
+      "path": "data/nuclear_archive/archive_counts.json",
+      "bytes": 939,
+      "sha256": "1bda5cded1e7a93a87bcfad0d49df926a885b43fc8e197878ac9e24c849575e0"
+    },
+    {
+      "path": "data/nuclear_archive/column_schema.json",
+      "bytes": 4084,
+      "sha256": "eee403e123cb105d2b27f896814f2b482e0e955b6ca7230740b64616eec9b62a"
+    },
+    {
+      "path": "data/nuclear_archive/license_attribution.md",
+      "bytes": 2048,
+      "sha256": "fd1d9c613e117819262aaed2cde77bd123c37f5d6bc446c448445a92211f8e72"
+    },
+    {
+      "path": "data/nuclear_archive/nubase_4.mas20.txt",
+      "bytes": 761906,
+      "sha256": "1585a5eea86c5e17e90307c7e6e786d060049c4039e392a261ff6db977df9859"
+    },
+    {
+      "path": "data/nuclear_archive/schema_header.txt",
+      "bytes": 2418,
+      "sha256": "cd282b2cc046a198ef74fa2967f92ae76a579f2f240b31315a70478fd4a3975a"
+    },
+    {
+      "path": "data/nuclear_archive/source_metadata.json",
+      "bytes": 4274,
+      "sha256": "fa53b1fb73d8723f4867177785ea77b69509336375f0b86aae0447320b012faf"
+    },
+    {
+      "path": "data/particle_archive/README.md",
+      "bytes": 9095,
+      "sha256": "06c93eeae4d6316b8d3acfaafa68753433658ee6c97c9d4ac1ebe415275519d4"
+    },
+    {
+      "path": "data/particle_archive/pdg2026_identity_archive.json",
+      "bytes": 1062960,
+      "sha256": "8ad5d6a07350ec3a9daf2d3ee37b32185a692d886365d5510c36bdf0e85800c6"
+    },
+    {
+      "path": "data/particle_archive/pdg2026_identity_metadata.json",
+      "bytes": 15198,
+      "sha256": "46c11d87c8756d5cbd3ea92890a4501734cf08def4389d2e8b5a5a43e4fcc1ca"
+    },
+    {
+      "path": "documents/current_status_addendum.md",
+      "bytes": 3220,
+      "sha256": "a0e9452ae97926f07e7c9dfc681e9612ee1ddece4ed53ce7862972e1750fccf6"
+    },
+    {
+      "path": "documents/drawings/composition_simplex.svg",
+      "bytes": 2448,
+      "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+    },
+    {
+      "path": "documents/drawings/material_record_sequence.svg",
+      "bytes": 2410,
+      "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+    },
+    {
+      "path": "documents/full_scope_completion_audit.md",
+      "bytes": 17861,
+      "sha256": "a2c438e2310ddaeb897cdabceb275f4c10681bd750f5d6ad12f5f7c5b876d954"
+    },
+    {
+      "path": "documents/pdf/provisional_application_draft.pdf",
+      "bytes": 146255,
+      "sha256": "a8306290a92c9433271dd1711e1bdabfd1c79779877897c99186638f3d6e0d7f"
+    },
+    {
+      "path": "documents/provisional_application_draft.md",
+      "bytes": 73191,
+      "sha256": "3c3a6f9b42ca87ffedfd97435ac0476d3301f7f1d650b4c2b9f0fb0b66b15949"
+    },
+    {
+      "path": "documents/reference_entry_support.md",
+      "bytes": 42672,
+      "sha256": "91b195ba1ac6c2a9426874c570f7dbbcd363e2b95d62a082f8a4bc0ee8f37a72"
+    },
+    {
+      "path": "documents/technical_scope_supplement.md",
+      "bytes": 23950,
+      "sha256": "51933a785f5c0cda2cdfab4dc64fe53401f6f9c1919b299870c4375e0b4d1c8d"
+    }
+  ],
+  "core": {
+    "front_matter_pages": 2,
+    "parts": [
+      {
+        "label": "A",
+        "title": "Original application working draft (29 September 2026)",
+        "page_count": 27,
+        "physical_start": 3,
+        "physical_end": 29
+      },
+      {
+        "label": "B",
+        "title": "Technical definitions and accounting",
+        "page_count": 6,
+        "physical_start": 30,
+        "physical_end": 35
+      },
+      {
+        "label": "C",
+        "title": "Five material families and proposed study cards",
+        "page_count": 13,
+        "physical_start": 36,
+        "physical_end": 48
+      },
+      {
+        "label": "D",
+        "title": "Current publication and filing status",
+        "page_count": 1,
+        "physical_start": 49,
+        "physical_end": 49
+      },
+      {
+        "label": "E",
+        "title": "Full requested-scope audit and unresolved facts",
+        "page_count": 6,
+        "physical_start": 50,
+        "physical_end": 55
+      },
+      {
+        "label": "F",
+        "title": "Per-claim page and textual-support map",
+        "page_count": 11,
+        "physical_start": 56,
+        "physical_end": 66
+      }
+    ],
+    "original_numbered_paragraphs": 80,
+    "candidate_claims": 199,
+    "original_application_pages_preserved": 27,
+    "original_pages_pixel_identical_at_72_dpi": 27,
+    "new_body_token_omissions": 0,
+    "out_of_page_word_boxes": 0,
+    "authoring_builder_sha256": "f3a2c60b3e6317918ba8533d5caf9bc3985eb9edab21c094d7f843cd418bfec0",
+    "font_files": [
+      {
+        "name": "arial.ttf",
+        "sha256": "b3658eadae55e682b5f69eb64c439c1ecc8f196c0bb8d4756d145d13bc86476a"
+      },
+      {
+        "name": "arialbd.ttf",
+        "sha256": "e8f4e3baf6cc35fed6fcce3a540e8b39e8f6cda1d22a28f2ec8f526fef7a43f5"
+      },
+      {
+        "name": "ariali.ttf",
+        "sha256": "86b32db9a06f9694e2a3760c42e5117bcdc5cc1255bb5186ca8ce0305e22f288"
+      },
+      {
+        "name": "arialbi.ttf",
+        "sha256": "267a411525980d648f10a7222a6ff1ebe4d4feeefbf9b3100cae2b5cfab5594a"
+      }
+    ],
+    "original_text_geometry_content_streams_unchanged": true,
+    "font_repair": "Replaced one unsupported superscript-minus display unit with cm^-1 and rebuilt the core; scientific unit meaning unchanged.",
+    "rebuild_observed_utc": "2026-09-30T08:44:52.306102+00:00",
+    "prior_recorded_authoring_builder_sha256": "b3e4ebd84c2da4314f7b28e26e856baf0899f89c671b6e6c47d5f20137c6283a",
+    "authoring_builder_path": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
+    "authoring_helper_path": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
+    "authoring_helper_sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+    "reproduction": {
+      "observed_utc": "2026-09-30T11:29:37.562552+00:00",
+      "byte_identical_to_previous_review_pdf": true,
+      "same_extracted_text_pages": 66,
+      "same_content_stream_pages": 66,
+      "pixel_identical_pages_at_scale_1_3": 66,
+      "retained_builder_and_helper_equal_used_bytes_before_and_after": true,
+      "all_input_source_hashes_unchanged": true,
+      "scope": "This unchanged core was reproduced with the exact retained builder/helper snapshots. These source links record actual code used; source fidelity, rendering and hashes do not certify physical or legal sufficiency."
+    }
+  },
+  "annex": {
+    "sections": [
+      {
+        "key": "scope",
+        "title": "Review scope and source identities",
+        "first_page": 1,
+        "last_page": 1,
+        "printed_record_count": 12
+      },
+      {
+        "key": "register-context",
+        "title": "Entity vocabulary: scope and source notes",
+        "first_page": 2,
+        "last_page": 4,
+        "printed_record_count": 2
+      },
+      {
+        "key": "elements",
+        "title": "Complete element-label register (138 rows)",
+        "first_page": 5,
+        "last_page": 19,
+        "printed_record_count": 138
+      },
+      {
+        "key": "particle-categories",
+        "title": "Complete particle-category vocabulary (17 rows)",
+        "first_page": 20,
+        "last_page": 21,
+        "printed_record_count": 17
+      },
+      {
+        "key": "nuclear-provenance",
+        "title": "NUBASE2020: provenance, chronology and attribution",
+        "first_page": 22,
+        "last_page": 24,
+        "printed_record_count": 4
+      },
+      {
+        "key": "nuclear-schema",
+        "title": "NUBASE2020: exact header and complete raw-column schema",
+        "first_page": 25,
+        "last_page": 26,
+        "printed_record_count": 2
+      },
+      {
+        "key": "nuclear-rows",
+        "title": "Complete NUBASE2020 snapshot (5,843 source-state rows)",
+        "first_page": 27,
+        "last_page": 476,
+        "printed_record_count": 5843
+      },
+      {
+        "key": "pdg-provenance",
+        "title": "PDG 2026.0: selections, schema and attribution",
+        "first_page": 477,
+        "last_page": 480,
+        "printed_record_count": 3
+      },
+      {
+        "key": "pdginfo",
+        "title": "Complete PDG source metadata rows (10 rows)",
+        "first_page": 481,
+        "last_page": 481,
+        "printed_record_count": 10
+      },
+      {
+        "key": "pdgparticle",
+        "title": "Complete selected pdgparticle records (1,170 rows)",
+        "first_page": 482,
+        "last_page": 570,
+        "printed_record_count": 1170
+      },
+      {
+        "key": "pdgid",
+        "title": "Complete selected pdgid records (450 rows)",
+        "first_page": 571,
+        "last_page": 597,
+        "printed_record_count": 450
+      },
+      {
+        "key": "pdgitem",
+        "title": "Complete selected pdgitem records (3,270 rows)",
+        "first_page": 598,
+        "last_page": 734,
+        "printed_record_count": 3270
+      },
+      {
+        "key": "pdgitem_map",
+        "title": "Complete selected pdgitem_map records (1,341 rows)",
+        "first_page": 735,
+        "last_page": 790,
+        "printed_record_count": 1341
+      },
+      {
+        "key": "pdgdoc",
+        "title": "Complete selected pdgdoc records (71 rows)",
+        "first_page": 791,
+        "last_page": 795,
+        "printed_record_count": 71
+      }
+    ],
+    "source_scope_checks": {
+      "element_label_rows": 138,
+      "recognized_element_rows": 118,
+      "hypothetical_element_rows": 20,
+      "particle_vocabulary_categories": 17,
+      "nuclear_source_rows": 5843,
+      "nuclear_unique_A_Z_pairs": 3558,
+      "nuclear_header_lines": 25,
+      "nuclear_raw_columns_reconstruct": true,
+      "nuclear_overflow_rows": 2,
+      "nuclear_maximum_width": 217,
+      "nuclear_literal_2021_discovery_field_ids": [
+        "NUBASE2020:Z047:A127:S2"
+      ],
+      "pdg_selected_table_rows": {
+        "pdgparticle": 1170,
+        "pdgid": 450,
+        "pdgitem": 3270,
+        "pdgitem_map": 1341,
+        "pdgdoc": 71
+      },
+      "pdginfo_rows": 10,
+      "pdg_groups_without_charge_state_rows": 12,
+      "pdg_all_selected_columns_and_values_retained": true,
+      "physical_existence_assessments_performed": 0,
+      "preparation_or_patent_enablement_assessed": false
+    },
+    "ordered_printed_record_ids": 12333,
+    "printed_body_lines_checked": 40184,
+    "independent_source_reconstruction": "All retained raw nuclear rows/column slices and selected PDG rows/columns/value types matched the source archives without importing the authoring builder.",
+    "minimum_body_font_points": 9.0,
+    "minimum_navigation_font_points": 8.5
+  },
+  "appearance_review": {
+    "core_pages_rendered": 66,
+    "annex_pages_rendered": 795,
+    "annex_contact_sheets_inspected": 27,
+    "annex_enlarged_pages": [
+      1,
+      23,
+      25,
+      26,
+      27,
+      36,
+      50,
+      114,
+      213,
+      435,
+      476,
+      477,
+      478,
+      479,
+      482,
+      569,
+      571,
+      702,
+      756,
+      791,
+      795
+    ],
+    "finding": "No actionable clipping, overlap, missing-glyph or header/footer collision found in the rendered review scopes.",
+    "limits": "Full-page thumbnails plus selected enlarged pages; this is not individual magnified review of every source character or a filing-format certification.",
+    "core_contact_sheets_inspected": 6,
+    "core_enlarged_pages": [
+      1,
+      2,
+      34,
+      40,
+      44,
+      56,
+      66
+    ],
+    "core_review_record_updated_utc": "2026-09-30T08:46:30.357280+00:00",
+    "core_reproduction_review": {
+      "observed_utc": "2026-09-30T11:34:26.776230+00:00",
+      "pages_rendered": 66,
+      "contact_sheets_inspected": 6,
+      "enlarged_pages": [
+        1,
+        2,
+        40,
+        56
+      ],
+      "finding": "No actionable clipping, overlap, missing-glyph or header/footer collision found; all 66 pages also pixel-identical to the previous reviewed core at render scale 1.3.",
+      "limits": "Full-page thumbnails and four enlarged pages; not individual magnified inspection of every character or filing-format certification."
+    }
+  },
+  "observed_authoring_software": {
+    "reportlab": "4.4.9",
+    "pypdf": "6.10.0",
+    "pdfplumber": "0.11.9",
+    "pypdfium2": "5.13.0"
+  },
+  "limitations": [
+    "Only named dated source selections are included; no entire current/future nuclear/particle universe.",
+    "The core and identity companion remain separate artifacts; include both when relying on their actual contents.",
+    "Identity, arithmetic, source fidelity and appearance do not prove physical enablement, novelty or inventorship.",
+    "No filing, priority entitlement, applicant experiments, universal patent bar or ready-to-submit status is asserted.",
+    "Routine package checks verify artifact/source hashes and recorded navigation consistency; they do not rerender PDFs or establish patentability."
+  ]
+}

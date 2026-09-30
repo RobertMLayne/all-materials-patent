@@ -1,0 +1,3 @@
+# Optional authoring only. Routine verify_package.py remains standard-library-only.
+reportlab==4.4.9
+pypdf==6.10.0

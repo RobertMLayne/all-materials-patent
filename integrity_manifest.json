@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 75,
+  "file_count": 86,
   "files": [
     {
       "path": ".editorconfig",
@@ -98,8 +98,8 @@
     },
     {
       "path": ".github/workflows/verify.yml",
-      "size_bytes": 1643,
-      "sha256": "9129eb9640a167cdda2cd93fe944fcc7836dcdbe204e7dd468188960aca79bbc"
+      "size_bytes": 1772,
+      "sha256": "8d60ec70bd65167b3caaf3c8ab98f32279064cb81d5ce8a456e33ba961349571"
     },
     {
       "path": ".gitignore",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 12011,
-      "sha256": "f11ce43c9c280da777afdd7238b8348eb8a13cf6fd3d7777ddd7748a9419724c"
+      "size_bytes": 14676,
+      "sha256": "f195af7cdde446f85f81c9321bb7dc4c30be877b1b17f9ba72be0aba59eeb6e6"
     },
     {
       "path": "data/claim_support_map.json",
@@ -247,6 +247,31 @@
       "sha256": "d682a91e7af133a164861de53964f482faa893392fda653d7071b46c327a2bc1"
     },
     {
+      "path": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
+      "size_bytes": 28420,
+      "sha256": "f3a2c60b3e6317918ba8533d5caf9bc3985eb9edab21c094d7f843cd418bfec0"
+    },
+    {
+      "path": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
+      "path": "data/review_packet_manifest.json",
+      "size_bytes": 14671,
+      "sha256": "9037d1632aba8a559df22184912316494a9b523b0c63f0b26ddc43d391650f67"
+    },
+    {
+      "path": "documents/applicant_evidence_intake.md",
+      "size_bytes": 11484,
+      "sha256": "12faebd03a1459627f5a872501fe9318c46534cdfd349c583e6cd108f2794c37"
+    },
+    {
+      "path": "documents/consolidated_review_edition.md",
+      "size_bytes": 12305,
+      "sha256": "4731ea601819b6356a45c1c4cde2c9cbb4c582cf1d384993c54cf8b3d66d46f1"
+    },
+    {
       "path": "documents/current_status_addendum.md",
       "size_bytes": 3220,
       "sha256": "a0e9452ae97926f07e7c9dfc681e9612ee1ddece4ed53ce7862972e1750fccf6"
@@ -263,8 +288,8 @@
     },
     {
       "path": "documents/full_scope_completion_audit.md",
-      "size_bytes": 17611,
-      "sha256": "339a0ed0712f5f1e938f10b9040f24dd8e2c9e7cb82a17ed1148aaaca44e7b2a"
+      "size_bytes": 17861,
+      "sha256": "a2c438e2310ddaeb897cdabceb275f4c10681bd750f5d6ad12f5f7c5b876d954"
     },
     {
       "path": "documents/github_settings.md",
@@ -275,6 +300,16 @@
       "path": "documents/pct_defensive_disclosure_blueprint.md",
       "size_bytes": 37796,
       "sha256": "96e2fc525cce1f8a05a3f301b46096b5031410d517ad70887d00d9eb98974bd1"
+    },
+    {
+      "path": "documents/pdf/materials_identity_data_review_annex.pdf",
+      "size_bytes": 1392801,
+      "sha256": "a808672808c7861f03b94a06771996b5fcaf8f94973b94612b131a1df37ba8fd"
+    },
+    {
+      "path": "documents/pdf/materials_provisional_review_2026-09-30.pdf",
+      "size_bytes": 714484,
+      "sha256": "ec4af77607dec8c4c9d6916d194fd26b10d3edbb15a37d64e8ea5cbd232d3f3b"
     },
     {
       "path": "documents/pdf/pct_defensive_disclosure_blueprint.pdf",
@@ -303,8 +338,8 @@
     },
     {
       "path": "documents/reference_entry_support.md",
-      "size_bytes": 10118,
-      "sha256": "d046e64524b88f54190d8dde0633226b22c5ef077637c09c370fab69f6392ea6"
+      "size_bytes": 42672,
+      "sha256": "91b195ba1ac6c2a9426874c570f7dbbcd363e2b95d62a082f8a4bc0ee8f37a72"
     },
     {
       "path": "documents/restart_checkpoint.md",
@@ -313,13 +348,13 @@
     },
     {
       "path": "documents/technical_scope_supplement.md",
-      "size_bytes": 20132,
-      "sha256": "f59e61f87096326d99447847a9f7161c8a6f72ca92b8d53ce45029ad419c53df"
+      "size_bytes": 23950,
+      "sha256": "51933a785f5c0cda2cdfab4dc64fe53401f6f9c1919b299870c4375e0b4d1c8d"
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 9332,
-      "sha256": "53ce621fa63c1c0ccaa9eb54f18598d82a606223db29f589804baa9572ba385f"
+      "size_bytes": 15966,
+      "sha256": "b0aab1a69e9fe6782f523b436dd281946fa0041ac31bfc868a41045366a05a52"
     },
     {
       "path": "pyproject.toml",
@@ -387,14 +422,34 @@
       "sha256": "8cc409fd345cfcc3cbbc92f6132d101d884516d6059585f5ab720d077761bc71"
     },
     {
+      "path": "tools/pdf/build_consolidated_review.py",
+      "size_bytes": 28420,
+      "sha256": "f3a2c60b3e6317918ba8533d5caf9bc3985eb9edab21c094d7f843cd418bfec0"
+    },
+    {
+      "path": "tools/pdf/build_identity_review_annex.py",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
+      "path": "tools/pdf/requirements-pdf.txt",
+      "size_bytes": 115,
+      "sha256": "8c745ef93c7846d51072adf5ee376174c567feb1405bfa3a9dda94533777f0ed"
+    },
+    {
+      "path": "tools/pdf/test_pdf_outputs.py",
+      "size_bytes": 17052,
+      "sha256": "529f077d5efa3db15fd67f4c107bc64e684e3bfab7b71b83d6e81b3162895069"
+    },
+    {
       "path": "tools/update_manifest.py",
       "size_bytes": 4785,
       "sha256": "196a2def8e20b8e31bf14f4ff3f2b3dc162472eba45766db9e370eeb5b9ec0e4"
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 49499,
-      "sha256": "e766e05097e95add1652aff3f9b61fe3c0f5cf938d89336702802d126fb5fc65"
+      "size_bytes": 64480,
+      "sha256": "ff12beab7afc448ca7711aca37b20dea56084874f462d9bd9dc6310bf7f687f6"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
