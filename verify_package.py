@@ -306,8 +306,11 @@ def check_working_application(root: Path) -> dict:
     require(support.get("changed_claims") == sorted(WORKING_CHANGED_CLAIMS)
             and support.get("changed_paragraphs") == sorted(WORKING_CHANGED_PARAGRAPHS),
             "Working change inventory differs")
-    paragraphs = lambda text: dict(re.findall(r"^\[(\d{4})\] (.+)$", text, re.M))
-    claims = lambda text: {int(n): body for n, body in re.findall(r"^\*\*Claim (\d+)\.\*\* (.+)$", text, re.M)}
+    def paragraphs(text):
+        return dict(re.findall(r"^\[(\d{4})\] (.+)$", text, re.M))
+
+    def claims(text):
+        return {int(n): body for n, body in re.findall(r"^\*\*Claim (\d+)\.\*\* (.+)$", text, re.M)}
     old_paragraphs, new_paragraphs = paragraphs(original), paragraphs(working)
     old_claims, new_claims = claims(original), claims(working)
     require(old_paragraphs.keys() == new_paragraphs.keys()

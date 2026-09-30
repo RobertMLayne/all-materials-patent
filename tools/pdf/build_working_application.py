@@ -84,7 +84,8 @@ class SourceDrawing(Flowable):
             if "fill-opacity" in attributes:
                 canvas.setFillAlpha(float(attributes["fill-opacity"]))
             filled, stroked = int(fill != "none"), int(stroke != "none")
-            value = lambda name, default=0: float(attributes.get(name, default))
+            def value(name, default=0):
+                return float(attributes.get(name, default))
             if tag == "rect":
                 args = (value("x"), height-value("y")-value("height"),
                         value("width"), value("height"))

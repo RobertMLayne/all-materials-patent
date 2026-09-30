@@ -493,8 +493,8 @@
     },
     {
       "path": "tools/pdf/build_working_application.py",
-      "size_bytes": 12671,
-      "sha256": "cdcf89036b5b65c42f70bf527406016545f3ce08e9a62946c0c484ad32b71bc1"
+      "size_bytes": 12690,
+      "sha256": "19ad115c849c0d98e7b5995edcb3fd667f8f25b76bb51fcce66dc25830ae1d68"
     },
     {
       "path": "tools/pdf/requirements-pdf.txt",
@@ -513,8 +513,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 75883,
-      "sha256": "4432e8717c88e808446b436a059f1215c7e8d5e4f71f862067b8822461c0d654"
+      "size_bytes": 75906,
+      "sha256": "dbefdcd7dbb9c2af3be00fecf66b00f009edb00d9d8972eb4f75885b3ea669da"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
