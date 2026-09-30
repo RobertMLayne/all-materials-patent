@@ -1,0 +1,2088 @@
+{
+  "schema_version": "1.0",
+  "title": "Finite entity register for materials-disclosure drafting",
+  "prepared_date": "2026-09-29",
+  "purpose": "Identity vocabulary and evidence-status distinctions. This is not a preparation disclosure, a claim of exhaustive physical possibilities, or evidence of patent coverage.",
+  "element_count_summary": {
+    "records": 138,
+    "recognized": 118,
+    "hypothetical_placeholders": 20,
+    "atomic_number_range": [
+      1,
+      138
+    ]
+  },
+  "element_scope_notes": [
+    "Recognized element names and symbols use the IUPAC table dated 4 May 2022, checked on the prepared date.",
+    "An accepted element identity does not establish stability, bulk availability, a known isotope for every A, or feasibility of every composition.",
+    "E119 through E138 are local placeholders, not accepted or systematic IUPAC symbols. The number 138 is a chosen indexing boundary, not a physical limit.",
+    "Isotopes, nuclear states, ions, allotropes and material phases are distinct identity layers and do not increase the recognized-element count.",
+    "No atomic weights, half-lives, synthesis conditions or material-property values are invented for hypothetical elements."
+  ],
+  "elements": [
+    {
+      "atomic_number": 1,
+      "name": "hydrogen",
+      "symbol": "H",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 2,
+      "name": "helium",
+      "symbol": "He",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 3,
+      "name": "lithium",
+      "symbol": "Li",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 4,
+      "name": "beryllium",
+      "symbol": "Be",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 5,
+      "name": "boron",
+      "symbol": "B",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 6,
+      "name": "carbon",
+      "symbol": "C",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 7,
+      "name": "nitrogen",
+      "symbol": "N",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 8,
+      "name": "oxygen",
+      "symbol": "O",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 9,
+      "name": "fluorine",
+      "symbol": "F",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 10,
+      "name": "neon",
+      "symbol": "Ne",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 11,
+      "name": "sodium",
+      "symbol": "Na",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 12,
+      "name": "magnesium",
+      "symbol": "Mg",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 13,
+      "name": "aluminium",
+      "symbol": "Al",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 14,
+      "name": "silicon",
+      "symbol": "Si",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 15,
+      "name": "phosphorus",
+      "symbol": "P",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 16,
+      "name": "sulfur",
+      "symbol": "S",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 17,
+      "name": "chlorine",
+      "symbol": "Cl",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 18,
+      "name": "argon",
+      "symbol": "Ar",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 19,
+      "name": "potassium",
+      "symbol": "K",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 20,
+      "name": "calcium",
+      "symbol": "Ca",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 21,
+      "name": "scandium",
+      "symbol": "Sc",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 22,
+      "name": "titanium",
+      "symbol": "Ti",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 23,
+      "name": "vanadium",
+      "symbol": "V",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 24,
+      "name": "chromium",
+      "symbol": "Cr",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 25,
+      "name": "manganese",
+      "symbol": "Mn",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 26,
+      "name": "iron",
+      "symbol": "Fe",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 27,
+      "name": "cobalt",
+      "symbol": "Co",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 28,
+      "name": "nickel",
+      "symbol": "Ni",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 29,
+      "name": "copper",
+      "symbol": "Cu",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 30,
+      "name": "zinc",
+      "symbol": "Zn",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 31,
+      "name": "gallium",
+      "symbol": "Ga",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 32,
+      "name": "germanium",
+      "symbol": "Ge",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 33,
+      "name": "arsenic",
+      "symbol": "As",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 34,
+      "name": "selenium",
+      "symbol": "Se",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 35,
+      "name": "bromine",
+      "symbol": "Br",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 36,
+      "name": "krypton",
+      "symbol": "Kr",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 37,
+      "name": "rubidium",
+      "symbol": "Rb",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 38,
+      "name": "strontium",
+      "symbol": "Sr",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 39,
+      "name": "yttrium",
+      "symbol": "Y",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 40,
+      "name": "zirconium",
+      "symbol": "Zr",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 41,
+      "name": "niobium",
+      "symbol": "Nb",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 42,
+      "name": "molybdenum",
+      "symbol": "Mo",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 43,
+      "name": "technetium",
+      "symbol": "Tc",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 44,
+      "name": "ruthenium",
+      "symbol": "Ru",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 45,
+      "name": "rhodium",
+      "symbol": "Rh",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 46,
+      "name": "palladium",
+      "symbol": "Pd",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 47,
+      "name": "silver",
+      "symbol": "Ag",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 48,
+      "name": "cadmium",
+      "symbol": "Cd",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 49,
+      "name": "indium",
+      "symbol": "In",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 50,
+      "name": "tin",
+      "symbol": "Sn",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 51,
+      "name": "antimony",
+      "symbol": "Sb",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 52,
+      "name": "tellurium",
+      "symbol": "Te",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 53,
+      "name": "iodine",
+      "symbol": "I",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 54,
+      "name": "xenon",
+      "symbol": "Xe",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 55,
+      "name": "caesium",
+      "symbol": "Cs",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 56,
+      "name": "barium",
+      "symbol": "Ba",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 57,
+      "name": "lanthanum",
+      "symbol": "La",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 58,
+      "name": "cerium",
+      "symbol": "Ce",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 59,
+      "name": "praseodymium",
+      "symbol": "Pr",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 60,
+      "name": "neodymium",
+      "symbol": "Nd",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 61,
+      "name": "promethium",
+      "symbol": "Pm",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 62,
+      "name": "samarium",
+      "symbol": "Sm",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 63,
+      "name": "europium",
+      "symbol": "Eu",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 64,
+      "name": "gadolinium",
+      "symbol": "Gd",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 65,
+      "name": "terbium",
+      "symbol": "Tb",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 66,
+      "name": "dysprosium",
+      "symbol": "Dy",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 67,
+      "name": "holmium",
+      "symbol": "Ho",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 68,
+      "name": "erbium",
+      "symbol": "Er",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 69,
+      "name": "thulium",
+      "symbol": "Tm",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 70,
+      "name": "ytterbium",
+      "symbol": "Yb",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 71,
+      "name": "lutetium",
+      "symbol": "Lu",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 72,
+      "name": "hafnium",
+      "symbol": "Hf",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 73,
+      "name": "tantalum",
+      "symbol": "Ta",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 74,
+      "name": "tungsten",
+      "symbol": "W",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 75,
+      "name": "rhenium",
+      "symbol": "Re",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 76,
+      "name": "osmium",
+      "symbol": "Os",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 77,
+      "name": "iridium",
+      "symbol": "Ir",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 78,
+      "name": "platinum",
+      "symbol": "Pt",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 79,
+      "name": "gold",
+      "symbol": "Au",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 80,
+      "name": "mercury",
+      "symbol": "Hg",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 81,
+      "name": "thallium",
+      "symbol": "Tl",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 82,
+      "name": "lead",
+      "symbol": "Pb",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 83,
+      "name": "bismuth",
+      "symbol": "Bi",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 84,
+      "name": "polonium",
+      "symbol": "Po",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 85,
+      "name": "astatine",
+      "symbol": "At",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 86,
+      "name": "radon",
+      "symbol": "Rn",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 87,
+      "name": "francium",
+      "symbol": "Fr",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 88,
+      "name": "radium",
+      "symbol": "Ra",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 89,
+      "name": "actinium",
+      "symbol": "Ac",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 90,
+      "name": "thorium",
+      "symbol": "Th",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 91,
+      "name": "protactinium",
+      "symbol": "Pa",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 92,
+      "name": "uranium",
+      "symbol": "U",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 93,
+      "name": "neptunium",
+      "symbol": "Np",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 94,
+      "name": "plutonium",
+      "symbol": "Pu",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 95,
+      "name": "americium",
+      "symbol": "Am",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 96,
+      "name": "curium",
+      "symbol": "Cm",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 97,
+      "name": "berkelium",
+      "symbol": "Bk",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 98,
+      "name": "californium",
+      "symbol": "Cf",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 99,
+      "name": "einsteinium",
+      "symbol": "Es",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 100,
+      "name": "fermium",
+      "symbol": "Fm",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 101,
+      "name": "mendelevium",
+      "symbol": "Md",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 102,
+      "name": "nobelium",
+      "symbol": "No",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 103,
+      "name": "lawrencium",
+      "symbol": "Lr",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 104,
+      "name": "rutherfordium",
+      "symbol": "Rf",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 105,
+      "name": "dubnium",
+      "symbol": "Db",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 106,
+      "name": "seaborgium",
+      "symbol": "Sg",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 107,
+      "name": "bohrium",
+      "symbol": "Bh",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 108,
+      "name": "hassium",
+      "symbol": "Hs",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 109,
+      "name": "meitnerium",
+      "symbol": "Mt",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 110,
+      "name": "darmstadtium",
+      "symbol": "Ds",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 111,
+      "name": "roentgenium",
+      "symbol": "Rg",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 112,
+      "name": "copernicium",
+      "symbol": "Cn",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 113,
+      "name": "nihonium",
+      "symbol": "Nh",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 114,
+      "name": "flerovium",
+      "symbol": "Fl",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 115,
+      "name": "moscovium",
+      "symbol": "Mc",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 116,
+      "name": "livermorium",
+      "symbol": "Lv",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 117,
+      "name": "tennessine",
+      "symbol": "Ts",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 118,
+      "name": "oganesson",
+      "symbol": "Og",
+      "status": "recognized_element",
+      "symbol_kind": "IUPAC_accepted_symbol",
+      "source_id": "IUPAC_PT_2022",
+      "source_url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29"
+    },
+    {
+      "atomic_number": 119,
+      "name": "hypothetical element 119",
+      "symbol": "E119",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 120,
+      "name": "hypothetical element 120",
+      "symbol": "E120",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 121,
+      "name": "hypothetical element 121",
+      "symbol": "E121",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 122,
+      "name": "hypothetical element 122",
+      "symbol": "E122",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 123,
+      "name": "hypothetical element 123",
+      "symbol": "E123",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 124,
+      "name": "hypothetical element 124",
+      "symbol": "E124",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 125,
+      "name": "hypothetical element 125",
+      "symbol": "E125",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 126,
+      "name": "hypothetical element 126",
+      "symbol": "E126",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 127,
+      "name": "hypothetical element 127",
+      "symbol": "E127",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 128,
+      "name": "hypothetical element 128",
+      "symbol": "E128",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 129,
+      "name": "hypothetical element 129",
+      "symbol": "E129",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 130,
+      "name": "hypothetical element 130",
+      "symbol": "E130",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 131,
+      "name": "hypothetical element 131",
+      "symbol": "E131",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 132,
+      "name": "hypothetical element 132",
+      "symbol": "E132",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 133,
+      "name": "hypothetical element 133",
+      "symbol": "E133",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 134,
+      "name": "hypothetical element 134",
+      "symbol": "E134",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 135,
+      "name": "hypothetical element 135",
+      "symbol": "E135",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 136,
+      "name": "hypothetical element 136",
+      "symbol": "E136",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 137,
+      "name": "hypothetical element 137",
+      "symbol": "E137",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    },
+    {
+      "atomic_number": 138,
+      "name": "hypothetical element 138",
+      "symbol": "E138",
+      "accepted_name": null,
+      "accepted_symbol": null,
+      "status": "hypothetical_placeholder",
+      "symbol_kind": "local_placeholder_not_IUPAC_symbol",
+      "source_id": "IUPAC_PT_PAGE",
+      "source_url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "source_edition_date": "2022-05-04",
+      "source_checked_date": "2026-09-29",
+      "scope_note": "Local atomic-number placeholder outside the cited recognized table; no discovery, isotope, synthesis or material property asserted."
+    }
+  ],
+  "standard_model_particle_categories": {
+    "enumeration_kind": "finite_category_register",
+    "category_count": 17,
+    "counting_convention": "Six quark flavor categories, three charged-lepton particle/antiparticle categories, three neutrino flavor categories, and five boson categories. W+ and W- are grouped; gluon color components are grouped. This is a table convention, not an absolute count of physical particles or quantum states.",
+    "neutrino_note": "Flavor labels differ from neutrino mass eigenstates. The register does not assert that the minimal massless-neutrino Standard Model explains observed neutrino masses, or resolve Dirac versus Majorana nature.",
+    "limitations": "Momentum, spin projections, polarization, color components, antiparticles, bound states, resonances, and hypothetical extensions are not an exhaustive cross-product. Established particle observation does not imply a stable bulk-material ingredient.",
+    "records": [
+      {
+        "id": "quark_up",
+        "name": "up quark flavor",
+        "labels": [
+          "u",
+          "anti-u"
+        ],
+        "category": "quark_flavor",
+        "status": "established_category",
+        "counting_note": "One flavor category; antiquark and three color states are not additional rows. No isolated free-quark ingredient is asserted.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "quark_down",
+        "name": "down quark flavor",
+        "labels": [
+          "d",
+          "anti-d"
+        ],
+        "category": "quark_flavor",
+        "status": "established_category",
+        "counting_note": "One flavor category; antiquark and three color states are not additional rows. No isolated free-quark ingredient is asserted.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "quark_charm",
+        "name": "charm quark flavor",
+        "labels": [
+          "c",
+          "anti-c"
+        ],
+        "category": "quark_flavor",
+        "status": "established_category",
+        "counting_note": "One flavor category; antiquark and three color states are not additional rows. No isolated free-quark ingredient is asserted.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "quark_strange",
+        "name": "strange quark flavor",
+        "labels": [
+          "s",
+          "anti-s"
+        ],
+        "category": "quark_flavor",
+        "status": "established_category",
+        "counting_note": "One flavor category; antiquark and three color states are not additional rows. No isolated free-quark ingredient is asserted.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "quark_top",
+        "name": "top quark flavor",
+        "labels": [
+          "t",
+          "anti-t"
+        ],
+        "category": "quark_flavor",
+        "status": "established_category",
+        "counting_note": "One flavor category; antiquark and three color states are not additional rows. No isolated free-quark ingredient is asserted.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "quark_bottom",
+        "name": "bottom quark flavor",
+        "labels": [
+          "b",
+          "anti-b"
+        ],
+        "category": "quark_flavor",
+        "status": "established_category",
+        "counting_note": "One flavor category; antiquark and three color states are not additional rows. No isolated free-quark ingredient is asserted.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "lepton_electron",
+        "name": "electron and positron",
+        "labels": [
+          "e-",
+          "e+"
+        ],
+        "category": "charged_lepton",
+        "status": "established_category",
+        "counting_note": "Particle and antiparticle grouped in one category.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "lepton_muon",
+        "name": "muon and antimuon",
+        "labels": [
+          "mu-",
+          "mu+"
+        ],
+        "category": "charged_lepton",
+        "status": "established_category",
+        "counting_note": "Particle and antiparticle grouped in one category.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "lepton_tau",
+        "name": "tau and antitau",
+        "labels": [
+          "tau-",
+          "tau+"
+        ],
+        "category": "charged_lepton",
+        "status": "established_category",
+        "counting_note": "Particle and antiparticle grouped in one category.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "neutrino_electron",
+        "name": "electron-flavor neutrino",
+        "labels": [
+          "nu_electron",
+          "anti-nu_electron"
+        ],
+        "category": "neutrino_flavor",
+        "status": "established_flavor_label",
+        "counting_note": "Weak-interaction flavor category, not a mass eigenstate. Labels for neutrino/antineutrino interactions do not settle Dirac versus Majorana nature.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "neutrino_muon",
+        "name": "muon-flavor neutrino",
+        "labels": [
+          "nu_muon",
+          "anti-nu_muon"
+        ],
+        "category": "neutrino_flavor",
+        "status": "established_flavor_label",
+        "counting_note": "Weak-interaction flavor category, not a mass eigenstate. Labels for neutrino/antineutrino interactions do not settle Dirac versus Majorana nature.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "neutrino_tau",
+        "name": "tau-flavor neutrino",
+        "labels": [
+          "nu_tau",
+          "anti-nu_tau"
+        ],
+        "category": "neutrino_flavor",
+        "status": "established_flavor_label",
+        "counting_note": "Weak-interaction flavor category, not a mass eigenstate. Labels for neutrino/antineutrino interactions do not settle Dirac versus Majorana nature.",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "boson_photon",
+        "name": "photon",
+        "labels": [
+          "gamma"
+        ],
+        "category": "gauge_boson",
+        "counting_note": "One species category; momentum and polarization states are not separately enumerated.",
+        "status": "established_category",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "boson_gluon",
+        "name": "gluon",
+        "labels": [
+          "g"
+        ],
+        "category": "gauge_boson_multiplet",
+        "counting_note": "Eight color components grouped in one category; no free isolated-gluon ingredient is asserted.",
+        "status": "established_category",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "boson_W",
+        "name": "charged W bosons",
+        "labels": [
+          "W+",
+          "W-"
+        ],
+        "category": "gauge_boson_charge_pair",
+        "counting_note": "Two charge-conjugate states grouped in one category.",
+        "status": "established_category",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "boson_Z",
+        "name": "Z boson",
+        "labels": [
+          "Z0"
+        ],
+        "category": "gauge_boson",
+        "counting_note": "One species category; polarization states are not separate entries.",
+        "status": "established_category",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      },
+      {
+        "id": "boson_Higgs",
+        "name": "Higgs boson",
+        "labels": [
+          "H"
+        ],
+        "category": "scalar_boson",
+        "counting_note": "Observed Higgs-boson category; additional hypothetical Higgs states are not asserted.",
+        "status": "established_category",
+        "source_ids": [
+          "CERN_SM",
+          "PDG_2026"
+        ]
+      }
+    ],
+    "source_ids": [
+      "CERN_SM",
+      "PDG_2026",
+      "PDG_API_2026"
+    ]
+  },
+  "composite_particle_parameterization": {
+    "enumerated": false,
+    "scope": "Examples include hadrons and nuclei; use a specific evaluated identity rather than treating all composites as one ingredient.",
+    "required_fields": [
+      "entity_id",
+      "entity_class",
+      "name",
+      "constituent_or_quantum_number_description",
+      "charge_state_if_relevant",
+      "nuclear_state_if_relevant",
+      "existence_status",
+      "property_measurement_or_estimation_status",
+      "source_edition",
+      "source_record_id",
+      "source_url",
+      "source_checked_date"
+    ],
+    "example_classes": [
+      "baryon (for example proton or neutron)",
+      "meson",
+      "atomic nucleus",
+      "atom",
+      "molecule"
+    ],
+    "notes": [
+      "A register that includes a nucleus and its nucleons must specify the construction level to avoid double-counting material constituents.",
+      "A resonance or short-lived particle is not automatically an isolable or persistent material.",
+      "Use PDG for hadrons and the isotope sources below for nuclei; this section does not enumerate every bound state."
+    ],
+    "source_ids": [
+      "PDG_2026",
+      "NUBASE2020"
+    ]
+  },
+  "quasiparticle_parameterization": {
+    "enumerated": false,
+    "illustrative_examples": [
+      "phonon",
+      "magnon",
+      "exciton",
+      "electron hole",
+      "plasmon",
+      "polaron"
+    ],
+    "required_fields": [
+      "host_material_id",
+      "excitation_type",
+      "model_or_mode_identifier",
+      "wavevector_or_frequency_where_relevant",
+      "temperature_and_fields",
+      "lifetime_or_linewidth_if_known",
+      "excitation_and_detection_method",
+      "evidence_status",
+      "source_url"
+    ],
+    "notes": [
+      "These are host-dependent excitations; they are not additional chemical elements or freely interchangeable independent substances.",
+      "The example list is deliberately finite and does not enumerate all possible quasiparticles."
+    ],
+    "source_ids": [
+      "IUPAC_QUASIPARTICLE"
+    ]
+  },
+  "hypothetical_particle_parameterization": {
+    "enumerated": false,
+    "illustrative_families": [
+      "graviton hypotheses",
+      "axion hypotheses",
+      "supersymmetric-particle hypotheses",
+      "other specified beyond-Standard-Model or dark-matter candidate models"
+    ],
+    "required_fields": [
+      "model_name_and_version",
+      "candidate_label",
+      "defining_quantum_numbers_or_model_parameters",
+      "assumed_parameter_domain",
+      "theoretical_reference",
+      "experimental_search_reference_if_any",
+      "search_result_or_limit",
+      "status",
+      "source_checked_date"
+    ],
+    "notes": [
+      "A search entry or numerical exclusion limit is not a discovery.",
+      "Do not assign measured masses, lifetimes, abundance or bulk-material behavior to an unconfirmed particle.",
+      "This parameterization does not claim to enumerate all theoretical particles, all models or all physically possible parameter values."
+    ],
+    "source_ids": [
+      "CERN_SM",
+      "PDG_2026"
+    ]
+  },
+  "nuclide_identifier_design": {
+    "enumerated": false,
+    "canonical_key_template": "Z{Z}-A{A}-{state_local_id}@{source_edition}",
+    "field_definitions": {
+      "Z": "Integer proton number. For a chemical-element nuclide, Z >= 1.",
+      "A": "Integer nucleon count; A >= Z. This arithmetic condition is necessary, not evidence of existence.",
+      "state_local_id": "Ground-state or source-qualified excited-state identifier, for example g or m1. This local label must be mapped to the source label and excitation information.",
+      "source_state_label": "Preserve the exact original database designation; do not assume one source's m/n or m1/m2 conventions are globally identical.",
+      "excitation_energy": "Value, unit, uncertainty and measured/estimated/unknown status where available; keep unresolved energy offsets.",
+      "existence_status": "observed, unobserved_estimated, uncertain, reported_nonexistent, or not_assessed, following the actual evaluated source.",
+      "property_status": "Assign measured, evaluated, estimated, limit, or unknown separately to each property.",
+      "electronic_charge_state": "Optional separate qualifier; changing the electron population does not change Z, A or the nuclear-state identity.",
+      "source_provenance": "Edition, record identifier, URL, evaluation cutoff, extraction date and original references where available."
+    },
+    "rules": [
+      "Unknown is not zero; preserve blank or unknown values.",
+      "Do not treat every algebraically permitted Z,A pair as an existing isotope.",
+      "An estimated mass does not by itself show that the nuclide is unobserved; existence and property status are separate.",
+      "Isomer states are not additional elements.",
+      "No complete nuclide table was fetched or enumerated for this artifact."
+    ],
+    "source_ids": [
+      "NUBASE2020",
+      "AME2020_I",
+      "AME2020_II",
+      "IAEA_LIVECHART_API"
+    ]
+  },
+  "historical_nuclide_count_reference": {
+    "edition": "NUBASE2020",
+    "experimental_data_cutoff": "2020-10-30",
+    "reported_counts": {
+      "experiment_based_ground_state_nuclides": 3340,
+      "experiment_based_excited_isomeric_states": 1938,
+      "unobserved_estimated_ground_states": 218,
+      "unobserved_estimated_excited_isomers": 45
+    },
+    "isomer_half_life_inclusion": "T_1/2 >= 100 ns (stated evaluation scope)",
+    "count_warning": "Historical evaluation categories as reported by NUBASE2020, not a current count of confirmed isotopes. No sum is asserted as a present all-isotope total.",
+    "source_id": "NUBASE2020",
+    "source_pinpoint": "Journal page 030001-2, section 2; PDF page 3 including cover."
+  },
+  "sources": [
+    {
+      "id": "IUPAC_PT_2022",
+      "title": "IUPAC Periodic Table of the Elements",
+      "url": "https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf",
+      "edition": "4 May 2022 table",
+      "edition_date": "2022-05-04",
+      "checked_date": "2026-09-29"
+    },
+    {
+      "id": "IUPAC_PT_PAGE",
+      "title": "IUPAC periodic table and element recognition/naming procedure",
+      "url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "edition": "Page identifying the 4 May 2022 table",
+      "checked_date": "2026-09-29"
+    },
+    {
+      "id": "CERN_SM",
+      "title": "CERN: The Standard Model",
+      "url": "https://home.web.cern.ch/science/physics/standard-model/",
+      "edition": "Live explanatory page",
+      "checked_date": "2026-09-29"
+    },
+    {
+      "id": "PDG_2026",
+      "title": "Review of Particle Physics 2026: Summary Tables",
+      "url": "https://pdg.lbl.gov/2026/tables/contents_tables.html",
+      "edition": "2026",
+      "listings_cutoff": "2026-01-15",
+      "checked_date": "2026-09-29"
+    },
+    {
+      "id": "PDG_API_2026",
+      "title": "PDG programmatic access and editioned datasets",
+      "url": "https://pdg.lbl.gov/2026/api/index.html",
+      "edition": "2026.0 identified on source page",
+      "checked_date": "2026-09-29"
+    },
+    {
+      "id": "IUPAC_QUASIPARTICLE",
+      "title": "IUPAC Gold Book: quasiparticle",
+      "url": "https://goldbook.iupac.org/terms/view/08863",
+      "edition": "5th edition, online version 5.0.0 (2025)",
+      "checked_date": "2026-09-29"
+    },
+    {
+      "id": "NUBASE2020",
+      "title": "Kondev et al.: The NUBASE2020 evaluation of nuclear physics properties",
+      "url": "https://www-nds.iaea.org/amdc/ame2020/NUBASE2020.pdf",
+      "doi": "10.1088/1674-1137/abddae",
+      "edition": "NUBASE2020; published 2021",
+      "experimental_data_cutoff": "2020-10-30",
+      "checked_date": "2026-09-29"
+    },
+    {
+      "id": "AME2020_I",
+      "title": "Huang et al.: The AME 2020 atomic mass evaluation (I)",
+      "url": "https://doi.org/10.1088/1674-1137/abddb0",
+      "edition": "AME2020; published 2021",
+      "checked_date": "2026-09-29"
+    },
+    {
+      "id": "AME2020_II",
+      "title": "Wang et al.: The AME 2020 atomic mass evaluation (II)",
+      "url": "https://doi.org/10.1088/1674-1137/abddaf",
+      "edition": "AME2020; published 2021",
+      "checked_date": "2026-09-29"
+    },
+    {
+      "id": "IAEA_LIVECHART_API",
+      "title": "IAEA LiveChart data download API guide",
+      "url": "https://www-nds.iaea.org/relnsd/vcharthtml/api_v0_guide.html",
+      "edition": "Guide describes v1 endpoint and ENSDF April 2022 snapshot, AME2020 and NUBASE2020 inputs",
+      "checked_date": "2026-09-29",
+      "note": "Retrieval date is not evidence of a newer evaluation cutoff; preserve returned provenance."
+    }
+  ],
+  "validation": {
+    "element_record_count": 138,
+    "recognized_count": 118,
+    "hypothetical_count": 20,
+    "atomic_numbers_unique": true,
+    "atomic_number_sequence_complete": true,
+    "symbols_unique": true,
+    "particle_category_count": 17,
+    "checks_run_date": "2026-09-29"
+  }
+}

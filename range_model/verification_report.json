@@ -1,0 +1,144 @@
+{
+  "status": "passed",
+  "test_group_count": 27,
+  "results": [
+    {
+      "test": "exhaustive_toy_support_and_composition_counts",
+      "status": "passed",
+      "evidence": "Independent Cartesian enumeration: N=1..5, denominator=1..8; support-stratified and total counts."
+    },
+    {
+      "test": "integer_generator_and_minimum_floor",
+      "status": "passed",
+      "evidence": "Independent brute-force composition vectors for totals 1..12, k=1..4, minimum=1..3."
+    },
+    {
+      "test": "exhaustive_toy_box_feasibility",
+      "status": "passed",
+      "evidence": "All closed endpoint boxes on denominator 4 for k=2,3, compared against independent brute-force lattice witnesses."
+    },
+    {
+      "test": "rational_feasible_but_D_grid_infeasible",
+      "status": "passed",
+      "evidence": "Exact thirds normalize to one; 3 does not divide D=10^19."
+    },
+    {
+      "test": "unequal_lattice_rounding_rejects_infeasible_box",
+      "status": "passed",
+      "evidence": "Real/rational singleton is feasible, denominator-10 integer ceilings exceed floors."
+    },
+    {
+      "test": "closed_equality_boundaries",
+      "status": "passed",
+      "evidence": "Both lower and upper sums equal one; accepted."
+    },
+    {
+      "test": "upper_sum_infeasible",
+      "status": "passed",
+      "evidence": "Total upper capacity 3/5 < 1."
+    },
+    {
+      "test": "lower_sum_infeasible",
+      "status": "passed",
+      "evidence": "Total required lower mass 6/5 > 1."
+    },
+    {
+      "test": "zero_supported_interval_rejected",
+      "status": "passed",
+      "evidence": "Zero is permitted only outside the positive support."
+    },
+    {
+      "test": "unary_is_exactly_one",
+      "status": "passed",
+      "evidence": "Normalization forces a unary composition to one."
+    },
+    {
+      "test": "138_slot_minimum_boundary",
+      "status": "passed",
+      "evidence": "137 minimum fractions plus (D-137)/D; exact normalization."
+    },
+    {
+      "test": "138_slot_box_and_grid_boundary",
+      "status": "passed",
+      "evidence": "Rational and fixed-D feasibility agree at the 138-slot extreme."
+    },
+    {
+      "test": "normalization_from_weights",
+      "status": "passed",
+      "evidence": "Independent expected normalized fractions."
+    },
+    {
+      "test": "requested_percentage_endpoints",
+      "status": "passed",
+      "evidence": "Fraction 10^-18..10^-17 maps to 10^-16%..10^-15%."
+    },
+    {
+      "test": "minimum_percentage_and_half",
+      "status": "passed",
+      "evidence": "Minimum is 10^-17%, and half is 50%."
+    },
+    {
+      "test": "requested_grid_indices",
+      "status": "passed",
+      "evidence": "Both indexed representations have identical exact endpoints."
+    },
+    {
+      "test": "binary_complement_reversal",
+      "status": "passed",
+      "evidence": "Endpoints reverse on complementation, preserving exact sums."
+    },
+    {
+      "test": "all_fixed_precisions_and_endpoint_subranges",
+      "status": "passed",
+      "evidence": "Endpoint and adjacency checks at p=0..19; exhaustive generator-count checks at p=0,1."
+    },
+    {
+      "test": "decimal_refinement_decade_boundaries",
+      "status": "passed",
+      "evidence": "All 19 decades, refinement depths 0,1,2; exact first and final endpoints."
+    },
+    {
+      "test": "canonical_rational_enumeration",
+      "status": "passed",
+      "evidence": "All denominator <=8 binary/ternary vectors independently collected and deduplicated; generator returns exactly that set once."
+    },
+    {
+      "test": "denominator_above_D_preserves_positive_floor",
+      "status": "passed",
+      "evidence": "At q=D+1 the minimum numerator is ceil(q/D)=2, not 1; arbitrary denominators do not permit below-floor coordinates."
+    },
+    {
+      "test": "unary_rational_generator_terminates",
+      "status": "passed",
+      "evidence": "Unary domain has exactly one point even without a denominator cap."
+    },
+    {
+      "test": "support_classification",
+      "status": "passed",
+      "evidence": "Explicit boundaries 118,119,138."
+    },
+    {
+      "test": "invalid_inputs_rejected",
+      "status": "passed",
+      "evidence": "11 malformed/float/unnormalized/below-floor input cases."
+    },
+    {
+      "test": "exact_decimal_serialization",
+      "status": "passed",
+      "evidence": "Terminating strings are exact; no invented rounded decimal for thirds."
+    },
+    {
+      "test": "production_count_identity",
+      "status": "passed",
+      "evidence": "Exact large-integer sum across every support size equals closed form for 118 and 138 slots."
+    },
+    {
+      "test": "artifact_serialization_roundtrip",
+      "status": "passed",
+      "evidence": "Both generated artifacts round-trip exactly through JSON and contain no binary floats."
+    }
+  ],
+  "runtime_arithmetic": "Python standard-library integer, Fraction, and Decimal arithmetic; no third-party dependencies.",
+  "proof_vs_tests": "Finite checks support implementation correctness. Universal mathematical coverage follows the definitions and coverage arguments in composition_range_model.json, not exhaustive testing of the actual infinite or astronomical domains.",
+  "limitations": "Mathematical composition coverage only. Hypothetical slots 119–138 are formal labels, not established elements. These definitions do not establish material existence, structure, preparation, utility, invention, patentability, anticipation, obviousness, written description, or enablement."
+}

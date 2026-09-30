@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "algorithm": "SHA-256",
+  "package_preparation_date": "2026-09-29",
+  "date_meaning": "Preparation date only; no filing or public-availability date is asserted.",
+  "limitations": [
+    "Integrity against this manifest is not a digital signature or trusted timestamp.",
+    "The executable model verifies mathematics, not physical enablement or patentability."
+  ],
+  "excluded": [
+    "integrity_manifest.json",
+    "range_model/verification_report.json",
+    "package_verification_report.json",
+    "generated_reports/",
+    "__pycache__/",
+    "*.pyc",
+    "*.pyo",
+    ".git/"
+  ],
+  "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
+  "file_count": 19,
+  "files": [
+    {
+      "path": ".github/workflows/verify.yml",
+      "sha256": "4c7fbbe074d2fc5da5b93382e699d8641ac09bf282517a39ead7055bcd1bce3d",
+      "size_bytes": 707
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "1b899eb11a061e369df7b74e28dcedb7526f89053b9d83690b5d2f560d84ccf1",
+      "size_bytes": 75
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "ba1eeab614cf03c27176a0eb2d128a13a3278c7a7aaf01f5f21063b233103617",
+      "size_bytes": 4272
+    },
+    {
+      "path": "README.md",
+      "sha256": "be46a8900c6f3626f4820a88ca4485c0d0f78bacd7a2aebacb78393f68a8a97d",
+      "size_bytes": 7673
+    },
+    {
+      "path": "data/claim_support_map.json",
+      "sha256": "b75a45d1a92705eb2f45fcea18e9817f8fb75d86c3661cff0d1b3ae43a8bf87e",
+      "size_bytes": 154015
+    },
+    {
+      "path": "data/entity_register.json",
+      "sha256": "289802cadf603fbda5e95b68249ab8e7eda5447b995e060449e76cd93bebf60a",
+      "size_bytes": 78047
+    },
+    {
+      "path": "data/entity_register_notes.md",
+      "sha256": "20f4d9ad36b44714bbd2c7dc52b3ee782fda15f1802061521706aaf1a645521d",
+      "size_bytes": 5860
+    },
+    {
+      "path": "documents/drawings/composition_simplex.svg",
+      "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9",
+      "size_bytes": 2448
+    },
+    {
+      "path": "documents/drawings/material_record_sequence.svg",
+      "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55",
+      "size_bytes": 2410
+    },
+    {
+      "path": "documents/pct_defensive_disclosure_blueprint.md",
+      "sha256": "96e2fc525cce1f8a05a3f301b46096b5031410d517ad70887d00d9eb98974bd1",
+      "size_bytes": 37796
+    },
+    {
+      "path": "documents/pdf/pct_defensive_disclosure_blueprint.pdf",
+      "sha256": "5f525b2963201d0dcba21251c3d2fe71a34c114165761123661b5459b30a4051",
+      "size_bytes": 152154
+    },
+    {
+      "path": "documents/pdf/provisional_application_draft.pdf",
+      "sha256": "a8306290a92c9433271dd1711e1bdabfd1c79779877897c99186638f3d6e0d7f",
+      "size_bytes": 146255
+    },
+    {
+      "path": "documents/pdf/provisional_filing_strategy.pdf",
+      "sha256": "01d614ed448f385414997e788e749e1f1961fc5d2380e91b6640fa742c9cbe95",
+      "size_bytes": 95630
+    },
+    {
+      "path": "documents/provisional_application_draft.md",
+      "sha256": "3c3a6f9b42ca87ffedfd97435ac0476d3301f7f1d650b4c2b9f0fb0b66b15949",
+      "size_bytes": 73191
+    },
+    {
+      "path": "documents/provisional_filing_strategy.md",
+      "sha256": "a0e63ffcecaab20ba47c8446eb3b8dd464955360e3e1a997cc8f59aa105eea70",
+      "size_bytes": 16749
+    },
+    {
+      "path": "range_model/composition_range_model.json",
+      "sha256": "42553c741d97a10b446676b46195d1a1dbeecf62103716a37669339d923b6fcd",
+      "size_bytes": 592234
+    },
+    {
+      "path": "range_model/composition_ranges.py",
+      "sha256": "3e296aca025a5035fe46c8f604a83e41261d84fa7b1f70041446798d806bf82c",
+      "size_bytes": 34341
+    },
+    {
+      "path": "range_model/numeric_examples.json",
+      "sha256": "664eee1f8fd28f458ca0617a88ba1ab4e9ab885668f00e00626319eebae728de",
+      "size_bytes": 95277
+    },
+    {
+      "path": "verify_package.py",
+      "sha256": "90fbc25684a869b512b6ff0265c6a30b118db25cbb44b94ef34ec3052e8e0566",
+      "size_bytes": 18178
+    }
+  ]
+}

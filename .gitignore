@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+package_verification_report.json
+generated_reports/
