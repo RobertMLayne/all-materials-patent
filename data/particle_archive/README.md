@@ -50,9 +50,10 @@ python extract_pdg_identities.py verify
 To reproduce against the official raw file, choose a scratch destination outside the published package:
 
 ```console
-python extract_pdg_identities.py download --destination scratch/pdg-2026.0.sqlite --observation scratch/download_observation.json
-python extract_pdg_identities.py extract --database scratch/pdg-2026.0.sqlite --download-observation scratch/download_observation.json --output-directory regenerated
-python extract_pdg_identities.py verify --database scratch/pdg-2026.0.sqlite
+mkdir -p /tmp/pdg2026.0-scratch
+python extract_pdg_identities.py download --destination /tmp/pdg2026.0-scratch/pdg-2026.0.sqlite --observation /tmp/pdg2026.0-scratch/download_observation.json
+python extract_pdg_identities.py extract --database /tmp/pdg2026.0-scratch/pdg-2026.0.sqlite --download-observation /tmp/pdg2026.0-scratch/download_observation.json --output-directory /tmp/pdg2026.0-regenerated
+python extract_pdg_identities.py verify --database /tmp/pdg2026.0-scratch/pdg-2026.0.sqlite
 ```
 
 The downloader refuses an existing destination and preserves an unexpected partial download for inspection. The extractor refuses a database with a different size, hash, edition, schema or license. A changed upstream release needs explicit review rather than a silent regeneration. The raw SQLite file remains scratch material and is not part of this text archive.

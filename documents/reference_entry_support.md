@@ -4,8 +4,6 @@ These entries provide concrete preparation and characterization evidence for the
 
 ## Current package evidence
 
-The inspected canonical checkout was clean on branch `main`, with origin `https://github.com/RobertMLayne/all-materials-patent.git` and HEAD `1e1d41806d1c5dd2922bbee41f3dd30c702fcaea`. Inspection and source research occurred on September 29, 2026, America/New_York. Applicable instructions were the checkout's maintenance rules and the user's development preferences. No canonical files or remote repositories were changed for this report.
-
 The existing preparation framework in `documents/provisional_application_draft.md`, paragraphs [0038]-[0043], identifies the categories of information an entry needs. Paragraphs [0039]-[0040] list route classes rather than composition-specific recipes. Paragraph [0044] summarizes a real TiO2(B) publication but explicitly leaves the complete methods to that source. Paragraph [0045] correctly limits what can be inferred from the host formula. Paragraphs [0062]-[0067] provide mechanism examples with proposed extrapolations, rather than an applicant-specific experimentally validated material series. Paragraph [0080] records unresolved full-scope preparation and property support.
 
 The blueprint's `Disclosure entry architecture` already provides a useful field schema. Its existing `MAT LIT 0001` is an attributed source locator, and says it is not a substitute recipe. The records below supply additional concrete fields and expose gaps that a composition vector alone cannot resolve. They do not convert a source summary into a demonstrated complete reproduction by the applicant.
