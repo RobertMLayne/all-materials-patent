@@ -273,8 +273,8 @@
     },
     {
       "path": "documents/consolidated_review_edition.md",
-      "size_bytes": 12305,
-      "sha256": "4731ea601819b6356a45c1c4cde2c9cbb4c582cf1d384993c54cf8b3d66d46f1"
+      "size_bytes": 13800,
+      "sha256": "5ad1fcfd3f9ba160802507f6fe458e616a2270987922526e08273487ae599f86"
     },
     {
       "path": "documents/current_status_addendum.md",
@@ -358,8 +358,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 17579,
-      "sha256": "7de973e43b27cc1b8296ea81ac88d7630081b5d71c5cff3c2b4b44cd294cbeb0"
+      "size_bytes": 20183,
+      "sha256": "196b26a466dbd0d92bd763e8e51c7888027523138ddaf48b0ca465a9a0cdee38"
     },
     {
       "path": "pyproject.toml",
@@ -428,8 +428,8 @@
     },
     {
       "path": "tools/pdf/build_consolidated_review.py",
-      "size_bytes": 28420,
-      "sha256": "f3a2c60b3e6317918ba8533d5caf9bc3985eb9edab21c094d7f843cd418bfec0"
+      "size_bytes": 28416,
+      "sha256": "3d0b844c308919efc803cb07927c4cc4370789138b96929496aa75674bfd7b3e"
     },
     {
       "path": "tools/pdf/build_identity_review_annex.py",
@@ -439,7 +439,7 @@
     {
       "path": "tools/pdf/requirements-pdf.txt",
       "size_bytes": 115,
-      "sha256": "8c745ef93c7846d51072adf5ee376174c567feb1405bfa3a9dda94533777f0ed"
+      "sha256": "cfb43a07bd0b4c2aa959c50eaf46c81f5d5cb785b0dcbf477c371545923f0b7b"
     },
     {
       "path": "tools/pdf/test_pdf_outputs.py",
