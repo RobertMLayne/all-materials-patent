@@ -98,8 +98,8 @@
     },
     {
       "path": ".github/workflows/verify.yml",
-      "size_bytes": 1622,
-      "sha256": "4b8900bfec8811c243f5b7c25d12d76efe1f136ccd4891fbac3f09374955d154"
+      "size_bytes": 1643,
+      "sha256": "9129eb9640a167cdda2cd93fe944fcc7836dcdbe204e7dd468188960aca79bbc"
     },
     {
       "path": ".gitignore",
@@ -128,8 +128,8 @@
     },
     {
       "path": "CONTRIBUTING.md",
-      "size_bytes": 8846,
-      "sha256": "fd4054e6dc732f25cf761103c904c21ecfaca2b63d9613c2a343119030bdcb06"
+      "size_bytes": 9353,
+      "sha256": "c1bd824c51d9312d0a3fab174c0276f946d8f012554a23b9c74f81f3314e650d"
     },
     {
       "path": "README.md",
@@ -268,8 +268,8 @@
     },
     {
       "path": "documents/github_settings.md",
-      "size_bytes": 7268,
-      "sha256": "d625bac953239400f1dfd8ee68769928eeb6ec636f3b209f9e70fbc0619a2ff5"
+      "size_bytes": 7451,
+      "sha256": "db9f5c8c0e017cc268a8d2a8c76b98128a01f92962e04f482d4a4fcbfb283c5e"
     },
     {
       "path": "documents/pct_defensive_disclosure_blueprint.md",
@@ -388,8 +388,8 @@
     },
     {
       "path": "tools/update_manifest.py",
-      "size_bytes": 2810,
-      "sha256": "066ab6b921699aae2a09bc26510033121785f7ae0096745fc838870e9d4128b4"
+      "size_bytes": 4785,
+      "sha256": "196a2def8e20b8e31bf14f4ff3f2b3dc162472eba45766db9e370eeb5b9ec0e4"
     },
     {
       "path": "verify_package.py",
