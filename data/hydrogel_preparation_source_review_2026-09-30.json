@@ -1,0 +1,106 @@
+{
+  "prepared_date": "2026-09-30",
+  "record_id": "MAT-LIT-HYDROGEL-0001-PREPARATION",
+  "scope": "Attributed 2018 preparation and calculated nominal monomer-only feed; no applicant experiment or final specimen assay.",
+  "primary_sources": [
+    {
+      "title": "Crosslinking of fibrous hydrogels",
+      "doi": "10.1038/s41467-018-04508-x",
+      "published_date": "2018-06-04",
+      "url": "https://www.nature.com/articles/s41467-018-04508-x",
+      "xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5986759/fullTextXML",
+      "xml_size_bytes": 84223,
+      "xml_sha256": "40a0c581dcd74dc0c0ecf6d2b4922236923c0d4da65fd4ea175cdc6f87a1533a",
+      "locators": [
+        "Figure 1b",
+        "Sec12 paragraph1",
+        "Sec13 paragraph1"
+      ],
+      "license": "CC BY 4.0"
+    },
+    {
+      "title": "2018 Supplementary Information",
+      "member": "41467_2018_4508_MOESM1_ESM.pdf",
+      "archive_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5986759/supplementaryFiles",
+      "sha256": "8d9961d659a2b73a90f5fab39ff78101c95b7a9065949c96f391ca16d0759a54",
+      "size_bytes": 727011,
+      "page_count": 13,
+      "locators": [
+        "page1 synthetic procedures",
+        "page4 Supplementary Table1",
+        "page13 reference2"
+      ]
+    },
+    {
+      "title": "2018 Figure 1 graphic",
+      "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-018-04508-x/MediaObjects/41467_2018_4508_Fig1_HTML.jpg",
+      "sha256": "8f8f8441af0c60a5b14937db528142ab021c285b4f7e57ca529e4489a04b4f7d",
+      "size_bytes": 396066,
+      "pixels": [
+        2023,
+        1217
+      ],
+      "visually_inspected": true,
+      "locator": "panel b"
+    },
+    {
+      "title": "Mandal et al., Therapeutic nanoworms",
+      "doi": "10.1039/C3SC51399H",
+      "publisher_url": "https://pubs.rsc.org/en/content/articlelanding/2013/sc/c3sc51399h",
+      "publisher_first_published_date": "2013-08-02",
+      "supplement_url": "https://www.rsc.org/suppdata/sc/c3/c3sc51399h/c3sc51399h.pdf",
+      "access": "Primary cached extraction inspected: sections2.1 and2.2; direct PDF download and screenshots failed404. No raw PDF bytes or graphical review.",
+      "cached_page_count": 32,
+      "raw_pdf_sha256": null,
+      "source_license": "RSC 2013 copyright; not asserted CC BY."
+    }
+  ],
+  "calculated_neutral_formulas": {
+    "methoxy_2018": {
+      "C": 14,
+      "H": 24,
+      "N": 2,
+      "O": 6
+    },
+    "azide_2018": {
+      "C": 15,
+      "H": 25,
+      "N": 5,
+      "O": 6
+    },
+    "four_ethylene_methoxy_counterpart": {
+      "C": 16,
+      "H": 28,
+      "N": 2,
+      "O": 7
+    }
+  },
+  "nominal_monomer_feed_umol": {
+    "methoxy_2018": 790,
+    "azide_2018": 27
+  },
+  "calculated_feed_atom_amount_umol": {
+    "C": 11465,
+    "H": 19635,
+    "N": 1715,
+    "O": 4902
+  },
+  "calculated_feed_atomic_fractions": {
+    "C": "11465/37717",
+    "H": "19635/37717",
+    "N": "1715/37717",
+    "O": "4902/37717"
+  },
+  "ideal_feed_total_atom_amount_umol": 37717,
+  "azide_monomer_mole_fraction": "27/817",
+  "basis_qualification": "CALCULATED ideal monomer-only feed; excludes other process inputs. Nominal reported amounts treated as exact arithmetic inputs; not actual specimen atom count, incorporation, end-group or impurity assay.",
+  "unresolved": [
+    "Drawn R-isocyanide/S-ester assignment conflicts with azide names S-isocyanide/R-ester.",
+    "Exact supplier identity/grade for three-ethylene methoxy monomer and linker2a not verified.",
+    "2018 printed drying formula NaSO4 unresolved.",
+    "Mandal numerical inconsistencies not corrected and graphical source not acquired."
+  ],
+  "applicant_experiment_asserted": false,
+  "physical_enablement_certified": false,
+  "filing_asserted": false
+}

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from contextlib import contextmanager, redirect_stdout
+from fractions import Fraction
 import hashlib
 import importlib.util
 import io
@@ -47,6 +48,18 @@ PROPERTY_AUTHORING = {
     "tools/pdf/build_working_application.py": "data/application_property_evidence_authoring_2026-09-30/builder.py.txt",
     "tools/pdf/build_consolidated_review.py": "data/application_property_evidence_authoring_2026-09-30/layout.py.txt",
     "tools/pdf/build_identity_review_annex.py": "data/application_property_evidence_authoring_2026-09-30/output_helper.py.txt",
+}
+PREPARATION_SOURCE = "documents/provisional_application_preparation_evidence_2026-09-30.md"
+PREPARATION_MAP = "data/claim_support_map_preparation_evidence_2026-09-30.json"
+PREPARATION_EDITION = "data/application_preparation_evidence_2026-09-30.json"
+PREPARATION_PDF = "documents/pdf/provisional_application_preparation_evidence_2026-09-30.pdf"
+PREPARATION_REVIEW = "data/hydrogel_preparation_source_review_2026-09-30.json"
+PREPARATION_BASELINE = "b31593f84ccb26a19cf1642d4a6115cb6a1543f0"
+PREPARATION_HEADING = "### Preparation associated with [0065]: identities, operations and composition basis"
+PREPARATION_AUTHORING = {
+    "tools/pdf/build_working_application.py": "data/application_preparation_evidence_authoring_2026-09-30/builder.py.txt",
+    "tools/pdf/build_consolidated_review.py": "data/application_preparation_evidence_authoring_2026-09-30/layout.py.txt",
+    "tools/pdf/build_identity_review_annex.py": "data/application_preparation_evidence_authoring_2026-09-30/output_helper.py.txt",
 }
 REVIEW_AUTHORING_FILES = {
     "builder": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
@@ -133,6 +146,8 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     "tools/pdf/requirements-pdf.txt", "tools/pdf/test_pdf_outputs.py",
     PROPERTY_SOURCE, PROPERTY_MAP, PROPERTY_EDITION, PROPERTY_PDF,
     "documents/application_property_evidence_2026-09-30.md", *PROPERTY_AUTHORING.values(),
+    PREPARATION_SOURCE, PREPARATION_MAP, PREPARATION_EDITION, PREPARATION_PDF, PREPARATION_REVIEW,
+    "documents/application_preparation_evidence_2026-09-30.md", *PREPARATION_AUTHORING.values(),
 }
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
@@ -501,6 +516,133 @@ def check_property_application(root: Path) -> dict:
             "recorded_pdf_pages": pdf["page_count"], "recorded_pdf_locations_checked": len(locations),
             "captured_sources_checked": len(entries), "hydrogel_source_table_data_rows_checked": 10,
             "remaining_application_text_preserved": True,
+            "pdf_parsed_or_appearance_rechecked_by_this_check": False,
+            "filing_or_earlier_entitlement_or_enablement_certified": False}
+
+
+def check_preparation_application(root: Path) -> dict:
+    """Verify the new preparation edition without relabeling historical PDFs.
+
+    Feed arithmetic has an explicit monomer-only basis. This check binds the
+    recorded rendering evidence to bytes; it does not repeat parsing or QA.
+    """
+    preceding_bytes = (root / PROPERTY_SOURCE).read_bytes()
+    source_bytes = (root / PREPARATION_SOURCE).read_bytes()
+    preceding, application = preceding_bytes.decode("utf-8"), source_bytes.decode("utf-8")
+    support = load_json(root / PREPARATION_MAP)
+    require(support.get("source_path") == PREPARATION_SOURCE and support.get("source_sha256")
+            == hashlib.sha256(source_bytes).hexdigest(), "Preparation source/map hash differs")
+    require(support.get("prepared_date") == "2026-09-30" and support.get("derived_from") == {
+        "path": PROPERTY_SOURCE, "sha256": hashlib.sha256(preceding_bytes).hexdigest(),
+        "repository_baseline": PREPARATION_BASELINE,
+    }, "Preparation source derivation differs")
+    require(support.get("changed_paragraphs") == ["0065"] and support.get("changed_claims") == [],
+            "Preparation change inventory differs")
+    require(support.get("claims") == load_json(root / PROPERTY_MAP).get("claims"),
+            "Preparation map changed individual claim records")
+    claim_result = check_claims(application, support)
+    def claims(text):
+        return re.findall(r"^\*\*Claim (\d+)\.\*\* (.+)$", text, re.M)
+    require(claims(application) == claims(preceding), "Preparation candidate claims differ from property edition")
+    old_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", preceding, re.M))
+    new_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", application, re.M))
+    require(old_paragraphs.keys() == new_paragraphs.keys()
+            and {n for n in old_paragraphs if old_paragraphs[n] != new_paragraphs[n]} == {"0065"},
+            "Unexpected preparation paragraph changes")
+    boundary = "## 1 Technical field\n"
+    require(application.count(boundary) == preceding.count(boundary) == 1,
+            "Preparation technical-field boundary differs")
+    preface, body = application.split(boundary)
+    lines = [line for line in preface.splitlines() if line]
+    require(len(lines) == 4 and lines[0]
+            == "# Provisional materials disclosure with attributed preparation evidence - 30 September 2026"
+            and lines[1] == "Prepared **30 September 2026** | **Prospective unfiled preparation-evidence edition** for applicant and patent counsel.",
+            "Preparation edition preface differs")
+    require(body.count(PREPARATION_HEADING) == 1, "Preparation block is missing or ambiguous")
+    block = body.split(PREPARATION_HEADING, 1)[1].split("[0066] ", 1)[0]
+    old_body = preceding.split(boundary, 1)[1]
+    old_body = old_body.replace("[0065] " + old_paragraphs["0065"], "[0065] " + new_paragraphs["0065"], 1)
+    old_reference, new_reference = PurePosixPath(PROPERTY_MAP).name, PurePosixPath(PREPARATION_MAP).name
+    require(old_body.count(old_reference) == body.count(new_reference) == 1
+            and old_reference not in body, "Preparation companion-map reference differs")
+    old_body = old_body.replace(old_reference, new_reference, 1)
+    require(body.replace(PREPARATION_HEADING + block, "", 1) == old_body,
+            "Preparation source changed outside the identified additions")
+    check_registry(load_json(root / "data/entity_register.json"), application)
+
+    review = load_json(root / PREPARATION_REVIEW)
+    expected_formulas = {"methoxy_2018": dict(zip("CHNO", (14, 24, 2, 6))),
+                         "azide_2018": dict(zip("CHNO", (15, 25, 5, 6))),
+                         "four_ethylene_methoxy_counterpart": dict(zip("CHNO", (16, 28, 2, 7)))}
+    require(review.get("calculated_neutral_formulas") == expected_formulas
+            and review.get("nominal_monomer_feed_umol") == {"methoxy_2018": 790, "azide_2018": 27},
+            "Preparation nominal monomer inputs differ")
+    amounts = {e: 790 * expected_formulas["methoxy_2018"][e] + 27 * expected_formulas["azide_2018"][e]
+               for e in "CHNO"}
+    total = sum(amounts.values())
+    fractions = {e: str(Fraction(amount, total)) for e, amount in amounts.items()}
+    require(review.get("calculated_feed_atom_amount_umol") == amounts
+            and review.get("calculated_feed_atomic_fractions") == fractions
+            and review.get("ideal_feed_total_atom_amount_umol") == total
+            and review.get("azide_monomer_mole_fraction") == "27/817",
+            "Preparation feed calculation or basis differs")
+    feed_header = "| Element | Ideal feed amount (µmol of atoms) | Exact ideal atomic fraction |"
+    table = [feed_header, "| --- | --- | --- |"] + [f"| {e} | {amounts[e]} | {fractions[e]} |" for e in "CHNO"]
+    require(application.count("\n".join(table)) == 1, "Preparation feed table differs from calculation")
+    monomer_rows = (
+        "| 2018 methoxy | CH2CH2-O-CH2CH2-O-CH2CH2-O-CH3 | C14H24N2O6 | 46 |",
+        "| 2018 azide | CH2CH2-O-CH2CH2-O-CH2CH2-O-CH2CH2-N3 | C15H25N5O6 | 51 |",
+    )
+    require(all(application.count(row) == 1 for row in monomer_rows), "Preparation monomer table differs")
+    require(all(review.get(key) is False for key in
+                ("applicant_experiment_asserted", "physical_enablement_certified", "filing_asserted")),
+            "Preparation source factual status differs")
+    edition = load_json(root / PREPARATION_EDITION)
+    require(edition.get("prepared_date") == "2026-09-30"
+            and edition.get("edition_status") == "prospective unfiled preparation-evidence edition"
+            and edition.get("repository_baseline") == PREPARATION_BASELINE
+            and edition.get("filing_asserted") is False and edition.get("physical_enablement_certified") is False,
+            "Preparation edition baseline or factual status differs")
+    expected_sources = {PREPARATION_SOURCE, PREPARATION_MAP, PREPARATION_REVIEW, *PREPARATION_AUTHORING,
+                        "documents/drawings/composition_simplex.svg", "documents/drawings/material_record_sequence.svg"}
+    entries = edition.get("sources", [])
+    require(len(entries) == len(expected_sources) and {e["path"] for e in entries} == expected_sources,
+            "Preparation PDF source inventory differs")
+    for entry in entries:
+        snapshot = PREPARATION_AUTHORING.get(entry["path"])
+        require(entry.get("snapshot_path") == snapshot, "Preparation authoring snapshot identity differs")
+        require(hashlib.sha256(safe_path(root, snapshot or entry["path"]).read_bytes()).hexdigest() == entry["sha256"],
+                "Preparation PDF captured-source hash differs")
+    pdf = edition.get("pdf", {})
+    require(pdf.get("path") == PREPARATION_PDF and type(pdf.get("page_count")) is int
+            and pdf["page_count"] > 0, "Invalid preparation PDF identity")
+    data = safe_path(root, pdf["path"]).read_bytes()
+    require(len(data) == pdf.get("size_bytes") and hashlib.sha256(data).hexdigest() == pdf.get("sha256"),
+            "Preparation PDF bytes differ from record")
+    locations = edition.get("location_map", {})
+    expected_locations = {f"paragraph_{n:04d}" for n in range(1, 81)} | {f"claim_{n}" for n in range(1, 200)}
+    require(locations.keys() == expected_locations
+            and all(type(p) is int and 1 <= p <= pdf["page_count"] for p in locations.values()),
+            "Preparation recorded PDF locations differ")
+    require(edition.get("complete_numbered_text_checked") == {"paragraphs": 80, "claims": 199}
+            and edition.get("vector_drawings_checked") == 2
+            and edition.get("complete_property_table_checked") == {
+                "data_rows": 10, "columns": 4, "headers_and_complete_rows_checked_in_order": True},
+            "Preparation recorded application content checks differ")
+    prose = sum(bool(line.strip()) and not line.startswith("|") for line in block.splitlines())
+    rows = sum(line.startswith("|") and not re.fullmatch(r"[|\s-]+", line) for line in block.splitlines())
+    require(edition.get("complete_preparation_text_checked") == {
+        "complete_prose_blocks": prose, "complete_table_rows_including_headers": rows, "checked_in_order": True},
+            "Preparation complete rendered block checks differ")
+    visual = edition.get("visual_review", {})
+    require(isinstance(visual, dict) and visual.get("status") == "completed"
+            and visual.get("pages_reviewed") == list(range(1, pdf["page_count"] + 1))
+            and visual.get("remaining_actionable_visual_findings") == 0,
+            "Preparation recorded appearance review is incomplete")
+    return {**claim_result, "changed_paragraphs": ["0065"], "changed_claims": [],
+            "recorded_pdf_pages": pdf["page_count"], "recorded_pdf_locations_checked": len(locations),
+            "captured_sources_checked": len(entries), "ideal_feed_fractions_recomputed": fractions,
+            "preceding_property_block_and_remaining_body_preserved": True,
             "pdf_parsed_or_appearance_rechecked_by_this_check": False,
             "filing_or_earlier_entitlement_or_enablement_certified": False}
 
@@ -902,6 +1044,7 @@ def run(root: Path) -> dict:
     claim_result = check_claims(application, load_json(root / "data/claim_support_map.json"))
     working_result = check_working_application(root)
     property_result = check_property_application(root)
+    preparation_result = check_preparation_application(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -922,6 +1065,7 @@ def run(root: Path) -> dict:
             "claim_clarification_verification": clarification_result,
             "working_application_edition_verification": working_result,
             "property_application_edition_verification": property_result,
+            "preparation_application_edition_verification": preparation_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -1232,6 +1376,50 @@ def self_test(root: Path) -> dict:
             property_map_path.write_bytes(property_map_original)
         require("property_table_row_loss_rejected_after_consistent_map_update" in extended,
                 "A consistently updated property map concealed a missing measured data row")
+        preparation_path, preparation_map_path = fixture / PREPARATION_SOURCE, fixture / PREPARATION_MAP
+        preparation_review_path = fixture / PREPARATION_REVIEW
+        originals = {path: path.read_bytes() for path in
+                     (preparation_path, preparation_map_path, preparation_review_path)}
+        for case, expected_error in (
+            ("preparation_source_map_drift_rejected", "Preparation source/map hash differs"),
+            ("preparation_claim_drift_rejected_after_consistent_map_update", "Preparation map changed individual claim records"),
+            ("preparation_feed_basis_drift_rejected_after_consistent_records", "Preparation feed calculation or basis differs"),
+        ):
+            try:
+                text = originals[preparation_path].decode("utf-8")
+                support = json.loads(originals[preparation_map_path])
+                if case == "preparation_source_map_drift_rejected":
+                    preparation_path.write_bytes(originals[preparation_path] + b"\nUnadopted addition.\n")
+                elif "claim_drift" in case:
+                    old_claim = support["claims"][0]["text"]
+                    new_claim = old_claim.replace("positive normalized fraction", "nonnegative normalized fraction", 1)
+                    require(old_claim != new_claim, "Preparation claim fixture lost its target")
+                    text = text.replace("**Claim 1.** " + old_claim, "**Claim 1.** " + new_claim, 1)
+                    preparation_path.write_text(text, encoding="utf-8", newline="\n")
+                    support["claims"][0]["text"] = new_claim
+                    support["source_sha256"] = hashlib.sha256(preparation_path.read_bytes()).hexdigest()
+                    preparation_map_path.write_text(json.dumps(support), encoding="utf-8")
+                else:
+                    # Deliberately confuse a monomer number fraction with an
+                    # elemental fraction, updating the map and source record.
+                    row = "| H | 19635 | 19635/37717 |"
+                    require(text.count(row) == 1, "Preparation feed fixture lost its target")
+                    preparation_path.write_text(text.replace(row, "| H | 19635 | 27/817 |", 1),
+                                                encoding="utf-8", newline="\n")
+                    support["source_sha256"] = hashlib.sha256(preparation_path.read_bytes()).hexdigest()
+                    preparation_map_path.write_text(json.dumps(support), encoding="utf-8")
+                    review = json.loads(originals[preparation_review_path])
+                    review["calculated_feed_atomic_fractions"]["H"] = "27/817"
+                    preparation_review_path.write_text(json.dumps(review), encoding="utf-8")
+                try:
+                    check_preparation_application(fixture)
+                except VerificationError as error:
+                    require(expected_error in str(error), "Preparation mutation failed for another reason: " + str(error))
+                    extended.append(case)
+                require(case in extended, "Preparation mutation was accepted: " + case)
+            finally:
+                for path, data in originals.items():
+                    path.write_bytes(data)
         for path in ("../outside.txt", "/absolute.txt", "C:/outside.txt", "a\\b"):
             try:
                 safe_path(fixture, path)
@@ -1421,7 +1609,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 23, f"Expected 23 extension failure checks, got {len(extended)}")
+    require(len(extended) == 26, f"Expected 26 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
