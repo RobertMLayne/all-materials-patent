@@ -45,7 +45,7 @@
       "PEDOT_PSS_stock_dry_category": "1/1000",
       "PS_latex_stock_dry_category": "-1/1000"
     },
-    "normalization": "All selected fractions are positive; both vectors sum exactly to one. Both primitive denominators divide 10^19, so these belong to both the finite grid and unrestricted rational domain.",
+    "normalization": "All selected fractions are positive; both vectors sum exactly to one. Both primitive denominators divide 10^19, making the coordinates numerically compatible with that resolution. The support and basis are stock-origin dry-input categories, so this record is not a member of the generators' elemental domains.",
     "accounting_prerequisites": "Specify conditioning and delivered non-water mass assays before physical charging. Allocate every stock-carried residue exactly once; received nanotube impurities remain inside that origin category. Do not assume three pure substances or infer stock volume from unmeasured dry solids.",
     "qualification": "These are present model targets, not reported blend proportions, source-precision upgrades, elemental fractions, purified nanotube fractions, actual delivered dry residue or measured retained product."
   },

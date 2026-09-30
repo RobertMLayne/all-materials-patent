@@ -223,8 +223,8 @@
     },
     {
       "path": "data/electrical_candidate_record_review_2026-09-30.json",
-      "size_bytes": 11829,
-      "sha256": "8c53b9ced4eb6fa75de68e815efd340fb0b8edf7b1ea65fa2b4f347a6761ec9a"
+      "size_bytes": 11953,
+      "sha256": "7819e70baf4bda6d3cfb993d223bd7e4c2ba01ee1910f566971fb188dc120c08"
     },
     {
       "path": "data/electrical_source_review_2026-09-30.json",
@@ -438,8 +438,8 @@
     },
     {
       "path": "documents/electrical_claim_comparison_2026-09-30.md",
-      "size_bytes": 16316,
-      "sha256": "3ea85ec09890e2088dbb3f255d290761f7eaee101b8eb017cc7ca3499e964433"
+      "size_bytes": 16448,
+      "sha256": "753742677a6bebd5b0a974ac0b417dc2e4db4b365a2af7a27421de6e81044f16"
     },
     {
       "path": "documents/full_scope_completion_audit.md",
@@ -563,8 +563,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 37649,
-      "sha256": "37cdbcbd03cbf7bc5490fde0d99f9a0eff6f995e32f0d774c680c0e41269a0ef"
+      "size_bytes": 38310,
+      "sha256": "5db3e6413f1e64e936af4db5468125af528a87e1e2f06b9f890505dcf47bdc1b"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
