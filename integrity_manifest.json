@@ -159,7 +159,7 @@
     {
       "path": "data/application_oxide_defect_evidence_2026-09-30.json",
       "size_bytes": 14130,
-      "sha256": "ac1afc26ffc5cea45eff167ca3b8f688710c7d8f8ec8fc6092a0ad2a0be572e7"
+      "sha256": "3a9651ef3654d8d0b0ede5fdf9481653ed4f572e5880d79c455b6b0476c9906c"
     },
     {
       "path": "data/application_oxide_defect_evidence_authoring_2026-09-30/builder.py.txt",
@@ -338,8 +338,8 @@
     },
     {
       "path": "data/oxide_defect_source_review_2026-09-30.json",
-      "size_bytes": 5461,
-      "sha256": "1a253a65fb91209740a87d170036cb030a32f583b63caf4b86526708d5be6f30"
+      "size_bytes": 5465,
+      "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
     },
     {
       "path": "data/particle_archive/README.md",
@@ -723,8 +723,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 138300,
-      "sha256": "3a6dd9c38227c425f9aa4a510196d046fdcd310a4ba2fc2dbc31e037b1c2856a"
+      "size_bytes": 139148,
+      "sha256": "f3be71e6d53450fb590a81b147fd6c02e857f47c1a55639bc3a02f50136edf83"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

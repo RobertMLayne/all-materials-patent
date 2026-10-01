@@ -80,11 +80,13 @@ OXIDE_PDF = "documents/pdf/provisional_application_oxide_defect_evidence_2026-09
 OXIDE_REVIEW = "data/oxide_defect_source_review_2026-09-30.json"
 OXIDE_BASELINE = "6d25542eb72f46ab148f6bad9ab81a2aaccdfe9a"
 OXIDE_HEADING = "### Oxide and defect evidence associated with [0064]: preparation, diagnostics and conditional response"
-# Fingerprints anchor the reviewed table and unresolved differences without
-# duplicating that source summary. Encode UTF-8 JSON with sorted object keys,
-# no ASCII escaping and separators (",", ":"); array order remains significant.
+# Fingerprints anchor the reviewed table and upstream source identities without
+# duplicating those records. Encode UTF-8 JSON with sorted object keys, no ASCII
+# escaping and separators (",", ":"); array order remains significant.
 OXIDE_TABLE_SHA256 = "e59f688ff9888189221bce65eaab68ff88421fc2884234791a2980f45fc84f4e"
 OXIDE_DIFFERENCES_SHA256 = "81b6b4befcdf13ce85abd7a6f3c3b5062a4257f4e9095fa7b9cc73f86290aabf"
+OXIDE_PRIMARY_ARTICLE = "https://www.nature.com/articles/ncomms6881"
+OXIDE_ACQUIRED_SOURCES_SHA256 = "da043c3bf4b13d13e18f94d0334d7c0e1b6fd30d1039f0582fefd8855c06924a"
 # The reviewed diagnostic sentence uses whitespace-normalized UTF-8 text.
 OXIDE_DIAGNOSTIC_SHA256 = "7e501e4e29f5d04e743f209ef57acab8d01084f8cde3602fa58d6532a8d37c01"
 OXIDE_AUTHORING = {
@@ -962,7 +964,7 @@ def check_oxide_application(root: Path) -> dict:
                     and all(isinstance(cell, str) for cell in row) for row in table_rows)
             and reviewed_digest(table_rows) == OXIDE_TABLE_SHA256
             and review.get("source_table_statuses") == [
-        "ESTABLISHED measurement report", "CALCULATED source estimate",
+        "ESTABLISHED measurement report", "ESTABLISHED measurement report",
         "ESTABLISHED measurement report", "CALCULATED source estimate",
     ], "Oxide reviewed source table or quantity status differs")
     table = ["| " + " | ".join(table_rows[0]) + " |", "| --- | --- | --- | --- |"]
@@ -981,6 +983,8 @@ def check_oxide_application(root: Path) -> dict:
     )), "Oxide source calculation or diagnostic boundary differs")
     model_result = check_ideal_oxide_host(review)
     require(review.get("review_date") == "2026-09-30" and review.get("doi") == "10.1038/ncomms6881"
+            and review.get("primary_article") == OXIDE_PRIMARY_ARTICLE
+            and reviewed_digest(review.get("acquired_public_sources")) == OXIDE_ACQUIRED_SOURCES_SHA256
             and all(review.get(key) is False for key in
                     ("applicant_experiment_asserted", "physical_enablement_certified", "novelty_assessed", "filing_asserted")),
             "Oxide source factual status differs")
@@ -1872,6 +1876,7 @@ def self_test(root: Path) -> dict:
             ("oxide_inherited_electrical_drift_rejected_after_consistent_map_update", "Oxide source changed outside the identified additions"),
             ("oxide_host_fraction_drift_rejected_after_consistent_records", "Oxide ideal-host fractions or canonical counts differ"),
             ("oxide_positron_carrier_confusion_rejected_after_consistent_records", "Oxide diagnostic or assay basis differs"),
+            ("oxide_upstream_source_identity_drift_rejected", "Oxide source factual status differs"),
         ):
             try:
                 text = originals[oxide_path].decode("utf-8")
@@ -1899,6 +1904,11 @@ def self_test(root: Path) -> dict:
                         review["ideal_host_accounting"]["cases"][2].update({
                             "x_Ti": "1/4", "x_O": "3/4", "Ti_count": 1, "O_count": 3, "total_atoms": 4,
                         })
+                        oxide_review_path.write_text(json.dumps(review), encoding="utf-8")
+                    elif "upstream_source_identity" in case:
+                        review["primary_article"] = "https://www.nature.com/articles/other"
+                        review["acquired_public_sources"][0]["bytes"] += 1
+                        review["acquired_public_sources"][1]["sha256"] = "0" * 64
                         oxide_review_path.write_text(json.dumps(review), encoding="utf-8")
                     else:
                         diagnostics = re.findall(r"\bFigure 1f [^.\n]*\.", evidence_block(text, OXIDE_HEADING, "0065"))
@@ -2109,7 +2119,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 35, f"Expected 35 extension failure checks, got {len(extended)}")
+    require(len(extended) == 36, f"Expected 36 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
