@@ -66,13 +66,13 @@
     },
     {
       "path": "data/oxide_defect_source_review_2026-09-30.json",
-      "sha256": "1a253a65fb91209740a87d170036cb030a32f583b63caf4b86526708d5be6f30"
+      "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
     }
   ],
   "pdf": {
     "path": "documents/pdf/provisional_application_oxide_defect_evidence_2026-09-30.pdf",
     "intended_archival_path": "documents/pdf/provisional_application_oxide_defect_evidence_2026-09-30.pdf",
-    "sha256": "0cca608ffe8b7527727c1da75272dcc967ef76f9caf435ce50b1e41b8ea437a5",
+    "sha256": "06df382fd7979cc66862ec62ecfe0fce2f3d727588e7077bb91c7991b10379df",
     "size_bytes": 178352,
     "page_count": 34
   },
@@ -506,7 +506,7 @@
   ],
   "visual_review": {
     "status": "completed",
-    "method": "All 34 pages rendered with Poppler 26.07.0 at 108 dpi and inspected in nine contact sheets; full-page inspection of pages 9, 10, 11, 16, 17, 18, 25, 26, 32 and 34. Root independently inspected pages 9, 10, 11, 16, 17 and 18 and the first/last contact sheets.",
+    "method": "Corrected PDF rendered with Poppler 26.07.0 at 108 dpi: all 34 PNGs are byte-for-byte identical to the initially inspected renders. The initial nine contact sheets and full-page inspections covered all pages and pages 9, 10, 11, 16, 17, 18, 25, 26, 32 and 34 respectively; root independently inspected pages 9, 10, 11, 16, 17 and 18. Root additionally inspected the corrected page 9.",
     "pages_reviewed": [
       1,
       2,
@@ -544,15 +544,20 @@
       34
     ],
     "remaining_actionable_visual_findings": 0,
-    "scope": "Appearance review only; no filing, earlier entitlement, physical enablement or patentability determination."
+    "scope": "Appearance review and exact rendered-image preservation only; no filing, earlier entitlement, physical enablement or patentability determination."
   },
   "filing_asserted": false,
   "physical_enablement_certified": false,
   "curation": {
-    "authoring_output_path": "generated_reports/oxide_defect_application_review_2026-09-30/oxide_defect_review.pdf",
+    "authoring_output_path": "generated_reports/oxide_defect_application_review_2026-09-30/oxide_defect_review_corrected_2026-10-01.pdf",
     "artifact_path": "documents/pdf/provisional_application_oxide_defect_evidence_2026-09-30.pdf",
     "bytes_verified_equal": true,
-    "raw_report_path_label": "actual authoring output, separately recorded from intended archival path"
+    "raw_report_path_label": "actual corrected authoring output, separately recorded from intended archival path",
+    "previous_candidate_commit": "e233db54c115eed193aec8bd034633da491f0daf",
+    "previous_candidate_PDF_sha256": "0cca608ffe8b7527727c1da75272dcc967ef76f9caf435ce50b1e41b8ea437a5",
+    "corrected_PNGs_identical_to_previously_inspected_PNGs": 34
   },
-  "python_version": "3.12.14"
+  "python_version": "3.12.14",
+  "prepared_date_meaning": "Date of the preserved Markdown edition; corrected PDF authored 2026-10-01, not a filing or publication date.",
+  "actual_corrected_PDF_creation_metadata": "D:20261001153041-04'00'"
 }

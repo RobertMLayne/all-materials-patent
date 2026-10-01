@@ -80,11 +80,12 @@ OXIDE_PDF = "documents/pdf/provisional_application_oxide_defect_evidence_2026-09
 OXIDE_REVIEW = "data/oxide_defect_source_review_2026-09-30.json"
 OXIDE_BASELINE = "6d25542eb72f46ab148f6bad9ab81a2aaccdfe9a"
 OXIDE_HEADING = "### Oxide and defect evidence associated with [0064]: preparation, diagnostics and conditional response"
-# Fingerprints anchor the reviewed table and unresolved differences without
+# Fingerprints anchor reviewed source provenance, table and differences without
 # duplicating that source summary. Encode UTF-8 JSON with sorted object keys,
 # no ASCII escaping and separators (",", ":"); array order remains significant.
 OXIDE_TABLE_SHA256 = "e59f688ff9888189221bce65eaab68ff88421fc2884234791a2980f45fc84f4e"
 OXIDE_DIFFERENCES_SHA256 = "81b6b4befcdf13ce85abd7a6f3c3b5062a4257f4e9095fa7b9cc73f86290aabf"
+OXIDE_PROVENANCE_SHA256 = "933d140f64a4e5a883349dcdf542bb8306b50749224f98ea1dbed3bd2c8ee7ca"
 # The reviewed diagnostic sentence uses whitespace-normalized UTF-8 text.
 OXIDE_DIAGNOSTIC_SHA256 = "7e501e4e29f5d04e743f209ef57acab8d01084f8cde3602fa58d6532a8d37c01"
 OXIDE_AUTHORING = {
@@ -957,12 +958,15 @@ def check_oxide_application(root: Path) -> dict:
     def reviewed_digest(value):
         return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True,
                                         separators=(",", ":")).encode("utf-8")).hexdigest()
+    require(reviewed_digest({key: review.get(key) for key in
+                             ("doi", "published_date_reported", "primary_article", "acquired_public_sources")})
+            == OXIDE_PROVENANCE_SHA256, "Oxide reviewed upstream provenance differs")
     require(isinstance(table_rows, list) and len(table_rows) == 5
             and all(isinstance(row, list) and len(row) == 4
                     and all(isinstance(cell, str) for cell in row) for row in table_rows)
             and reviewed_digest(table_rows) == OXIDE_TABLE_SHA256
             and review.get("source_table_statuses") == [
-        "ESTABLISHED measurement report", "CALCULATED source estimate",
+        "ESTABLISHED measurement report", "ESTABLISHED measurement report",
         "ESTABLISHED measurement report", "CALCULATED source estimate",
     ], "Oxide reviewed source table or quantity status differs")
     table = ["| " + " | ".join(table_rows[0]) + " |", "| --- | --- | --- | --- |"]
@@ -1864,7 +1868,9 @@ def self_test(root: Path) -> dict:
                 for path, data in originals.items():
                     path.write_bytes(data)
         oxide_path, oxide_map_path, oxide_review_path = fixture / OXIDE_SOURCE, fixture / OXIDE_MAP, fixture / OXIDE_REVIEW
-        originals = {path: path.read_bytes() for path in (oxide_path, oxide_map_path, oxide_review_path)}
+        oxide_edition_path = fixture / OXIDE_EDITION
+        originals = {path: path.read_bytes() for path in
+                     (oxide_path, oxide_map_path, oxide_review_path, oxide_edition_path, manifest_path)}
         check_oxide_application(fixture)
         for case, expected_error in (
             ("oxide_source_map_drift_rejected", "Oxide source/map hash differs"),
@@ -1872,6 +1878,7 @@ def self_test(root: Path) -> dict:
             ("oxide_inherited_electrical_drift_rejected_after_consistent_map_update", "Oxide source changed outside the identified additions"),
             ("oxide_host_fraction_drift_rejected_after_consistent_records", "Oxide ideal-host fractions or canonical counts differ"),
             ("oxide_positron_carrier_confusion_rejected_after_consistent_records", "Oxide diagnostic or assay basis differs"),
+            ("oxide_upstream_provenance_substitution_rejected_after_consistent_records", "Oxide reviewed upstream provenance differs"),
         ):
             try:
                 text = originals[oxide_path].decode("utf-8")
@@ -1879,6 +1886,27 @@ def self_test(root: Path) -> dict:
                 review = json.loads(originals[oxide_review_path])
                 if case == "oxide_source_map_drift_rejected":
                     oxide_path.write_bytes(originals[oxide_path] + b"\nUnadopted addition.\n")
+                elif "provenance_substitution" in case:
+                    # Refresh both consistency layers to isolate the reviewed
+                    # upstream pin, rather than merely catching a stale hash.
+                    review["primary_article"] = "https://example.invalid/substituted-article"
+                    review["acquired_public_sources"][0].update({
+                        "source": review["primary_article"] + ".pdf",
+                        "sha256": "0" * 64, "filename": "substituted_article.pdf",
+                    })
+                    oxide_review_path.write_text(json.dumps(review), encoding="utf-8")
+                    edition = json.loads(originals[oxide_edition_path])
+                    entries = [entry for entry in edition["sources"] if entry["path"] == OXIDE_REVIEW]
+                    require(len(entries) == 1, "Oxide provenance fixture lost its captured-input target")
+                    entries[0]["sha256"] = hashlib.sha256(oxide_review_path.read_bytes()).hexdigest()
+                    oxide_edition_path.write_text(json.dumps(edition), encoding="utf-8")
+                    refreshed = json.loads(originals[manifest_path])
+                    for entry in refreshed["files"]:
+                        if entry["path"] in {OXIDE_REVIEW, OXIDE_EDITION}:
+                            changed = (fixture / entry["path"]).read_bytes()
+                            entry.update(size_bytes=len(changed), sha256=hashlib.sha256(changed).hexdigest())
+                    manifest_path.write_text(json.dumps(refreshed), encoding="utf-8")
+                    check_integrity(fixture)
                 else:
                     if "claim_drift" in case:
                         old_claim = support["claims"][0]["text"]
@@ -2109,7 +2137,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 35, f"Expected 35 extension failure checks, got {len(extended)}")
+    require(len(extended) == 36, f"Expected 36 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,

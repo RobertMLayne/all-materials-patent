@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 23900,
-      "sha256": "5a3ba1a4ff677de3c02aa3b6bd63b3134884c563a9c6712835e371eb82f07471"
+      "size_bytes": 23899,
+      "sha256": "f952a7f22112cd65a6e5335c8c8b8fff42abc54d1b69837c1aca42864686a766"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -158,8 +158,8 @@
     },
     {
       "path": "data/application_oxide_defect_evidence_2026-09-30.json",
-      "size_bytes": 14130,
-      "sha256": "ac1afc26ffc5cea45eff167ca3b8f688710c7d8f8ec8fc6092a0ad2a0be572e7"
+      "size_bytes": 14781,
+      "sha256": "18959be8860131c4e92a8a45cf65e33dbe0673778ebd02cc613dabfc5cc32872"
     },
     {
       "path": "data/application_oxide_defect_evidence_authoring_2026-09-30/builder.py.txt",
@@ -338,8 +338,8 @@
     },
     {
       "path": "data/oxide_defect_source_review_2026-09-30.json",
-      "size_bytes": 5461,
-      "sha256": "1a253a65fb91209740a87d170036cb030a32f583b63caf4b86526708d5be6f30"
+      "size_bytes": 5465,
+      "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
     },
     {
       "path": "data/particle_archive/README.md",
@@ -428,8 +428,8 @@
     },
     {
       "path": "documents/application_oxide_defect_evidence_2026-09-30.md",
-      "size_bytes": 7656,
-      "sha256": "8854b0b7b82855e87bcb61d432c001e9e612263173263bb4928168e146ba2f84"
+      "size_bytes": 8638,
+      "sha256": "5a44b8aad276b45d7b6207bbbfc9360ee2730e1fe2d046110dad4605c4516a28"
     },
     {
       "path": "documents/application_preparation_evidence_2026-09-30.md",
@@ -529,7 +529,7 @@
     {
       "path": "documents/pdf/provisional_application_oxide_defect_evidence_2026-09-30.pdf",
       "size_bytes": 178352,
-      "sha256": "0cca608ffe8b7527727c1da75272dcc967ef76f9caf435ce50b1e41b8ea437a5"
+      "sha256": "06df382fd7979cc66862ec62ecfe0fce2f3d727588e7077bb91c7991b10379df"
     },
     {
       "path": "documents/pdf/provisional_application_preparation_evidence_2026-09-30.pdf",
@@ -608,8 +608,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 41054,
-      "sha256": "b6aecc07bf502e9d5d0aa1a5e3bf6b08cd1eb385b49c17e87d4a69939826f5e1"
+      "size_bytes": 41770,
+      "sha256": "e2f86357735632f9d6fd847b39da0a6d6223fd4ff71d6dc767eec8baac36cba2"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -723,8 +723,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 138300,
-      "sha256": "3a6dd9c38227c425f9aa4a510196d046fdcd310a4ba2fc2dbc31e037b1c2856a"
+      "size_bytes": 140527,
+      "sha256": "59cc466b96fa9d574da2b9f9ebe244413c860ac5947174f55cfa1e5d86484ab5"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
