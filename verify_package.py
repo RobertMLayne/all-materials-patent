@@ -73,6 +73,26 @@ ELECTRICAL_AUTHORING = {
     "tools/pdf/build_consolidated_review.py": "data/application_electrical_evidence_authoring_2026-09-30/layout.py.txt",
     "tools/pdf/build_identity_review_annex.py": "data/application_electrical_evidence_authoring_2026-09-30/output_helper.py.txt",
 }
+OXIDE_SOURCE = "documents/provisional_application_oxide_defect_evidence_2026-09-30.md"
+OXIDE_MAP = "data/claim_support_map_oxide_defect_evidence_2026-09-30.json"
+OXIDE_EDITION = "data/application_oxide_defect_evidence_2026-09-30.json"
+OXIDE_PDF = "documents/pdf/provisional_application_oxide_defect_evidence_2026-09-30.pdf"
+OXIDE_REVIEW = "data/oxide_defect_source_review_2026-09-30.json"
+OXIDE_BASELINE = "6d25542eb72f46ab148f6bad9ab81a2aaccdfe9a"
+OXIDE_HEADING = "### Oxide and defect evidence associated with [0064]: preparation, diagnostics and conditional response"
+# Fingerprints anchor reviewed source provenance, table and differences without
+# duplicating that source summary. Encode UTF-8 JSON with sorted object keys,
+# no ASCII escaping and separators (",", ":"); array order remains significant.
+OXIDE_TABLE_SHA256 = "e59f688ff9888189221bce65eaab68ff88421fc2884234791a2980f45fc84f4e"
+OXIDE_DIFFERENCES_SHA256 = "81b6b4befcdf13ce85abd7a6f3c3b5062a4257f4e9095fa7b9cc73f86290aabf"
+OXIDE_PROVENANCE_SHA256 = "933d140f64a4e5a883349dcdf542bb8306b50749224f98ea1dbed3bd2c8ee7ca"
+# The reviewed diagnostic sentence uses whitespace-normalized UTF-8 text.
+OXIDE_DIAGNOSTIC_SHA256 = "7e501e4e29f5d04e743f209ef57acab8d01084f8cde3602fa58d6532a8d37c01"
+OXIDE_AUTHORING = {
+    "tools/pdf/build_working_application.py": "data/application_oxide_defect_evidence_authoring_2026-09-30/builder.py.txt",
+    "tools/pdf/build_consolidated_review.py": "data/application_oxide_defect_evidence_authoring_2026-09-30/layout.py.txt",
+    "tools/pdf/build_identity_review_annex.py": "data/application_oxide_defect_evidence_authoring_2026-09-30/output_helper.py.txt",
+}
 REVIEW_AUTHORING_FILES = {
     "builder": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
     "helper": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
@@ -166,6 +186,8 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     "documents/application_preparation_evidence_2026-09-30.md", *PREPARATION_AUTHORING.values(),
     ELECTRICAL_SOURCE, ELECTRICAL_MAP, ELECTRICAL_EDITION, ELECTRICAL_PDF, ELECTRICAL_REVIEW,
     "documents/application_electrical_evidence_2026-09-30.md", *ELECTRICAL_AUTHORING.values(),
+    OXIDE_SOURCE, OXIDE_MAP, OXIDE_EDITION, OXIDE_PDF, OXIDE_REVIEW,
+    "documents/application_oxide_defect_evidence_2026-09-30.md", *OXIDE_AUTHORING.values(),
 }
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
@@ -828,6 +850,198 @@ def check_electrical_application(root: Path) -> dict:
             "filing_or_earlier_entitlement_or_enablement_certified": False}
 
 
+def check_ideal_oxide_host(review: dict) -> dict:
+    """Recompute five exact ideal inventories without assigning physical states."""
+    model = review.get("ideal_host_accounting", {})
+    expected_definition = {
+        "evidence_status": "CALCULATED present ideal atom-count model; not a source assay",
+        "basis": "Ideal Ti/O host atom counts", "selected_atomic_numbers": [8, 22],
+        "delta_domain": "Rational 0 <= delta < 2; irrational cases symbolic",
+        "x_Ti_formula": "1/(3-delta)", "x_O_formula": "(2-delta)/(3-delta)",
+        "finite_count_rule": "delta=V/N; N positive integer; V integer; 0 <= V < 2N",
+        "charge_model": "Neutral O^2- host compensated only by Ti^3+/Ti^4+: fraction(Ti^3+ among Ti atoms)=2*delta for 0 <= delta <= 1/2",
+        "physical_candidates_prepared": False, "source_OH_or_positron_values_assigned_to_delta": False,
+    }
+    require(all(model.get(key) == value for key, value in expected_definition.items())
+            and model.get("physical_candidates_prepared") is False
+            and model.get("source_OH_or_positron_values_assigned_to_delta") is False,
+            "Oxide ideal-host definition or evidence basis differs")
+    deltas = (Fraction(0), Fraction(1, 10**20), Fraction(1, 4), Fraction(1),
+              Fraction(2) - Fraction(1, 10**20))
+    cases = model.get("cases", [])
+    require(isinstance(cases, list) and len(cases) == len(deltas), "Oxide ideal-host case inventory differs")
+    for case, delta in zip(cases, deltas):
+        require(case.get("delta") == str(delta) and 0 <= delta < 2, "Oxide ideal-host delta differs")
+        n, v = delta.denominator, delta.numerator
+        oxygen, total = 2 * n - v, 3 * n - v
+        fractions = {"x_Ti": Fraction(1, 3 - delta), "x_O": Fraction(2 - delta, 3 - delta)}
+        require(all(value > 0 for value in fractions.values()) and sum(fractions.values()) == 1,
+                "Invalid recomputed ideal-host fractions")
+        require(all(case.get(key) == str(value) for key, value in fractions.items())
+                and all(type(case.get(key)) is int and case[key] == value for key, value in
+                        {"Ti_count": n, "O_count": oxygen, "total_atoms": total}.items())
+                and Fraction(n, total).denominator == total,
+                "Oxide ideal-host fractions or canonical counts differ")
+        admissible = delta <= Fraction(1, 2)
+        require(case.get("only_Ti3_Ti4_charge_model_admissible") is admissible,
+                "Oxide restricted charge-model boundary differs")
+        if admissible:
+            # These integer formal-charge populations are consequences of the
+            # restricted model, not measured Ti oxidation-state populations.
+            require(0 <= 2 * v <= n and 3 * (2 * v) + 4 * (n - 2 * v) == 2 * oxygen,
+                    "Recomputed restricted charge balance differs")
+    trace = Fraction(cases[-1]["x_O"])
+    require(trace < Fraction(1, 10**19), "Oxide near-two trace does not fall below the original floor")
+    return {"exact_ideal_host_cases_recomputed": len(cases), "canonical_integer_inventories_checked": len(cases),
+            "near_two_oxygen_fraction": str(trace), "near_two_below_original_positive_floor": True,
+            "physical_realization_or_measured_defect_population_certified": False}
+
+
+def check_oxide_application(root: Path) -> dict:
+    """Verify the fifth edition while preserving every preceding application.
+
+    The external source review and ideal-host calculations have separate bases.
+    Recorded PDF coverage binds bytes; this offline check does not parse a PDF.
+    """
+    preceding_bytes = (root / ELECTRICAL_SOURCE).read_bytes()
+    source_bytes = (root / OXIDE_SOURCE).read_bytes()
+    preceding, application = preceding_bytes.decode("utf-8"), source_bytes.decode("utf-8")
+    support = load_json(root / OXIDE_MAP)
+    require(support.get("source_path") == OXIDE_SOURCE and support.get("source_sha256")
+            == hashlib.sha256(source_bytes).hexdigest(), "Oxide source/map hash differs")
+    require(support.get("prepared_date") == "2026-09-30" and support.get("derived_from") == {
+        "path": ELECTRICAL_SOURCE, "sha256": hashlib.sha256(preceding_bytes).hexdigest(),
+        "repository_baseline": OXIDE_BASELINE,
+    }, "Oxide source derivation differs")
+    require(support.get("changed_paragraphs") == ["0064"] and support.get("changed_claims") == [],
+            "Oxide change inventory differs")
+    require(support.get("claims") == load_json(root / ELECTRICAL_MAP).get("claims"),
+            "Oxide map changed individual claim records")
+    claim_result = check_claims(application, support)
+    require(re.findall(r"^\*\*Claim (\d+)\.\*\* (.+)$", application, re.M)
+            == re.findall(r"^\*\*Claim (\d+)\.\*\* (.+)$", preceding, re.M),
+            "Oxide candidate claims differ from electrical edition")
+    old_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", preceding, re.M))
+    new_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", application, re.M))
+    require(old_paragraphs.keys() == new_paragraphs.keys()
+            and {n for n in old_paragraphs if old_paragraphs[n] != new_paragraphs[n]} == {"0064"},
+            "Unexpected oxide paragraph changes")
+    boundary = "## 1 Technical field\n"
+    require(application.count(boundary) == preceding.count(boundary) == 1,
+            "Oxide technical-field boundary differs")
+    preface, body = application.split(boundary)
+    lines = [line for line in preface.splitlines() if line]
+    require(len(lines) == 4 and lines[0]
+            == "# Provisional materials disclosure with attributed oxide and defect evidence - 30 September 2026"
+            and lines[1] == "Prepared **30 September 2026** | **Prospective unfiled oxide-defect-evidence edition** for applicant and patent counsel.",
+            "Oxide edition preface differs")
+    block = evidence_block(body, OXIDE_HEADING, "0065")
+    old_body = preceding.split(boundary, 1)[1]
+    old_body = old_body.replace("[0064] " + old_paragraphs["0064"], "[0064] " + new_paragraphs["0064"], 1)
+    old_reference, new_reference = PurePosixPath(ELECTRICAL_MAP).name, PurePosixPath(OXIDE_MAP).name
+    require(old_body.count(old_reference) == body.count(new_reference) == 1
+            and old_reference not in body, "Oxide companion-map reference differs")
+    old_body = old_body.replace(old_reference, new_reference, 1)
+    require(body.replace(OXIDE_HEADING + block, "", 1) == old_body,
+            "Oxide source changed outside the identified additions")
+    check_registry(load_json(root / "data/entity_register.json"), application)
+
+    review = load_json(root / OXIDE_REVIEW)
+    require(review.get("source_basis") == {
+        "OH": "See D[0064] diagnostic basis.",
+        "positron_lifetimes_are_charge_carrier_lifetimes": False,
+        "T2_positron_values_present_in_Figure_1f": False,
+        "whole_product_elemental_inventory_assayed": False, "retained_Pt_fraction_assayed": False,
+        "reported_hydrogen_rate_units": "micromol h^-1 g^-1", "source_conflicts_resolved": False,
+    }, "Oxide diagnostic or assay basis differs")
+    table_rows = review.get("source_table_rows")
+    def reviewed_digest(value):
+        return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True,
+                                        separators=(",", ":")).encode("utf-8")).hexdigest()
+    require(reviewed_digest({key: review.get(key) for key in
+                             ("doi", "published_date_reported", "primary_article", "acquired_public_sources")})
+            == OXIDE_PROVENANCE_SHA256, "Oxide reviewed upstream provenance differs")
+    require(isinstance(table_rows, list) and len(table_rows) == 5
+            and all(isinstance(row, list) and len(row) == 4
+                    and all(isinstance(cell, str) for cell in row) for row in table_rows)
+            and reviewed_digest(table_rows) == OXIDE_TABLE_SHA256
+            and review.get("source_table_statuses") == [
+        "ESTABLISHED measurement report", "ESTABLISHED measurement report",
+        "ESTABLISHED measurement report", "CALCULATED source estimate",
+    ], "Oxide reviewed source table or quantity status differs")
+    table = ["| " + " | ".join(table_rows[0]) + " |", "| --- | --- | --- | --- |"]
+    table.extend("| " + " | ".join(row) + " |" for row in table_rows[1:])
+    require(block.count("\n".join(table)) == 1, "Oxide source table differs from reviewed rows")
+    require(reviewed_digest(review.get("unresolved_source_differences")) == OXIDE_DIFFERENCES_SHA256,
+            "Oxide unresolved source differences were changed or resolved")
+    diagnostics = re.findall(r"\bFigure 1f [^.\n]*\.", block)
+    require(len(diagnostics) == 1 and hashlib.sha256(" ".join(diagnostics[0].split()).encode("utf-8")).hexdigest()
+            == OXIDE_DIAGNOSTIC_SHA256, "Oxide reviewed diagnostic sentence differs")
+    require(all(fragment in block for fragment in (
+        "x_Ti = 1/(3-delta)", "x_O = (2-delta)/(3-delta)", "0 <= delta <= 1/2",
+        "Neither measures whole-specimen elemental fractions or charge-carrier lifetimes.",
+        "methanol-assisted hydrogen evolution", "../data/oxide_defect_source_review_2026-09-30.json",
+        "PROPOSED present verification and alternative", "UNSUPPORTED extensions",
+    )), "Oxide source calculation or diagnostic boundary differs")
+    model_result = check_ideal_oxide_host(review)
+    require(review.get("review_date") == "2026-09-30" and review.get("doi") == "10.1038/ncomms6881"
+            and all(review.get(key) is False for key in
+                    ("applicant_experiment_asserted", "physical_enablement_certified", "novelty_assessed", "filing_asserted")),
+            "Oxide source factual status differs")
+
+    edition = load_json(root / OXIDE_EDITION)
+    require(edition.get("prepared_date") == "2026-09-30"
+            and edition.get("edition_status") == "prospective unfiled oxide-defect-evidence edition"
+            and edition.get("repository_baseline") == OXIDE_BASELINE
+            and edition.get("filing_asserted") is False and edition.get("physical_enablement_certified") is False,
+            "Oxide edition baseline or factual status differs")
+    expected_sources = {OXIDE_SOURCE, OXIDE_MAP, OXIDE_REVIEW, PREPARATION_REVIEW, ELECTRICAL_REVIEW,
+                        *OXIDE_AUTHORING, "documents/drawings/composition_simplex.svg",
+                        "documents/drawings/material_record_sequence.svg"}
+    entries = edition.get("sources", [])
+    require(len(entries) == len(expected_sources) and {entry["path"] for entry in entries} == expected_sources,
+            "Oxide PDF source inventory differs")
+    for entry in entries:
+        snapshot = OXIDE_AUTHORING.get(entry["path"])
+        require(entry.get("snapshot_path") == snapshot, "Oxide authoring snapshot identity differs")
+        require(hashlib.sha256(safe_path(root, snapshot or entry["path"]).read_bytes()).hexdigest() == entry["sha256"],
+                "Oxide PDF captured-source hash differs")
+    pdf = edition.get("pdf", {})
+    require(pdf.get("path") == OXIDE_PDF and type(pdf.get("page_count")) is int
+            and pdf["page_count"] > 0, "Invalid oxide PDF identity")
+    data = safe_path(root, pdf["path"]).read_bytes()
+    require(len(data) == pdf.get("size_bytes") and hashlib.sha256(data).hexdigest() == pdf.get("sha256"),
+            "Oxide PDF bytes differ from record")
+    locations = edition.get("location_map", {})
+    expected_locations = {f"paragraph_{n:04d}" for n in range(1, 81)} | {f"claim_{n}" for n in range(1, 200)}
+    require(locations.keys() == expected_locations
+            and all(type(page) is int and 1 <= page <= pdf["page_count"] for page in locations.values()),
+            "Oxide recorded PDF locations differ")
+    require(edition.get("complete_numbered_text_checked") == {"paragraphs": 80, "claims": 199}
+            and edition.get("vector_drawings_checked") == 2
+            and edition.get("complete_property_table_checked") == {
+                "data_rows": 10, "columns": 4, "headers_and_complete_rows_checked_in_order": True},
+            "Oxide recorded application content checks differ")
+    for key, heading, ending in (
+        ("complete_preparation_text_checked", PREPARATION_HEADING, "0066"),
+        ("complete_electrical_text_checked", ELECTRICAL_HEADING, "0067"),
+        ("complete_oxide_defect_text_checked", OXIDE_HEADING, "0065"),
+    ):
+        require(edition.get(key) == evidence_block_counts(evidence_block(body, heading, ending)),
+                "Oxide complete rendered block checks differ: " + key)
+    visual = edition.get("visual_review", {})
+    require(isinstance(visual, dict) and visual.get("status") == "completed"
+            and visual.get("pages_reviewed") == list(range(1, pdf["page_count"] + 1))
+            and visual.get("remaining_actionable_visual_findings") == 0,
+            "Oxide recorded appearance review is incomplete")
+    return {**claim_result, **model_result, "changed_paragraphs": ["0064"], "changed_claims": [],
+            "recorded_pdf_pages": pdf["page_count"], "recorded_pdf_locations_checked": len(locations),
+            "captured_sources_checked": len(entries), "source_table_data_rows_checked": len(table_rows) - 1,
+            "preceding_hydrogel_and_electrical_blocks_and_remaining_body_preserved": True,
+            "pdf_parsed_or_appearance_rechecked_by_this_check": False,
+            "filing_or_earlier_entitlement_or_enablement_certified": False}
+
+
 def check_local_links(root: Path) -> int:
     checked = 0
     for relative in EXPECTED_FILES:
@@ -1227,6 +1441,7 @@ def run(root: Path) -> dict:
     property_result = check_property_application(root)
     preparation_result = check_preparation_application(root)
     electrical_result = check_electrical_application(root)
+    oxide_result = check_oxide_application(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -1249,6 +1464,7 @@ def run(root: Path) -> dict:
             "property_application_edition_verification": property_result,
             "preparation_application_edition_verification": preparation_result,
             "electrical_application_edition_verification": electrical_result,
+            "oxide_defect_application_edition_verification": oxide_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -1651,6 +1867,87 @@ def self_test(root: Path) -> dict:
             finally:
                 for path, data in originals.items():
                     path.write_bytes(data)
+        oxide_path, oxide_map_path, oxide_review_path = fixture / OXIDE_SOURCE, fixture / OXIDE_MAP, fixture / OXIDE_REVIEW
+        oxide_edition_path = fixture / OXIDE_EDITION
+        originals = {path: path.read_bytes() for path in
+                     (oxide_path, oxide_map_path, oxide_review_path, oxide_edition_path, manifest_path)}
+        check_oxide_application(fixture)
+        for case, expected_error in (
+            ("oxide_source_map_drift_rejected", "Oxide source/map hash differs"),
+            ("oxide_claim_drift_rejected_after_consistent_map_update", "Oxide map changed individual claim records"),
+            ("oxide_inherited_electrical_drift_rejected_after_consistent_map_update", "Oxide source changed outside the identified additions"),
+            ("oxide_host_fraction_drift_rejected_after_consistent_records", "Oxide ideal-host fractions or canonical counts differ"),
+            ("oxide_positron_carrier_confusion_rejected_after_consistent_records", "Oxide diagnostic or assay basis differs"),
+            ("oxide_upstream_provenance_substitution_rejected_after_consistent_records", "Oxide reviewed upstream provenance differs"),
+        ):
+            try:
+                text = originals[oxide_path].decode("utf-8")
+                support = json.loads(originals[oxide_map_path])
+                review = json.loads(originals[oxide_review_path])
+                if case == "oxide_source_map_drift_rejected":
+                    oxide_path.write_bytes(originals[oxide_path] + b"\nUnadopted addition.\n")
+                elif "provenance_substitution" in case:
+                    # Refresh both consistency layers to isolate the reviewed
+                    # upstream pin, rather than merely catching a stale hash.
+                    review["primary_article"] = "https://example.invalid/substituted-article"
+                    review["acquired_public_sources"][0].update({
+                        "source": review["primary_article"] + ".pdf",
+                        "sha256": "0" * 64, "filename": "substituted_article.pdf",
+                    })
+                    oxide_review_path.write_text(json.dumps(review), encoding="utf-8")
+                    edition = json.loads(originals[oxide_edition_path])
+                    entries = [entry for entry in edition["sources"] if entry["path"] == OXIDE_REVIEW]
+                    require(len(entries) == 1, "Oxide provenance fixture lost its captured-input target")
+                    entries[0]["sha256"] = hashlib.sha256(oxide_review_path.read_bytes()).hexdigest()
+                    oxide_edition_path.write_text(json.dumps(edition), encoding="utf-8")
+                    refreshed = json.loads(originals[manifest_path])
+                    for entry in refreshed["files"]:
+                        if entry["path"] in {OXIDE_REVIEW, OXIDE_EDITION}:
+                            changed = (fixture / entry["path"]).read_bytes()
+                            entry.update(size_bytes=len(changed), sha256=hashlib.sha256(changed).hexdigest())
+                    manifest_path.write_text(json.dumps(refreshed), encoding="utf-8")
+                    check_integrity(fixture)
+                else:
+                    if "claim_drift" in case:
+                        old_claim = support["claims"][0]["text"]
+                        new_claim = old_claim.replace("positive normalized fraction", "nonnegative normalized fraction", 1)
+                        require(old_claim != new_claim, "Oxide claim fixture lost its target")
+                        text = text.replace("**Claim 1.** " + old_claim, "**Claim 1.** " + new_claim, 1)
+                        support["claims"][0]["text"] = new_claim
+                    elif "electrical_drift" in case:
+                        row = "| PEDOT:PSS threshold | 0.443 wt% |"
+                        require(text.count(row) == 1, "Oxide electrical fixture lost its target")
+                        text = text.replace(row, row.replace("0.443", "0.444"), 1)
+                    elif "host_fraction" in case:
+                        # Confuse deficiency delta with a normalized Ti atom
+                        # fraction and update both the prose and review case.
+                        heading = "**Conditional charge model"
+                        require(text.count(heading) == 1, "Oxide host fixture lost its target")
+                        text = text.replace(heading, "At delta = 1/4, x_Ti = 1/4 and x_O = 3/4, with counts (1,3).\n\n" + heading, 1)
+                        review["ideal_host_accounting"]["cases"][2].update({
+                            "x_Ti": "1/4", "x_O": "3/4", "Ti_count": 1, "O_count": 3, "total_atoms": 4,
+                        })
+                        oxide_review_path.write_text(json.dumps(review), encoding="utf-8")
+                    else:
+                        diagnostics = re.findall(r"\bFigure 1f [^.\n]*\.", evidence_block(text, OXIDE_HEADING, "0065"))
+                        require(len(diagnostics) == 1, "Oxide positron fixture lost its target")
+                        diagnostic = diagnostics[0]
+                        text = text.replace(diagnostic, "Figure 1f measures charge-carrier lifetimes for T-2.", 1)
+                        review["source_basis"]["positron_lifetimes_are_charge_carrier_lifetimes"] = True
+                        review["source_basis"]["T2_positron_values_present_in_Figure_1f"] = True
+                        oxide_review_path.write_text(json.dumps(review), encoding="utf-8")
+                    oxide_path.write_text(text, encoding="utf-8", newline="\n")
+                    support["source_sha256"] = hashlib.sha256(oxide_path.read_bytes()).hexdigest()
+                    oxide_map_path.write_text(json.dumps(support), encoding="utf-8")
+                try:
+                    check_oxide_application(fixture)
+                except VerificationError as error:
+                    require(expected_error in str(error), "Oxide mutation failed for another reason: " + str(error))
+                    extended.append(case)
+                require(case in extended, "Oxide mutation was accepted: " + case)
+            finally:
+                for path, data in originals.items():
+                    path.write_bytes(data)
         for path in ("../outside.txt", "/absolute.txt", "C:/outside.txt", "a\\b"):
             try:
                 safe_path(fixture, path)
@@ -1840,7 +2137,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 30, f"Expected 30 extension failure checks, got {len(extended)}")
+    require(len(extended) == 36, f"Expected 36 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
