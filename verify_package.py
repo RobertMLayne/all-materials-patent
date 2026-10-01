@@ -93,6 +93,27 @@ OXIDE_AUTHORING = {
     "tools/pdf/build_consolidated_review.py": "data/application_oxide_defect_evidence_authoring_2026-09-30/layout.py.txt",
     "tools/pdf/build_identity_review_annex.py": "data/application_oxide_defect_evidence_authoring_2026-09-30/output_helper.py.txt",
 }
+PHASE_SOURCE = "documents/provisional_application_phase_specific_evidence_2026-10-01.md"
+PHASE_MAP = "data/claim_support_map_phase_specific_evidence_2026-10-01.json"
+PHASE_EDITION = "data/application_phase_specific_evidence_2026-10-01.json"
+PHASE_PDF = "documents/pdf/provisional_application_phase_specific_evidence_2026-10-01.pdf"
+PHASE_REVIEW = "data/magneli_source_review_2026-10-01.json"
+PHASE_RECORD = "data/oxide_candidate_record_review_2026-10-01.json"
+PHASE_BASELINE = "ad590d8fb6e2646e27234fa51efce071044e4bf8"
+PHASE_HEADING = "### Phase-specific evidence and worked record associated with [0064]"
+# These pins identify reviewed input records and the whitespace-normalized
+# application source account without duplicating its scientific summary.
+PHASE_REVIEW_SHA256 = "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
+PHASE_RECORD_SHA256 = "031d389236fbe42f81d3b607f7146a4a359e48db7892533a2c5f77aaf5bf0efa"
+PHASE_ACCOUNT_SHA256 = "462b6a266c19d1a377f5d44d83a010694e1131bb1168ba4e1c55da28fad05fb3"
+# Freeze the reviewed block's field statuses and qualifications independently
+# of refreshed source/map and outer hashes; no missing evidence is promoted.
+PHASE_BLOCK_SHA256 = "fa290887cabcb57c3208fe666db5612307fc435fef3f91b17b24f7f48cd2fa38"
+PHASE_AUTHORING = {
+    "tools/pdf/build_working_application.py": "data/application_phase_specific_evidence_authoring_2026-10-01/builder.py.txt",
+    "tools/pdf/build_consolidated_review.py": "data/application_phase_specific_evidence_authoring_2026-10-01/layout.py.txt",
+    "tools/pdf/build_identity_review_annex.py": "data/application_phase_specific_evidence_authoring_2026-10-01/output_helper.py.txt",
+}
 REVIEW_AUTHORING_FILES = {
     "builder": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
     "helper": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
@@ -191,6 +212,8 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     "documents/application_electrical_evidence_2026-09-30.md", *ELECTRICAL_AUTHORING.values(),
     OXIDE_SOURCE, OXIDE_MAP, OXIDE_EDITION, OXIDE_PDF, OXIDE_REVIEW,
     "documents/application_oxide_defect_evidence_2026-09-30.md", *OXIDE_AUTHORING.values(),
+    PHASE_SOURCE, PHASE_MAP, PHASE_EDITION, PHASE_PDF,
+    "documents/application_phase_specific_evidence_2026-10-01.md", *PHASE_AUTHORING.values(),
 }
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
@@ -1045,6 +1068,135 @@ def check_oxide_application(root: Path) -> dict:
             "filing_or_earlier_entitlement_or_enablement_certified": False}
 
 
+def check_phase_application(root: Path) -> dict:
+    """Check the sixth edition's actual teaching, boundaries and captured bytes.
+
+    Calculations independently use stipulated atom counts. Neither the source
+    pins nor recorded PDF checks establish physical realization or appearance.
+    """
+    previous_bytes = (root / OXIDE_SOURCE).read_bytes()
+    source_bytes = (root / PHASE_SOURCE).read_bytes()
+    previous, application = previous_bytes.decode("utf-8"), source_bytes.decode("utf-8")
+    support = load_json(root / PHASE_MAP)
+    require(support.get("source_path") == PHASE_SOURCE and support.get("source_sha256")
+            == hashlib.sha256(source_bytes).hexdigest(), "Phase source/map hash differs")
+    require(support.get("prepared_date") == "2026-10-01" and support.get("derived_from") == {
+        "path": OXIDE_SOURCE, "sha256": hashlib.sha256(previous_bytes).hexdigest(),
+        "repository_baseline": PHASE_BASELINE,
+    }, "Phase source derivation differs")
+    require(support.get("claims") == load_json(root / OXIDE_MAP).get("claims")
+            and support.get("changed_claims") == [] and support.get("changed_paragraphs") == ["0064"],
+            "Phase individual claim records or change inventory differ")
+    claims = check_claims(application, support)
+    old_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", previous, re.M))
+    new_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", application, re.M))
+    require(old_paragraphs.keys() == new_paragraphs.keys()
+            and {n for n in old_paragraphs if old_paragraphs[n] != new_paragraphs[n]} == {"0064"},
+            "Unexpected phase paragraph changes")
+    boundary = "## 1 Technical field\n"
+    require(application.count(boundary) == previous.count(boundary) == 1,
+            "Phase technical-field boundary differs")
+    preface, body = application.split(boundary)
+    lines = [line for line in preface.splitlines() if line]
+    require(len(lines) == 4 and lines[0]
+            == "# Provisional materials disclosure with phase-specific evidence and a worked record - 1 October 2026"
+            and lines[1] == "Prepared **1 October 2026** | **Prospective unfiled phase-specific-evidence edition** for applicant and patent counsel.",
+            "Phase edition preface differs")
+    starts = list(re.finditer(r"^" + re.escape(PHASE_HEADING) + r"$", body, re.M))
+    ends = list(re.finditer(r"^" + re.escape(OXIDE_HEADING) + r"$", body, re.M))
+    require(len(starts) == len(ends) == 1 and starts[0].end() < ends[0].start(),
+            "Phase evidence boundary differs")
+    block = body[starts[0].end():ends[0].start()]
+    old_body = previous.split(boundary, 1)[1]
+    old_body = old_body.replace("[0064] " + old_paragraphs["0064"], "[0064] " + new_paragraphs["0064"], 1)
+    old_map, new_map = PurePosixPath(OXIDE_MAP).name, PurePosixPath(PHASE_MAP).name
+    require(old_body.count(old_map) == body.count(new_map) == 1 and old_map not in body,
+            "Phase companion-map reference differs")
+    require(body.replace(PHASE_HEADING + block, "", 1) == old_body.replace(old_map, new_map, 1),
+            "Phase source changed outside identified additions")
+    account = re.findall(r"^Zhang et al\.[^\n]+$", block, re.M)
+    require(len(account) == 1 and hashlib.sha256(" ".join(account[0].split()).encode("utf-8")).hexdigest()
+            == PHASE_ACCOUNT_SHA256, "Phase reviewed source account differs")
+    for path, expected in ((PHASE_REVIEW, PHASE_REVIEW_SHA256), (PHASE_RECORD, PHASE_RECORD_SHA256)):
+        require(hashlib.sha256((root / path).read_bytes()).hexdigest() == expected,
+                "Phase reviewed input identity differs: " + path)
+    record = load_json(root / PHASE_RECORD)
+    composition, sites = record["composition"], record["site_and_charge_accounting"]
+    # Independent count normalization, distinct site denominator and formal
+    # charge balance; no production generator or specimen result is inferred.
+    target = {"Ti": Fraction(4, 11), "O": Fraction(7, 11)}
+    baseline = {"Ti": Fraction(1, 3), "O": Fraction(2, 3)}
+    require(sum(target.values()) == sum(baseline.values()) == 1
+            and composition["assigned_target_fractions"] == {k: str(v) for k, v in target.items()}
+            and composition["changed_minus_baseline"] == {k: str(target[k] - baseline[k]) for k in target}
+            and Fraction(sites["reference_vacancy_site_fraction"]) == Fraction(1, 8)
+            and Fraction(sites["occupied_atom_O_fraction"]) == target["O"]
+            and 3 * 2 + 4 * 2 - 2 * 7 == 0 and 10**19 % 11 != 0,
+            "Phase exact count or denominator accounting differs")
+    require(all(fragment in block for fragment in (
+        "on a stipulated occupied-atom basis, not a feed, site or whole-product assay basis",
+        "x_Ti = 4/11 and x_O = 7/11", "(+1/33,-1/33)", "V/(2*N_Ti) = 1/8",
+        "candidate applicability and conditioning prerequisites PROPOSED",
+        "optical results as UNSUPPORTED", "actual candidate outcomes UNSUPPORTED",
+        "A(lambda)=1-R(lambda)-T(lambda)",
+        "compatible total reflected/transmitted power fractions", "No candidate comparison has been performed.",
+        "no original article bytes or PDF hash were acquired", "No permissive reuse grant is verified.",
+    )), "Phase target basis or evidence boundary differs")
+    require(hashlib.sha256(" ".join(block.split()).encode("utf-8")).hexdigest() == PHASE_BLOCK_SHA256,
+            "Phase reviewed record fields or qualifications differ")
+    edition = load_json(root / PHASE_EDITION)
+    require(edition.get("prepared_date") == "2026-10-01"
+            and edition.get("edition_status") == "prospective unfiled phase-specific-evidence edition"
+            and edition.get("repository_baseline") == PHASE_BASELINE
+            and edition.get("filing_asserted") is False and edition.get("physical_enablement_certified") is False,
+            "Phase edition baseline or factual status differs")
+    expected_sources = {PHASE_SOURCE, PHASE_MAP, PHASE_REVIEW, PHASE_RECORD, OXIDE_REVIEW,
+                        PREPARATION_REVIEW, ELECTRICAL_REVIEW, *PHASE_AUTHORING,
+                        "documents/drawings/composition_simplex.svg", "documents/drawings/material_record_sequence.svg"}
+    entries = edition.get("sources", [])
+    require(len(entries) == len(expected_sources) and {e["path"] for e in entries} == expected_sources,
+            "Phase PDF source inventory differs")
+    for entry in entries:
+        snapshot = PHASE_AUTHORING.get(entry["path"])
+        require(entry.get("snapshot_path") == snapshot
+                and hashlib.sha256(safe_path(root, snapshot or entry["path"]).read_bytes()).hexdigest() == entry["sha256"],
+                "Phase PDF captured-source identity differs")
+    pdf = edition.get("pdf", {})
+    require(pdf.get("path") == PHASE_PDF and type(pdf.get("page_count")) is int and pdf["page_count"] > 0,
+            "Invalid phase PDF identity")
+    data = safe_path(root, PHASE_PDF).read_bytes()
+    require(len(data) == pdf.get("size_bytes") and hashlib.sha256(data).hexdigest() == pdf.get("sha256"),
+            "Phase PDF bytes differ from record")
+    locations = edition.get("location_map", {})
+    require(locations.keys() == {f"paragraph_{n:04d}" for n in range(1, 81)} | {f"claim_{n}" for n in range(1, 200)}
+            and all(type(page) is int and 1 <= page <= pdf["page_count"] for page in locations.values()),
+            "Phase PDF recorded locations differ")
+    require(edition.get("complete_numbered_text_checked") == {"paragraphs": 80, "claims": 199}
+            and edition.get("vector_drawings_checked") == 2
+            and edition.get("complete_phase_specific_text_checked") == evidence_block_counts(block)
+            and edition.get("complete_property_table_checked") == {
+                "data_rows": 10, "columns": 4, "headers_and_complete_rows_checked_in_order": True},
+            "Phase recorded application coverage differs")
+    for key, heading, ending in (
+        ("complete_preparation_text_checked", PREPARATION_HEADING, "0066"),
+        ("complete_electrical_text_checked", ELECTRICAL_HEADING, "0067"),
+        ("complete_oxide_defect_text_checked", OXIDE_HEADING, "0065"),
+    ):
+        require(edition.get(key) == evidence_block_counts(evidence_block(body, heading, ending)),
+                "Phase inherited block coverage differs: " + key)
+    visual = edition.get("visual_review", {})
+    require(isinstance(visual, dict) and visual.get("status") == "completed"
+            and visual.get("pages_reviewed") == list(range(1, pdf["page_count"] + 1))
+            and visual.get("remaining_actionable_visual_findings") == 0,
+            "Phase recorded appearance review is incomplete")
+    return {**claims, "changed_paragraphs": ["0064"], "changed_claims": [],
+            "captured_sources_checked": len(entries), "recorded_pdf_pages": pdf["page_count"],
+            "recorded_pdf_locations_checked": len(locations), "new_source_account_words": len(account[0].split()),
+            "preceding_evidence_and_remaining_body_preserved": True,
+            "physical_realization_or_filing_or_earlier_entitlement_certified": False,
+            "pdf_parsed_or_appearance_rechecked_by_this_check": False}
+
+
 def check_local_links(root: Path) -> int:
     checked = 0
     for relative in EXPECTED_FILES:
@@ -1445,6 +1597,7 @@ def run(root: Path) -> dict:
     preparation_result = check_preparation_application(root)
     electrical_result = check_electrical_application(root)
     oxide_result = check_oxide_application(root)
+    phase_result = check_phase_application(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -1468,6 +1621,7 @@ def run(root: Path) -> dict:
             "preparation_application_edition_verification": preparation_result,
             "electrical_application_edition_verification": electrical_result,
             "oxide_defect_application_edition_verification": oxide_result,
+            "phase_specific_application_edition_verification": phase_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -1970,6 +2124,74 @@ def self_test(root: Path) -> dict:
         except VerificationError:
             caught.append("unreviewed_novelty_status_change_rejected")
 
+        phase_path, phase_map_path = fixture / PHASE_SOURCE, fixture / PHASE_MAP
+        phase_review_path, phase_edition_path = fixture / PHASE_REVIEW, fixture / PHASE_EDITION
+        originals = {path: path.read_bytes() for path in
+                     (phase_path, phase_map_path, phase_review_path, phase_edition_path, manifest_path)}
+        check_phase_application(fixture)
+        for case, expected_error in (
+            ("phase_source_map_drift_rejected", "Phase source/map hash differs"),
+            ("phase_claim_drift_rejected_after_consistent_records", "Phase individual claim records"),
+            ("phase_inherited_evidence_drift_rejected_after_consistent_records", "Phase source changed outside identified additions"),
+            ("phase_target_basis_drift_rejected_after_consistent_records", "Phase target basis or evidence boundary differs"),
+            ("phase_source_access_promotion_rejected_after_consistent_records", "Phase reviewed input identity differs"),
+            ("phase_candidate_outcome_promotion_rejected_after_consistent_records", "Phase target basis or evidence boundary differs"),
+        ):
+            try:
+                text = originals[phase_path].decode("utf-8")
+                support = json.loads(originals[phase_map_path])
+                if case == "phase_source_map_drift_rejected":
+                    phase_path.write_bytes(originals[phase_path] + b"\nUnadopted addition.\n")
+                else:
+                    if "claim_drift" in case:
+                        old_claim = support["claims"][0]["text"]
+                        new_claim = old_claim.replace("positive normalized fraction", "nonnegative normalized fraction", 1)
+                        require(old_claim != new_claim, "Phase claim fixture lost its target")
+                        text = text.replace("**Claim 1.** " + old_claim, "**Claim 1.** " + new_claim, 1)
+                        support["claims"][0]["text"] = new_claim
+                    elif "inherited_evidence" in case:
+                        row = "| PEDOT:PSS threshold | 0.443 wt% |"
+                        require(text.count(row) == 1, "Phase inherited fixture lost its target")
+                        text = text.replace(row, row.replace("0.443", "0.444"), 1)
+                    elif "target_basis" in case:
+                        target = "on a stipulated occupied-atom basis, not a feed, site or whole-product assay basis"
+                        require(text.count(target) == 1, "Phase basis fixture lost its target")
+                        text = text.replace(target, "on a stipulated mass-fraction basis", 1)
+                    elif "candidate_outcome" in case:
+                        target = "actual candidate outcomes UNSUPPORTED"
+                        require(text.count(target) == 1, "Phase outcome fixture lost its target")
+                        text = text.replace(target, "actual candidate outcomes ESTABLISHED", 1)
+                    else:
+                        review = json.loads(originals[phase_review_path])
+                        review["access"]["original_pdf_sha256"] = "0" * 64
+                        phase_review_path.write_bytes((json.dumps(review) + "\n").encode("utf-8"))
+                    phase_path.write_bytes(text.encode("utf-8"))
+                    support["source_sha256"] = hashlib.sha256(phase_path.read_bytes()).hexdigest()
+                    phase_map_path.write_bytes((json.dumps(support) + "\n").encode("utf-8"))
+                    # Refresh captured and outer hashes to challenge semantic
+                    # preservation rather than merely detecting stale records.
+                    edition = json.loads(originals[phase_edition_path])
+                    for entry in edition["sources"]:
+                        if entry["path"] in {PHASE_SOURCE, PHASE_MAP, PHASE_REVIEW}:
+                            entry["sha256"] = hashlib.sha256((fixture / entry["path"]).read_bytes()).hexdigest()
+                    phase_edition_path.write_bytes((json.dumps(edition) + "\n").encode("utf-8"))
+                    refreshed = json.loads(originals[manifest_path])
+                    for entry in refreshed["files"]:
+                        if entry["path"] in {PHASE_SOURCE, PHASE_MAP, PHASE_REVIEW, PHASE_EDITION}:
+                            changed = (fixture / entry["path"]).read_bytes()
+                            entry.update(size_bytes=len(changed), sha256=hashlib.sha256(changed).hexdigest())
+                    manifest_path.write_bytes((json.dumps(refreshed) + "\n").encode("utf-8"))
+                    check_integrity(fixture)
+                try:
+                    check_phase_application(fixture)
+                except VerificationError as error:
+                    require(expected_error in str(error), "Phase mutation failed for another reason: " + str(error))
+                    extended.append(case)
+                require(case in extended, "Phase mutation was accepted: " + case)
+            finally:
+                for path, data in originals.items():
+                    path.write_bytes(data)
+
         model_path = fixture / "range_model/unrestricted_composition_model.json"
         model_original = model_path.read_bytes()
         model = json.loads(model_original)
@@ -2140,7 +2362,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 36, f"Expected 36 extension failure checks, got {len(extended)}")
+    require(len(extended) == 42, f"Expected 42 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
