@@ -1,0 +1,239 @@
+{
+  "record_id": "MAT-IDEAL-OXIDE-0001-CURATED-RECORD",
+  "prepared_date": "2026-10-01",
+  "prepared_utc": "2026-10-01T19:51:47.144003+00:00",
+  "record_operation": "Performed exact target assignment, evidence-field curation and record construction; no specimen prepared or measured for this record.",
+  "candidate_scope": "A proposed phase-specific verification for the nominal ideal host, with an ideal baseline for a separate conditional optical scenario. This is present record curation, not a specimen or an assertion of complete retained-product inventory.",
+  "application_source": "documents/provisional_application_oxide_defect_evidence_2026-09-30.md",
+  "claim_correspondence": {
+    "186": {
+      "dependency_root": 186,
+      "direct_parent": null,
+      "record_fields": [
+        "composition",
+        "structural_field",
+        "preparation_field",
+        "measurement_field",
+        "property_field",
+        "evidence_statuses"
+      ],
+      "qualification": "Present field construction and target assignment are recorded. This correspondence is not a conclusion about physical realization or legal compliance."
+    },
+    "197": {
+      "dependency_root": 186,
+      "direct_parent": 186,
+      "record_fields": [
+        "property_scenario"
+      ],
+      "qualification": "Baseline, change, response, mechanism, conditions and discriminating inquiry are explicit; physical implementation remains unperformed."
+    },
+    "198": {
+      "dependency_root": 186,
+      "direct_parent": 197,
+      "record_fields": [
+        "property_scenario.credible_alternative"
+      ],
+      "qualification": "A separate conditional hypothesis; no simultaneous opposite outcomes for an identical specimen and condition."
+    },
+    "199": {
+      "dependency_root": 186,
+      "direct_parent": 186,
+      "record_fields": [
+        "evidence_statuses",
+        "source_records"
+      ],
+      "qualification": "Attributed teachings, own arithmetic, proposed implementation and unsupported outcomes remain distinct."
+    }
+  },
+  "source_records": {
+    "Zhang_2013_phase_specific_context": {
+      "record": "data/magneli_source_review_2026-10-01.json",
+      "source_summary_location": "source_derived_summary in the referenced curated reader review; no duplicate summary, recipe or source table here.",
+      "access_boundary": "Native original HTML/PDF not acquired (HTTP 403); official reader text inspected. No original PDF SHA or page-pixel/graph inspection. Retain all access, precursor-stage, process, numerical-conflict and inventory limitations in the referenced record.",
+      "condition_boundary": "Phase-specific context is not a complete candidate preparation, retained-inventory assay or candidate-property outcome.",
+      "record_sha256": "ce740caa47e1a94720d0e703216e812c49ed99a4e08e1364738c100037cfe0da"
+    },
+    "Li_2015_rutile_context": {
+      "record": "data/oxide_defect_source_review_2026-09-30.json",
+      "application_locator": "Description [0064] and adjacent rutile/ideal-host block in the stated source edition.",
+      "applicability_boundary": "Existing specimen and diagnostic boundaries remain at the referenced application locator. They do not supply measurements or a preparation for this new target; no quantitative property or complete inventory is transferred.",
+      "record_sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
+    }
+  },
+  "composition": {
+    "evidence_status": "CALCULATED",
+    "selection_status": "Assigned present ideal-host targets; implementation and applicability remain PROPOSED.",
+    "support": [
+      {
+        "atomic_number": 8,
+        "symbol": "O",
+        "identity_status": "recognized"
+      },
+      {
+        "atomic_number": 22,
+        "symbol": "Ti",
+        "identity_status": "recognized"
+      }
+    ],
+    "basis": "Occupied-atom number fractions within the expressly stipulated ideal Ti/O host. This is neither a feed-component basis nor an assayed complete retained-product basis.",
+    "boundary": "All counted ideal host atoms are stipulated Ti or O. This excludes other labels only in the model; no physical segmentation of a host or zero concentration of other labels in a whole specimen has been established.",
+    "baseline_formula": "TiO2",
+    "target_formula": "Ti4O7 = TiO_(2-delta), delta=1/4",
+    "baseline_target_fractions": {
+      "Ti": "1/3",
+      "O": "2/3"
+    },
+    "assigned_target_fractions": {
+      "Ti": "4/11",
+      "O": "7/11"
+    },
+    "changed_minus_baseline": {
+      "Ti": "1/33",
+      "O": "-1/33"
+    },
+    "normalization": "All selected coordinates are positive. Each vector sums exactly to one; no independent change of one coordinate without its complement.",
+    "primitive_total_atom_denominator": 11,
+    "integer_compatibility": {
+      "ideal_counts": {
+        "Ti": "4*m",
+        "O": "7*m",
+        "total_atoms": "11*m"
+      },
+      "restriction": "m is an arbitrary positive integer for accounting compatibility only; no physical specimen count, yield or size follows."
+    },
+    "decimal_grid_membership": {
+      "D": "10^19",
+      "member": false,
+      "reason": "11 does not divide 10^19. The exact target belongs to the unrestricted rational domain; no decimal rounding is used to turn it into a grid member."
+    },
+    "qualification": "Nominal formula, chosen exact fractions and integer compatibility do not establish measured delta, isotope distribution, complete product inventory or successful preparation.",
+    "mass_basis_conversion": {
+      "evidence_status": "CALCULATED",
+      "conditional_formula": {
+        "Ti": "4*M_Ti/(4*M_Ti+7*M_O)",
+        "O": "7*M_O/(4*M_Ti+7*M_O)"
+      },
+      "restriction": "Use positive finite isotope-qualified effective masses and a stated allocation/compatible-unit convention for this same stipulated host. Numerical masses and mass fractions are not assigned, and atomic fractions are not reused as mass fractions."
+    }
+  },
+  "site_and_charge_accounting": {
+    "evidence_status": "CALCULATED",
+    "reference_site_count": "2*N_Ti = 8*m; missing-O reference count V=m; delta=V/N_Ti=1/4.",
+    "reference_vacancy_site_fraction": "1/8",
+    "reference_O_site_occupied_fraction": "7/8",
+    "occupied_atom_O_fraction": "7/11",
+    "restriction": "Reference-site arithmetic is not a measured vacancy concentration, a crystallographic site map, or a demonstration that the target is a rutile lattice containing independent point vacancies.",
+    "restricted_charge_assumptions": [
+      "Neutral ideal host",
+      "Every O formally O(2-)",
+      "Only formal Ti(III) and Ti(IV) compensate charge"
+    ],
+    "conditional_formal_populations": {
+      "TiIII_among_Ti": "1/2",
+      "TiIV_among_Ti": "1/2",
+      "TiIII_among_all_ideal_atoms": "2/11",
+      "TiIV_among_all_ideal_atoms": "2/11",
+      "integer_counts": "2*m formal Ti(III), 2*m formal Ti(IV), 7*m formal O(2-)"
+    },
+    "conditional_charge_balance": "3*(2*m)+4*(2*m)-2*(7*m)=0",
+    "qualification": "Formal charge populations remain a restricted model, not measured oxidation states, localized-electron populations or additional elemental constituents. Vacancies are not atoms."
+  },
+  "structural_field": {
+    "source_context": {
+      "evidence_status": "ESTABLISHED",
+      "record_reference": "source_records.Zhang_2013_phase_specific_context",
+      "scope": "Attributed phase/characterization context only; all source limitations remain attached."
+    },
+    "candidate_structural_target": {
+      "evidence_status": "PROPOSED",
+      "statement": "Assess whether a defined conditioned candidate has the Ti4O7 phase identity and structure appropriate to the nominal host rather than inferring phase from normalized fractions."
+    },
+    "candidate_actual_structure": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "No candidate phase assemblage, site-order pattern, particle shape/size distribution, surface composition, interfaces or spatial homogeneity is supplied. Bulk and local evidence have separate boundaries."
+    }
+  },
+  "preparation_field": {
+    "source_context": {
+      "evidence_status": "ESTABLISHED",
+      "record_reference": "source_records.Zhang_2013_phase_specific_context",
+      "scope": "The published sequence and reported conditions are preserved only in the existing source review. This is not a resolved self-contained route to these exact whole-product targets."
+    },
+    "candidate_preparation": {
+      "evidence_status": "PROPOSED",
+      "statement": "Resolve source precursor-stage identity and critical atmosphere, thermal, cooling/passivation and isolation/conditioning gaps; establish applicability to identified materials and apparatus before implementation. Record every input, process stage, residue, loss and conditioned-product boundary. No operating default, reagent amount or successful repetition is newly supplied here."
+    },
+    "candidate_success": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "No applicant or candidate yield, phase purity, retained mass, exact elemental inventory or performed source repetition is asserted."
+    }
+  },
+  "measurement_field": {
+    "candidate_measurement": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "No candidate diffraction, elemental assay, isotope-state assay, surface analysis, spectrum, measured delta, formal-charge population or calibrated uncertainty is supplied."
+    },
+    "verification_inquiry": {
+      "evidence_status": "PROPOSED",
+      "composition_and_inventory": "Define conditioned host, complete dry product, and optical specimen boundaries separately. Use applicable justified evidence to evaluate Ti/O ratio and other retained species; report method scope, calibration, limits, uncertainties and spatial/sampling representativeness. Nondetection does not certify exact zeros outside Ti/O.",
+      "phase_and_structure": "Assess phase identity, secondary phases, morphology, surface chemistry and spatial heterogeneity with appropriate complementary evidence. Diffraction phase purity alone is not an exhaustive atom inventory.",
+      "property": "Specify the spectral observable and optical collection/normalization protocol before implementation; measure or justify reflectance, transmittance, scattering and geometry effects separately. Retain raw data, calibration and uncertainty when obtained.",
+      "qualification": "Appropriate existing source/model support or supplied characterization can inform a field. No categorical rule requiring a new experiment for every example is imposed; present missing evidence remains missing."
+    }
+  },
+  "property_field": {
+    "source_context": {
+      "evidence_status": "ESTABLISHED",
+      "record_reference": "source_records.Zhang_2013_phase_specific_context",
+      "scope": "Source optical context only. No source numerical value, graph digitization, conductivity or reaction performance is assigned to the new candidate."
+    },
+    "candidate_actual_result": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "No observed candidate response, exact absorptance, statistical significance, unexpected effect or full response curve is asserted."
+    },
+    "unsupported_extension": {
+      "evidence_status": "UNSUPPORTED",
+      "statement": "The selected host target and source references do not establish every oxide phase, every delta, complete Ti/O-only material or universal property reversal."
+    }
+  },
+  "property_scenario": {
+    "evidence_status": "PROPOSED",
+    "temporal_status": "Present unperformed comparison informed by existing sources; not an applicant prediction predating them.",
+    "baseline_material_and_state": "A future conditioned TiO2 reference associated with the baseline ideal-host atom vector, characterized at a specified equilibrated state and with a declared complete specimen boundary. It is not identified as Li T-1 or any already-measured source specimen.",
+    "controlled_change": "Compare a future candidate targeting the ideal Ti4O7 host vector with that reference. The target change is Ti +1/33 and O -1/33 on the stipulated atom basis; preparation also changes phase/structure and potentially morphology and surfaces. This is a composition-and-phase comparison, not a proved defect-only perturbation.",
+    "proposed_response": "Hypothesis: increased absorptance in a preselected visible/near-infrared spectral band if the candidate state provides additional optically active electronic transitions under the specified collection protocol. No spectral magnitude, universal sign or source-comparison curve is predicted.",
+    "mechanism": "A conditional electronic-transition model associated with the changed host/phase; the target vector and restricted formal-charge bookkeeping do not prove the actual optically active population.",
+    "conditions": "Before implementation define wavelength band and weighting, equilibrium temperature, illumination and collection geometry, specimen thickness/areal loading, packing and calibrated spectral methods. Match or quantify morphology, surface and scattering covariates. No new operating values or physically achieved controls are asserted.",
+    "observable_convention": "If evaluating spectral absorptance A(lambda)=1-R(lambda)-T(lambda), use compatible total-power reflectance/transmittance collection and a stated specimen boundary. Diffuse reflectance or instrument absorbance is not silently substituted for absolute absorptance; unspecified weighting/normalization remains unresolved.",
+    "discriminating_test": "Compare the defined specimens using independently supported inventory and phase evidence, calibrated optical measurements and stated uncertainty. Evaluate whether any change survives scattering/geometry controls and is attributable to the proposed optically active state rather than a changed specimen boundary. No test has been performed.",
+    "credible_alternative": {
+      "evidence_status": "PROPOSED",
+      "hypothesis": "Unchanged within a specified resolution, or lower band absorptance, if the changed electronic/structural state contributes weakly in the selected band or changes effective light interaction enough to offset added transitions.",
+      "mechanism": "A different realized transition population or morphology/scattering/path-length state can alter the comparison; none is measured for this candidate.",
+      "scope": "A separate conditional hypothesis about the realized state, not opposing measurements for the same specimen under identical conditions and not a measured source reversal."
+    }
+  },
+  "evidence_statuses": {
+    "ESTABLISHED": "Only attributed source context, with reader/access and condition limitations retained through the referenced records.",
+    "CALCULATED": "Present exact vector, finite-count compatibility, reference-site bookkeeping and restricted formal-charge/mass formula calculations.",
+    "PROPOSED": "Unperformed candidate preparation, verification inquiry and conditional optical comparison/alternative.",
+    "UNSUPPORTED": "Actual candidate realization, complete retained inventory, measured structure/delta/charge populations/property and universal extrapolations."
+  },
+  "publication_boundary": "Present curation in this dated companion record. It is not content captured in any preserved application/PDF, an earlier source operation, a filing or a certified earliest prior-art date. Any application amendment would require separately reviewed inclusion of essential technical support and limits.",
+  "physical_experiment_performed_for_this_record": false,
+  "physical_enablement_certified": false,
+  "novelty_or_inventorship_decided": false,
+  "filing_asserted": false,
+  "application_source_sha256": "1f397b45d90e71a612b1e3fbeb5a205f80c8512ba6ac49816cbae3dc1fa57925",
+  "repository_baseline": "696d94bee802bb4db36b270706ae3ba36fb4c1e7",
+  "claim_wordings": {
+    "186": "A method of constructing a candidate-material record, comprising selecting a constituent support and composition basis; assigning positive normalized target fractions whose sum is one; recording structural, preparation, measurement and property fields; and recording an evidence status for each field without treating an unresolved field as a successful preparation.",
+    "197": "The method of claim 186, comprising recording a property scenario with a baseline material and state, controlled change, proposed response, mechanism, conditions, discriminating test and evidence status.",
+    "198": "The method of claim 197, comprising recording a credible alternative response and its mechanism as a separate conditional hypothesis, rather than asserting opposite responses for the same specimen under identical conditions.",
+    "199": "The method of claim 186, comprising labeling attributed source teachings ESTABLISHED, stated mathematical or model results CALCULATED, unperformed tests or preparations PROPOSED, and possibilities without adequate support UNSUPPORTED, and retaining source and condition information with the labels."
+  },
+  "curation": {
+    "prior_ignored_candidate_sha256": "a002c4083290c9219421524c4717baefb2c9727111de8c037e2c0d8534bb0451",
+    "meaning": "Earlier review candidate identity, distinct from this curated record. Public source references and their hashes identify the actually included records."
+  }
+}

@@ -24,6 +24,8 @@ The [hydrogel comparison against actual claims](documents/hydrogel_claim_compari
 
 The [electrical comparison against actual claims](documents/electrical_claim_comparison_2026-09-30.md) maps claims 1, 178, 183-186 and 197-199, separating material specifications from record-building operations. Its [worked stock-origin record](data/electrical_candidate_record_review_2026-09-30.json) assigns normalized dry-input targets, rejects an unsupported independent-surfactant shortcut, and retains carrier-residue, threshold-basis and response-attribution limits. Four later-claim tests expose specific disclosure gaps; all claim assessments and historical application/PDF contents remain unchanged.
 
+The [oxide comparison against actual claims](documents/oxide_claim_comparison_2026-10-01.md) maps 13 material claims and four record-method claims, including their dependencies and conditional interpretation. Its [worked candidate record](data/oxide_candidate_record_review_2026-10-01.json) performs ideal-host target assignment, exact accounting and four-category evidence recording, with unperformed preparation and optical scenarios. The separate [primary-source reader review](data/magneli_source_review_2026-10-01.json) preserves acquisition, visual-inspection and applicability limits. Four later-claim scenarios expose missing features and possible conditional statutory arguments. These companions are outside the preserved application/PDF; mathematical compatibility and source curation do not establish an actual candidate or universal legal coverage.
+
 ## Read the documents
 
 | Document | Readable PDF | Editable source |

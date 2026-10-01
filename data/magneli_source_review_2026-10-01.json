@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "prepared_date": "2026-10-01",
+  "review_utc": "2026-10-01T19:35:25.541576+00:00",
+  "review_scope": "Attributed primary-source reader review and present model accounting; no original article byte acquisition, applicant experiment, filing or legal determination.",
+  "source_identity": {
+    "doi": "10.1049/mnl.2012.0963",
+    "publisher_url": "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/mnl.2012.0963",
+    "pdf_url": "https://ietresearch.onlinelibrary.wiley.com/doi/pdf/10.1049/mnl.2012.0963",
+    "title": "Fabrication and characterisation of Magneli phase Ti4O7 nanoparticles",
+    "authors": [
+      "Xiaoyan Zhang",
+      "Ying Liu",
+      "Jinwen Ye",
+      "Ruijie Zhu"
+    ],
+    "journal": "Micro & Nano Letters",
+    "year": 2013,
+    "volume": 8,
+    "issue": 5,
+    "pages": "251–253"
+  },
+  "publisher_reported_first_publication_date": "2013-05-01",
+  "publication_date_basis": "Publisher DOI landing-page metadata, checked 2026-10-01; not certification of statutory qualification or earliest availability.",
+  "access": {
+    "native_html_status": "HTTP 403; no original bytes retained",
+    "native_pdf_status": "HTTP 403; no original bytes retained",
+    "original_pdf_sha256": null,
+    "reader_scope": "Official web reader exposed publisher HTML and three-page PDF text. This is an extracted reader view, not a locally acquired original article.",
+    "visual_scope": "No page pixels reviewed. First screenshot request for page 0 failed with TimeoutError; requests for pages 1 and 2 returned no usable image payload. One bounded repeated request for pages 1 and 2 likewise yielded no usable image payload. Graph axes, intensities, peak labels, and equation typography therefore remain visually unverified.",
+    "authentication_or_bypass_used": false
+  },
+  "ordinary_native_access_observations": [
+    {
+      "file": "zhang_2013_magneli_publisher.html",
+      "url": "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/mnl.2012.0963",
+      "attempt_utc": "2026-10-01T19:29:25.639320+00:00",
+      "request": "Ordinary public GET, User-Agent Research source verification; no account,cookies or access bypass",
+      "status": "ordinary_access_failed",
+      "http_status": 403,
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "zhang_2013_magneli_published_article.pdf",
+      "url": "https://ietresearch.onlinelibrary.wiley.com/doi/pdf/10.1049/mnl.2012.0963",
+      "attempt_utc": "2026-10-01T19:29:25.639320+00:00",
+      "request": "Ordinary public GET, User-Agent Research source verification; no account,cookies or access bypass",
+      "status": "ordinary_access_failed",
+      "http_status": 403,
+      "reason": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "source_derived_summary": "Zhang et al. (2013, pp.251–253) describe 2 g Ti (≥99.5 wt%, stated average 0.25 mm), 40 mL 28 wt% aqueous ammonia and 80 mL 30 wt% peroxide stirred at 0–5 °C for 3 h; 100 mL 2 wt% F68 solution follows (2 h stirring, 12 h rest), then 70 °C/0.5 h, 100 mL ethanol, centrifugation and 200 °C/2 h calcination. Reduction is hydrogen-atmosphere reported, but the post-calcination precursor remains named H4TiO5. XRD supports author-reported Ti4O7 at 850 °C/5 h or 860 °C/4 h (Fig.1). At 850 °C, SEM diameters are 200–500 nm and BET area 8.351 m²/g (Fig.2). The text’s XRD crystallite estimates disagree: 100–150 nm versus about160 nm. Room-temperature diffuse-reflectance spectra span 200–1100 nm, with UV and visible/near-infrared bands (Fig.3); oxygen-vacancy causation is interpretation. Conductivity is background, not measured here. Unspecified details include hydrogen flow/purity/pressure, ramps, cooling/passivation, BET conditioning and exhaustive retained inventory. Phase purity does not establish elemental exclusivity. The reader footer attributes IET 2013; permissive reuse is unestablished.",
+  "source_derived_summary_word_count_whitespace": 161,
+  "locators": {
+    "recipe_and_precursor_identity": "Printed p.251, section 2 Experiments",
+    "reduction_and_phase_assignment": "Printed pp.251–252, section 3.1 and Figure 1 caption",
+    "particle_vs_crystallite_and_area": "Printed p.252, section 3.2 and Figure 2 caption; compare final paragraph of section 3.1",
+    "optical_response": "Printed p.252, section 3.3 and Figure 3 caption",
+    "conclusions_and_reference_boundaries": "Printed p.253, sections 4 and 6",
+    "rights_statement_scope": "Extracted printed footers only, not independent license confirmation"
+  },
+  "independent_accounting": {
+    "status": "CALCULATED ideal nominal host, not a product assay",
+    "host_formula": "Ti4O7 = TiO(2-delta) for delta=1/4",
+    "occupied_atom_fractions": {
+      "Ti": "4/11",
+      "O": "7/11"
+    },
+    "vacancy_site_fraction_relative_to_2N_reference_O_sites": "1/8",
+    "conditional_TiIII_fraction_among_Ti": "1/2 only under neutral O(2-) and Ti(III)/Ti(IV)-only bookkeeping",
+    "conditional_TiIII_fraction_among_all_ideal_atoms": "2/11 under the same restrictions",
+    "restriction": "Named crystallographic phase and nominal host stoichiometry do not establish complete specimen atom counts, exclusion of H/C/N or other residues, formal charge populations, phase stability for arbitrary delta, or particle-wide uniformity."
+  },
+  "quantity_status_boundary": "Attributed experimental reports are distinguished from source-derived crystallite estimates and a proposed causal interpretation. No source estimate becomes an exact candidate measurement.",
+  "actionable_next_step": "A bounded source-supported application entry may bridge this single nominal host target to the reported phase-identification and optical evidence, while marking process ambiguities and complete-inventory evidence as unresolved. Resolve precursor-stage identity and critical reduction/conditioning variables before calling the route self-contained; obtain conditioned retained-inventory evidence before asserting exact two-label product support.",
+  "not_supported": [
+    "Universal accessibility of the ideal delta family",
+    "Complete two-element specimen inventory",
+    "Measured conductivity of these nanoparticles",
+    "Photocatalytic hydrogen performance of this phase",
+    "Applicant preparation, contribution, or results",
+    "Calibrated graph values or equation transcription without visual verification"
+  ],
+  "rights": "No permissive reuse grant verified; no original article, figures or page images republished.",
+  "application_boundary": "This companion record is not content captured in the preserved oxide-defect-evidence application or its PDF.",
+  "curation": {
+    "prior_ignored_review_sha256": "c49ebf86fd6631623f217be1b1c44c96a528b8554fe809eee3324bc27b09583a",
+    "meaning": "Identity of the earlier reader review, not an original article hash or the hash of this curated record."
+  },
+  "applicant_experiment_asserted": false,
+  "physical_enablement_certified": false,
+  "novelty_assessed": false,
+  "filing_asserted": false
+}
