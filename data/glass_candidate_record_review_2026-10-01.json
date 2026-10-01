@@ -1,0 +1,725 @@
+{
+  "record_id": "GLASS-PRINCIPAL-RECORD-2026-10-01",
+  "prepared_date": "2026-10-01",
+  "prepared_utc": "2026-10-01T23:02:34.481358+00:00",
+  "repository_baseline": "1c894861cb71e53647995ea5767522c24a7dafd0",
+  "record_operation": "Present construction of a candidate-material data record: support and basis selected, positive normalized target assigned, four evidence-labelled fields and conditional scenario recorded. This operation does not prepare or measure material.",
+  "record_scope": "Ideal principal-element atom subinventory with a separate unresolved whole-specimen transfer. The optional additional-Al branch is independent count accounting and receives no preparation or thermal/property prediction. The auxiliary box records separately assign continuous and grid targets and their own four evidence fields; they receive no physical preparation or thermal/property prediction.",
+  "application_source": {
+    "path": "documents/provisional_application_metal_glass_evidence_2026-10-01.md",
+    "sha256": "94086dfe5e862fada24504c677580dbebbdc7511620b7ba7b89d8623aa4eac55",
+    "locator": "[0063] and Glass evidence associated with [0063]",
+    "chronology": "Current prospective description; no earlier filing content or entitlement asserted"
+  },
+  "claim_map": {
+    "path": "data/claim_support_map_metal_glass_evidence_2026-10-01.json",
+    "sha256": "c6cc0ffbd504b79866c6384f53635d7d05ea02216f60695918e8e4085bebba9b"
+  },
+  "source_review": {
+    "path": "data/metal_glass_source_review_2026-10-01.json",
+    "sha256": "4f681b721c96d0c8071c0fdcd0b00d8fc281b3fa90db479fadcd30679be43731",
+    "primary_source_id": "glass",
+    "condition_locator": "primary_sources[id=glass].reviewed_locators; application glass block Attributed glass teaching and Access and diagnostic scope",
+    "scope": "Existing attributed account and access/rights limits remain at these pinned locations. This record repeats no source recipe or measured result."
+  },
+  "actual_claim_wordings": {
+    "186": "A method of constructing a candidate-material record, comprising selecting a constituent support and composition basis; assigning positive normalized target fractions whose sum is one; recording structural, preparation, measurement and property fields; and recording an evidence status for each field without treating an unresolved field as a successful preparation.",
+    "197": "The method of claim 186, comprising recording a property scenario with a baseline material and state, controlled change, proposed response, mechanism, conditions, discriminating test and evidence status.",
+    "198": "The method of claim 197, comprising recording a credible alternative response and its mechanism as a separate conditional hypothesis, rather than asserting opposite responses for the same specimen under identical conditions.",
+    "199": "The method of claim 186, comprising labeling attributed source teachings ESTABLISHED, stated mathematical or model results CALCULATED, unperformed tests or preparations PROPOSED, and possibilities without adequate support UNSUPPORTED, and retaining source and condition information with the labels.",
+    "191": "The method of claim 186, comprising selecting component bounds L_i and U_i for the selected support; testing 0 <= L_i <= U_i <= 1 for every component and sum_i(L_i) <= 1 <= sum_i(U_i); when those tests are satisfied, constructing a preliminary nonnegative normalized witness z_i within the bounds by starting at z_i = L_i and allocating the residual 1-sum_i(L_i) in support order without exceeding any U_i until sum_i(z_i) = 1; and assigning as the positive target fractions of claim 186 a strictly positive normalized witness within those bounds, using the preliminary witness as that target only when every coordinate is positive and otherwise constructing a separate strictly positive witness before target assignment.",
+    "192": "The method of claim 191, further comprising, for a box satisfying the tests of claim 191, determining strictly positive feasibility for the selected support by requiring U_i > 0 for every component; when sum_i(L_i) = 1, additionally requiring L_i > 0 for every component and using the lower-bound vector as the positive witness; and when sum_i(L_i) < 1, setting epsilon = min(min_i(U_i), (1-sum_i(L_i))/(2k)), replacing each lower bound by L'_i = max(L_i, epsilon), and constructing a strictly positive normalized witness by allocating the residual 1-sum_i(L'_i) within the unchanged upper bounds; and assigning the resulting positive witness as the target fractions of claim 186.",
+    "193": "The method of claim 186, comprising selecting a k-component box with 0 <= L_i <= U_i <= 1; calculating b_i = max(1, ceiling(D L_i)) and c_i = min(D-k+1, floor(D U_i)) for D = 10^19; accepting the box as numerically feasible on the positive D-grid only when b_i <= c_i for every component and sum_i(b_i) <= D <= sum_i(c_i); and, on acceptance, constructing integers n_i within those bounds with sum_i(n_i) = D by residual allocation and assigning x_i = n_i/D as the positive normalized target fractions of claim 186."
+  },
+  "claim_correspondence": {
+    "186": {
+      "dependency": "independent",
+      "recorded_operations": {
+        "select_constituent_support": "composition.ordered_principal_support",
+        "select_basis": "composition.basis",
+        "assign_positive_normalized_target": "composition.principal_target",
+        "record_structural_field": "structural_field",
+        "record_preparation_field": "preparation_field",
+        "record_measurement_field": "measurement_field",
+        "record_property_field": "property_field",
+        "record_evidence_for_each_without_success_default": "four fields retain distinct context/model/proposal/unsupported candidate statuses"
+      },
+      "scope": "Textual operation correspondence only; no statutory conclusion or physical claim 1 inventory certification"
+    },
+    "197": {
+      "dependency": "186",
+      "recorded_features": [
+        "property_scenario.baseline",
+        "property_scenario.controlled_change",
+        "property_scenario.primary_hypothesis",
+        "property_scenario.conditions",
+        "property_scenario.discriminating_test",
+        "property_scenario.evidence_status"
+      ],
+      "scope": "Baseline/state and comparison are declared PROPOSED record branches, not fabricated existing specimens"
+    },
+    "198": {
+      "dependency": "197 -> 186",
+      "recorded_feature": "property_scenario.alternative_hypotheses",
+      "scope": "Separate conditional alternatives; no simultaneous contradictory response asserted for one specimen under identical conditions"
+    },
+    "199": {
+      "dependency": "186",
+      "recorded_feature": "evidence_statuses plus pinned source and condition locators",
+      "scope": "Status labels distinguish attribution, accounting, unperformed proposals and unsupported candidate outcomes"
+    },
+    "191": {
+      "dependency": "186",
+      "recorded_feature": "auxiliary_box_records.continuous_candidate_record",
+      "scope": "Current exact selected-case record operations, with target assignment and four fields; not physical material realization, prior-source operations or a statutory conclusion."
+    },
+    "192": {
+      "dependency": "191 -> 186",
+      "recorded_feature": "auxiliary_box_records.continuous_candidate_record",
+      "scope": "Current exact selected-case record operations, with target assignment and four fields; not physical material realization, prior-source operations or a statutory conclusion."
+    },
+    "193": {
+      "dependency": "186",
+      "recorded_feature": "auxiliary_box_records.grid_candidate_record",
+      "scope": "Current exact selected-case record operations, with target assignment and four fields; not physical material realization, prior-source operations or a statutory conclusion."
+    }
+  },
+  "composition": {
+    "support_selection_performed": true,
+    "basis_selection_performed": true,
+    "target_assignment_performed": true,
+    "basis": "Ideal principal-only elemental atomic-fraction basis; denominator is the declared six-principal atom subtotal. It is neither feed mass, volume, site fraction nor an exhaustive retained-product assay.",
+    "ordered_principal_support": [
+      "B",
+      "Si",
+      "P",
+      "Cr",
+      "Ni",
+      "Nb"
+    ],
+    "atomic_numbers": [
+      5,
+      14,
+      15,
+      24,
+      28,
+      41
+    ],
+    "principal_target": [
+      "4/125",
+      "1/200",
+      "4/25",
+      "87/1000",
+      "343/500",
+      "3/100"
+    ],
+    "target_evidence_status": "CALCULATED",
+    "primitive_integer_counts": [
+      32,
+      5,
+      160,
+      87,
+      686,
+      30
+    ],
+    "principal_total": 1000,
+    "primitive_denominator": 1000,
+    "constraints": "Every assigned coordinate is positive; exact sum 1. Counts are mathematical bookkeeping and do not assign local order, site occupancy or a rod.",
+    "finite_principal_compatibility": {
+      "condition": "For a finite principal subtotal to have these exact fractions, N_P=1000*m with m>=1 integer and N_i=n_i*m. This is necessary and sufficient for count integrality alone.",
+      "multiplicity_m": "UNPROVIDED for any actual specimen",
+      "actual_principal_ratios": "UNSUPPORTED; the target is not substituted for actual measured r_i",
+      "decimal_grid": "Primitive 1000 divides 10^19; grid numerators are n_i*10^16 and sum 10^19. Grid compatibility is not a physical preparation or precision result."
+    },
+    "whole_inventory_transfer": {
+      "actual_count_definitions": "N_P=sum over principal labels N_i; N_R=sum over actually present labels outside that support; N=N_P+N_R. N_P>=1 and N_R>=0 are finite integers for the declared ordinary-atom inventory.",
+      "actual_principal_share": "f=N_P/N, 0<f<=1; UNKNOWN, not assumed1",
+      "actual_conditional_ratios": "r_i=N_i/N_P; UNKNOWN and not replaced by r_target",
+      "whole_principal_fractions": "x_i=f*r_i",
+      "outside_principal_fractions": "When N_R>0, separately identify all positive additional labels and y_j=N_j/N_R, with x_j=(1-f)*y_j. When N_R=0 there is no additional support and y is not evaluated.",
+      "closure": "Whole closure requires all positive retained labels/counts under one spatial and temporal boundary; an aggregate unknown remainder does not identify that support.",
+      "residue_allocation": "Allocate by elemental label, not process origin. Retained principal-element atoms change N_P and r_i; only atoms of labels outside the principal support enter N_R. Unknown process retention cannot be silently assigned to N_R or zero.",
+      "conditional_exact_target_model": "Only under the independent stipulation r_i=r_target, N_P=1000*m. A whole finite target then has principal counts n_i*m, extra subtotal R>=0 integer, total 1000*m+R and principal share1000*m/(1000*m+R). Actual R/labels/ratios remain unsupported.",
+      "actual_retained_inventory_status": "UNSUPPORTED"
+    },
+    "mass_and_isotope_convention": {
+      "status": "CALCULATED symbolic relation only; numerical conversion unavailable without justified mass/isotope information",
+      "qualified_mass_requirement": "Each populated elemental state needs a justified positive finite isotope-qualified effective mass M_i and the same explicit allocation/compatible-unit convention. Missing positive-population mass is not assigned zero.",
+      "principal_only_ideal_mass_fractions": "v_i=r_target_i*M_i/sum over principal j(r_target_j*M_j)",
+      "whole_mass_fractions": "w_i=a_i*M_i/sum over all populated j(a_j*M_j), using actual whole atom fractions a_i and complete mass allocation",
+      "distinct_principal_mass_share": "f_mass=(sum over principal i N_i*M_i)/(sum over all populated j N_j*M_j); generally f_mass differs from atom share f. Whole principal w_i=f_mass*v_i_actual uses actual principal ratios, not the target by default.",
+      "numerical_mass_fractions": "UNSUPPORTED",
+      "actual_isotope_populations": "UNSUPPORTED",
+      "equal_mass_assumed": false
+    }
+  },
+  "additional_Al_calculation": {
+    "evidence_status": "CALCULATED; independently authored target branch, not a source-Al observation",
+    "outside_principal_label": "Al, atomic number13",
+    "interior_domain": "0<beta<1; this exact finite-count branch uses rational beta. Values outside[0,1] cannot be normalized nonnegative populations.",
+    "ordered_interior_support": [
+      "B",
+      "Al",
+      "Si",
+      "P",
+      "Cr",
+      "Ni",
+      "Nb"
+    ],
+    "interior_target": "Each existing principal fraction becomes (1-beta)*r_target_i; x_Al=beta. All seven coordinates are positive and sum 1.",
+    "closure_boundaries": {
+      "beta0": "Drop zero Al; return six principal labels.",
+      "beta1": "Drop every zero principal coordinate; retain only Al with fraction 1. This one-label boundary is outside claim 1 k>=2, while independent record claim 186 does not itself impose that minimum."
+    },
+    "exact_witness": {
+      "L": "100000000000000000000",
+      "beta": "1/100000000000000000000",
+      "ordered_counts": [
+        "3199999999999999999968",
+        "1000",
+        "499999999999999999995",
+        "15999999999999999999840",
+        "8699999999999999999913",
+        "68599999999999999999314",
+        "2999999999999999999970"
+      ],
+      "total": "100000000000000000000000",
+      "ordered_fractions": [
+        "99999999999999999999/3125000000000000000000",
+        "1/100000000000000000000",
+        "99999999999999999999/20000000000000000000000",
+        "99999999999999999999/625000000000000000000",
+        "8699999999999999999913/100000000000000000000000",
+        "34299999999999999999657/50000000000000000000000",
+        "299999999999999999997/10000000000000000000000"
+      ],
+      "gcd_all_counts": 1,
+      "primitive_denominator": "100000000000000000000000",
+      "proof": "gcd(original n_i)=1 implies gcd(scaled principal counts)=L-1; gcd(1000,L-1)=1. Thus primitive denominator 1000L, also the LCM of reduced coordinate denominators.",
+      "below_grid": "Al fraction 1/L is positive and below 10^-19; this calculated branch is outside that historical positive-floor grid but inside the unrestricted rational domain."
+    },
+    "record_boundaries": "A complete stipulated target on the declared ideal seven-element atom inventory only. It is not an actual glass specimen, local network or complete source-product assay.",
+    "preparation_support": "UNSUPPORTED; no new operating route assigned",
+    "isotope_and_retention_support": "UNSUPPORTED",
+    "glass_state_or_property_prediction": "UNSUPPORTED and intentionally not transferred from the primary inquiry",
+    "specimen_or_thermal_test_performed": false
+  },
+  "structural_field": {
+    "record_assignment_performed": true,
+    "ESTABLISHED_context": {
+      "pointer": "application_source glass block and source_review primary_source_id glass",
+      "condition_scope": "Use only the attributed diagnostic state under its recorded measurement history; no claim of candidate identity follows."
+    },
+    "CALCULATED_content": "Ideal elemental count vectors do not specify local order, a network, crystallite distribution, phase fractions or spatial uniformity.",
+    "PROPOSED_content": "Independently support candidate phase/local-order identity, region boundaries and structural diagnostics before comparison.",
+    "UNSUPPORTED_candidate_fields": [
+      "actual network/local order",
+      "phase assemblage",
+      "quantitative crystalline fraction",
+      "representative spatial inventory",
+      "occupied-site assignment"
+    ],
+    "candidate_outcome_status": "UNSUPPORTED"
+  },
+  "preparation_field": {
+    "record_assignment_performed": true,
+    "ESTABLISHED_context": {
+      "pointer": "application_source glass block Attributed glass teaching; source_review pinned source/locators",
+      "scope": "Attributed third-party operations only; recipe and measured results are not copied into this record."
+    },
+    "PROPOSED_content": "Determine applicability and complete missing operating/retention fields for independently identified specimens; use two explicitly declared cooling histories and documented starting material/geometry.",
+    "candidate_preparation_performed": false,
+    "UNSUPPORTED_candidate_fields": [
+      "actual batch/lot identities",
+      "completed operating history",
+      "retained composition",
+      "successful formation",
+      "yield and failure limits"
+    ],
+    "candidate_outcome_status": "UNSUPPORTED"
+  },
+  "measurement_field": {
+    "record_assignment_performed": true,
+    "ESTABLISHED_context": {
+      "pointer": "application_source Access and diagnostic scope; pinned source-review locators",
+      "scope": "Source diagnostic context remains separate from a candidate assay or exact absent-phase statement."
+    },
+    "CALCULATED_content": "Count compatibility and normalization are not measurement precision, detection limits or physical realization.",
+    "PROPOSED_content": "Prespecify calibrated diffraction/calorimetry, reference controls, spatial sampling, diagnostics/uncertainty and independent retained-inventory evidence; measure or justify actual thermal trajectories at relevant positions.",
+    "UNSUPPORTED_candidate_fields": [
+      "retained elemental/isotope amounts",
+      "quantitative phase fractions",
+      "network identity",
+      "actual temperature trajectories",
+      "diagnostic/calibration/sampling results",
+      "new property outcomes"
+    ],
+    "candidate_outcome_status": "UNSUPPORTED"
+  },
+  "property_field": {
+    "record_assignment_performed": true,
+    "scenario_reference": "property_scenario",
+    "ESTABLISHED_context": "Retain attributed source context only at the pinned application/review paths; it is not the proposed fixed-target comparison.",
+    "PROPOSED_content": "Bounded thermal-path inquiry and separate alternatives recorded below.",
+    "UNSUPPORTED_candidate_fields": [
+      "actual crystalline-signal response",
+      "comparison significance",
+      "quantitative phase fraction",
+      "new critical diameter/rate",
+      "universal response"
+    ],
+    "candidate_outcome_status": "UNSUPPORTED"
+  },
+  "property_scenario": {
+    "evidence_status": "PROPOSED; all actual candidate outcomes UNSUPPORTED",
+    "applies_to": "Primary six-principal target and independently characterized actual retained specimens only; no property assignment to the additional-Al calculation.",
+    "baseline": {
+      "record_branch_id": "GLASS-THERMAL-A",
+      "material": "Independently identified lots with the declared primary nominal target; actual retained ratios and inventory remain to be supported.",
+      "state": "Declared geometry, initial structural/chemical state and cooling history A; actual specimen and history UNPROVIDED."
+    },
+    "controlled_change": {
+      "record_branch_id": "GLASS-THERMAL-B",
+      "description": "A second declared cooling history for separately supported matched specimens; nominal target, material lots and geometry are controlled rather than presumed to establish matched retained product.",
+      "actual_temperature_fields": "T_A(position,time) and T_B(position,time) must be measured or otherwise justified at relevant positions; no numerical trajectory assigned.",
+      "history_condition": "The primary hypothesis applies only if actual history B spends less time in an independently supported relevant crystallization window, with justified other covariates."
+    },
+    "observable": {
+      "description": "A prespecified method-specific crystalline-signal metric under the same validated sampling and analysis convention.",
+      "symbols": "S_A,S_B; signed difference Delta_S=S_B-S_A where metric/units are compatible.",
+      "metric_units_thresholds_and_resolution": "UNPROVIDED; choose prospectively with calibration/uncertainty evidence.",
+      "boundary": "A diagnostic signal and method-bounded nondetection are not automatically an exact crystalline mass/volume fraction or zero crystallinity."
+    },
+    "primary_hypothesis": {
+      "response": "Conditional lower crystalline signal for B relative to A.",
+      "mechanism": "Less realized exposure to a relevant crystallization window may suppress formation/detectability under supported matched initial conditions.",
+      "status": "PROPOSED, not a measured sign or universal glass-formation rule"
+    },
+    "conditions": [
+      "identified lot and initial-state records",
+      "same declared nominal principal target and justified retained inventory covariates",
+      "defined geometry and inspected regions",
+      "actual spatial thermal paths rather than bath descriptions or unverified modeled rates",
+      "melt/flux/contact and atmosphere records",
+      "loss/contamination/nucleation and surface-history evidence",
+      "conditioning and storage",
+      "same calibrated diagnostic protocols/reference controls and prespecified criteria",
+      "sampling/replicate rationale and uncertainty/comparison resolution"
+    ],
+    "discriminating_test": {
+      "status": "PROPOSED and unperformed",
+      "method": "Compare prespecified diagnostics with independently justified actual thermal histories and retained-state evidence. Inspect spatial variation and nucleation/contamination alternatives before attributing a signal change to the intended history.",
+      "required_controls": "Reference and calibration controls; matched or explicitly assessed initial-state/geometry/retention covariates; spatial sampling and justified replicate allocation; retain failed preparations and unresolved classifications.",
+      "model_separation": "A modeled critical cooling rate or bath description does not establish the candidate centerline trajectory; any justified quantitative phase analysis is a separate measurement model."
+    },
+    "alternative_hypotheses": [
+      {
+        "id": "ALT-SAME-DIAGNOSTIC-BOUNDARY",
+        "response": "Unchanged signal within independently justified resolution.",
+        "mechanism": "Both realized histories may fall within the same diagnostic classification/resolution boundary.",
+        "status": "PROPOSED; not exact response equality or a measured null"
+      },
+      {
+        "id": "ALT-GREATER-CRYSTALLINE-SIGNAL",
+        "response": "Greater signal for B is a separate conditional alternative.",
+        "mechanism": "The realized local path or heterogeneous-nucleation population instead differs in a crystallization-favoring way.",
+        "activation_condition": "Investigate independently supported path/initial-state/contact/contamination differences; do not silently assume matched covariates when evidence contradicts that assumption.",
+        "status": "PROPOSED; no simultaneous opposite results for an identical state/specimen"
+      }
+    ],
+    "unresolved_before_interpretation": [
+      "actual specimens/lots/geometry",
+      "completed preparation and candidate retention",
+      "initial phase/local order/nucleation state",
+      "actual thermal trajectories and relevant window",
+      "validated signal metric/thresholds/resolution",
+      "quantitative-phase calibration if claimed",
+      "sampling, replicate and uncertainty choices"
+    ],
+    "comparison_performed": false,
+    "measured_outcomes_assigned": false,
+    "source_curve_or_new_threshold_assigned": false
+  },
+  "evidence_statuses": {
+    "ESTABLISHED": "Existing attributed third-party teachings only; source and condition references retained at pinned paths.",
+    "CALCULATED": "Explicit exact rational/count and symbolic qualified-mass relations; physical realization unproved.",
+    "PROPOSED": "Unperformed candidate preparation/diagnostics and conditional comparison with separate hypotheses.",
+    "UNSUPPORTED": "Actual candidate retention/isotopes, structure/network/quantitative phases, preparation success and new outcomes where no evidence is provided."
+  },
+  "arithmetic_checks_performed": {
+    "method": "Inline Python standard-library Fraction,gcd,lcm with explicit ValueError guards; no production generator used as oracle; no new permanent test file.",
+    "principal_target_sum": "1",
+    "principal_target_positive": true,
+    "principal_count_sum": 1000,
+    "principal_count_gcd": 1,
+    "principal_primitive_denominator": 1000,
+    "grid_divisibility_verified": true,
+    "stipulated_residual_cases": [
+      {
+        "m": 1,
+        "outside_principal_count_R": 0,
+        "principal_count_N_P": 1000,
+        "whole_count_N": 1000,
+        "principal_share_f": "1",
+        "principal_whole_fractions": [
+          "4/125",
+          "1/200",
+          "4/25",
+          "87/1000",
+          "343/500",
+          "3/100"
+        ],
+        "outside_principal_share": "0",
+        "scope": "CALCULATED stipulated boundary, not an actual specimen or impurity assignment"
+      },
+      {
+        "m": 1,
+        "outside_principal_count_R": 1,
+        "principal_count_N_P": 1000,
+        "whole_count_N": 1001,
+        "principal_share_f": "1000/1001",
+        "principal_whole_fractions": [
+          "32/1001",
+          "5/1001",
+          "160/1001",
+          "87/1001",
+          "98/143",
+          "30/1001"
+        ],
+        "outside_principal_share": "1/1001",
+        "scope": "CALCULATED stipulated boundary, not an actual specimen or impurity assignment"
+      },
+      {
+        "m": 1,
+        "outside_principal_count_R": 1000,
+        "principal_count_N_P": 1000,
+        "whole_count_N": 2000,
+        "principal_share_f": "1/2",
+        "principal_whole_fractions": [
+          "2/125",
+          "1/400",
+          "2/25",
+          "87/2000",
+          "343/1000",
+          "3/200"
+        ],
+        "outside_principal_share": "1/2",
+        "scope": "CALCULATED stipulated boundary, not an actual specimen or impurity assignment"
+      },
+      {
+        "m": 3,
+        "outside_principal_count_R": 17,
+        "principal_count_N_P": 3000,
+        "whole_count_N": 3017,
+        "principal_share_f": "3000/3017",
+        "principal_whole_fractions": [
+          "96/3017",
+          "15/3017",
+          "480/3017",
+          "261/3017",
+          "294/431",
+          "90/3017"
+        ],
+        "outside_principal_share": "17/3017",
+        "scope": "CALCULATED stipulated boundary, not an actual specimen or impurity assignment"
+      }
+    ],
+    "additional_Al_boundary_cases": [
+      {
+        "beta": "0",
+        "canonical_support": [
+          "B",
+          "Si",
+          "P",
+          "Cr",
+          "Ni",
+          "Nb"
+        ],
+        "sum": "1",
+        "scope": "CALCULATED closure/interior accounting; no glass-state claim"
+      },
+      {
+        "beta": "1/2",
+        "canonical_support": [
+          "B",
+          "Al",
+          "Si",
+          "P",
+          "Cr",
+          "Ni",
+          "Nb"
+        ],
+        "sum": "1",
+        "scope": "CALCULATED closure/interior accounting; no glass-state claim"
+      },
+      {
+        "beta": "1/100000000000000000000",
+        "canonical_support": [
+          "B",
+          "Al",
+          "Si",
+          "P",
+          "Cr",
+          "Ni",
+          "Nb"
+        ],
+        "sum": "1",
+        "scope": "CALCULATED closure/interior accounting; no glass-state claim"
+      },
+      {
+        "beta": "1",
+        "canonical_support": [
+          "Al"
+        ],
+        "sum": "1",
+        "scope": "CALCULATED closure/interior accounting; no glass-state claim"
+      }
+    ],
+    "additional_Al_witness_primitive_denominator": "100000000000000000000000",
+    "scope": "Accounting consistency only; no measurement, material preparation, causal response or statutory conclusion."
+  },
+  "publication_boundary": "Prospective companion record for authorized repository review. It is outside all historical application/PDF captures and supplies no earlier filing content, legal date or private applicant evidence.",
+  "physical_experiment_performed_for_this_record": false,
+  "physical_enablement_certified": false,
+  "novelty_or_inventorship_decided": false,
+  "earlier_entitlement_certified": false,
+  "inventor_identity_inferred": false,
+  "filing_asserted": false,
+  "auxiliary_box_records": {
+    "evidence_status": "CALCULATED; authored numerical box, not source-reported intervals",
+    "operations_performed_utc": "2026-10-01T23:08:32.035275+00:00",
+    "support_reference": "composition.ordered_principal_support",
+    "basis_reference": "composition.basis; ideal six-element atom subinventory only",
+    "tau": "1/100000000000000000000",
+    "lower": [
+      "3199999999999999999/100000000000000000000",
+      "499999999999999999/100000000000000000000",
+      "15999999999999999999/100000000000000000000",
+      "8699999999999999999/100000000000000000000",
+      "68599999999999999999/100000000000000000000",
+      "2999999999999999999/100000000000000000000"
+    ],
+    "upper": [
+      "3200000000000000001/100000000000000000000",
+      "500000000000000001/100000000000000000000",
+      "16000000000000000001/100000000000000000000",
+      "8700000000000000001/100000000000000000000",
+      "68600000000000000001/100000000000000000000",
+      "3000000000000000001/100000000000000000000"
+    ],
+    "lower_sum": "49999999999999999997/50000000000000000000",
+    "upper_sum": "50000000000000000003/50000000000000000000",
+    "bound_tests_passed": true,
+    "physical_materials_within_box_enabled": false,
+    "endpoint_domain": "Arbitrary rational endpoints, also exact real endpoints; the reduced endpoints require denominator 10^20 and are not p<=19 decimal endpoints. The width 2*tau is not one elementary decimal cell. Material-claim 152/167/168 compatibility remains conditional on physical claim 1 requirements.",
+    "continuous_candidate_record": {
+      "record_id": "GLASS-BOX-CONTINUOUS-2026-10-01",
+      "selected_support": [
+        "B",
+        "Si",
+        "P",
+        "Cr",
+        "Ni",
+        "Nb"
+      ],
+      "selected_basis": "Ideal principal-only elemental atomic-fraction basis; denominator is the declared six-principal atom subtotal. It is neither feed mass, volume, site fraction nor an exhaustive retained-product assay.",
+      "initial_preliminary_witness": [
+        "3199999999999999999/100000000000000000000",
+        "499999999999999999/100000000000000000000",
+        "15999999999999999999/100000000000000000000",
+        "8699999999999999999/100000000000000000000",
+        "68599999999999999999/100000000000000000000",
+        "2999999999999999999/100000000000000000000"
+      ],
+      "residual_allocation_trace": [
+        {
+          "index": 0,
+          "increment": "1/50000000000000000000",
+          "residual_after": "1/25000000000000000000"
+        },
+        {
+          "index": 1,
+          "increment": "1/50000000000000000000",
+          "residual_after": "1/50000000000000000000"
+        },
+        {
+          "index": 2,
+          "increment": "1/50000000000000000000",
+          "residual_after": "0"
+        },
+        {
+          "index": 3,
+          "increment": "0",
+          "residual_after": "0"
+        },
+        {
+          "index": 4,
+          "increment": "0",
+          "residual_after": "0"
+        },
+        {
+          "index": 5,
+          "increment": "0",
+          "residual_after": "0"
+        }
+      ],
+      "preliminary_final_witness": [
+        "3200000000000000001/100000000000000000000",
+        "500000000000000001/100000000000000000000",
+        "16000000000000000001/100000000000000000000",
+        "8699999999999999999/100000000000000000000",
+        "68599999999999999999/100000000000000000000",
+        "2999999999999999999/100000000000000000000"
+      ],
+      "every_final_coordinate_strictly_positive": true,
+      "epsilon": "1/200000000000000000000",
+      "adjusted_lower": [
+        "3199999999999999999/100000000000000000000",
+        "499999999999999999/100000000000000000000",
+        "15999999999999999999/100000000000000000000",
+        "8699999999999999999/100000000000000000000",
+        "68599999999999999999/100000000000000000000",
+        "2999999999999999999/100000000000000000000"
+      ],
+      "positive_feasibility_branch": "Every U_i>0; sum(L)<1; epsilon=tau/2; max(L_i,epsilon)=L_i here; repeated support-order residual allocation produces the same strictly positive witness.",
+      "positive_target_assignment_performed": true,
+      "assigned_target_fractions": [
+        "3200000000000000001/100000000000000000000",
+        "500000000000000001/100000000000000000000",
+        "16000000000000000001/100000000000000000000",
+        "8699999999999999999/100000000000000000000",
+        "68599999999999999999/100000000000000000000",
+        "2999999999999999999/100000000000000000000"
+      ],
+      "primitive_denominator": "100000000000000000000",
+      "on_historical_D_grid": false,
+      "evidence_fields": {
+        "structural": {
+          "evidence_status": "UNSUPPORTED",
+          "content": "No physical phase, network or local-order identity is assigned to this auxiliary calculated target."
+        },
+        "preparation": {
+          "evidence_status": "PROPOSED",
+          "content": "Any operating development would require an independently supported material embodiment; it remains unperformed and no route or successful preparation is assigned."
+        },
+        "measurement": {
+          "evidence_status": "CALCULATED; actual candidate measurements UNSUPPORTED",
+          "content": "Exact interval and target arithmetic is supplied, with no observed retained composition, detection limit, uncertainty or specimen assay."
+        },
+        "property": {
+          "evidence_status": "UNSUPPORTED",
+          "content": "No thermal response, glass identity or other candidate property is transferred to this auxiliary target."
+        }
+      },
+      "operation_correspondence": "Selected operations of191 and192, each inheriting the explicit support/basis/target/four-field record construction of186. This is a current worked record, not a novelty or earlier source-operation finding."
+    },
+    "grid_candidate_record": {
+      "record_id": "GLASS-BOX-GRID-2026-10-01",
+      "selected_support": [
+        "B",
+        "Si",
+        "P",
+        "Cr",
+        "Ni",
+        "Nb"
+      ],
+      "selected_basis": "Ideal principal-only elemental atomic-fraction basis; denominator is the declared six-principal atom subtotal. It is neither feed mass, volume, site fraction nor an exhaustive retained-product assay.",
+      "D": "10000000000000000000",
+      "integer_lower_b": [
+        "320000000000000000",
+        "50000000000000000",
+        "1600000000000000000",
+        "870000000000000000",
+        "6860000000000000000",
+        "300000000000000000"
+      ],
+      "integer_upper_c": [
+        "320000000000000000",
+        "50000000000000000",
+        "1600000000000000000",
+        "870000000000000000",
+        "6860000000000000000",
+        "300000000000000000"
+      ],
+      "bound_formula": "b_i=max(1,ceil(D*L_i)); c_i=min(D-k+1,floor(D*U_i)). The cap does not bind in this particular case.",
+      "acceptance_tests_passed": true,
+      "integer_residual_allocation": "Start at b; sum(b)=D, so residual0 and every assigned increment0. Thus n=b=c; there is exactly one D-grid point in this box.",
+      "assigned_integer_numerators": [
+        "320000000000000000",
+        "50000000000000000",
+        "1600000000000000000",
+        "870000000000000000",
+        "6860000000000000000",
+        "300000000000000000"
+      ],
+      "positive_target_assignment_performed": true,
+      "assigned_target_fractions": [
+        "4/125",
+        "1/200",
+        "4/25",
+        "87/1000",
+        "343/500",
+        "3/100"
+      ],
+      "grid_point_unique": true,
+      "evidence_fields": {
+        "structural": {
+          "evidence_status": "UNSUPPORTED",
+          "content": "No physical phase, network or local-order identity is assigned to this auxiliary calculated target."
+        },
+        "preparation": {
+          "evidence_status": "PROPOSED",
+          "content": "Any operating development would require an independently supported material embodiment; it remains unperformed and no route or successful preparation is assigned."
+        },
+        "measurement": {
+          "evidence_status": "CALCULATED; actual candidate measurements UNSUPPORTED",
+          "content": "Exact interval and target arithmetic is supplied, with no observed retained composition, detection limit, uncertainty or specimen assay."
+        },
+        "property": {
+          "evidence_status": "UNSUPPORTED",
+          "content": "No thermal response, glass identity or other candidate property is transferred to this auxiliary target."
+        }
+      },
+      "operation_correspondence": "Selected operations of193, inheriting186 directly. It does not inherit191 or192. Current grid assignment supplies no physical or statutory result."
+    },
+    "checks_performed": {
+      "independent_exact_steps": "Standard-library Fraction calculation of bounds, sums, epsilon, ordered continuous allocation, primitive denominator, integer bounds and grid uniqueness.",
+      "actual_existing_functions_checked": {
+        "unrestricted_positive_box_witness": [
+          "3200000000000000001/100000000000000000000",
+          "500000000000000001/100000000000000000000",
+          "16000000000000000001/100000000000000000000",
+          "8699999999999999999/100000000000000000000",
+          "68599999999999999999/100000000000000000000",
+          "2999999999999999999/100000000000000000000"
+        ],
+        "unrestricted_lattice_witness": [
+          "4/125",
+          "1/200",
+          "4/25",
+          "87/1000",
+          "343/500",
+          "3/100"
+        ],
+        "historical_box_witness": [
+          "3200000000000000001/100000000000000000000",
+          "500000000000000001/100000000000000000000",
+          "16000000000000000001/100000000000000000000",
+          "8699999999999999999/100000000000000000000",
+          "68599999999999999999/100000000000000000000",
+          "2999999999999999999/100000000000000000000"
+        ],
+        "historical_lattice_box_witness": [
+          "4/125",
+          "1/200",
+          "4/25",
+          "87/1000",
+          "343/500",
+          "3/100"
+        ]
+      },
+      "scope": "Functions match these independently computed witnesses in this all-positive specific case only; no general equivalence or full enumeration is claimed."
+    },
+    "continuous_domain": "The closed box intersected with exact normalization is not a singleton. The unique-point statement applies only to its D=10^19 grid intersection; the nominal and perturbed continuous targets are different feasible points."
+  }
+}
