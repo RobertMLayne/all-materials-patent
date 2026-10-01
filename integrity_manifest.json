@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 23899,
-      "sha256": "f952a7f22112cd65a6e5335c8c8b8fff42abc54d1b69837c1aca42864686a766"
+      "size_bytes": 23999,
+      "sha256": "8de875dd8de3e964e05ee7c438d16baee5c3d1e4e37578309c6542fb4ba10990"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -428,8 +428,8 @@
     },
     {
       "path": "documents/application_oxide_defect_evidence_2026-09-30.md",
-      "size_bytes": 8638,
-      "sha256": "5a44b8aad276b45d7b6207bbbfc9360ee2730e1fe2d046110dad4605c4516a28"
+      "size_bytes": 8639,
+      "sha256": "a78acac93d968c4d3a748255a35c0070eab7643dea03256e7583adb4c851ead5"
     },
     {
       "path": "documents/application_preparation_evidence_2026-09-30.md",
@@ -608,8 +608,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 42478,
-      "sha256": "6b87caa9337e7c2136da9ef974bc21deb26d3625abd82a3bfb4a6012554a3905"
+      "size_bytes": 42522,
+      "sha256": "ffec0a2d427e512448835c47168be2a97b2e6bd25f0a6f7de27153fe2f8e1d1e"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
