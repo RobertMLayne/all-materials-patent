@@ -114,6 +114,32 @@ PHASE_AUTHORING = {
     "tools/pdf/build_consolidated_review.py": "data/application_phase_specific_evidence_authoring_2026-10-01/layout.py.txt",
     "tools/pdf/build_identity_review_annex.py": "data/application_phase_specific_evidence_authoring_2026-10-01/output_helper.py.txt",
 }
+FAMILY_SOURCE = "documents/provisional_application_family_evidence_2026-10-01.md"
+FAMILY_MAP = "data/claim_support_map_family_evidence_2026-10-01.json"
+FAMILY_EDITION = "data/application_family_evidence_2026-10-01.json"
+FAMILY_PDF = "documents/pdf/provisional_application_family_evidence_2026-10-01.pdf"
+FAMILY_REVIEW = "data/family_source_review_2026-10-01.json"
+FAMILY_CONTEXT = "documents/reference_entry_support.md"
+FAMILY_BASELINE = "7e9b9419e26a179a2288b427e0e82f42389b8366"
+FAMILY_PREFACE_SHA256 = "9f15451239cca8c2752cc5c55704873539ad76bc43706f53e14e6f3ad3562513"
+FAMILY_HEADINGS = {
+    "molecular": "### Molecular evidence associated with [0040]: identity, crystallization and accounting",
+    "polymer": "### Polymer evidence associated with [0040]: stereochemistry, processing and accounting",
+    "composite": "### Composite evidence associated with [0040]: constituents, preparation and accounting",
+}
+# Reviewed identities and qualifications are anchored independently of source,
+# captured-input and outer hashes. These pins do not certify physical outcomes.
+FAMILY_REVIEW_SHA256 = "056c83e78d38d0fc6421150994f097081a8fd6efd98ca83951f5230a3d679e40"
+FAMILY_BLOCK_SHA256 = {
+    "molecular": "bd3d4834506ecd293a06f46d2a620ac7c4a3736962cc038d8ee08071eb45613a",
+    "polymer": "2eef656a65855427a7bcc6985c11f57cc2c951187b744240457a4740a096d5f9",
+    "composite": "604dc64a9d62e521b1e3793598662552df8a547800fe271f07e8af0ece078666",
+}
+FAMILY_AUTHORING = {
+    "tools/pdf/build_working_application.py": "data/application_family_evidence_authoring_2026-10-01/builder.py.txt",
+    "tools/pdf/build_consolidated_review.py": "data/application_family_evidence_authoring_2026-10-01/layout.py.txt",
+    "tools/pdf/build_identity_review_annex.py": "data/application_family_evidence_authoring_2026-10-01/output_helper.py.txt",
+}
 REVIEW_AUTHORING_FILES = {
     "builder": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
     "helper": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
@@ -214,6 +240,8 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     "documents/application_oxide_defect_evidence_2026-09-30.md", *OXIDE_AUTHORING.values(),
     PHASE_SOURCE, PHASE_MAP, PHASE_EDITION, PHASE_PDF,
     "documents/application_phase_specific_evidence_2026-10-01.md", *PHASE_AUTHORING.values(),
+    FAMILY_SOURCE, FAMILY_MAP, FAMILY_EDITION, FAMILY_PDF, FAMILY_REVIEW,
+    "documents/application_family_evidence_2026-10-01.md", *FAMILY_AUTHORING.values(),
 }
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
@@ -1197,6 +1225,177 @@ def check_phase_application(root: Path) -> dict:
             "pdf_parsed_or_appearance_rechecked_by_this_check": False}
 
 
+def check_family_application(root: Path) -> dict:
+    """Check the seventh edition's preserved body and three qualified records.
+
+    Count models use declared subinventories, chain assumptions and dry-input
+    categories. These checks establish neither preparation nor legal coverage.
+    """
+    previous_bytes = (root / PHASE_SOURCE).read_bytes()
+    source_bytes = (root / FAMILY_SOURCE).read_bytes()
+    previous, application = previous_bytes.decode("utf-8"), source_bytes.decode("utf-8")
+    support = load_json(root / FAMILY_MAP)
+    require(support.get("source_path") == FAMILY_SOURCE and support.get("source_sha256")
+            == hashlib.sha256(source_bytes).hexdigest(), "Family source/map hash differs")
+    require(support.get("prepared_date") == "2026-10-01" and support.get("derived_from") == {
+        "path": PHASE_SOURCE, "sha256": hashlib.sha256(previous_bytes).hexdigest(),
+        "repository_baseline": FAMILY_BASELINE,
+    }, "Family source derivation differs")
+    require(support.get("claims") == load_json(root / PHASE_MAP).get("claims")
+            and support.get("changed_claims") == [] and support.get("changed_paragraphs") == ["0040"],
+            "Family individual claim records or change inventory differ")
+    claims = check_claims(application, support)
+    old_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", previous, re.M))
+    new_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", application, re.M))
+    require(old_paragraphs.keys() == new_paragraphs.keys()
+            and {n for n in old_paragraphs if old_paragraphs[n] != new_paragraphs[n]} == {"0040"},
+            "Unexpected family paragraph changes")
+    pointer = (" The following selected molecular, polymer and composite records supply attributed operations, "
+               "present composition accounting and conditional inquiries; candidate realization and broader applicability remain unresolved.")
+    require(new_paragraphs["0040"] == old_paragraphs["0040"] + pointer,
+            "Family preparation paragraph or pointer differs")
+    boundary = "## 1 Technical field\n"
+    require(application.count(boundary) == previous.count(boundary) == 1,
+            "Family technical-field boundary differs")
+    preface, body = application.split(boundary)
+    lines = [line for line in preface.splitlines() if line]
+    require(len(lines) == 4 and lines[0]
+            == "# Provisional materials disclosure with molecular, polymer and composite evidence - 1 October 2026"
+            and lines[1] == "Prepared **1 October 2026** | **Prospective unfiled family-evidence edition** for applicant and patent counsel.",
+            "Family edition preface differs")
+    require(hashlib.sha256(" ".join(preface.split()).encode("utf-8")).hexdigest() == FAMILY_PREFACE_SHA256,
+            "Family reviewed preface qualifications differ")
+    starts = [list(re.finditer(r"^" + re.escape(h) + r"$", body, re.M)) for h in FAMILY_HEADINGS.values()]
+    ends = list(re.finditer(r"^\[0041\] ", body, re.M))
+    require(all(len(s) == 1 for s in starts) and len(ends) == 1,
+            "Missing or ambiguous family evidence boundary")
+    positions = [s[0] for s in starts]
+    require(positions[0].start() < positions[1].start() < positions[2].start() < ends[0].start(),
+            "Family evidence order differs")
+    spans, blocks = {}, {}
+    for i, key in enumerate(FAMILY_HEADINGS):
+        end = positions[i + 1].start() if i < 2 else ends[0].start()
+        spans[key] = body[positions[i].start():end]
+        blocks[key] = body[positions[i].end():end]
+    old_body = previous.split(boundary, 1)[1]
+    old_body = old_body.replace("[0040] " + old_paragraphs["0040"], "[0040] " + new_paragraphs["0040"], 1)
+    old_map, new_map = PurePosixPath(PHASE_MAP).name, PurePosixPath(FAMILY_MAP).name
+    require(old_body.count(old_map) == body.count(new_map) == 1 and old_map not in body,
+            "Family companion-map reference differs")
+    remaining = body[:positions[0].start()] + body[ends[0].start():]
+    require(remaining == old_body.replace(old_map, new_map, 1),
+            "Family source changed outside identified additions")
+    # Assert the intended basis/status before full pins, so coherent negative
+    # fixtures demonstrate rejection at their concrete evidence boundary.
+    require("actual candidate outcomes UNSUPPORTED" in blocks["molecular"]
+            and "actual candidate outcomes UNSUPPORTED" in blocks["polymer"]
+            and "actual candidate outcomes UNSUPPORTED" in blocks["composite"],
+            "Family candidate outcome status differs")
+    require("selected-crystallite count quantities, not bulk mass or volume phase fractions" in blocks["molecular"],
+            "Family molecular occurrence basis differs")
+    require("distinct from elemental fractions, repeat populations and final retained composition" in blocks["polymer"],
+            "Family polymer feed basis differs")
+    require("not the source's actual batch masses, a stoichiometric cure prescription or retained cured-product assay" in blocks["composite"],
+            "Family composite conditional basis differs")
+    for key, span in spans.items():
+        require(hashlib.sha256(" ".join(span.split()).encode("utf-8")).hexdigest() == FAMILY_BLOCK_SHA256[key],
+                "Family reviewed block qualifications differ: " + key)
+    require(hashlib.sha256((root / FAMILY_REVIEW).read_bytes()).hexdigest() == FAMILY_REVIEW_SHA256,
+            "Family reviewed source identities differ")
+    review = load_json(root / FAMILY_REVIEW)
+    require(review.get("application_source_path") == FAMILY_SOURCE
+            and review.get("historical_context_path") == FAMILY_CONTEXT
+            and review.get("historical_context_sha256") == hashlib.sha256((root / FAMILY_CONTEXT).read_bytes()).hexdigest(),
+            "Family historical context differs")
+    sources = review.get("primary_sources", [])
+    require(len(sources) == 3 and [s["id"] for s in sources] == list(FAMILY_HEADINGS),
+            "Family primary-source inventory differs")
+    for s in sources:
+        account = blocks[s["id"]].strip().splitlines()[0]
+        require(s.get("application_source_path") == FAMILY_SOURCE
+                and s.get("reviewed_block_sha256") == FAMILY_BLOCK_SHA256[s["id"]]
+                and s.get("selected_account_sha256") == hashlib.sha256(" ".join(account.split()).encode()).hexdigest(),
+                "Family source account identity differs")
+    # Independent formula-unit normalization and conditional finite inventories;
+    # the production enumeration routines and source outcomes are not oracles.
+    accounting = review["present_accounting"]
+    for key, counts, target in (
+        ("unsolvated", (12, 15, 2, 1), ("2/5", "1/2", "1/15", "1/30")),
+        ("dihydrate", (16, 15, 2, 3), ("4/9", "5/12", "1/18", "1/12")),
+    ):
+        normalized = tuple(str(Fraction(n, sum(counts))) for n in counts)
+        require(normalized == target
+                and accounting["molecular"][key + "_atom_counts"] == list(counts)
+                and accounting["molecular"][key + "_fractions"] == list(target),
+                "Family molecular count accounting differs")
+    for m, q in ((1, 0), (1, 2), (3, 6), (2, 7)):
+        counts = (12*m + 2*q, 15*m, 2*m, m + q)
+        require(sum(counts) == 30*m + 3*q and all(n > 0 for n in counts),
+                "Family conditional water inventory differs")
+    repeat = tuple(str(Fraction(n, 9)) for n in (3, 4, 2))
+    require(accounting["polymer"]["ideal_repeat_counts"] == [3, 4, 2]
+            and accounting["polymer"]["ideal_repeat_fractions"] == list(repeat),
+            "Family polymer repeat accounting differs")
+    for r, k in ((1, 1), (3, 1), (3, 3), (100, 7)):
+        counts = (3*r, 4*r + 2*k, 2*r + k)
+        require(sum(counts) == 9*r + 3*k and sum(Fraction(n, sum(counts)) for n in counts) == 1,
+                "Family conditional chain inventory differs")
+    stock, target = Fraction(1, 100), Fraction(9, 1250)
+    dispersion = target / stock
+    dry = (target, (1-stock)*dispersion, 1-dispersion)
+    require(sum(dry) == 1 and all(x > 0 for x in dry)
+            and accounting["composite"]["conditional_stock_fraction"] == str(dispersion)
+            and accounting["composite"]["conditional_dry_fractions"] == [str(x) for x in dry],
+            "Family conditional dry-input accounting differs")
+    edition = load_json(root / FAMILY_EDITION)
+    require(edition.get("prepared_date") == "2026-10-01"
+            and edition.get("edition_status") == "prospective unfiled family-evidence edition"
+            and edition.get("repository_baseline") == FAMILY_BASELINE
+            and edition.get("filing_asserted") is False and edition.get("physical_enablement_certified") is False,
+            "Family edition baseline or factual status differs")
+    expected_sources = {FAMILY_SOURCE, FAMILY_MAP, FAMILY_REVIEW, FAMILY_CONTEXT, PHASE_REVIEW, PHASE_RECORD,
+                        OXIDE_REVIEW, PREPARATION_REVIEW, ELECTRICAL_REVIEW, *FAMILY_AUTHORING,
+                        "documents/drawings/composition_simplex.svg", "documents/drawings/material_record_sequence.svg"}
+    entries = edition.get("sources", [])
+    require(len(entries) == 14 and {e["path"] for e in entries} == expected_sources,
+            "Family PDF source inventory differs")
+    for entry in entries:
+        snapshot = FAMILY_AUTHORING.get(entry["path"])
+        require(entry.get("snapshot_path") == snapshot
+                and hashlib.sha256(safe_path(root, snapshot or entry["path"]).read_bytes()).hexdigest() == entry["sha256"],
+                "Family PDF captured-source identity differs")
+    pdf = edition.get("pdf", {})
+    require(pdf.get("path") == FAMILY_PDF and type(pdf.get("page_count")) is int and pdf["page_count"] > 0,
+            "Invalid family PDF identity")
+    data = safe_path(root, FAMILY_PDF).read_bytes()
+    require(len(data) == pdf.get("size_bytes") and hashlib.sha256(data).hexdigest() == pdf.get("sha256"),
+            "Family PDF bytes differ from record")
+    locations = edition.get("location_map", {})
+    require(locations.keys() == {f"paragraph_{n:04d}" for n in range(1, 81)} | {f"claim_{n}" for n in range(1, 200)}
+            and all(type(page) is int and 1 <= page <= pdf["page_count"] for page in locations.values()),
+            "Family PDF recorded locations differ")
+    require(edition.get("complete_numbered_text_checked") == {"paragraphs": 80, "claims": 199}
+            and edition.get("vector_drawings_checked") == 2
+            and edition.get("complete_family_text_checked") == {k: evidence_block_counts(b) for k, b in blocks.items()}
+            and edition.get("complete_phase_specific_text_checked") == evidence_block_counts(evidence_block(body, PHASE_HEADING, "0065").split(OXIDE_HEADING, 1)[0]),
+            "Family recorded new or inherited phase coverage differs")
+    prior_edition = load_json(root / PHASE_EDITION)
+    for key in ("complete_preparation_text_checked", "complete_electrical_text_checked",
+                "complete_oxide_defect_text_checked", "complete_property_table_checked"):
+        require(edition.get(key) == prior_edition.get(key), "Family inherited block coverage differs: " + key)
+    visual = edition.get("visual_review", {})
+    require(isinstance(visual, dict) and visual.get("status") == "completed"
+            and visual.get("pages_reviewed") == list(range(1, pdf["page_count"] + 1))
+            and visual.get("remaining_actionable_visual_findings") == 0,
+            "Family recorded appearance review is incomplete")
+    return {**claims, "changed_paragraphs": ["0040"], "changed_claims": [],
+            "captured_sources_checked": len(entries), "recorded_pdf_pages": pdf["page_count"],
+            "recorded_pdf_locations_checked": len(locations), "qualified_family_records_checked": 3,
+            "preceding_evidence_and_remaining_body_preserved": True,
+            "physical_realization_or_filing_or_earlier_entitlement_certified": False,
+            "pdf_parsed_or_appearance_rechecked_by_this_check": False}
+
+
 def check_local_links(root: Path) -> int:
     checked = 0
     for relative in EXPECTED_FILES:
@@ -1598,6 +1797,7 @@ def run(root: Path) -> dict:
     electrical_result = check_electrical_application(root)
     oxide_result = check_oxide_application(root)
     phase_result = check_phase_application(root)
+    family_result = check_family_application(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -1622,6 +1822,7 @@ def run(root: Path) -> dict:
             "electrical_application_edition_verification": electrical_result,
             "oxide_defect_application_edition_verification": oxide_result,
             "phase_specific_application_edition_verification": phase_result,
+            "family_application_edition_verification": family_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -2192,6 +2393,97 @@ def self_test(root: Path) -> dict:
                 for path, data in originals.items():
                     path.write_bytes(data)
 
+        family_path, family_map_path = fixture / FAMILY_SOURCE, fixture / FAMILY_MAP
+        family_review_path, family_edition_path = fixture / FAMILY_REVIEW, fixture / FAMILY_EDITION
+        originals = {path: path.read_bytes() for path in
+                     (family_path, family_map_path, family_review_path, family_edition_path, manifest_path)}
+        check_family_application(fixture)
+        for case, expected_error in (
+            ("family_source_map_drift_rejected", "Family source/map hash differs"),
+            ("family_preface_filing_promotion_rejected_after_consistent_records", "Family reviewed preface qualifications differ"),
+            ("family_claim_drift_rejected_after_consistent_records", "Family individual claim records"),
+            ("family_inherited_evidence_drift_rejected_after_consistent_records", "Family source changed outside identified additions"),
+            ("family_preparation_paragraph_drift_rejected_after_consistent_records", "Family preparation paragraph or pointer differs"),
+            ("family_source_access_promotion_rejected_after_consistent_records", "Family reviewed source identities differ"),
+            ("family_candidate_outcome_promotion_rejected_after_consistent_records", "Family candidate outcome status differs"),
+            ("family_molecular_basis_drift_rejected_after_consistent_records", "Family molecular occurrence basis differs"),
+            ("family_polymer_basis_drift_rejected_after_consistent_records", "Family polymer feed basis differs"),
+            ("family_composite_basis_drift_rejected_after_consistent_records", "Family composite conditional basis differs"),
+        ):
+            try:
+                text = originals[family_path].decode("utf-8")
+                support = json.loads(originals[family_map_path])
+                if case == "family_source_map_drift_rejected":
+                    family_path.write_bytes(originals[family_path] + b"\nUnadopted addition.\n")
+                else:
+                    if "claim_drift" in case:
+                        old_claim = support["claims"][0]["text"]
+                        new_claim = old_claim.replace("positive normalized fraction", "nonnegative normalized fraction", 1)
+                        require(old_claim != new_claim, "Family claim fixture lost its target")
+                        text = text.replace("**Claim 1.** " + old_claim, "**Claim 1.** " + new_claim, 1)
+                        support["claims"][0]["text"] = new_claim
+                    elif "inherited_evidence" in case:
+                        row = "| PEDOT:PSS threshold | 0.443 wt% |"
+                        require(text.count(row) == 1, "Family inherited fixture lost its target")
+                        text = text.replace(row, row.replace("0.443", "0.444"), 1)
+                    elif "preface_filing" in case:
+                        preface, tail = text.split("## 1 Technical field\n", 1)
+                        lines = preface.splitlines()
+                        indices = [i for i, line in enumerate(lines) if line]
+                        require(len(indices) == 4, "Family preface fixture lost its target")
+                        lines[indices[2]] += " A completed filing and earlier priority entitlement are asserted."
+                        text = "\n".join(lines) + "\n## 1 Technical field\n" + tail
+                    elif "source_access" in case:
+                        review = json.loads(originals[family_review_path])
+                        review["primary_sources"][0].update(original_bytes_acquired=True, original_sha256="0" * 64)
+                        family_review_path.write_bytes((json.dumps(review) + "\n").encode("utf-8"))
+                    else:
+                        targets = {
+                            "family_preparation_paragraph_drift_rejected_after_consistent_records":
+                                ("The actual precursors, stoichiometry, atmosphere, thermal schedule, isolation and phase-confirmation steps are necessary.",
+                                 "The actual precursors, stoichiometry, atmosphere, thermal schedule, isolation and phase-confirmation steps are optional."),
+                            "family_candidate_outcome_promotion_rejected_after_consistent_records":
+                                ("actual candidate outcomes UNSUPPORTED", "actual candidate outcomes ESTABLISHED"),
+                            "family_molecular_basis_drift_rejected_after_consistent_records":
+                                ("selected-crystallite count quantities, not bulk mass or volume phase fractions",
+                                 "bulk mass phase fractions"),
+                            "family_polymer_basis_drift_rejected_after_consistent_records":
+                                ("distinct from elemental fractions, repeat populations and final retained composition",
+                                 "equivalent to final retained composition"),
+                            "family_composite_basis_drift_rejected_after_consistent_records":
+                                ("not the source's actual batch masses, a stoichiometric cure prescription or retained cured-product assay",
+                                 "the observed actual batch masses and retained cured-product assay"),
+                        }
+                        target, replacement = targets[case]
+                        require(target in text, "Family semantic fixture lost its target")
+                        text = text.replace(target, replacement, 1)
+                    family_path.write_bytes(text.encode("utf-8"))
+                    support["source_sha256"] = hashlib.sha256(family_path.read_bytes()).hexdigest()
+                    family_map_path.write_bytes((json.dumps(support) + "\n").encode("utf-8"))
+                    # Coherent captured and outer hashes must not promote a
+                    # counting model, input balance or unknown outcome to an assay.
+                    edition = json.loads(originals[family_edition_path])
+                    for entry in edition["sources"]:
+                        if entry["path"] in {FAMILY_SOURCE, FAMILY_MAP, FAMILY_REVIEW}:
+                            entry["sha256"] = hashlib.sha256((fixture / entry["path"]).read_bytes()).hexdigest()
+                    family_edition_path.write_bytes((json.dumps(edition) + "\n").encode("utf-8"))
+                    refreshed = json.loads(originals[manifest_path])
+                    for entry in refreshed["files"]:
+                        if entry["path"] in {FAMILY_SOURCE, FAMILY_MAP, FAMILY_REVIEW, FAMILY_EDITION}:
+                            changed = (fixture / entry["path"]).read_bytes()
+                            entry.update(size_bytes=len(changed), sha256=hashlib.sha256(changed).hexdigest())
+                    manifest_path.write_bytes((json.dumps(refreshed) + "\n").encode("utf-8"))
+                    check_integrity(fixture)
+                try:
+                    check_family_application(fixture)
+                except VerificationError as error:
+                    require(expected_error in str(error), "Family mutation failed for another reason: " + str(error))
+                    extended.append(case)
+                require(case in extended, "Family mutation was accepted: " + case)
+            finally:
+                for path, data in originals.items():
+                    path.write_bytes(data)
+
         model_path = fixture / "range_model/unrestricted_composition_model.json"
         model_original = model_path.read_bytes()
         model = json.loads(model_original)
@@ -2362,7 +2654,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 42, f"Expected 42 extension failure checks, got {len(extended)}")
+    require(len(extended) == 52, f"Expected 52 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,

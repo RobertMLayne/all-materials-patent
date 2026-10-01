@@ -1,0 +1,195 @@
+{
+  "reviewed_date": "2026-10-01",
+  "scope": "Selected primary-source review and present accounting/record operations; no applicant experiment or legal certification.",
+  "application_source_path": "documents/provisional_application_family_evidence_2026-10-01.md",
+  "primary_sources": [
+    {
+      "id": "molecular",
+      "authors": "Broadhurst et al.",
+      "year": 2021,
+      "doi": "10.1107/S2052252521010101",
+      "primary_url": "https://journals.iucr.org/m/issues/2021/06/00/yc5034/index.html",
+      "supporting_url": "https://journals.iucr.org/m/issues/2021/06/00/yc5034/yc5034sup2.pdf",
+      "identity_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C298464",
+      "reviewed_locators": [
+        "main sections 2 and 3",
+        "SI Powder Diffraction sup-4-sup-5",
+        "NIST identity block"
+      ],
+      "access": "Official reader text; no native source-byte acquisition or graphic inspection.",
+      "original_bytes_acquired": false,
+      "original_sha256": null,
+      "rights": "Main CC BY 4.0 stated; separate SI grant unverified; identity page retains its reserved-rights notice.",
+      "scope": "Selected attributed account and identity only; acquisition and scientific qualifications are printed in the application.",
+      "application_source_path": "documents/provisional_application_family_evidence_2026-10-01.md",
+      "selected_account_sha256": "b0c23a580ca03decd09fc8da34209400208594d2ed7554c33031923d643ba658",
+      "selected_account_whitespace_words": 128,
+      "reviewed_block_sha256": "bd3d4834506ecd293a06f46d2a620ac7c4a3736962cc038d8ee08071eb45613a",
+      "reviewed_date": "2026-10-01"
+    },
+    {
+      "id": "polymer",
+      "authors": "Su et al.",
+      "year": 2020,
+      "doi": "10.3390/polym12112515",
+      "primary_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7694064/fullTextXML",
+      "reviewed_locators": [
+        "sec2dot1-polymers-12-02515",
+        "sec2dot2-polymers-12-02515",
+        "sec2dot3dot1-polymers-12-02515",
+        "sec2dot3dot3-polymers-12-02515",
+        "sections 3.1 and 3.5 text"
+      ],
+      "access": "Ordinary unauthenticated public XML GET; independent matching acquisition.",
+      "HTTP_status": 200,
+      "original_bytes_acquired": true,
+      "original_sha256": "6f43886af6d2afdabfb113179ac0efe3a1c99e5adcf7216c9d9451e2d3c53c70",
+      "size_bytes": 70195,
+      "format": "XML",
+      "rights": "Front matter states CC BY 4.0.",
+      "full_graphics_verified": false,
+      "scope": "Primary XML text only; unresolved assignment and specimen-state limits are printed once in the application.",
+      "application_source_path": "documents/provisional_application_family_evidence_2026-10-01.md",
+      "selected_account_sha256": "9865613046791ae27f5a183aa3bfead63232a544343a9008a3daed8d2385cee5",
+      "selected_account_whitespace_words": 152,
+      "reviewed_block_sha256": "2eef656a65855427a7bcc6985c11f57cc2c951187b744240457a4740a096d5f9",
+      "reviewed_date": "2026-10-01"
+    },
+    {
+      "id": "composite",
+      "authors": "Nguyen et al.",
+      "year": 2017,
+      "primary_url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=920936",
+      "bibliographic_url": "https://www.nist.gov/publications/impact-uv-irradiation-multiwall-carbon-nanotubes-nanocomposites-formation-entangled",
+      "reviewed_locators": [
+        "sections 2.1-2.3",
+        "section 3.4",
+        "printed lines 87-181 and 344-374"
+      ],
+      "access": "Ordinary unauthenticated public PDF GET; text and selected native pages inspected.",
+      "HTTP_status": 200,
+      "original_bytes_acquired": true,
+      "original_sha256": "399baa7ea1aba0b126bfe10bfccc526a3e30e060a846eff158b2d1834eb8e193",
+      "size_bytes": 1062421,
+      "format": "PDF",
+      "page_count": 31,
+      "native_pages_inspected": [
+        5,
+        6,
+        7,
+        19,
+        20
+      ],
+      "full_graphics_verified": false,
+      "rights": "No broad reuse grant verified; source originals and graphics are not republished.",
+      "scope": "Selected attributed account; complete supplement and final-publisher comparison not performed. No Zhao result is adopted.",
+      "application_source_path": "documents/provisional_application_family_evidence_2026-10-01.md",
+      "selected_account_sha256": "0df683cbdeb77a1bdbf200982079c4edaf56d26dfce22aff044626340421d571",
+      "selected_account_whitespace_words": 130,
+      "reviewed_block_sha256": "604dc64a9d62e521b1e3793598662552df8a547800fe271f07e8af0ece078666",
+      "reviewed_date": "2026-10-01"
+    }
+  ],
+  "historical_context_path": "documents/reference_entry_support.md",
+  "historical_context_sha256": "91b195ba1ac6c2a9426874c570f7dbbcd363e2b95d62a082f8a4bc0ee8f37a72",
+  "present_accounting": {
+    "molecular": {
+      "ordered_support": [
+        "H",
+        "C",
+        "N",
+        "O"
+      ],
+      "unsolvated_atom_counts": [
+        12,
+        15,
+        2,
+        1
+      ],
+      "unsolvated_fractions": [
+        "2/5",
+        "1/2",
+        "1/15",
+        "1/30"
+      ],
+      "dihydrate_atom_counts": [
+        16,
+        15,
+        2,
+        3
+      ],
+      "dihydrate_fractions": [
+        "4/9",
+        "5/12",
+        "1/18",
+        "1/12"
+      ],
+      "basis": "Stipulated formula-unit atom counts; not whole deposit or phase-mass fractions.",
+      "general_counts": [
+        "12*m+2*q",
+        "15*m",
+        "2*m",
+        "m+q"
+      ],
+      "general_total": "30*m+3*q",
+      "constraints": "m>0 and q>=0 integers; no stable hydrate for every ratio asserted."
+    },
+    "polymer": {
+      "ordered_support": [
+        "C",
+        "H",
+        "O"
+      ],
+      "ideal_repeat_counts": [
+        3,
+        4,
+        2
+      ],
+      "ideal_repeat_fractions": [
+        "1/3",
+        "4/9",
+        "2/9"
+      ],
+      "conditional_chain_counts": [
+        "3*R",
+        "4*R+2*K",
+        "2*R+K"
+      ],
+      "conditional_chain_total": "9*R+3*K",
+      "constraints": "R>=K>=1 integers, expressly hypothetical hydroxyl/carboxyl termini.",
+      "component_mass_target": [
+        "1/2",
+        "1/2"
+      ],
+      "basis": "Ideal repeat and conditional termini; component feed target is not elemental or retained-product assay."
+    },
+    "composite": {
+      "nominal_loading_representation": "9/1250",
+      "conditional_dry_categories": [
+        "MWCNT",
+        "resin",
+        "curing agent"
+      ],
+      "conditional_dry_fractions": [
+        "9/1250",
+        "891/1250",
+        "7/25"
+      ],
+      "conditional_stock_fraction": "18/25",
+      "basis": "Conditional no-loss dry-input balance with no additional dry component; no actual batch or cure prescription."
+    }
+  },
+  "present_record_status": {
+    "support_and_basis_assigned": true,
+    "record_fields_constructed": true,
+    "candidate_preparation_performed": false,
+    "candidate_outcomes": "UNSUPPORTED",
+    "conditional_scenarios": "PROPOSED"
+  },
+  "filing_asserted": false,
+  "earlier_entitlement_certified": false,
+  "physical_enablement_certified": false,
+  "claim_specific_novelty_assessments": 0,
+  "inventor_identity_inferred": false,
+  "scientific_source_accounts_repeated_in_this_record": false
+}
