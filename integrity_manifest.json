@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 170,
+  "file_count": 172,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 28435,
-      "sha256": "a8e4fdbb510017cc72c5819e86fced209f04f49402666ef4f94b3e9399c7f03d"
+      "size_bytes": 29244,
+      "sha256": "57c532a155961e9fa2b1f7faa5ab1ee35bf0a88626fe4a90b15c495f44f790e8"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -345,6 +345,11 @@
       "path": "data/family_source_review_2026-10-01.json",
       "size_bytes": 7203,
       "sha256": "056c83e78d38d0fc6421150994f097081a8fd6efd98ca83951f5230a3d679e40"
+    },
+    {
+      "path": "data/glass_candidate_record_review_2026-10-01.json",
+      "size_bytes": 38695,
+      "sha256": "1601fda1c88d12f5b4dc00165537dd2c0178147275187b2ed2ff0380907bc8af"
     },
     {
       "path": "data/hydrogel_candidate_record_review_2026-09-30.json",
@@ -597,6 +602,11 @@
       "sha256": "db9f5c8c0e017cc268a8d2a8c76b98128a01f92962e04f482d4a4fcbfb283c5e"
     },
     {
+      "path": "documents/glass_claim_comparison_2026-10-01.md",
+      "size_bytes": 33859,
+      "sha256": "51b72e30ee2283d9b4a38f00c47af24e0d6ed5d40f5e3f35af5ea2e6b4004d4c"
+    },
+    {
       "path": "documents/hydrogel_claim_comparison_2026-09-30.md",
       "size_bytes": 16873,
       "sha256": "38de864dfdfcbc6bb490f19705d8c2b1ea6d742567679fa497e25bccbff5e515"
@@ -753,8 +763,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 54490,
-      "sha256": "e3b21d6cb5ee7405b9ab4093a4199e2f47a23934d4fb7aa2c305421253388f75"
+      "size_bytes": 58114,
+      "sha256": "0780d301dbe3164a3d6e9f3eeec6755513397c92f6fbe4b07bb07c4f67b56c63"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -868,8 +878,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 202433,
-      "sha256": "efb7b33e97029c09d0f9c33cba18a54adeae81e20d575e42cd73cbfeeb7da4ee"
+      "size_bytes": 202545,
+      "sha256": "a2a3dadf7200351dc3401072c08c230970924b290200c0788d794e1bd8dcb4ba"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

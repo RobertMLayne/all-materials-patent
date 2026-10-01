@@ -219,6 +219,8 @@ EXPECTED_HASHED = frozenset({
     "documents/oxide_claim_comparison_2026-10-01.md",
     "data/oxide_candidate_record_review_2026-10-01.json",
     "data/magneli_source_review_2026-10-01.json",
+    "documents/glass_claim_comparison_2026-10-01.md",
+    "data/glass_candidate_record_review_2026-10-01.json",
     "documents/full_scope_completion_audit.md",
     "range_model/unrestricted_compositions.py",
     "range_model/unrestricted_composition_model.json",

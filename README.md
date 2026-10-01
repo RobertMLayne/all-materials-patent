@@ -32,6 +32,8 @@ The [oxide comparison against actual claims](documents/oxide_claim_comparison_20
 
 The [current metal and glass edition](documents/application_metal_glass_evidence_2026-10-01.md) prints selected attributed operations alongside [0039] and [0063], exact principal/whole-inventory accounting and conditional inquiries. Its [actual authoring record](data/application_metal_glass_evidence_2026-10-01.json) binds fifteen captured inputs to the reviewed 42-page PDF. All 199 claims and their individual assessments remain unchanged, with twelve earlier PDFs preserved. Calculated count witnesses, diagnostic classifications and proposed comparisons retain their qualifications; source-supported examples do not establish an applicant experiment, a complete retained inventory or full-scope physical/legal coverage.
 
+The [glass comparison against actual claims](documents/glass_claim_comparison_2026-10-01.md) separates complete retained support from the principal target and maps actual material and record-method limitations. Its [worked record](data/glass_candidate_record_review_2026-10-01.json) performs present target/field construction, distinct continuous and grid box assignments, and a separate below-grid added-Al calculation. Four later-claim scenarios retain missing physical and legal features. The box half-width is a calculated coordinate choice, not source precision or achievable measurement resolution; unique grid membership does not replace the continuous domain. These companions are outside the preserved application/PDF captures, with no applicant preparation, new property outcome or status upgrade.
+
 ## Read the documents
 
 | Document | Readable PDF | Editable source |
