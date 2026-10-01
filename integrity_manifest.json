@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 141,
+  "file_count": 144,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 23999,
-      "sha256": "8de875dd8de3e964e05ee7c438d16baee5c3d1e4e37578309c6542fb4ba10990"
+      "size_bytes": 24862,
+      "sha256": "ad8c3d2a93c999f6e051d5845c2eec9b260b92935ee2ba2e14b81577cf69156d"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -277,6 +277,11 @@
       "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327"
     },
     {
+      "path": "data/magneli_source_review_2026-10-01.json",
+      "size_bytes": 7021,
+      "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
+    },
+    {
       "path": "data/nuclear_archive/README.md",
       "size_bytes": 5016,
       "sha256": "79239e699e93637fc182f2aae2e2f8928608a62ff62578a7acb168bc63ed1d69"
@@ -335,6 +340,11 @@
       "path": "data/nuclear_archive/verify_nuclear_archive.py",
       "size_bytes": 12328,
       "sha256": "d3fdba1118cf527e643411d8901b659f192d6029590bbac39ca96e9aecf59792"
+    },
+    {
+      "path": "data/oxide_candidate_record_review_2026-10-01.json",
+      "size_bytes": 17340,
+      "sha256": "031d389236fbe42f81d3b607f7146a4a359e48db7892533a2c5f77aaf5bf0efa"
     },
     {
       "path": "data/oxide_defect_source_review_2026-09-30.json",
@@ -497,6 +507,11 @@
       "sha256": "36d30a8db00a5bb6c6421de3daae7e8f6188d62cf58318bdafcca6d90b4d425e"
     },
     {
+      "path": "documents/oxide_claim_comparison_2026-10-01.md",
+      "size_bytes": 23234,
+      "sha256": "cf0aa8fea0e6235be363cfd22fc3aa6b32cb9b47c4f2546e0a1ac86151a4115a"
+    },
+    {
       "path": "documents/pct_defensive_disclosure_blueprint.md",
       "size_bytes": 37796,
       "sha256": "96e2fc525cce1f8a05a3f301b46096b5031410d517ad70887d00d9eb98974bd1"
@@ -608,8 +623,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 42522,
-      "sha256": "ffec0a2d427e512448835c47168be2a97b2e6bd25f0a6f7de27153fe2f8e1d1e"
+      "size_bytes": 45671,
+      "sha256": "4486fd9fbac8f0435b6cc31d2ea9789a75068776d88dd7d6f34f9d4e457128c0"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -723,8 +738,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 140527,
-      "sha256": "59cc466b96fa9d574da2b9f9ebe244413c860ac5947174f55cfa1e5d86484ab5"
+      "size_bytes": 140689,
+      "sha256": "d2fd1dedbebd9a6523efa4c89ca05495e04490177c514066d90d4beb7b884ffe"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
