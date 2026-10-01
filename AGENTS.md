@@ -14,16 +14,16 @@ This repository is a research and drafting package. Its documents do not establi
 - Do not add unrelated account inventories, repository-review reports, credentials, local absolute paths, temporary renders, or synced private reference files to this package.
 - Do not add a license grant or assert that an application has been filed unless the user expressly supplies and authorizes the relevant change. External publication and filing require the user's instructions; verification alone authorizes neither.
 
-## Pending work record
+## Scope and unresolved work record
 
-The following items remain open. They describe unresolved work, not performed experiments or promised results.
+The following items record scope and unresolved evidence, not performed experiments or promised results. As confirmed on 1 October 2026, this is a theoretical defensive-disclosure project: applicant physical preparation, characterization and property experiments are unperformed and not planned. Do not treat the historical proposed study cards as scheduled work. Preserve the missing physical support and all evidence labels; this scope decision supplies no enablement or legal outcome.
 
 | ID | Status | Work and required evidence |
 | --- | --- | --- |
-| TECH-001 | Open | Identify the applicant's actual technical contribution and the people responsible for it. |
-| EXP-001 | Not performed in this package | Select specific material embodiments and document materials, equipment, process conditions, isolation and failure boundaries. |
-| EXP-002 | Not performed in this package | Confirm actual composition, structure, phase and measurement uncertainty using appropriate calibrated methods. |
-| EXP-003 | Not performed in this package | Test a defined property scenario and its credible alternative under stated conditions; retain raw evidence and negative outcomes. |
+| TECH-001 | Scope clarified; claim-specific review open | The requested contribution is comprehensive theoretical combination/range enumeration. No original physical preparation method or validated property model has been supplied; inventorship is not determined by document authorship. |
+| EXP-001 | Unperformed; not planned | Applicant preparation is outside the confirmed theoretical-only scope. No prepared specimen or applicant process outcome is evidenced; attributed literature teaching retains its own boundaries. |
+| EXP-002 | Unperformed; not planned | Applicant characterization is outside the confirmed theoretical-only scope. Actual retained composition, structure, phase and measurement uncertainty are not supplied by numerical targets. |
+| EXP-003 | Unperformed; not planned | Applicant property testing is outside the confirmed theoretical-only scope. Proposed/unsupported alternatives are not measured or established outcomes. |
 | DATA-001 | Partially addressed | Versioned NUBASE2020 source/state parsing and PDG 2026.0 selected identity tables are included with attribution, source hashes, unknowns, and dated scope. They are not complete current/future nuclear or particle universes, and physical existence must not be inferred from table membership or a property marker. |
 | PAT-001 | Open | Conduct claim-specific novelty, support, enablement, eligibility, unity and inventorship review, with composition-specific evidence. |
 | PUB-001 | Observed access; earliest availability uncertified | A public repository version/access observation is preserved separately from document preparation dates. Continue preserving actual versions and accessibility evidence; do not certify an earliest date from private commits or this observation alone. |
