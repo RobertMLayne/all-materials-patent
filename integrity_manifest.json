@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 144,
+  "file_count": 152,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 24862,
-      "sha256": "ad8c3d2a93c999f6e051d5845c2eec9b260b92935ee2ba2e14b81577cf69156d"
+      "size_bytes": 26140,
+      "sha256": "4b2daa1db534f3e2256656c94b722a66313bf57b9442c8bf1a6923aaa9d58d50"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -173,6 +173,26 @@
     },
     {
       "path": "data/application_oxide_defect_evidence_authoring_2026-09-30/output_helper.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
+      "path": "data/application_phase_specific_evidence_2026-10-01.json",
+      "size_bytes": 15003,
+      "sha256": "d850d15add4bd096c5a663e27ff908444156e4239d4527160d2615e967fb9e8f"
+    },
+    {
+      "path": "data/application_phase_specific_evidence_authoring_2026-10-01/builder.py.txt",
+      "size_bytes": 21841,
+      "sha256": "8fb5c63d76b014cafbf9e11630e41a5cc730870008f3a516ba2b8f3d942780bd"
+    },
+    {
+      "path": "data/application_phase_specific_evidence_authoring_2026-10-01/layout.py.txt",
+      "size_bytes": 28711,
+      "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8"
+    },
+    {
+      "path": "data/application_phase_specific_evidence_authoring_2026-10-01/output_helper.py.txt",
       "size_bytes": 37887,
       "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
     },
@@ -230,6 +250,11 @@
       "path": "data/claim_support_map_oxide_defect_evidence_2026-09-30.json",
       "size_bytes": 153971,
       "sha256": "792e5023bd282ae7b37330410017724ba616f06262d8ebc944c1f4e1e825d473"
+    },
+    {
+      "path": "data/claim_support_map_phase_specific_evidence_2026-10-01.json",
+      "size_bytes": 153977,
+      "sha256": "871991af9bad55fe92988197c650df480501f41ba40929f0343f3bcd4fc979b5"
     },
     {
       "path": "data/claim_support_map_preparation_evidence_2026-09-30.json",
@@ -442,6 +467,11 @@
       "sha256": "a78acac93d968c4d3a748255a35c0070eab7643dea03256e7583adb4c851ead5"
     },
     {
+      "path": "documents/application_phase_specific_evidence_2026-10-01.md",
+      "size_bytes": 9480,
+      "sha256": "9a72456ec44f1c22bd9dd9f072317321131f73d5b6a4c9fdd6f7f85178df895a"
+    },
+    {
       "path": "documents/application_preparation_evidence_2026-09-30.md",
       "size_bytes": 7015,
       "sha256": "b61789e2564515a60e170b8c9e52a7afe74b60c3c25e61e334f262cf72e2dfcb"
@@ -547,6 +577,11 @@
       "sha256": "06df382fd7979cc66862ec62ecfe0fce2f3d727588e7077bb91c7991b10379df"
     },
     {
+      "path": "documents/pdf/provisional_application_phase_specific_evidence_2026-10-01.pdf",
+      "size_bytes": 184734,
+      "sha256": "5660cf04e70a4f76de4e8785ca4b02ee7636eff30998d13a6b4ebb0001170fbd"
+    },
+    {
       "path": "documents/pdf/provisional_application_preparation_evidence_2026-09-30.pdf",
       "size_bytes": 167520,
       "sha256": "8fe0a7d5c093548da2034b1648432b27504c793ab55f90fc739b3dd6fe917c0b"
@@ -587,6 +622,11 @@
       "sha256": "1f397b45d90e71a612b1e3fbeb5a205f80c8512ba6ac49816cbae3dc1fa57925"
     },
     {
+      "path": "documents/provisional_application_phase_specific_evidence_2026-10-01.md",
+      "size_bytes": 109596,
+      "sha256": "7bf785cebfea08d41702eb168b7819a0eae24410a3ff105fde33b435c375aa3e"
+    },
+    {
       "path": "documents/provisional_application_preparation_evidence_2026-09-30.md",
       "size_bytes": 91807,
       "sha256": "c9b8f44b79f970379054cf89508cb81853906dbb825a6bca476eb4b0216f575e"
@@ -623,8 +663,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 45671,
-      "sha256": "4486fd9fbac8f0435b6cc31d2ea9789a75068776d88dd7d6f34f9d4e457128c0"
+      "size_bytes": 48487,
+      "sha256": "1e4ac9226b3e2442708a713a357bf8bb8eceda0351a601a64ca3d3c48f5f8b7e"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -718,8 +758,8 @@
     },
     {
       "path": "tools/pdf/build_working_application.py",
-      "size_bytes": 20103,
-      "sha256": "de87734cd070a6840de334c63c9a451ebac4c405658a91633d2590eff92dcc07"
+      "size_bytes": 21841,
+      "sha256": "8fb5c63d76b014cafbf9e11630e41a5cc730870008f3a516ba2b8f3d942780bd"
     },
     {
       "path": "tools/pdf/requirements-pdf.txt",
@@ -738,8 +778,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 140689,
-      "sha256": "d2fd1dedbebd9a6523efa4c89ca05495e04490177c514066d90d4beb7b884ffe"
+      "size_bytes": 156952,
+      "sha256": "ab67d83276a21e907600d3f1f476690c8001dbfb2fe2589890687c12c7e379a8"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

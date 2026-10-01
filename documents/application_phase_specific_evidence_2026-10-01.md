@@ -1,0 +1,47 @@
+# Application edition with phase-specific evidence and a worked record
+
+Prepared 1 October 2026. This prospective, unfiled edition derives from the [preserved oxide-defect-evidence application](provisional_application_oxide_defect_evidence_2026-09-30.md), SHA-256 `1f397b45d90e71a612b1e3fbeb5a205f80c8512ba6ac49816cbae3dc1fa57925`, at repository baseline `ad590d8fb6e2646e27234fa51efce071044e4bf8`.
+
+The [application source](provisional_application_phase_specific_evidence_2026-10-01.md), [review PDF](pdf/provisional_application_phase_specific_evidence_2026-10-01.pdf), [textual claim map](../data/claim_support_map_phase_specific_evidence_2026-10-01.json) and [actual authoring record](../data/application_phase_specific_evidence_2026-10-01.json) identify this edition. Ten earlier PDFs, their captured inputs and historical authoring snapshots remain preserved artifacts.
+
+## Applied content and reasons
+
+The [earlier claim comparison](oxide_claim_comparison_2026-10-01.md), [worked record](../data/oxide_candidate_record_review_2026-10-01.json) and [primary-source reader review](../data/magneli_source_review_2026-10-01.json) were companions outside the preceding application. This edition prints the selected attributed account and present record operations in the description itself. External pointers identify provenance and broader analysis; they are not substitutes for the essential content now printed in the application.
+
+Numbered paragraph [0064] gains one sentence identifying the adjoining phase-specific block. Eleven prose blocks place the selected account, exact target assignment, occupied-atom and reference-site denominators, restrictive formal-charge accounting, field construction, verification boundaries, conditional optical inquiry and its credible alternative in the description. All other numbered paragraphs, all 199 claims and every individual claim assessment remain unchanged. The inherited oxide, hydrogel and electrical evidence blocks remain intact.
+
+The present ideal target is `(Ti,O) = (4/11,7/11)`. Compatible integer counts `(4m,7m)` are mathematical inventories for positive integer `m`, without an assigned specimen size. Reference-site and formal-charge populations use their own denominators. The target's denominator does not divide `10^19`, so the unrestricted rational domain and original finite decimal grid retain different scope. No rounding changes domain membership. A symbolic mass-basis conversion retains state-qualified masses without inventing numerical isotope masses or an assay.
+
+The record performs support selection, basis assignment and evidence-field construction. An attributed operation does not certify its successful application to a new candidate. Structural targets and the conditional comparison remain PROPOSED; unprovided candidate preparation, retained composition, phase and property outcomes remain UNSUPPORTED. A target fraction cannot serve as a measured assay, and source observations cannot serve as a new applicant experiment. The proposed optical comparison specifies response boundaries and covariates rather than predicting every opposite result. Appropriate justified existing evidence may support a field; new experiments are not categorically required for every example.
+
+Independent technical and legal-content review checked source chronology and qualifications, target calculations, denominator distinctions, inherited-body preservation and unchanged claim assessments. The reader-only source account preserves the documented acquisition limits and unresolved applicability. Original copyrighted article bytes and graphics are not republished. The selected scientific account appears once in this edition; this guide points to it rather than duplicating its recipe or measurements.
+
+The broad requested composition, isotope, particle and property scope remains in the candidate claims. This particular example does not demonstrate full-scope preparation or establish a universal patent bar. [MPEP §2164](https://www.uspto.gov/web/offices/pac/mpep/s2164.html) requires enablement analysis appropriate to the claimed scope. [PCT ISPE 4.25-4.27](https://www.wipo.int/en/web/pct-system/texts/ispe/4_02_27) informs the choice to retain essential teaching in the actual description. Neither a companion nor this later unfiled edition establishes content in an earlier relied-upon application.
+
+## Authoring and validation
+
+The maintained builder adds a sixth named selection, `--edition phase-specific-evidence`, while preserving its default and five historical selections. It captures twelve actual inputs and checks the complete new prose in reading order, every numbered paragraph and claim, all 279 numbered starts, both vector drawings and the complete inherited evidence blocks. The new prose ends at the next unique evidence heading; historical paragraph-start boundaries remain supported. Explicit boundary validation rejects absent, conflicting or repeated terminators. Exclusive output publication continues to require unused output and report paths.
+
+Optional authoring reused Python 3.12.14, ReportLab 4.4.9, pypdf 6.19.0 and recorded Arial font hashes. The compatible pinned pypdf package came from an existing isolated environment through a read-only import-path overlay; no package or environment was installed or modified. Three inert code snapshots retain the actual authoring code. The version record binds the twelve captured inputs to PDF bytes and distinguishes the generated output from its archival copy. Preparation and authoring dates are not filing or publication dates.
+
+The PDF has 35 pages. Extracted-text checks cover all 80 numbered paragraphs, 199 complete claims, eleven new phase-specific prose blocks, eight inherited oxide prose blocks and five table rows including its header, complete preparation/electrical prose and rows, and ten property data rows. These checks establish rendered-text correspondence, not visual appearance or physical realization.
+
+All 35 pages were rendered with Poppler 26.07.0 at 108 dpi and inspected through nine contact sheets. Full-page inspection covers pages 1, 9, 10, 11, 12 and 35. Root independently inspected the contact sheet for pages 9-12 and the final contact sheet, plus full pages 9, 10, 11, 12 and 35. The final authoring record identifies completed appearance review and remaining findings. Byte comparisons preserve earlier artifacts separately from the deliberate maintained-code and documentation changes.
+
+The offline standard-library verifier checks derivation, exact surrounding-body preservation, unchanged claim/map records, independently anchored reviewed inputs, source account and full new block, exact count/denominator accounting, captured code snapshots, PDF identity and recorded text/appearance coverage. It does not parse the PDF or repeat visual inspection. Six new negative cases challenge stale source/map provenance, changed claims, inherited evidence drift, changed composition basis, falsely promoted source acquisition and falsely promoted candidate outcomes. The latter five refresh captured and outer integrity hashes before requiring semantic rejection. Independent code review exposed the outcome-promotion gap before publication; the added guard and full-block anchor retain reviewed field statuses and qualifications. All five historical application checker bodies remain unchanged.
+
+Required checks are `python -B verify_package.py --self-test`, `python -B tools/pdf/test_pdf_outputs.py` and the configured Ruff correctness check. The guide describes their scopes; actual local results and final-commit CI/review results are recorded with the reviewed change. Passing software checks does not certify novelty, enablement, inventorship, filing or a measured workflow speedup.
+
+Local validation passed with 154 inventoried files, 152 SHA-256 records, 52 deliberate invalid cases rejected, two offline downloader regression cases, all 15 PDF output-safety tests and Ruff 0.16.8. Independent byte comparison preserved 140 previously hashed artifacts, including all ten earlier PDFs; the deliberate changes to existing files are the README, decision log, maintained application builder and verifier. Final-commit GitHub checks and automated-review evidence belong to the pull request rather than this authoring record.
+
+Input-only checking with the pinned optional authoring libraries creates no PDF:
+
+```powershell
+python -B tools/pdf/build_working_application.py --edition phase-specific-evidence --baseline-commit ad590d8fb6e2646e27234fa51efce071044e4bf8 --check
+```
+
+A new review copy requires unused output/report paths and subsequent visual inspection. Preserve this artifact and its inert snapshots rather than attributing later code or inputs to its actual authoring history.
+
+## Remaining work
+
+Candidate-specific route applicability, unresolved operating details, actual retained inventory, phase identity, isotope state and optical response still require support. The ideal target and conditional alternative do not fill those gaps. Claims require individual novelty, written-description, enablement, eligibility, unity and inventorship analysis. Applicant contribution, inventor identity, chronology and filing facts remain unresolved; private intake is excluded from the public package. No applicant experiment, successful candidate preparation, earlier entitlement or filing is asserted. The [full-scope completion audit](full_scope_completion_audit.md) remains applicable.
