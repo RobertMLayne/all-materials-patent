@@ -140,6 +140,33 @@ FAMILY_AUTHORING = {
     "tools/pdf/build_consolidated_review.py": "data/application_family_evidence_authoring_2026-10-01/layout.py.txt",
     "tools/pdf/build_identity_review_annex.py": "data/application_family_evidence_authoring_2026-10-01/output_helper.py.txt",
 }
+METAL_GLASS_SOURCE = "documents/provisional_application_metal_glass_evidence_2026-10-01.md"
+METAL_GLASS_MAP = "data/claim_support_map_metal_glass_evidence_2026-10-01.json"
+METAL_GLASS_EDITION = "data/application_metal_glass_evidence_2026-10-01.json"
+METAL_GLASS_PDF = "documents/pdf/provisional_application_metal_glass_evidence_2026-10-01.pdf"
+METAL_GLASS_REVIEW = "data/metal_glass_source_review_2026-10-01.json"
+METAL_GLASS_BASELINE = "eae10a2cfd8467a4adee9f7883c8a76f77914832"
+METAL_GLASS_HEADINGS = {
+    "alloy": "### Alloy evidence associated with [0039]: preparation, principal inventory and conditional transport",
+    "glass": "### Glass evidence associated with [0063]: preparation, phase identity and conditional response",
+}
+METAL_GLASS_POINTERS = {
+    "0039": " The adjoining alloy-evidence block records a selected attributed preparation, principal-inventory accounting and a conditional transport inquiry.",
+    "0063": " The adjoining glass-evidence block records a selected attributed preparation, principal-inventory accounting and a conditional thermal-path inquiry.",
+}
+# Reviewed whitespace-normalized UTF-8 spans and the exact metadata bytes
+# preserve qualifications independently of refreshed captured and outer hashes.
+METAL_GLASS_PREFACE_SHA256 = "317a7609c61210bd782a11c1c0735296042c9cf697f9ba74bc72ff32c717fb29"
+METAL_GLASS_REVIEW_SHA256 = "4f681b721c96d0c8071c0fdcd0b00d8fc281b3fa90db479fadcd30679be43731"
+METAL_GLASS_BLOCK_SHA256 = {
+    "alloy": "36671b1e2965e001878662ec987b49847cdc4b441eeaf280a005c87bb2d4c9c9",
+    "glass": "856649b3f175d919f6bc13deea914236314a39f30b3aa959c23ebd8a970ac9b1",
+}
+METAL_GLASS_AUTHORING = {
+    "tools/pdf/build_working_application.py": "data/application_metal_glass_evidence_authoring_2026-10-01/builder.py.txt",
+    "tools/pdf/build_consolidated_review.py": "data/application_metal_glass_evidence_authoring_2026-10-01/layout.py.txt",
+    "tools/pdf/build_identity_review_annex.py": "data/application_metal_glass_evidence_authoring_2026-10-01/output_helper.py.txt",
+}
 REVIEW_AUTHORING_FILES = {
     "builder": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
     "helper": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
@@ -242,6 +269,8 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     "documents/application_phase_specific_evidence_2026-10-01.md", *PHASE_AUTHORING.values(),
     FAMILY_SOURCE, FAMILY_MAP, FAMILY_EDITION, FAMILY_PDF, FAMILY_REVIEW,
     "documents/application_family_evidence_2026-10-01.md", *FAMILY_AUTHORING.values(),
+    METAL_GLASS_SOURCE, METAL_GLASS_MAP, METAL_GLASS_EDITION, METAL_GLASS_PDF, METAL_GLASS_REVIEW,
+    "documents/application_metal_glass_evidence_2026-10-01.md", *METAL_GLASS_AUTHORING.values(),
 }
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
@@ -1396,6 +1425,192 @@ def check_family_application(root: Path) -> dict:
             "pdf_parsed_or_appearance_rechecked_by_this_check": False}
 
 
+def check_metal_glass_application(root: Path) -> dict:
+    """Check the eighth edition's distinct inventories and preserved teaching.
+
+    Principal targets and stipulated count witnesses are mathematics, not
+    whole-specimen assays, successful preparations or legal conclusions.
+    """
+    previous_bytes = (root / FAMILY_SOURCE).read_bytes()
+    source_bytes = (root / METAL_GLASS_SOURCE).read_bytes()
+    previous, application = previous_bytes.decode("utf-8"), source_bytes.decode("utf-8")
+    support = load_json(root / METAL_GLASS_MAP)
+    require(support.get("source_path") == METAL_GLASS_SOURCE and support.get("source_sha256")
+            == hashlib.sha256(source_bytes).hexdigest(), "Metal/glass source/map hash differs")
+    require(support.get("prepared_date") == "2026-10-01" and support.get("derived_from") == {
+        "path": FAMILY_SOURCE, "sha256": hashlib.sha256(previous_bytes).hexdigest(),
+        "repository_baseline": METAL_GLASS_BASELINE,
+    }, "Metal/glass source derivation differs")
+    require(support.get("claims") == load_json(root / FAMILY_MAP).get("claims")
+            and support.get("changed_claims") == [] and support.get("changed_paragraphs") == ["0039", "0063"],
+            "Metal/glass individual claim records or change inventory differ")
+    claims = check_claims(application, support)
+    old_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", previous, re.M))
+    new_paragraphs = dict(re.findall(r"^\[(\d{4})\] (.+)$", application, re.M))
+    require(old_paragraphs.keys() == new_paragraphs.keys()
+            and {n for n in old_paragraphs if old_paragraphs[n] != new_paragraphs[n]} == set(METAL_GLASS_POINTERS),
+            "Unexpected metal/glass paragraph changes")
+    for paragraph, key in (("0039", "alloy"), ("0063", "glass")):
+        require(new_paragraphs[paragraph] == old_paragraphs[paragraph] + METAL_GLASS_POINTERS[paragraph],
+                "Metal/glass " + key + " preparation paragraph or pointer differs")
+    boundary = "## 1 Technical field\n"
+    require(application.count(boundary) == previous.count(boundary) == 1,
+            "Metal/glass technical-field boundary differs")
+    preface, body = application.split(boundary)
+    lines = [line for line in preface.splitlines() if line]
+    require(len(lines) == 4 and lines[0]
+            == "# Provisional materials disclosure with metal and glass evidence - 1 October 2026"
+            and lines[1] == "Prepared **1 October 2026** | **Prospective unfiled metal-glass-evidence edition** for applicant and patent counsel.",
+            "Metal/glass edition preface differs")
+    require(hashlib.sha256(" ".join(preface.split()).encode("utf-8")).hexdigest() == METAL_GLASS_PREFACE_SHA256,
+            "Metal/glass reviewed preface qualifications differ")
+    blocks = {}
+    for key, previous_number, next_number in (("alloy", "0039", "0040"), ("glass", "0063", "0064")):
+        heading = METAL_GLASS_HEADINGS[key]
+        block = evidence_block(body, heading, next_number)
+        require(body.index("[" + previous_number + "] ") < body.index(heading),
+                "Metal/glass evidence placement differs: " + key)
+        blocks[key] = block
+    old_body = previous.split(boundary, 1)[1]
+    for paragraph in METAL_GLASS_POINTERS:
+        old_body = old_body.replace("[" + paragraph + "] " + old_paragraphs[paragraph],
+                                    "[" + paragraph + "] " + new_paragraphs[paragraph], 1)
+    old_map, new_map = PurePosixPath(FAMILY_MAP).name, PurePosixPath(METAL_GLASS_MAP).name
+    require(old_body.count(old_map) == body.count(new_map) == 1 and old_map not in body,
+            "Metal/glass companion-map reference differs")
+    remaining = body
+    for key, block in blocks.items():
+        remaining = remaining.replace(METAL_GLASS_HEADINGS[key] + block, "", 1)
+    require(remaining == old_body.replace(old_map, new_map, 1),
+            "Metal/glass source changed outside identified additions")
+    # Concrete evidence boundaries precede full pins so coherently refreshed
+    # fixtures fail at the actual unsupported outcome or denominator change.
+    require(all("actual candidate outcomes UNSUPPORTED" in b for b in blocks.values()),
+            "Metal/glass candidate outcome status differs")
+    require("and f is not assumed one" in blocks["alloy"]
+            and "The target r_target is not substituted for measured r_i" in blocks["alloy"]
+            and "The source-nominal r_target does not supply measured r_i or f" in blocks["glass"],
+            "Metal/glass principal/whole inventory basis differs")
+    for key, block in blocks.items():
+        span = METAL_GLASS_HEADINGS[key] + block
+        require(hashlib.sha256(" ".join(span.split()).encode("utf-8")).hexdigest() == METAL_GLASS_BLOCK_SHA256[key],
+                "Metal/glass reviewed block qualifications differ: " + key)
+    review_bytes = (root / METAL_GLASS_REVIEW).read_bytes()
+    review = load_json(root / METAL_GLASS_REVIEW)
+    require(review.get("application_source_path") == METAL_GLASS_SOURCE,
+            "Metal/glass review application pointer differs")
+    accounting = review["present_accounting"]
+    require(accounting["whole_transfer"].get("target_substituted_for_measured_ratios") is False
+            and accounting["whole_transfer"].get("f_assumed_one") is False
+            and accounting["whole_transfer"].get("unknown_constituents_resolved") is False,
+            "Metal/glass principal/whole inventory basis differs")
+    status = review.get("present_record_status", {})
+    require(status.get("candidate_preparation_performed") is False
+            and status.get("candidate_outcomes") == "UNSUPPORTED"
+            and status.get("conditional_scenarios") == "PROPOSED",
+            "Metal/glass candidate outcome status differs")
+    # Normalize the stipulated counts directly; production generators and
+    # physical measurements are not used as mathematical test oracles.
+    from math import gcd, lcm
+    alloy = accounting["alloy"]
+    require([len(s) for s in alloy["ordered_principal_supports"]] == [4, 5]
+            and alloy["principal_targets"] == [[str(Fraction(1, n))] * n for n in (4, 5)],
+            "Metal/glass nominal principal accounting differs")
+    glass = accounting["glass"]
+    counts = tuple(glass["principal_counts"])
+    require(counts == (32, 5, 160, 87, 686, 30)
+            and all(type(n) is int and n > 0 for n in counts)
+            and len(glass["ordered_principal_support"]) == len(counts)
+            and glass["principal_total"] == sum(counts) == 1000
+            and glass["principal_target"] == [str(Fraction(n, sum(counts))) for n in counts]
+            and gcd(*counts) == 1 and 10**19 % sum(counts) == 0,
+            "Metal/glass nominal principal accounting differs")
+    for m, c in ((1, 0), (1, 1), (2, 3)):
+        occupied = ((c,) if c else ()) + (m,) * 4
+        require(len(occupied) == (5 if c else 4) and all(n > 0 for n in occupied)
+                and sum(occupied) == 4*m + c
+                and sum(Fraction(n, sum(occupied)) for n in occupied) == 1,
+                "Metal/glass additional-count support differs")
+    witness = alloy["below_grid"]
+    scale = 10**20
+    occupied = (4,) + (scale-1,) * 4
+    total = sum(occupied)
+    fractions = tuple(Fraction(n, total) for n in occupied)
+    primitive = total // gcd(*occupied)
+    require(witness.get("L") == str(scale) and witness.get("c") == "4"
+            and witness.get("m") == str(scale-1) and witness.get("total") == str(total)
+            and witness.get("fractions") == [str(x) for x in fractions]
+            and witness.get("primitive_denominator") == str(primitive)
+            and primitive == lcm(*(x.denominator for x in fractions)) == 4*scale
+            and 0 < fractions[0] < Fraction(1, 10**19) and sum(fractions) == 1,
+            "Metal/glass below-grid count accounting differs")
+    require(hashlib.sha256(review_bytes).hexdigest() == METAL_GLASS_REVIEW_SHA256,
+            "Metal/glass reviewed source identities differ")
+    sources = review.get("primary_sources", [])
+    require(len(sources) == 2 and [s["id"] for s in sources] == list(METAL_GLASS_HEADINGS),
+            "Metal/glass primary-source inventory differs")
+    for source in sources:
+        account = blocks[source["id"]].strip().splitlines()[0]
+        require(source.get("application_source_path") == METAL_GLASS_SOURCE
+                and source.get("reviewed_block_sha256") == METAL_GLASS_BLOCK_SHA256[source["id"]]
+                and source.get("selected_account_sha256") == hashlib.sha256(" ".join(account.split()).encode("utf-8")).hexdigest(),
+                "Metal/glass source account identity differs")
+    edition = load_json(root / METAL_GLASS_EDITION)
+    require(edition.get("prepared_date") == "2026-10-01"
+            and edition.get("edition_status") == "prospective unfiled metal-glass-evidence edition"
+            and edition.get("repository_baseline") == METAL_GLASS_BASELINE
+            and edition.get("filing_asserted") is False and edition.get("physical_enablement_certified") is False,
+            "Metal/glass edition baseline or factual status differs")
+    expected_sources = {METAL_GLASS_SOURCE, METAL_GLASS_MAP, METAL_GLASS_REVIEW, FAMILY_REVIEW, FAMILY_CONTEXT,
+                        PHASE_REVIEW, PHASE_RECORD, OXIDE_REVIEW, PREPARATION_REVIEW, ELECTRICAL_REVIEW,
+                        *METAL_GLASS_AUTHORING, "documents/drawings/composition_simplex.svg",
+                        "documents/drawings/material_record_sequence.svg"}
+    entries = edition.get("sources", [])
+    require(len(entries) == 15 and {e["path"] for e in entries} == expected_sources,
+            "Metal/glass PDF source inventory differs")
+    for entry in entries:
+        snapshot = METAL_GLASS_AUTHORING.get(entry["path"])
+        require(entry.get("snapshot_path") == snapshot
+                and hashlib.sha256(safe_path(root, snapshot or entry["path"]).read_bytes()).hexdigest() == entry["sha256"],
+                "Metal/glass PDF captured-source identity differs")
+    pdf = edition.get("pdf", {})
+    require(pdf.get("path") == METAL_GLASS_PDF and type(pdf.get("page_count")) is int and pdf["page_count"] > 0,
+            "Invalid metal/glass PDF identity")
+    data = safe_path(root, METAL_GLASS_PDF).read_bytes()
+    require(len(data) == pdf.get("size_bytes") and hashlib.sha256(data).hexdigest() == pdf.get("sha256"),
+            "Metal/glass PDF bytes differ from record")
+    locations = edition.get("location_map", {})
+    require(locations.keys() == {f"paragraph_{n:04d}" for n in range(1, 81)} | {f"claim_{n}" for n in range(1, 200)}
+            and all(type(page) is int and 1 <= page <= pdf["page_count"] for page in locations.values()),
+            "Metal/glass PDF recorded locations differ")
+    require(edition.get("complete_numbered_text_checked") == {"paragraphs": 80, "claims": 199}
+            and edition.get("vector_drawings_checked") == 2
+            and edition.get("complete_metal_glass_text_checked") == {k: evidence_block_counts(b) for k, b in blocks.items()},
+            "Metal/glass recorded new text coverage differs")
+    family_blocks = {
+        "molecular": evidence_block(body, FAMILY_HEADINGS["molecular"], "0041").split(FAMILY_HEADINGS["polymer"], 1)[0],
+        "polymer": evidence_block(body, FAMILY_HEADINGS["polymer"], "0041").split(FAMILY_HEADINGS["composite"], 1)[0],
+        "composite": evidence_block(body, FAMILY_HEADINGS["composite"], "0041"),
+    }
+    require(edition.get("complete_family_text_checked") == {k: evidence_block_counts(b) for k, b in family_blocks.items()},
+            "Metal/glass inherited family coverage differs")
+    prior_edition = load_json(root / FAMILY_EDITION)
+    for key in ("complete_family_text_checked", "complete_phase_specific_text_checked", "complete_preparation_text_checked",
+                "complete_electrical_text_checked", "complete_oxide_defect_text_checked", "complete_property_table_checked"):
+        require(edition.get(key) == prior_edition.get(key), "Metal/glass inherited block coverage differs: " + key)
+    visual = edition.get("visual_review", {})
+    require(isinstance(visual, dict) and visual.get("status") == "completed"
+            and visual.get("pages_reviewed") == list(range(1, pdf["page_count"] + 1))
+            and visual.get("remaining_actionable_visual_findings") == 0,
+            "Metal/glass recorded appearance review is incomplete")
+    return {**claims, "changed_paragraphs": ["0039", "0063"], "changed_claims": [],
+            "captured_sources_checked": len(entries), "recorded_pdf_pages": pdf["page_count"],
+            "recorded_pdf_locations_checked": len(locations), "qualified_metal_glass_records_checked": 2,
+            "preceding_evidence_and_remaining_body_preserved": True,
+            "physical_realization_or_filing_or_earlier_entitlement_certified": False,
+            "pdf_parsed_or_appearance_rechecked_by_this_check": False}
+
+
 def check_local_links(root: Path) -> int:
     checked = 0
     for relative in EXPECTED_FILES:
@@ -1798,6 +2013,7 @@ def run(root: Path) -> dict:
     oxide_result = check_oxide_application(root)
     phase_result = check_phase_application(root)
     family_result = check_family_application(root)
+    metal_glass_result = check_metal_glass_application(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -1823,6 +2039,7 @@ def run(root: Path) -> dict:
             "oxide_defect_application_edition_verification": oxide_result,
             "phase_specific_application_edition_verification": phase_result,
             "family_application_edition_verification": family_result,
+            "metal_glass_application_edition_verification": metal_glass_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -2484,6 +2701,112 @@ def self_test(root: Path) -> dict:
                 for path, data in originals.items():
                     path.write_bytes(data)
 
+        metal_path, metal_map_path = fixture / METAL_GLASS_SOURCE, fixture / METAL_GLASS_MAP
+        metal_review_path, metal_edition_path = fixture / METAL_GLASS_REVIEW, fixture / METAL_GLASS_EDITION
+        originals = {path: path.read_bytes() for path in
+                     (metal_path, metal_map_path, metal_review_path, metal_edition_path, manifest_path)}
+        check_metal_glass_application(fixture)
+        for case, expected_error in (
+            ("metal_glass_source_map_drift_rejected", "Metal/glass source/map hash differs"),
+            ("metal_glass_claim_drift_rejected_after_consistent_records", "Metal/glass individual claim records"),
+            ("metal_glass_inherited_evidence_drift_rejected_after_consistent_records", "Metal/glass source changed outside identified additions"),
+            ("metal_glass_alloy_prefix_drift_rejected_after_consistent_records", "Metal/glass alloy preparation paragraph or pointer differs"),
+            ("metal_glass_glass_prefix_drift_rejected_after_consistent_records", "Metal/glass glass preparation paragraph or pointer differs"),
+            ("metal_glass_preface_filing_promotion_rejected_after_consistent_records", "Metal/glass reviewed preface qualifications differ"),
+            ("metal_glass_source_acquisition_promotion_rejected_after_consistent_records", "Metal/glass reviewed source identities differ"),
+            ("metal_glass_candidate_outcome_promotion_rejected_after_consistent_records", "Metal/glass candidate outcome status differs"),
+            ("metal_glass_principal_whole_conflation_rejected_after_consistent_records", "Metal/glass principal/whole inventory basis differs"),
+            ("metal_glass_nominal_count_drift_rejected_after_consistent_records", "Metal/glass nominal principal accounting differs"),
+            ("metal_glass_below_grid_count_drift_rejected_after_consistent_records", "Metal/glass below-grid count accounting differs"),
+        ):
+            try:
+                text = originals[metal_path].decode("utf-8")
+                support = json.loads(originals[metal_map_path])
+                review = json.loads(originals[metal_review_path])
+                if case == "metal_glass_source_map_drift_rejected":
+                    metal_path.write_bytes(originals[metal_path] + b"\nUnadopted addition.\n")
+                else:
+                    if "claim_drift" in case:
+                        old_claim = support["claims"][0]["text"]
+                        new_claim = old_claim.replace("positive normalized fraction", "nonnegative normalized fraction", 1)
+                        require(old_claim != new_claim, "Metal/glass claim fixture lost its target")
+                        text = text.replace("**Claim 1.** " + old_claim, "**Claim 1.** " + new_claim, 1)
+                        support["claims"][0]["text"] = new_claim
+                    elif "inherited_evidence" in case:
+                        target = "selected-crystallite count quantities, not bulk mass or volume phase fractions"
+                        require(text.count(target) == 1, "Metal/glass inherited fixture lost its target")
+                        text = text.replace(target, "bulk specimen mass fractions", 1)
+                    elif "prefix_drift" in case:
+                        target, replacement = (
+                            ("The selected route must address", "The selected route need not address")
+                            if "alloy_prefix" in case else
+                            ("A candidate record specifies the melt", "A candidate record need not specify the melt")
+                        )
+                        require(text.count(target) == 1, "Metal/glass prefix fixture lost its target")
+                        text = text.replace(target, replacement, 1)
+                    elif "preface_filing" in case:
+                        preface, tail = text.split("## 1 Technical field\n", 1)
+                        lines = preface.splitlines()
+                        indices = [i for i, line in enumerate(lines) if line]
+                        require(len(indices) == 4, "Metal/glass preface fixture lost its target")
+                        lines[indices[2]] += " A completed filing and earlier priority entitlement are asserted."
+                        text = "\n".join(lines) + "\n## 1 Technical field\n" + tail
+                    elif "source_acquisition" in case:
+                        source = review["primary_sources"][0]
+                        require(source["supplement_inspected"] is False,
+                                "Metal/glass acquisition fixture lost its target")
+                        source.update(supplement_inspected=True, supplement_original_bytes_acquired=True,
+                                      supplement_original_sha256="0" * 64)
+                    elif "candidate_outcome" in case or "principal_whole" in case:
+                        heading = METAL_GLASS_HEADINGS["alloy"]
+                        block = evidence_block(text, heading, "0040")
+                        if "candidate_outcome" in case:
+                            target, replacement = "actual candidate outcomes UNSUPPORTED", "actual candidate outcomes ESTABLISHED"
+                            review["present_record_status"].update(candidate_preparation_performed=True,
+                                                                    candidate_outcomes="ESTABLISHED")
+                        else:
+                            target, replacement = "and f is not assumed one", "and f is assumed one"
+                            review["present_accounting"]["whole_transfer"]["f_assumed_one"] = True
+                        require(block.count(target) == 1, "Metal/glass evidence fixture lost its target")
+                        text = text.replace(heading + block, heading + block.replace(target, replacement, 1), 1)
+                    elif "nominal_count" in case:
+                        glass = review["present_accounting"]["glass"]
+                        glass["principal_counts"][0] += 1
+                        glass["principal_total"] = sum(glass["principal_counts"])
+                        glass["principal_target"] = [str(Fraction(n, glass["principal_total"]))
+                                                     for n in glass["principal_counts"]]
+                    else:
+                        require("below_grid_count" in case, "Unknown metal/glass fixture")
+                        witness = review["present_accounting"]["alloy"]["below_grid"]
+                        witness["primitive_denominator"] = witness["L"]
+                    metal_path.write_bytes(text.encode("utf-8"))
+                    support["source_sha256"] = hashlib.sha256(metal_path.read_bytes()).hexdigest()
+                    metal_map_path.write_bytes((json.dumps(support) + "\n").encode("utf-8"))
+                    metal_review_path.write_bytes((json.dumps(review) + "\n").encode("utf-8"))
+                    # Consistent provenance layers do not turn subinventory
+                    # targets into assays or missing evidence into outcomes.
+                    edition = json.loads(originals[metal_edition_path])
+                    for entry in edition["sources"]:
+                        if entry["path"] in {METAL_GLASS_SOURCE, METAL_GLASS_MAP, METAL_GLASS_REVIEW}:
+                            entry["sha256"] = hashlib.sha256((fixture / entry["path"]).read_bytes()).hexdigest()
+                    metal_edition_path.write_bytes((json.dumps(edition) + "\n").encode("utf-8"))
+                    refreshed = json.loads(originals[manifest_path])
+                    for entry in refreshed["files"]:
+                        if entry["path"] in {METAL_GLASS_SOURCE, METAL_GLASS_MAP, METAL_GLASS_REVIEW, METAL_GLASS_EDITION}:
+                            changed = (fixture / entry["path"]).read_bytes()
+                            entry.update(size_bytes=len(changed), sha256=hashlib.sha256(changed).hexdigest())
+                    manifest_path.write_bytes((json.dumps(refreshed) + "\n").encode("utf-8"))
+                    check_integrity(fixture)
+                try:
+                    check_metal_glass_application(fixture)
+                except VerificationError as error:
+                    require(expected_error in str(error), "Metal/glass mutation failed for another reason: " + str(error))
+                    extended.append(case)
+                require(case in extended, "Metal/glass mutation was accepted: " + case)
+            finally:
+                for path, data in originals.items():
+                    path.write_bytes(data)
+
         model_path = fixture / "range_model/unrestricted_composition_model.json"
         model_original = model_path.read_bytes()
         model = json.loads(model_original)
@@ -2654,7 +2977,7 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 52, f"Expected 52 extension failure checks, got {len(extended)}")
+    require(len(extended) == 63, f"Expected 63 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,

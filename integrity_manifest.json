@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 161,
+  "file_count": 170,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 27245,
-      "sha256": "a0915b0738eac94441f1cbe58d27699b476964e3b085f0ece042a62f1417cda9"
+      "size_bytes": 28435,
+      "sha256": "a8e4fdbb510017cc72c5819e86fced209f04f49402666ef4f94b3e9399c7f03d"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -173,6 +173,26 @@
     },
     {
       "path": "data/application_family_evidence_authoring_2026-10-01/output_helper.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
+      "path": "data/application_metal_glass_evidence_2026-10-01.json",
+      "size_bytes": 17076,
+      "sha256": "815594e2571e5f34dac8c1ab8fca02112939758aec1dd29b13a186846d5363cb"
+    },
+    {
+      "path": "data/application_metal_glass_evidence_authoring_2026-10-01/builder.py.txt",
+      "size_bytes": 25722,
+      "sha256": "4f4f0f8e37796285409583927d97ff20f82da7395a8315b0d7ed9b3838763e35"
+    },
+    {
+      "path": "data/application_metal_glass_evidence_authoring_2026-10-01/layout.py.txt",
+      "size_bytes": 28711,
+      "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8"
+    },
+    {
+      "path": "data/application_metal_glass_evidence_authoring_2026-10-01/output_helper.py.txt",
       "size_bytes": 37887,
       "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
     },
@@ -272,6 +292,11 @@
       "sha256": "6021bfa1ae1e5983753a8b70b3acb2b6e6e4ff2cba1ac415a3ca65c09de6f34b"
     },
     {
+      "path": "data/claim_support_map_metal_glass_evidence_2026-10-01.json",
+      "size_bytes": 153977,
+      "sha256": "c6cc0ffbd504b79866c6384f53635d7d05ea02216f60695918e8e4085bebba9b"
+    },
+    {
       "path": "data/claim_support_map_oxide_defect_evidence_2026-09-30.json",
       "size_bytes": 153971,
       "sha256": "792e5023bd282ae7b37330410017724ba616f06262d8ebc944c1f4e1e825d473"
@@ -335,6 +360,11 @@
       "path": "data/magneli_source_review_2026-10-01.json",
       "size_bytes": 7021,
       "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
+    },
+    {
+      "path": "data/metal_glass_source_review_2026-10-01.json",
+      "size_bytes": 10055,
+      "sha256": "4f681b721c96d0c8071c0fdcd0b00d8fc281b3fa90db479fadcd30679be43731"
     },
     {
       "path": "data/nuclear_archive/README.md",
@@ -497,6 +527,11 @@
       "sha256": "6760a2e7e3ec3f22f64accd6e60be7f24be5c64d119761679f6b0beadc9c03a2"
     },
     {
+      "path": "documents/application_metal_glass_evidence_2026-10-01.md",
+      "size_bytes": 12705,
+      "sha256": "d11b3720df37d1a7d80a172ee4d673b5ab02433773e228269bb959e4244308ef"
+    },
+    {
       "path": "documents/application_oxide_defect_evidence_2026-09-30.md",
       "size_bytes": 8639,
       "sha256": "a78acac93d968c4d3a748255a35c0070eab7643dea03256e7583adb4c851ead5"
@@ -612,6 +647,11 @@
       "sha256": "4be9bae9c511cb657530e380b3f146310faf3c930c1c3d0bf87ba02881c3c138"
     },
     {
+      "path": "documents/pdf/provisional_application_metal_glass_evidence_2026-10-01.pdf",
+      "size_bytes": 212750,
+      "sha256": "01429b48939e3bc9196c73290c30e7b20dd3e9b562ef486766e8c2996abd32ae"
+    },
+    {
       "path": "documents/pdf/provisional_application_oxide_defect_evidence_2026-09-30.pdf",
       "size_bytes": 178352,
       "sha256": "06df382fd7979cc66862ec62ecfe0fce2f3d727588e7077bb91c7991b10379df"
@@ -662,6 +702,11 @@
       "sha256": "d0a3663e417fc2a04dc50d1e2d75590f281524cff99e908965159de9b54e4321"
     },
     {
+      "path": "documents/provisional_application_metal_glass_evidence_2026-10-01.md",
+      "size_bytes": 141106,
+      "sha256": "94086dfe5e862fada24504c677580dbebbdc7511620b7ba7b89d8623aa4eac55"
+    },
+    {
       "path": "documents/provisional_application_oxide_defect_evidence_2026-09-30.md",
       "size_bytes": 101668,
       "sha256": "1f397b45d90e71a612b1e3fbeb5a205f80c8512ba6ac49816cbae3dc1fa57925"
@@ -708,8 +753,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 51160,
-      "sha256": "0013157c34b33702669a90a1d86703d5d278736d2417d3f130787137c0a0db08"
+      "size_bytes": 54490,
+      "sha256": "e3b21d6cb5ee7405b9ab4093a4199e2f47a23934d4fb7aa2c305421253388f75"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -803,8 +848,8 @@
     },
     {
       "path": "tools/pdf/build_working_application.py",
-      "size_bytes": 23960,
-      "sha256": "0838bc97899bad22d53287a6b1cf68b04c0d683cda608c322a8adc1d4bd1cc99"
+      "size_bytes": 25722,
+      "sha256": "4f4f0f8e37796285409583927d97ff20f82da7395a8315b0d7ed9b3838763e35"
     },
     {
       "path": "tools/pdf/requirements-pdf.txt",
@@ -823,8 +868,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 178534,
-      "sha256": "04df7aad9049dca509f9b11185badd312f339a11afc30bd24a5dc93e0ac8c73c"
+      "size_bytes": 202433,
+      "sha256": "efb7b33e97029c09d0f9c33cba18a54adeae81e20d575e42cd73cbfeeb7da4ee"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

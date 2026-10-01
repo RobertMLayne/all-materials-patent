@@ -1,0 +1,261 @@
+{
+  "reviewed_date": "2026-10-01",
+  "scope": "Selected primary-source review and present accounting/record operations; no applicant experiment or legal certification.",
+  "application_source_path": "documents/provisional_application_metal_glass_evidence_2026-10-01.md",
+  "primary_sources": [
+    {
+      "id": "alloy",
+      "application_source_path": "documents/provisional_application_metal_glass_evidence_2026-10-01.md",
+      "selected_account_sha256": "dc2d0b04b017a76ce3cbce137f128b6a1ac736f2c25f1aab2c29df7d43aae447",
+      "selected_account_whitespace_words": 150,
+      "reviewed_block_sha256": "36671b1e2965e001878662ec987b49847cdc4b441eeaf280a005c87bb2d4c9c9",
+      "reviewed_date": "2026-10-01",
+      "authors": "Vaidya et al.",
+      "title": "Radioactive isotopes reveal a non sluggish kinetics of grain boundary diffusion in high entropy alloys",
+      "year": 2017,
+      "doi": "10.1038/s41598-017-12551-9",
+      "publication_date": "2017-09-25",
+      "primary_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5612997/fullTextXML",
+      "reviewed_locators": [
+        "main Methods",
+        "Results text and captions",
+        "Supplementary Table S1 is an uninspected dependency"
+      ],
+      "access": "Ordinary unauthenticated public XML GET; main XML text and captions reviewed.",
+      "HTTP_status": 200,
+      "original_bytes_acquired": true,
+      "original_sha256": "6d401ee84c0f3e1ade3ce1b4f0db997900d70da53946b913d7c5ec983f2ec856",
+      "size_bytes": 103222,
+      "format": "XML",
+      "full_graphics_verified": false,
+      "supplement_inspected": false,
+      "rights": "CC BY 4.0 stated in the primary article permissions; third-party credit-line exceptions retained",
+      "scope": "Selected account only; candidate stages and missing support remain qualified in the application."
+    },
+    {
+      "id": "glass",
+      "application_source_path": "documents/provisional_application_metal_glass_evidence_2026-10-01.md",
+      "selected_account_sha256": "0f19652b3a17cca6081d847a0a7d0bf561cf4f4bdf98b090262a9d007eca1948",
+      "selected_account_whitespace_words": 102,
+      "reviewed_block_sha256": "856649b3f175d919f6bc13deea914236314a39f30b3aa959c23ebd8a970ac9b1",
+      "reviewed_date": "2026-10-01",
+      "authors": "Na et al.",
+      "title": "Compositional landscape for glass formation in metal alloys",
+      "year": 2014,
+      "doi": "10.1073/pnas.1407780111",
+      "primary_url": "https://authors.library.caltech.edu/records/4r2k2-70t09/files/PNAS-2014-Na-9031-6.pdf",
+      "author_repository_url": "https://authors.library.caltech.edu/records/4r2k2-70t09",
+      "observed_online_before_print": "2014-06-09",
+      "observed_issue_date": "2014-06-24",
+      "date_scope": "Source-record dates only; no statutory prior-art qualification, earlier applicant entitlement or earliest public-access certification.",
+      "reviewed_locators": [
+        "main native page 2 (printed 9032): atomic-percentage convention",
+        "main native page 3 (printed 9033): selected specimen, Figure 3 and caption",
+        "main native page 6 (printed 9036): Materials and Methods, paragraph 1 and continuation at top of right column",
+        "SI native page 1: measurement/model distinctions",
+        "SI native page 4: fitted quantities distinguished from measured-source entries"
+      ],
+      "access": "Ordinary unauthenticated public PDF GET from the official author repository; selected native pages inspected.",
+      "original_bytes_acquired": true,
+      "acquisitions": [
+        {
+          "format": "PDF",
+          "primary_url": "https://authors.library.caltech.edu/records/4r2k2-70t09/files/PNAS-2014-Na-9031-6.pdf",
+          "HTTP_status": 200,
+          "size_bytes": 1166378,
+          "sha256": "f634b9d4138dad3d573d1434c1d3eca70029ce70d6a7d58332b38c7ccb10530f",
+          "page_count": 6,
+          "native_pages_visually_inspected": [
+            3,
+            6
+          ]
+        },
+        {
+          "format": "PDF",
+          "primary_url": "https://authors.library.caltech.edu/records/4r2k2-70t09/files/PNAS-2014-Na-1407780111_si.pdf",
+          "HTTP_status": 200,
+          "size_bytes": 385154,
+          "sha256": "b0b6a53c01ce2b14174be984f4d485d2a98cda61ff9ba0dc0e0421299784609c",
+          "page_count": 4,
+          "native_pages_visually_inspected": [
+            1,
+            4
+          ]
+        }
+      ],
+      "full_graphics_verified": false,
+      "rights": "Author-repository metadata identifies National Academy of Sciences copyright and does not grant commercial reproduction, distribution, display or performance rights. No broad permissive grant is verified.",
+      "scope": "Selected account only; preparation routes remain distinct and diagnostics do not supply a whole-inventory assay."
+    }
+  ],
+  "preserved_glass_background": {
+    "doi": "10.1038/ncomms10313",
+    "primary_url": "https://www.nature.com/articles/ncomms10313",
+    "application_paragraph": "0063",
+    "decision": "Preserve the earlier paragraph and citation as background; use an additional primary source for the selected operational account.",
+    "reviewed_locators": [
+      "main Methods, Metallic glass database construction, native page 6",
+      "SI Supplementary Methods, native pages 16-21",
+      "SI section B, native pages 19-20",
+      "SI section C, native pages 20-21"
+    ],
+    "acquisitions": [
+      {
+        "format": "PDF",
+        "primary_url": "https://www.nature.com/articles/ncomms10313.pdf",
+        "HTTP_status": 200,
+        "size_bytes": 591313,
+        "sha256": "8b6618ffc394c9d72b85c33ef7ff8ebea1d25a5854872b2785673b0f34b823c1",
+        "page_count": 7,
+        "native_pages_visually_inspected": [
+          6
+        ]
+      },
+      {
+        "format": "PDF",
+        "primary_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fncomms10313/MediaObjects/41467_2016_BFncomms10313_MOESM396_ESM.pdf",
+        "HTTP_status": 200,
+        "size_bytes": 1481149,
+        "sha256": "ff6d41cfb2fc87c1b7bccef8b339c0d99b20e3d01d96a7224d4441f1914590ee",
+        "page_count": 34,
+        "native_pages_visually_inspected": [
+          16,
+          19,
+          20
+        ]
+      },
+      {
+        "format": "XML",
+        "primary_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4735709/fullTextXML",
+        "HTTP_status": 200,
+        "size_bytes": 99388,
+        "sha256": "3eb3dc6a258f0e42ad6d4eb401f13bb71768e9ad7813607f2b7295a098850e37",
+        "retained_original_bytes": false,
+        "review_scope": "In-memory primary Methods, supplementary linkage and license inspection"
+      }
+    ],
+    "full_graphics_verified": false,
+    "rights": "Primary XML explicitly identifies CC BY 4.0 with third-party-material qualifications; no source originals or graphics are selected for public reproduction."
+  },
+  "present_accounting": {
+    "alloy": {
+      "ordered_principal_supports": [
+        [
+          "Cr",
+          "Fe",
+          "Co",
+          "Ni"
+        ],
+        [
+          "Cr",
+          "Mn",
+          "Fe",
+          "Co",
+          "Ni"
+        ]
+      ],
+      "principal_targets": [
+        [
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4"
+        ],
+        [
+          "1/5",
+          "1/5",
+          "1/5",
+          "1/5",
+          "1/5"
+        ]
+      ],
+      "basis": "Ideal principal atom targets, not measured whole specimens.",
+      "additional_carbon_support": [
+        "C",
+        "Cr",
+        "Fe",
+        "Co",
+        "Ni"
+      ],
+      "additional_carbon_counts": [
+        "c",
+        "m",
+        "m",
+        "m",
+        "m"
+      ],
+      "additional_carbon_total": "4*m+c",
+      "constraints": "m>0 and c>=0 integers; drop carbon from canonical support when c=0.",
+      "below_grid": {
+        "L": "100000000000000000000",
+        "c": "4",
+        "m": "99999999999999999999",
+        "total": "400000000000000000000",
+        "fractions": [
+          "1/100000000000000000000",
+          "99999999999999999999/400000000000000000000",
+          "99999999999999999999/400000000000000000000",
+          "99999999999999999999/400000000000000000000",
+          "99999999999999999999/400000000000000000000"
+        ],
+        "primitive_denominator": "400000000000000000000",
+        "basis": "Stipulated count witness; no source assay, specimen or preparation."
+      }
+    },
+    "glass": {
+      "ordered_principal_support": [
+        "B",
+        "Si",
+        "P",
+        "Cr",
+        "Ni",
+        "Nb"
+      ],
+      "principal_counts": [
+        32,
+        5,
+        160,
+        87,
+        686,
+        30
+      ],
+      "principal_total": 1000,
+      "principal_target": [
+        "4/125",
+        "1/200",
+        "4/25",
+        "87/1000",
+        "343/500",
+        "3/100"
+      ],
+      "basis": "Ideal nominal principal atom target; no whole-product assay or network identity."
+    },
+    "whole_transfer": {
+      "principal_fraction": "f=N_P/N",
+      "principal_ratios": "r_i=N_i/N_P",
+      "whole_principal_fractions": "x_i=f*r_i",
+      "additional_total": "1-f",
+      "target_substituted_for_measured_ratios": false,
+      "f_assumed_one": false,
+      "unknown_constituents_resolved": false
+    },
+    "mass_conversion": {
+      "principal_only": "v_i=r_target_i*M_i/sum_j_in_S_P(r_target_j*M_j)",
+      "numerical_isotope_populations_assigned": false,
+      "basis": "Qualified finite positive masses and consistent allocation; distinct from whole mass inventory."
+    }
+  },
+  "present_record_status": {
+    "support_and_basis_assigned": true,
+    "record_fields_constructed": true,
+    "candidate_preparation_performed": false,
+    "candidate_outcomes": "UNSUPPORTED",
+    "conditional_scenarios": "PROPOSED"
+  },
+  "filing_asserted": false,
+  "earlier_entitlement_certified": false,
+  "physical_enablement_certified": false,
+  "claim_specific_novelty_assessments": 0,
+  "inventor_identity_inferred": false,
+  "scientific_source_accounts_repeated_in_this_record": false
+}
