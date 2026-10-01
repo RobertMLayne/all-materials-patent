@@ -278,8 +278,8 @@
     },
     {
       "path": "data/magneli_source_review_2026-10-01.json",
-      "size_bytes": 7018,
-      "sha256": "ce740caa47e1a94720d0e703216e812c49ed99a4e08e1364738c100037cfe0da"
+      "size_bytes": 7021,
+      "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
     },
     {
       "path": "data/nuclear_archive/README.md",
@@ -344,7 +344,7 @@
     {
       "path": "data/oxide_candidate_record_review_2026-10-01.json",
       "size_bytes": 17340,
-      "sha256": "4ae10ae903f7a8350ce2d8b476e32cdd095fe9cb63a337c99e745655f7be3e1b"
+      "sha256": "031d389236fbe42f81d3b607f7146a4a359e48db7892533a2c5f77aaf5bf0efa"
     },
     {
       "path": "data/oxide_defect_source_review_2026-09-30.json",
@@ -509,7 +509,7 @@
     {
       "path": "documents/oxide_claim_comparison_2026-10-01.md",
       "size_bytes": 23234,
-      "sha256": "7838379984117fd10bf723c420ec22c3ad4c0f7ed23da4b997af4358fd1697c1"
+      "sha256": "cf0aa8fea0e6235be363cfd22fc3aa6b32cb9b47c4f2546e0a1ac86151a4115a"
     },
     {
       "path": "documents/pct_defensive_disclosure_blueprint.md",
@@ -623,8 +623,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 45258,
-      "sha256": "c388d9552f940d46a0b553a5ec0b9d90d03e7b7aeb8b4327a02b3e2e0ea9e45b"
+      "size_bytes": 45671,
+      "sha256": "4486fd9fbac8f0435b6cc31d2ea9789a75068776d88dd7d6f34f9d4e457128c0"
     },
     {
       "path": "documents/working_application_2026-09-30.md",

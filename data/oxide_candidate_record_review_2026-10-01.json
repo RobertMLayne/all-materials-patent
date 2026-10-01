@@ -51,7 +51,7 @@
       "source_summary_location": "source_derived_summary in the referenced curated reader review; no duplicate summary, recipe or source table here.",
       "access_boundary": "Native original HTML/PDF not acquired (HTTP 403); official reader text inspected. No original PDF SHA or page-pixel/graph inspection. Retain all access, precursor-stage, process, numerical-conflict and inventory limitations in the referenced record.",
       "condition_boundary": "Phase-specific context is not a complete candidate preparation, retained-inventory assay or candidate-property outcome.",
-      "record_sha256": "ce740caa47e1a94720d0e703216e812c49ed99a4e08e1364738c100037cfe0da"
+      "record_sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
     },
     "Li_2015_rutile_context": {
       "record": "data/oxide_defect_source_review_2026-09-30.json",
