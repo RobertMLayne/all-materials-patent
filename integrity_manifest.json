@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 152,
+  "file_count": 161,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 26140,
-      "sha256": "4b2daa1db534f3e2256656c94b722a66313bf57b9442c8bf1a6923aaa9d58d50"
+      "size_bytes": 27245,
+      "sha256": "a0915b0738eac94441f1cbe58d27699b476964e3b085f0ece042a62f1417cda9"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -153,6 +153,26 @@
     },
     {
       "path": "data/application_electrical_evidence_authoring_2026-09-30/output_helper.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
+      "path": "data/application_family_evidence_2026-10-01.json",
+      "size_bytes": 16223,
+      "sha256": "6c81887d062c3103b623c4454c41b170098fe89e6958e51a8b1f8acf1cd61b52"
+    },
+    {
+      "path": "data/application_family_evidence_authoring_2026-10-01/builder.py.txt",
+      "size_bytes": 23960,
+      "sha256": "0838bc97899bad22d53287a6b1cf68b04c0d683cda608c322a8adc1d4bd1cc99"
+    },
+    {
+      "path": "data/application_family_evidence_authoring_2026-10-01/layout.py.txt",
+      "size_bytes": 28711,
+      "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8"
+    },
+    {
+      "path": "data/application_family_evidence_authoring_2026-10-01/output_helper.py.txt",
       "size_bytes": 37887,
       "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
     },
@@ -247,6 +267,11 @@
       "sha256": "764df80922ef6a6e69dbd43872ac1463df34a7955ff575499436f84770603eb2"
     },
     {
+      "path": "data/claim_support_map_family_evidence_2026-10-01.json",
+      "size_bytes": 153963,
+      "sha256": "6021bfa1ae1e5983753a8b70b3acb2b6e6e4ff2cba1ac415a3ca65c09de6f34b"
+    },
+    {
       "path": "data/claim_support_map_oxide_defect_evidence_2026-09-30.json",
       "size_bytes": 153971,
       "sha256": "792e5023bd282ae7b37330410017724ba616f06262d8ebc944c1f4e1e825d473"
@@ -290,6 +315,11 @@
       "path": "data/entity_register_notes.md",
       "size_bytes": 5860,
       "sha256": "20f4d9ad36b44714bbd2c7dc52b3ee782fda15f1802061521706aaf1a645521d"
+    },
+    {
+      "path": "data/family_source_review_2026-10-01.json",
+      "size_bytes": 7203,
+      "sha256": "056c83e78d38d0fc6421150994f097081a8fd6efd98ca83951f5230a3d679e40"
     },
     {
       "path": "data/hydrogel_candidate_record_review_2026-09-30.json",
@@ -462,6 +492,11 @@
       "sha256": "6423b64e8234c89b092cf360248de6f34594675945b707fd0ada7fefe17121e5"
     },
     {
+      "path": "documents/application_family_evidence_2026-10-01.md",
+      "size_bytes": 10142,
+      "sha256": "6760a2e7e3ec3f22f64accd6e60be7f24be5c64d119761679f6b0beadc9c03a2"
+    },
+    {
       "path": "documents/application_oxide_defect_evidence_2026-09-30.md",
       "size_bytes": 8639,
       "sha256": "a78acac93d968c4d3a748255a35c0070eab7643dea03256e7583adb4c851ead5"
@@ -572,6 +607,11 @@
       "sha256": "1bbc26fd640e202b701f792de316865d964634e231bcc4f6958cbf9a91b78959"
     },
     {
+      "path": "documents/pdf/provisional_application_family_evidence_2026-10-01.pdf",
+      "size_bytes": 200802,
+      "sha256": "4be9bae9c511cb657530e380b3f146310faf3c930c1c3d0bf87ba02881c3c138"
+    },
+    {
       "path": "documents/pdf/provisional_application_oxide_defect_evidence_2026-09-30.pdf",
       "size_bytes": 178352,
       "sha256": "06df382fd7979cc66862ec62ecfe0fce2f3d727588e7077bb91c7991b10379df"
@@ -615,6 +655,11 @@
       "path": "documents/provisional_application_electrical_evidence_2026-09-30.md",
       "size_bytes": 96305,
       "sha256": "36125cd499bd20cd64bdad9ca599d65f2e637fc2a130a552471f9c83c7f3284a"
+    },
+    {
+      "path": "documents/provisional_application_family_evidence_2026-10-01.md",
+      "size_bytes": 127431,
+      "sha256": "d0a3663e417fc2a04dc50d1e2d75590f281524cff99e908965159de9b54e4321"
     },
     {
       "path": "documents/provisional_application_oxide_defect_evidence_2026-09-30.md",
@@ -663,8 +708,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 48487,
-      "sha256": "1e4ac9226b3e2442708a713a357bf8bb8eceda0351a601a64ca3d3c48f5f8b7e"
+      "size_bytes": 51160,
+      "sha256": "0013157c34b33702669a90a1d86703d5d278736d2417d3f130787137c0a0db08"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -758,8 +803,8 @@
     },
     {
       "path": "tools/pdf/build_working_application.py",
-      "size_bytes": 21841,
-      "sha256": "8fb5c63d76b014cafbf9e11630e41a5cc730870008f3a516ba2b8f3d942780bd"
+      "size_bytes": 23960,
+      "sha256": "0838bc97899bad22d53287a6b1cf68b04c0d683cda608c322a8adc1d4bd1cc99"
     },
     {
       "path": "tools/pdf/requirements-pdf.txt",
@@ -778,8 +823,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 156952,
-      "sha256": "ab67d83276a21e907600d3f1f476690c8001dbfb2fe2589890687c12c7e379a8"
+      "size_bytes": 178534,
+      "sha256": "04df7aad9049dca509f9b11185badd312f339a11afc30bd24a5dc93e0ac8c73c"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
