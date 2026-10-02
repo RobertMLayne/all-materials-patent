@@ -409,7 +409,7 @@
     {
       "path": "data/nuclear_archive/portable_bundle_manifest.json",
       "size_bytes": 2202,
-      "sha256": "ee6bff15cefdf0adc6348ff7face156f73fba59e161dc66730f475b7cbb553a3"
+      "sha256": "4a7488c291aa914d8be4aa1416aad6fe1d1f2766431611148e6bbe0219c21f81"
     },
     {
       "path": "data/nuclear_archive/schema_header.txt",
@@ -428,8 +428,8 @@
     },
     {
       "path": "data/nuclear_archive/verify_nuclear_archive.py",
-      "size_bytes": 12328,
-      "sha256": "d3fdba1118cf527e643411d8901b659f192d6029590bbac39ca96e9aecf59792"
+      "size_bytes": 12618,
+      "sha256": "9e89a55c1d44c0fdf7e8d8c71f91242e444b6dcb55aba14c373ded70230e86fb"
     },
     {
       "path": "data/oxide_candidate_record_review_2026-10-01.json",
@@ -453,8 +453,8 @@
     },
     {
       "path": "data/particle_archive/extract_pdg_identities.py",
-      "size_bytes": 21209,
-      "sha256": "93c62fd424bb602cd3f6e01f931e81f4c9e4def3da59d2621b406fb89c9aba20"
+      "size_bytes": 21272,
+      "sha256": "eaa0568287fdd9f1b2dd6910972b06bf53a8cb721dd3c71d9baf8ea7dfbf5132"
     },
     {
       "path": "data/particle_archive/pdg2026_identity_archive.json",
@@ -883,8 +883,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 202608,
-      "sha256": "27ea88fb09907cdb262fda7464592e18bb110b6d935476f526722e44546ca977"
+      "size_bytes": 206047,
+      "sha256": "558ee33d397bee50a3bb265dd580b2306fa5ef42ebcaf4e4d43951c232f42411"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

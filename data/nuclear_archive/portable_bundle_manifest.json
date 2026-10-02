@@ -54,12 +54,12 @@
     },
     {
       "path": "verify_nuclear_archive.py",
-      "bytes": 12328,
-      "sha256": "d3fdba1118cf527e643411d8901b659f192d6029590bbac39ca96e9aecf59792"
+      "bytes": 12618,
+      "sha256": "9e89a55c1d44c0fdf7e8d8c71f91242e444b6dcb55aba14c373ded70230e86fb"
     }
   ],
   "file_count": 11,
-  "total_bytes": 808074,
+  "total_bytes": 808364,
   "optional_generated_normalized_json": {
     "path": "nuclear_states.json",
     "bytes": 18118327,

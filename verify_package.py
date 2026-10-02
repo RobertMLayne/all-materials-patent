@@ -2831,6 +2831,22 @@ def self_test(root: Path) -> dict:
                 nuclear_verifier.verify_payload(payload, schema, nuclear_parser.SOURCE.read_bytes())
             except ValueError:
                 extended.append("nuclear_presence_promoted_to_observation_rejected")
+            payload["states"][0]["observation_status"] = "not inferred from property markers; requires source review"
+            numeric = payload["states"][0]["mass_excess"]["value"]
+            original_numeric = numeric.copy()
+            require(numeric["kind"] == "numeric", "Numeric mutation fixture is not numeric")
+            for kind in ("missing", "unparsed_text", "source_category"):
+                numeric.update(kind=kind, operator=None, value_decimal=None)
+                try:
+                    nuclear_verifier.verify_payload(payload, schema, nuclear_parser.SOURCE.read_bytes())
+                except ValueError as error:
+                    require("Numeric source mislabeled" in str(error), "Numeric mutation failed for another reason")
+                    extended.append("nuclear_numeric_mislabeled_as_" + kind + "_rejected")
+                else:
+                    raise VerificationError("Numeric source was accepted as " + kind)
+                finally:
+                    numeric.clear()
+                    numeric.update(original_numeric)
 
         metadata_path = fixture / PARTICLE_DIRECTORY / "pdg2026_identity_metadata.json"
         metadata_original = metadata_path.read_bytes()
@@ -2884,6 +2900,34 @@ def self_test(root: Path) -> dict:
                         "Successful exclusive publication did not preserve bytes or remove its partial")
                 require(load_json(observation)["sha256"] == download_sha, "Successful observation lacks the pinned test hash")
                 downloader_cases.append("mocked_pinned_test_bytes_exclusive_publication")
+
+                destination = download_root / "separate-database" / "source.bin"
+                observation = download_root / "separate-observation" / "metadata" / "source.json"
+                require(not observation.parent.exists(), "Separate observation parent fixture already exists")
+                with patch.object(downloader.urllib.request, "urlopen", return_value=OfflineResponse(download_bytes)) as response, \
+                        redirect_stdout(io.StringIO()):
+                    downloader.download(argparse.Namespace(destination=destination, observation=observation))
+                require(response.call_count == 1 and destination.read_bytes() == download_bytes,
+                        "Separate-parent transfer did not preserve pinned bytes")
+                require(load_json(observation)["sha256"] == download_sha and not destination.with_suffix(".bin.part").exists(),
+                        "Separate-parent transfer failed to publish provenance or remove the partial")
+                downloader_cases.append("separate_observation_parent_created_and_pinned_transfer_published")
+
+                destination = download_root / "preexisting-observation-database" / "source.bin"
+                observation = download_root / "preexisting-observation.json"
+                preserved_observation = b"Preserve this existing observation.\n"
+                observation.write_bytes(preserved_observation)
+                with patch.object(downloader.urllib.request, "urlopen") as response:
+                    try:
+                        downloader.download(argparse.Namespace(destination=destination, observation=observation))
+                    except ValueError as error:
+                        require("Observation already exists" in str(error), "Observation preflight failed for another reason")
+                    else:
+                        raise VerificationError("Preexisting observation was accepted")
+                require(response.call_count == 0 and observation.read_bytes() == preserved_observation,
+                        "Observation preflight fetched bytes or altered existing provenance")
+                require(not destination.parent.exists(), "Observation preflight created destination directories")
+                downloader_cases.append("preexisting_observation_preserved_before_directory_creation_or_fetch")
 
                 destination = download_root / "competing.bin"
                 observation = download_root / "competing.json"
@@ -2980,8 +3024,8 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 63, f"Expected 63 extension failure checks, got {len(extended)}")
-    require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
+    require(len(extended) == 66, f"Expected 66 extension failure checks, got {len(extended)}")
+    require(len(downloader_cases) == 4, "Expected the four durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
             "downloader_regression_case_count": len(downloader_cases), "downloader_regression_cases": downloader_cases,
