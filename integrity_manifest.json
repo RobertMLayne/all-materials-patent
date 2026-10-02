@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 172,
+  "file_count": 173,
   "files": [
     {
       "path": ".editorconfig",
@@ -123,8 +123,8 @@
     },
     {
       "path": "AGENTS.md",
-      "size_bytes": 4700,
-      "sha256": "895d8d9f9f51c6e5b5a278cf8dbdc7b12f7d80ee517eb7ee526290fef1d09663"
+      "size_bytes": 5408,
+      "sha256": "50126a51c364d0fe5e71f331047b7c2e530c097bcee56fa16d18b71c22b86586"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 29244,
-      "sha256": "57c532a155961e9fa2b1f7faa5ab1ee35bf0a88626fe4a90b15c495f44f790e8"
+      "size_bytes": 29765,
+      "sha256": "c50f80d74d0c284a8960dff4a251d012210b807b790838db1a9e19e3d23983b8"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -762,9 +762,14 @@
       "sha256": "51933a785f5c0cda2cdfab4dc64fe53401f6f9c1919b299870c4375e0b4d1c8d"
     },
     {
+      "path": "documents/theoretical_disclosure_strategy_2026-10-01.md",
+      "size_bytes": 10330,
+      "sha256": "85415fd83a309071a31e713136a43bba998c679ead9b237b5560ad77d5a7468e"
+    },
+    {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 58114,
-      "sha256": "0780d301dbe3164a3d6e9f3eeec6755513397c92f6fbe4b07bb07c4f67b56c63"
+      "size_bytes": 60380,
+      "sha256": "0d3740471de930737502cf94dbe11def610cf0a139a5c80ad0d230d1315288ea"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -878,8 +883,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 202545,
-      "sha256": "a2a3dadf7200351dc3401072c08c230970924b290200c0788d794e1bd8dcb4ba"
+      "size_bytes": 202608,
+      "sha256": "27ea88fb09907cdb262fda7464592e18bb110b6d935476f526722e44546ca977"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
