@@ -779,7 +779,7 @@
     {
       "path": "pyproject.toml",
       "size_bytes": 338,
-      "sha256": "948f71a406b376ed19c4f3440cd53df426dc709f360e35f4d1eb9ce84f41cc18"
+      "sha256": "83a1756f3c55fc7048ab33e12ead14635e6d1c50b6f3ad28941090c7dfef8039"
     },
     {
       "path": "range_model/claim_clarification_checks.py",
@@ -849,7 +849,7 @@
     {
       "path": "requirements-dev.txt",
       "size_bytes": 96,
-      "sha256": "8cc409fd345cfcc3cbbc92f6132d101d884516d6059585f5ab720d077761bc71"
+      "sha256": "faed2b6ec2664f96f81c5cc8dba520862d9c281cf9e46502c8ae0542cc304304"
     },
     {
       "path": "tools/pdf/build_consolidated_review.py",
