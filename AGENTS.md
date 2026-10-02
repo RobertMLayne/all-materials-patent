@@ -14,7 +14,7 @@ This repository is a research and drafting package. Its documents do not establi
 - Do not add unrelated account inventories, repository-review reports, credentials, local absolute paths, temporary renders, or synced private reference files to this package.
 - Do not add a license grant or assert that an application has been filed unless the user expressly supplies and authorizes the relevant change. External publication and filing require the user's instructions; verification alone authorizes neither.
 
-## Scope and unresolved work record
+## Pending work record
 
 The following items record scope and unresolved evidence, not performed experiments or promised results. As confirmed on 1 October 2026, this is a theoretical defensive-disclosure project: applicant physical preparation, characterization and property experiments are unperformed and not planned. Do not treat the historical proposed study cards as scheduled work. Preserve the missing physical support and all evidence labels; this scope decision supplies no enablement or legal outcome.
 

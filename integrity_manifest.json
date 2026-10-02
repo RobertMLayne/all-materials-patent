@@ -123,8 +123,8 @@
     },
     {
       "path": "AGENTS.md",
-      "size_bytes": 5421,
-      "sha256": "cdf90a0753480e4558a68f12a389d9a4984dc1300018ac12e27ff8d65dc5d4b4"
+      "size_bytes": 5408,
+      "sha256": "50126a51c364d0fe5e71f331047b7c2e530c097bcee56fa16d18b71c22b86586"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -768,8 +768,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 60172,
-      "sha256": "3ee40341c42904acf15d5f52a3002d6ad17274d86d311f3591d5b5b802bb08e8"
+      "size_bytes": 60380,
+      "sha256": "0d3740471de930737502cf94dbe11def610cf0a139a5c80ad0d230d1315288ea"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
