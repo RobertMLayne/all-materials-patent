@@ -1,2 +1,2 @@
 # Development only; the disclosure and archive verifiers use the standard library.
-ruff==0.16.8
+ruff==0.16.9

@@ -305,6 +305,7 @@ def download(args: argparse.Namespace) -> None:
     require(not (args.observation.exists() or args.observation.is_symlink() or observation_path.exists()),
             "Observation already exists; preserve and review it instead of overwriting")
     destination.parent.mkdir(parents=True, exist_ok=True)
+    observation_path.parent.mkdir(parents=True, exist_ok=True)
     request = urllib.request.Request(SOURCE_URL, headers={"User-Agent": "PDGIdentityArchive/1.0"})
     with urllib.request.urlopen(request, timeout=60) as response, partial.open("xb") as output:
         status_code = response.status

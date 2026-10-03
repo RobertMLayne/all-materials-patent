@@ -434,7 +434,7 @@
     {
       "path": "data/nuclear_archive/portable_bundle_manifest.json",
       "size_bytes": 2202,
-      "sha256": "ee6bff15cefdf0adc6348ff7face156f73fba59e161dc66730f475b7cbb553a3"
+      "sha256": "4a7488c291aa914d8be4aa1416aad6fe1d1f2766431611148e6bbe0219c21f81"
     },
     {
       "path": "data/nuclear_archive/schema_header.txt",
@@ -453,8 +453,8 @@
     },
     {
       "path": "data/nuclear_archive/verify_nuclear_archive.py",
-      "size_bytes": 12328,
-      "sha256": "d3fdba1118cf527e643411d8901b659f192d6029590bbac39ca96e9aecf59792"
+      "size_bytes": 12618,
+      "sha256": "9e89a55c1d44c0fdf7e8d8c71f91242e444b6dcb55aba14c373ded70230e86fb"
     },
     {
       "path": "data/oxide_candidate_record_review_2026-10-01.json",
@@ -478,8 +478,8 @@
     },
     {
       "path": "data/particle_archive/extract_pdg_identities.py",
-      "size_bytes": 21209,
-      "sha256": "93c62fd424bb602cd3f6e01f931e81f4c9e4def3da59d2621b406fb89c9aba20"
+      "size_bytes": 21272,
+      "sha256": "eaa0568287fdd9f1b2dd6910972b06bf53a8cb721dd3c71d9baf8ea7dfbf5132"
     },
     {
       "path": "data/particle_archive/pdg2026_identity_archive.json",
@@ -819,7 +819,7 @@
     {
       "path": "pyproject.toml",
       "size_bytes": 338,
-      "sha256": "948f71a406b376ed19c4f3440cd53df426dc709f360e35f4d1eb9ce84f41cc18"
+      "sha256": "83a1756f3c55fc7048ab33e12ead14635e6d1c50b6f3ad28941090c7dfef8039"
     },
     {
       "path": "range_model/claim_clarification_checks.py",
@@ -889,7 +889,7 @@
     {
       "path": "requirements-dev.txt",
       "size_bytes": 96,
-      "sha256": "8cc409fd345cfcc3cbbc92f6132d101d884516d6059585f5ab720d077761bc71"
+      "sha256": "faed2b6ec2664f96f81c5cc8dba520862d9c281cf9e46502c8ae0542cc304304"
     },
     {
       "path": "tools/pdf/build_consolidated_review.py",
@@ -923,8 +923,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 222249,
-      "sha256": "ee32ff7e52edd0cce8ae893334cfeecdc02e707ce1c425b895d89a0f12222106"
+      "size_bytes": 225768,
+      "sha256": "6ad49b190a9827e65c2928a269e39121b68eab493731d2498feb45cbe1582f59"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

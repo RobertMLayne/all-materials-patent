@@ -30,12 +30,15 @@ def require(condition: bool, message: str) -> None:
 def check_numeric(field: dict, expected_raw: str) -> None:
     require(field["raw"] == expected_raw, "Parsed property's raw source slice changed")
     require(field["systematics_marker"] == ("#" in expected_raw), "Systematics flag mismatch")
-    if field["kind"] != "numeric":
+    # Classify the source independently: a payload must not opt out of number
+    # verification by relabeling a numeric source token as missing or text.
+    match = re.fullmatch(r"([<>~]?)\s*([+-]?\d+(?:\.\d*)?(?:[Ee][+-]?\d+)?)\s*(#?)", expected_raw.strip())
+    if match is None:
+        require(field["kind"] != "numeric", "Non-numeric source mislabeled as numeric")
         return
-    text = expected_raw.strip().replace("#", "").strip()
-    expected_operator = text[0] if text[:1] in {"<", ">", "~"} else "="
-    if expected_operator != "=":
-        text = text[1:].strip()
+    require(field["kind"] == "numeric", "Numeric source mislabeled as missing or text")
+    text = match[2]
+    expected_operator = match[1] or "="
     require(field["operator"] == expected_operator, "Numeric operator mismatch")
     require(Decimal(field["value_decimal"]) == Decimal(text), "Numeric value mismatch")
     require(field["value_decimal"] == text, "Numerical precision/token spelling changed")
