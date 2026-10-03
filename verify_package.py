@@ -312,7 +312,8 @@ SUBSTANTIVE_FILES = {
     "data/application_substantive_review_authoring_2026-10-03/layout.py.txt",
     "data/application_substantive_review_authoring_2026-10-03/output_helper.py.txt",
 }
-EXPECTED_HASHED = EXPECTED_HASHED | SUBSTANTIVE_FILES
+EDITION_CORRECTIONS = "data/edition_identity_corrections_2026-10-03.json"
+EXPECTED_HASHED = EXPECTED_HASHED | SUBSTANTIVE_FILES | {EDITION_CORRECTIONS}
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
     "composition_ranges", "unrestricted_compositions", "independent_unrestricted_checks",
@@ -1652,6 +1653,38 @@ def check_metal_glass_application(root: Path) -> dict:
             "pdf_parsed_or_appearance_rechecked_by_this_check": False}
 
 
+def check_edition_identity_correction(root: Path) -> dict:
+    """Resolve one known historical label error without rewriting captured bytes."""
+    correction = load_json(root / EDITION_CORRECTIONS)
+    expected = {
+        "id": "EDITION-IDENTITY-01", "artifact_path": THEORETICAL_MAP,
+        "artifact_sha256": "49dd2b782033940cf5d77bf6168f8eba345329ec189f29406e791d9ee91426f1",
+        "field": "edition", "recorded_value": "metal-glass-evidence application 2026-10-01",
+        "effective_value": "theoretical review application 2026-10-01",
+        "source_path": THEORETICAL_SOURCE,
+        "source_sha256": "61ffc4ec1aa89d32dcc4cd44d35852a4b315b13d514c2898c4aabf460e3235f7",
+        "prepared_date": "2026-10-01", "source_paragraph_count": 94,
+        "reason": "The theoretical-edition map retained the preceding metal/glass edition label. "
+                  "Its source identity, paragraph count and authoring captures identify the theoretical edition.",
+        "archived_bytes_preserved": True, "claim_text_or_support_locations_changed": False,
+        "application_content_or_pdf_changed": False, "earlier_filing_or_publication_date_assigned": False,
+    }
+    require(correction == {
+        "schema_version": 1, "record_date": "2026-10-03",
+        "scope": "Post-authoring metadata correction; archived application contents and captured bytes remain unchanged.",
+        "corrections": [expected]}, "Edition identity correction differs from reviewed erratum")
+    support = load_json(root / THEORETICAL_MAP)
+    require(support.get("edition") == expected["recorded_value"]
+            and all(support.get(key) == expected[key] for key in
+                    ("source_path", "source_sha256", "prepared_date", "source_paragraph_count")),
+            "Archived edition metadata differs from the identified exception")
+    require(hashlib.sha256((root / THEORETICAL_MAP).read_bytes()).hexdigest() == expected["artifact_sha256"]
+            and hashlib.sha256((root / THEORETICAL_SOURCE).read_bytes()).hexdigest() == expected["source_sha256"],
+            "Edition identity correction is not bound to the preserved artifacts")
+    return {"recorded_edition": expected["recorded_value"], "effective_edition": expected["effective_value"],
+            "correction_record": EDITION_CORRECTIONS, "archived_bytes_preserved": True}
+
+
 def check_theoretical_application(root: Path) -> dict:
     """Verify the complete unfiled review draft, without certifying support.
 
@@ -1770,7 +1803,8 @@ def check_theoretical_application(root: Path) -> dict:
             and visual.get("pages_reviewed") == list(range(1, pdf["page_count"] + 1))
             and visual.get("remaining_actionable_visual_findings") == 0,
             "Theoretical recorded appearance review is incomplete")
-    return {**claims, "numbered_paragraphs": paragraph_count, "added_paragraphs": added,
+    identity = check_edition_identity_correction(root)
+    return {**claims, "edition_identity": identity, "numbered_paragraphs": paragraph_count, "added_paragraphs": added,
             "changed_paragraphs": [], "changed_claims": [], "captured_sources_checked": len(entries),
             "recorded_pdf_pages": pdf["page_count"], "recorded_pdf_locations_checked": len(locations),
             "preceding_evidence_and_remaining_body_preserved": True,
@@ -3087,6 +3121,37 @@ def self_test(root: Path) -> dict:
                 for path, data in originals.items():
                     path.write_bytes(data)
 
+        identity_paths = (fixture / EDITION_CORRECTIONS, fixture / THEORETICAL_MAP)
+        identity_originals = {path: path.read_bytes() for path in identity_paths}
+        for case, expected_error in (
+            ("edition_erratum_effective_label_drift_rejected", "Edition identity correction differs"),
+            ("edition_erratum_source_binding_drift_rejected", "Edition identity correction differs"),
+            ("edition_erratum_unknown_archive_label_rejected", "Archived edition metadata differs"),
+            ("edition_erratum_archive_byte_drift_rejected", "not bound to the preserved artifacts"),
+        ):
+            try:
+                erratum = json.loads(identity_originals[identity_paths[0]])
+                if "effective_label" in case:
+                    erratum["corrections"][0]["effective_value"] = "substantive review application 2026-10-03"
+                elif "source_binding" in case:
+                    erratum["corrections"][0]["source_sha256"] = "0" * 64
+                elif "unknown_archive_label" in case:
+                    support = json.loads(identity_originals[identity_paths[1]])
+                    support["edition"] = "unidentified application"
+                    identity_paths[1].write_text(json.dumps(support), encoding="utf-8")
+                else:
+                    identity_paths[1].write_bytes(identity_originals[identity_paths[1]] + b"\n")
+                identity_paths[0].write_text(json.dumps(erratum), encoding="utf-8")
+                try:
+                    check_edition_identity_correction(fixture)
+                except VerificationError as error:
+                    require(expected_error in str(error), "Edition identity mutation failed for another reason: " + str(error))
+                    extended.append(case)
+                require(case in extended, "Edition identity mutation was accepted: " + case)
+            finally:
+                for path, original in identity_originals.items():
+                    path.write_bytes(original)
+
         with module_environment(fixture / "tools"):
             substantive_module = import_local("substantive_review_checks", fixture / SUBSTANTIVE_CHECKER)
             extended.extend(substantive_module.negative_tests(
@@ -3236,6 +3301,44 @@ def self_test(root: Path) -> dict:
                         "Refused publication lost its verified partial or wrote a success observation")
                 downloader_cases.append("concurrent_destination_preserved_partial_retained_no_observation")
 
+                # Check all pairwise relationships before mkdir or fetch. The
+                # resolved-alias cases model path resolution, not real symlinks.
+                real_resolve = Path.resolve
+                collision_root = download_root / "collisions"
+                cases = (
+                    ("observation_below_destination", collision_root / "a.bin",
+                     collision_root / "a.bin/metadata.json", None, "ancestors or descendants"),
+                    ("observation_below_partial", collision_root / "b.bin",
+                     collision_root / "b.bin.part/metadata.json", None, "ancestors or descendants"),
+                    ("observation_above_outputs", collision_root / "ancestor/source.bin",
+                     collision_root / "ancestor", None, "ancestors or descendants"),
+                    ("resolved_partial_below_destination", collision_root / "c.bin",
+                     collision_root / "c.json", collision_root / "c.bin/partial", "ancestors or descendants"),
+                    ("resolved_partial_above_destination", collision_root / "parent/d.bin",
+                     collision_root / "d.json", collision_root / "parent", "ancestors or descendants"),
+                    ("observation_aliases_destination", collision_root / "e.bin",
+                     collision_root / "e.bin", None, "distinct paths"),
+                    ("observation_aliases_partial", collision_root / "f.bin",
+                     collision_root / "f.bin.part", None, "distinct paths"),
+                )
+                for case, destination, observation, partial_override, expected_error in cases:
+                    requested_partial = destination.with_suffix(destination.suffix + ".part")
+                    def resolved(path: Path, *args, **kwargs) -> Path:
+                        if partial_override is not None and path == requested_partial:
+                            return real_resolve(partial_override)
+                        return real_resolve(path, *args, **kwargs)
+                    with patch.object(Path, "resolve", resolved), patch.object(Path, "mkdir") as mkdir, \
+                            patch.object(downloader.urllib.request, "urlopen") as response:
+                        try:
+                            downloader.download(argparse.Namespace(destination=destination, observation=observation))
+                        except ValueError as error:
+                            require(expected_error in str(error), "Collision rejected for another reason: " + str(error))
+                        else:
+                            raise VerificationError("Downloader accepted output collision: " + case)
+                    require(mkdir.call_count == response.call_count == 0 and not collision_root.exists(),
+                            "Collision preflight created directories or fetched bytes: " + case)
+                    downloader_cases.append(case + "_rejected_before_mkdir_or_fetch")
+
         # The parent owns the real marker before launching the competing helper,
         # so contention is deterministic and requires no timing assumptions.
         helper_path = fixture / "tools/update_manifest.py"
@@ -3307,8 +3410,8 @@ def self_test(root: Path) -> dict:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
     # Preserve all ten theoretical-edition cases and the three archive repairs.
-    require(len(extended) == 96, f"Expected 96 extension failure checks, got {len(extended)}")
-    require(len(downloader_cases) == 4, "Expected the four durable downloader publication regressions")
+    require(len(extended) == 101, f"Expected 101 extension failure checks, got {len(extended)}")
+    require(len(downloader_cases) == 11, "Expected eleven durable downloader publication/preflight regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
             "downloader_regression_case_count": len(downloader_cases), "downloader_regression_cases": downloader_cases,

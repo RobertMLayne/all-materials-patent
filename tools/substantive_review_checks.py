@@ -84,6 +84,8 @@ def check(root: Path, require, safe_path, block_counts, technical_check) -> dict
     old_bytes, new_bytes = (root / OLD_SOURCE).read_bytes(), (root / SOURCE).read_bytes()
     old, new = old_bytes.decode("utf-8"), new_bytes.decode("utf-8")
     support, historical = read_json(root, SUPPORT), read_json(root, OLD_SUPPORT)
+    require(support.get("edition") == "substantive review application 2026-10-03",
+            "Substantive edition identity differs")
     require(support.get("source_path") == SOURCE and support.get("source_sha256") == digest(new_bytes),
             "Substantive source/map hash differs")
     require(support.get("prepared_date") == "2026-10-03" and support.get("derived_from") == {
@@ -313,6 +315,7 @@ def negative_tests(root: Path, checker, require, error_type) -> list[str]:
              AUTHORING["tools/pdf/build_working_application.py"]]
     originals = {name: (root / name).read_bytes() for name in names}
     cases = [
+        ("substantive_edition_identity_drift_rejected", "Substantive edition identity differs"),
         ("substantive_consistent_outcome_promotion_rejected", "Substantive reviewed additions differ"),
         ("substantive_inherited_claim_change_rejected", "Substantive historical claim records differ"),
         ("substantive_claim_review_omission_rejected", "Substantive claim review inventory differs"),
@@ -343,7 +346,9 @@ def negative_tests(root: Path, checker, require, error_type) -> list[str]:
             edition = json.loads(originals[EDITION])
             claims = json.loads(originals[CLAIM_REVIEW])
             technical = json.loads(originals[TECHNICAL_REVIEW])
-            if "consistent_outcome" in case:
+            if "edition_identity" in case:
+                support["edition"] = "theoretical review application 2026-10-01"
+            elif "consistent_outcome" in case:
                 source = source.replace("[0097] CALCULATED", "[0097] ESTABLISHED", 1)
                 support["source_sha256"] = digest(source.encode())
             elif "inherited_claim" in case:

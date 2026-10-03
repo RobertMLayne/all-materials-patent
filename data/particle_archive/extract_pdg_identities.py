@@ -298,6 +298,10 @@ def download(args: argparse.Namespace) -> None:
     # fetching bytes: metadata must never replace the database or its partial.
     require(len({destination, partial, observation_path}) == 3,
             "Destination, partial download and observation must be distinct paths")
+    require(all(left not in right.parents and right not in left.parents
+                for left, right in ((destination, partial), (destination, observation_path),
+                                    (partial, observation_path))),
+            "Destination, partial download and observation must not be ancestors or descendants")
     require(not (args.destination.exists() or args.destination.is_symlink() or destination.exists()),
             "Destination already exists; verify/reuse it instead of overwriting")
     require(not (requested_partial.exists() or requested_partial.is_symlink() or partial.exists()),

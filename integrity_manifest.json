@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 193,
+  "file_count": 194,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 32409,
-      "sha256": "1413632bdc3e09c8e1ad851f30a804c7047d783be76fa24609158e5d21fd0bca"
+      "size_bytes": 32931,
+      "sha256": "d6b0ae66263c7c6924a66064d1f67e2793787442c7245efb3621f03419974906"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -377,6 +377,11 @@
       "sha256": "2f91092c37f1c730cbd930a38e539cf89f33347fc36c4843bb782d971fad8f4d"
     },
     {
+      "path": "data/edition_identity_corrections_2026-10-03.json",
+      "size_bytes": 1241,
+      "sha256": "d2bc38c8c9e15bab45038688bebcdf90967e5e2460662572590c1f358c46f5a4"
+    },
+    {
       "path": "data/electrical_candidate_record_review_2026-09-30.json",
       "size_bytes": 11953,
       "sha256": "7819e70baf4bda6d3cfb993d223bd7e4c2ba01ee1910f566971fb188dc120c08"
@@ -508,8 +513,8 @@
     },
     {
       "path": "data/particle_archive/extract_pdg_identities.py",
-      "size_bytes": 21272,
-      "sha256": "eaa0568287fdd9f1b2dd6910972b06bf53a8cb721dd3c71d9baf8ea7dfbf5132"
+      "size_bytes": 21602,
+      "sha256": "b94583e22d78b79c4bd971ed8988cb89e69c80cc0fe21b2ecac18647000730f2"
     },
     {
       "path": "data/particle_archive/pdg2026_identity_archive.json",
@@ -618,8 +623,8 @@
     },
     {
       "path": "documents/application_substantive_review_2026-10-03.md",
-      "size_bytes": 27996,
-      "sha256": "b9002b3c89beaccae5557d710f31d893b9045130fda692e3e328e7ef295a904d"
+      "size_bytes": 32678,
+      "sha256": "a34ff6fc7161556a46d68c580a7214cd96cdb1d91f45f2c29999e32718c42d09"
     },
     {
       "path": "documents/application_theoretical_review_2026-10-01.md",
@@ -968,8 +973,8 @@
     },
     {
       "path": "tools/substantive_review_checks.py",
-      "size_bytes": 28650,
-      "sha256": "8ba48cbfd9ccf6d0a7eeb4ceb5ca24d0f114f9f3ce322fc523502fe389499a89"
+      "size_bytes": 29008,
+      "sha256": "d2f8401286544a0db277b34f6f5bc8d95d945f27771faaf7073a20c96df9037d"
     },
     {
       "path": "tools/technical_review_calculations.py",
@@ -983,8 +988,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 227779,
-      "sha256": "3a7bc384760d659d4585eb3a9c10be534dbb384a380d329ceb645dab13600320"
+      "size_bytes": 235289,
+      "sha256": "412a2070422d52828dcf645516987a2db2f13a227782ef66ff3b49e782f34cfa"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
