@@ -1,0 +1,1133 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-03",
+  "review_type": "Substantive mathematical and physical-coherence review",
+  "evidence_status": "CALCULATED bookkeeping checks and PROPOSED/UNSUPPORTED physical branches; attributed existing source facts remain attributed.",
+  "applicant_physical_experiments_performed": false,
+  "applicant_physical_experiments_planned": false,
+  "full_scope_physical_enablement_established": false,
+  "universal_defensive_preemption_established": false,
+  "new_preparation_or_measurement_results_added": false,
+  "source_baseline_hashes": [
+    {
+      "path": "documents/provisional_application_theoretical_review_2026-10-01.md",
+      "sha256": "61ffc4ec1aa89d32dcc4cd44d35852a4b315b13d514c2898c4aabf460e3235f7"
+    },
+    {
+      "path": "data/claim_support_map_theoretical_review_2026-10-01.json",
+      "sha256": "49dd2b782033940cf5d77bf6168f8eba345329ec189f29406e791d9ee91426f1"
+    },
+    {
+      "path": "documents/pdf/provisional_application_theoretical_review_2026-10-01.pdf",
+      "sha256": "8ffb4207a9cfbab5f467a6848c020ffef01e8fc47c57c49e681ea6c80e0b3049"
+    },
+    {
+      "path": "data/application_theoretical_review_2026-10-01.json",
+      "sha256": "ceb71a7297ee95faf80e76841ac38cad30dbacf0f16d9297cc8cf3ce5fbb8825"
+    }
+  ],
+  "baseline_repository_revision_observed": "c446585e5cd85cf24b9b37339a567a58a38f1c02",
+  "reviewed_specification": {
+    "path": "documents/provisional_application_substantive_review_2026-10-03.md",
+    "sha256": "5ccb71d5448a07f41041302f4be2b962e9a214c83b2f92e39ed642a3b8b1ec23",
+    "paragraph_count": 99,
+    "claim_count": 199
+  },
+  "review_scope": {
+    "numbered_paragraphs": "0001-0099",
+    "candidate_claims": "1-199, reviewed by substantive group",
+    "families": [
+      "elemental composition domains and exact intervals",
+      "alloys",
+      "glasses and amorphous phases",
+      "inorganic and defect-bearing oxides",
+      "molecular phases and hydrates",
+      "linear polymers and finite chain populations",
+      "crosslinked hydrogels and network topology",
+      "structural and electrical composites",
+      "isotope and nuclear-state inventories",
+      "particle and host-excitation systems",
+      "conditional property mechanisms and normalized uncertainty"
+    ],
+    "boundaries": "Mathematical identities and explicit model assumptions were checked. Full physical availability, preparation, identity, persistence, properties, enablement, novelty and inventorship were not established."
+  },
+  "standards_followed": [
+    "Repository evidence labels distinguish ESTABLISHED attribution, CALCULATED model consequences, PROPOSED unperformed branches and UNSUPPORTED missing physical support.",
+    "Exact rational fractions, normalization, finite count compatibility and identified atomic/mass/constituent bases follow the package conventions.",
+    "Independent examples used Python 3.12.10 standard-library Fraction arithmetic; approximate decimal conversions used Decimal with precision 40.",
+    "The original 94 numbered paragraphs and all 199 candidate claims are preserved verbatim; new clarifications are separately numbered."
+  ],
+  "overall_result": "The accounting formulas are coherent under their express assumptions. Eight identified narrative corrections or qualifications are addressed by added paragraphs [0095]-[0099]; no fatal arithmetic contradiction or further necessary narrative correction was found. Arbitrary physical preparation and property scope remain unresolved.",
+  "findings": [
+    {
+      "id": "TECH-01",
+      "severity": "moderate refinement",
+      "paragraphs": [
+        "0008",
+        "0017",
+        "0047",
+        "0090"
+      ],
+      "claims": [
+        169,
+        170,
+        171,
+        172,
+        173
+      ],
+      "independent_example": {
+        "elemental_atomic": [
+          "1/2",
+          "1/2"
+        ],
+        "first_element_conditional_states": [
+          "1/2",
+          "1/2"
+        ],
+        "second_element_conditional_states": [
+          "1"
+        ],
+        "N": 2,
+        "element_counts": [
+          "1",
+          "1"
+        ],
+        "joint_state_counts": [
+          "1/2",
+          "1/2",
+          "1"
+        ],
+        "joint_primitive_denominator": 4
+      },
+      "issue_at_baseline": "Elemental finite-count compatibility does not by itself ensure the requested conditional isotope-state profile is compatible with the same chosen total atom inventory. Paragraph 0090 enforces each stock contribution, but a general joint-inventory rule is not printed explicitly.",
+      "baseline_recommendation": "For a finite whole atomic inventory N, each requested isotope-state count N*a_i*y_i,a,s must be a nonnegative integer, with positive count for every populated entry. When the complete joint atomic vector is rational, N must be a positive multiple of its primitive denominator. If the declared material basis is mass fraction, first obtain atomic fractions using the qualified conversion; unresolved masses leave that conversion unresolved. This joint count condition supplies bookkeeping compatibility, not existence, preparation or persistence.",
+      "disposition": {
+        "status": "addressed_in_review_narrative",
+        "type": "narrative_clarification",
+        "added_paragraphs": [
+          "0097"
+        ],
+        "resolution": "The joint finite isotope/nuclear-state count condition and the different elemental/joint primitive denominators are printed explicitly, with N=2 and N=4 examples. Qualified conversion precedes the condition for a mass-basis record.",
+        "physical_scope_status": "Arbitrary physical preparation, identity, persistence and property scope remain unresolved; this narrative disposition supplies no physical realization."
+      }
+    },
+    {
+      "id": "TECH-02",
+      "severity": "moderate refinement",
+      "paragraphs": [
+        "0008",
+        "0017",
+        "0034",
+        "0035",
+        "0082",
+        "0083",
+        "0086"
+      ],
+      "claims": [
+        174,
+        176,
+        181,
+        182
+      ],
+      "independent_example": {
+        "fixed_unit": "Intact benzene C6H6",
+        "atomic_profile_H_C": [
+          "1/2",
+          "1/2"
+        ],
+        "elemental_primitive_denominator": 2,
+        "N_elementally_compatible": 2,
+        "required_whole_unit_atoms": 12,
+        "whole_molecule_inventory": "N=12*m for nonnegative integer m; positive m for a nonempty pure molecular inventory"
+      },
+      "primary_source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=71432",
+      "issue_at_baseline": "Primitive elemental-denominator compatibility can admit fractions of a required whole molecular or formula unit. Paragraph 0083 mentions finite-count compatibility without spelling out the stronger whole-unit or occupation constraint. Existing integer packet model and molecular-unit model already provide the appropriate construction.",
+      "baseline_recommendation": "Elemental atom-count compatibility is necessary but does not by itself ensure whole molecular/formula units, site occupations or structural identity. Where a phase is modeled as intact specified packets or units, require nonnegative integer unit populations and the corresponding complete atom counts as in [0082] and [0086]; additional structural occupation and charge constraints remain separate.",
+      "disposition": {
+        "status": "addressed_in_review_narrative",
+        "type": "narrative_clarification",
+        "added_paragraphs": [
+          "0095",
+          "0097"
+        ],
+        "resolution": "Whole formula units, molecules and site multiplicities have their own stronger constraints. The intact C6H6 example separates elemental denominator2 from 12-atom whole units.",
+        "physical_scope_status": "Arbitrary physical preparation, identity, persistence and property scope remain unresolved; this narrative disposition supplies no physical realization."
+      }
+    },
+    {
+      "id": "TECH-03",
+      "severity": "moderate refinement",
+      "paragraphs": [
+        "0012",
+        "0036",
+        "0089"
+      ],
+      "claims": [
+        178,
+        183
+      ],
+      "issue_at_baseline": "Origin-allocated mass categories after reaction need not correspond to realized physical phases with independently additive volumes. The phrase compatible additive constituent volumes guards the formula, but should explicitly stop use of stock densities for transformed cured categories.",
+      "baseline_recommendation": "The volume relation applies only where j labels nonoverlapping realized retained phases or constituents with justified densities at the stated observation conditions and an applicable additive volume allocation. A stock-origin mass allocation after reaction does not by itself define a constituent volume or justify use of the original stock density. Require V_void>=0 and use phi_void=V_void/(sum_j V_j+V_void).",
+      "disposition": {
+        "status": "addressed_in_review_narrative",
+        "type": "narrative_clarification",
+        "added_paragraphs": [
+          "0096"
+        ],
+        "resolution": "Origin allocations are distinguished from realized physical phases and volumes; the additive branch requires disjoint retained constituents, justified densities, finite nonnegative void volume and positive total volume.",
+        "physical_scope_status": "Arbitrary physical preparation, identity, persistence and property scope remain unresolved; this narrative disposition supplies no physical realization."
+      }
+    },
+    {
+      "id": "TECH-04",
+      "severity": "minor correction",
+      "paragraphs": [
+        "0082",
+        "0084"
+      ],
+      "claims": [
+        185,
+        186
+      ],
+      "issue_at_baseline": "Paragraph 0084 calls the elemental conservation equation of 0082 charge balance. The equation conserves elemental atoms; it contains no electrical charges, electron/current balance or species/oxidation-state constraint.",
+      "baseline_recommendation": "Replace Charge balance in [0082] with Elemental atom balance in [0082]. Retain independently supplied species, reaction and charge/conservation constraints where they matter.",
+      "disposition": {
+        "status": "addressed_in_review_narrative",
+        "type": "narrative_correction",
+        "added_paragraphs": [
+          "0099"
+        ],
+        "resolution": "The retained phrase Charge balance in 0082 is expressly qualified as elemental atom balance, not electrical charge conservation. The original paragraph is preserved.",
+        "physical_scope_status": "Arbitrary physical preparation, identity, persistence and property scope remain unresolved; this narrative disposition supplies no physical realization."
+      }
+    },
+    {
+      "id": "TECH-05",
+      "severity": "minor explicit domain refinement",
+      "paragraphs": [
+        "0083",
+        "0090"
+      ],
+      "claims": [
+        182,
+        169,
+        173
+      ],
+      "issue_at_baseline": "Make nonempty mixture domains explicit rather than leaving positive denominator and profile normalization implicit in counted profiles.",
+      "baseline_recommendation": "For [0083], require a finite selected phase list, N_a nonnegative integers, sum_a N_a>0, c_e,a>=0, sum_e c_e,a=1, and N_a*c_e,a integral where a counted finite profile is asserted. For [0090], require N_j nonnegative integers with sum_j N_j>0 and y_j,s>=0 with sum_s y_j,s=1 for each populated stock, in addition to the existing contributed sub-count integrality rule.",
+      "disposition": {
+        "status": "addressed_in_review_narrative",
+        "type": "narrative_clarification",
+        "added_paragraphs": [
+          "0095"
+        ],
+        "resolution": "Complete profiles are nonnegative and normalized, finite atom totals have positive sum, and all per-phase and per-stock contributions are integral for exact finite-count descriptions. Ensemble-average profiles remain distinct.",
+        "physical_scope_status": "Arbitrary physical preparation, identity, persistence and property scope remain unresolved; this narrative disposition supplies no physical realization."
+      }
+    },
+    {
+      "id": "TECH-06",
+      "severity": "minor explicit domain refinement",
+      "paragraphs": [
+        "0087",
+        "0088",
+        "0089"
+      ],
+      "claims": [
+        177,
+        178,
+        183
+      ],
+      "issue_at_baseline": "The referenced chain model already states R>=K>=1, while the new population and topology paragraphs could print their integer-domain and population consistency assumptions directly. A partially lost category still has positive support if its retained mass remains positive.",
+      "baseline_recommendation": "Use nonnegative integer K_n with K=sum_n K_n>0 and, when linking to the hydroxyl/carboxyl chain model, R=sum_n n*K_n with positive integer repeat lengths n and R>=K. State L,B,C,P,U,A are nonnegative integers. Replace a lost category leaves its positive support with a category whose retained mass is zero is omitted from the positive support; partial loss changes its positive fraction.",
+      "disposition": {
+        "status": "addressed_in_review_narrative",
+        "type": "narrative_clarification",
+        "added_paragraphs": [
+          "0096",
+          "0099"
+        ],
+        "resolution": "Positive support is removed only at zero retained mass. Chain repeat and population domains, K/R consistency, and linker/host-group nonnegative integer domains are printed explicitly.",
+        "physical_scope_status": "Arbitrary physical preparation, identity, persistence and property scope remain unresolved; this narrative disposition supplies no physical realization."
+      }
+    },
+    {
+      "id": "TECH-07",
+      "severity": "minor indexing clarification",
+      "paragraphs": [
+        "0015",
+        "0040",
+        "0087"
+      ],
+      "claims": [
+        177,
+        187
+      ],
+      "issue_at_baseline": "The inherited PLA evidence presents a tuple in (C,H,O) order whereas canonical support indexing uses increasing atomic number, giving (H,C,O). Coordinate-labelled presentations are mathematically unambiguous, but the distinction should be explicit in any new edition rather than rewriting the retained edition.",
+      "baseline_recommendation": "A labelled formula/count tuple may use a declared presentation order; canonical support records reorder the labels and corresponding coordinates together by increasing atomic number. For the ideal PLA repeat, canonical (H,C,O) coordinates are (4/9,1/3,2/9).",
+      "disposition": {
+        "status": "addressed_in_review_narrative",
+        "type": "narrative_clarification",
+        "added_paragraphs": [
+          "0096"
+        ],
+        "resolution": "Local coordinate display order is distinguished from canonical ascending atomic number; the H,C,O repeat vector and finite-chain permutation are correct.",
+        "physical_scope_status": "Arbitrary physical preparation, identity, persistence and property scope remain unresolved; this narrative disposition supplies no physical realization."
+      }
+    },
+    {
+      "id": "TECH-08",
+      "severity": "residual physical qualification, not an arithmetic error",
+      "paragraphs": [
+        "0063",
+        "0084"
+      ],
+      "claims": [
+        175,
+        197,
+        198
+      ],
+      "primary_source": "https://www.nature.com/articles/ncomms10313",
+      "source_fact": "Primary metallic-glass paper describes temperature-dependent crystallization waiting time with a TTT nose, local cooling geometry, and separate nucleation/growth behavior.",
+      "issue_at_baseline": "Unweighted window residence W alone does not order crystallization probability or crystalline signal for different thermal paths. The existing text already says W supplies no critical cooling condition and different trajectories/nucleation can defeat the branch; retain that qualification and avoid promoting W to a predictor.",
+      "baseline_recommendation": "If a lower-residence signal hypothesis is retained, state its applicability additionally depends on comparable or otherwise justified temperature-dependent nucleation/growth behavior and initial nuclei. No temperature window, kinetic law, critical threshold or rate is supplied for an unsupported composition.",
+      "disposition": {
+        "status": "addressed_in_review_narrative",
+        "type": "narrative_qualification",
+        "added_paragraphs": [
+          "0099"
+        ],
+        "resolution": "W remains a descriptive path functional; comparative response requires applicable temperature-dependent nucleation/growth behavior, initial nuclei, local paths and matched observations. Equal W can have different outcomes; no unsupported kinetic predictor is supplied.",
+        "physical_scope_status": "Arbitrary physical preparation, identity, persistence and property scope remain unresolved; this narrative disposition supplies no physical realization."
+      }
+    }
+  ],
+  "baseline_new_paragraph_coverage": [
+    {
+      "paragraph": "0081",
+      "status": "coherent",
+      "notes": "Evidence labels and unperformed theoretical status preserved; no successful arbitrary material implied."
+    },
+    {
+      "paragraph": "0082",
+      "status": "coherent with terminology refinement in 0084",
+      "notes": "Integer packet balances and N*x integrality correct. Unconstrained ingress/loss variables cannot establish a physical inverse recipe; known streams and removal mechanisms remain necessary."
+    },
+    {
+      "paragraph": "0083",
+      "status": "coherent with explicit domain and whole-unit refinements",
+      "notes": "Atom-weighted convex-hull identity correct for disjoint complete profiles and nonempty total; coexistence, phase occupations, interfaces and other boundaries remain separate."
+    },
+    {
+      "paragraph": "0084",
+      "status": "coherent with minor correction and retained kinetic qualification",
+      "notes": "Atom balance is not charge balance. Window residence functional has time units and cannot by itself predict crystallization."
+    },
+    {
+      "paragraph": "0085",
+      "status": "coherent",
+      "notes": "TiO2+delta H2 -> TiO(2-delta)+delta H2O balances Ti/O/H. V=N*delta integral and 0<=V<2N preserve positive Ti/O host; no thermodynamics, site map or phase is inferred. Restricted TiIII/TiIV model applies only to delta<=1/2."
+    },
+    {
+      "paragraph": "0086",
+      "status": "coherent",
+      "notes": "CBZ unsolvated/dihydrate counts, totals, formula-unit and atom weights correct; fixed-unit mixture distinguishes phase assembly from variable hydrate occupancy."
+    },
+    {
+      "paragraph": "0087",
+      "status": "coherent with direct consistency assumptions recommended",
+      "notes": "Conditional chain formula and number/weight averages correct under one mass convention; neither gives full distribution, source ends or mechanical outcome."
+    },
+    {
+      "paragraph": "0088",
+      "status": "coherent",
+      "notes": "Linker partition and end-count inequalities correct. B upper bound is necessary only; group locations, graph connectivity and effectiveness remain unresolved. Both illustrative populations consume eight ends."
+    },
+    {
+      "paragraph": "0089",
+      "status": "coherent with retained-phase volume refinement",
+      "notes": "Retention normalization and unit-direction tensor invariants correct. Mass categories, physical volume categories and transport connectivity remain distinct."
+    },
+    {
+      "paragraph": "0090",
+      "status": "coherent with joint-state inventory refinement",
+      "notes": "Finite stock mixing convexity and per-stock integer counts correct. Decay/daughters, reference time and unknown positive-state masses retained."
+    },
+    {
+      "paragraph": "0091",
+      "status": "coherent",
+      "notes": "Noninteracting positive-energy excitation shares normalize; zero populations omit unknown energies; zero excitation has no denominator. Quantum restrictions, host and conservation are correctly independent."
+    },
+    {
+      "paragraph": "0092",
+      "status": "coherent",
+      "notes": "Chain rule is exact on differentiable chosen model branches; sign not fixed by a direct term. Other observables and discontinuities correctly separated."
+    },
+    {
+      "paragraph": "0093",
+      "status": "coherent",
+      "notes": "Deterministic normalized mass bounds and Jacobian are correct; covariance scaling 10000 for percentages is correct. Input covariance, linearization validity and residual completeness remain necessary."
+    },
+    {
+      "paragraph": "0094",
+      "status": "coherent",
+      "notes": "Review completion is separate from universal physical support; no applicant experiment schedule or success is invented."
+    }
+  ],
+  "independent_calculation_checks": [
+    {
+      "id": "C01",
+      "check": "Glass nominal target",
+      "result": "passed",
+      "values": {
+        "sum": "1",
+        "primitive_denominator": 1000
+      },
+      "inputs": {
+        "nominal_integer_vector_B_Si_P_Cr_Ni_Nb": [
+          32,
+          5,
+          160,
+          87,
+          686,
+          30
+        ],
+        "normalization_denominator": 1000
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C02",
+      "check": "Alloy below-grid carbon",
+      "result": "passed",
+      "values": {
+        "carbon": "1/100000000000000000000",
+        "primitive_denominator": "400000000000000000000"
+      },
+      "inputs": {
+        "L": "100000000000000000000",
+        "carbon_count": 4,
+        "equal_principal_count_each": "99999999999999999999",
+        "principal_categories": 4,
+        "positive_grid_floor": "1/10000000000000000000"
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C03",
+      "check": "Ti4O7 target and restricted charge",
+      "result": "passed",
+      "values": {
+        "atomic": [
+          "4/11",
+          "7/11"
+        ],
+        "vacancy_reference_fraction": "1/8",
+        "TiIII_fraction": "1/2",
+        "formal_charge_sum": 0
+      },
+      "inputs": {
+        "Ti_count": 4,
+        "O_count": 7,
+        "assumed_reference_O_sites": 8,
+        "formal_TiIII_count": 2,
+        "formal_TiIV_count": 2,
+        "formal_O_charge": -2
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C04",
+      "check": "PIC monomer-only feed",
+      "result": "passed",
+      "values": {
+        "counts": [
+          11465,
+          19635,
+          1715,
+          4902
+        ],
+        "total": 37717
+      },
+      "inputs": {
+        "methoxy_formula_counts_C_H_N_O": [
+          14,
+          24,
+          2,
+          6
+        ],
+        "azide_formula_counts_C_H_N_O": [
+          15,
+          25,
+          5,
+          6
+        ],
+        "nominal_input_amounts_micromol": [
+          790,
+          27
+        ],
+        "basis": "Proportional monomer-only input amounts in micromoles; not the integer atom count of a specimen."
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C05",
+      "check": "0086 two unsolvated plus one dihydrate units",
+      "result": "passed",
+      "values": {
+        "counts": [
+          40,
+          45,
+          6,
+          5
+        ],
+        "total": 96,
+        "dihydrate_unit_fraction": "1/3",
+        "dihydrate_atom_weight": "3/8",
+        "atomic": [
+          "5/12",
+          "15/32",
+          "1/16",
+          "5/96"
+        ]
+      },
+      "inputs": {
+        "unsolvated_unit_count": 2,
+        "dihydrate_unit_count": 1,
+        "unsolvated_atom_counts_H_C_N_O": [
+          12,
+          15,
+          2,
+          1
+        ],
+        "dihydrate_atom_counts_H_C_N_O": [
+          16,
+          15,
+          2,
+          3
+        ]
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C06",
+      "check": "0087 n=2 and n=3 conditional chains and separate toy averages",
+      "result": "passed",
+      "values": {
+        "R": 5,
+        "K": 2,
+        "counts_C_H_O": [
+          15,
+          24,
+          12
+        ],
+        "total": 51,
+        "toy_chain_counts": [
+          3,
+          1
+        ],
+        "toy_masses": [
+          2,
+          4
+        ],
+        "Mn": "5/2",
+        "Mw": "14/5"
+      },
+      "inputs": {
+        "conditional_chain_repeat_lengths": [
+          2,
+          3
+        ],
+        "conditional_chain_population": [
+          1,
+          1
+        ],
+        "separate_average_example_chain_population": [
+          3,
+          1
+        ],
+        "separate_average_example_masses": [
+          2,
+          4
+        ],
+        "mass_convention": "Anonymous positive masses in one common arbitrary unit; not physical source-polymer masses."
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C07",
+      "check": "0088 alternative linker populations",
+      "result": "passed",
+      "values": {
+        "populations": [
+          [
+            4,
+            0,
+            0,
+            6
+          ],
+          [
+            0,
+            4,
+            0,
+            6
+          ]
+        ],
+        "L": 10,
+        "consumed_ends": [
+          8,
+          8
+        ]
+      },
+      "inputs": {
+        "L": 10,
+        "available_host_groups_A": 8,
+        "populations_B_C_P_U": [
+          [
+            4,
+            0,
+            0,
+            6
+          ],
+          [
+            0,
+            4,
+            0,
+            6
+          ]
+        ]
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C08",
+      "check": "0089 retained mass and additive volume example",
+      "result": "passed",
+      "values": {
+        "retained_mass": [
+          "2",
+          "3/2"
+        ],
+        "mass_fractions": [
+          "4/7",
+          "3/7"
+        ],
+        "densities": [
+          "2",
+          "3"
+        ],
+        "void_volume": "1/2",
+        "constituent_volume_fractions": [
+          "1/2",
+          "1/4"
+        ],
+        "void_fraction": "1/4"
+      },
+      "inputs": {
+        "input_masses": [
+          "2",
+          "3"
+        ],
+        "retained_factors": [
+          "1",
+          "1/2"
+        ],
+        "densities": [
+          "2",
+          "3"
+        ],
+        "void_volume": "1/2",
+        "unit_convention": "Anonymous compatible mass/density/volume units in an expressly additive model."
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C09",
+      "check": "0089 orientation tensor example",
+      "result": "passed",
+      "values": {
+        "diagonal": [
+          "1/2",
+          "1/2",
+          "0"
+        ],
+        "trace": "1",
+        "symmetric": true,
+        "positive_semidefinite": true
+      },
+      "inputs": {
+        "unit_directions": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "normalized_weights": [
+          "1/2",
+          "1/2"
+        ]
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C10",
+      "check": "0090 isotope stock example",
+      "result": "passed",
+      "values": {
+        "stock_totals": [
+          4,
+          3
+        ],
+        "stock_profiles": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "state_counts": [
+          2,
+          5
+        ],
+        "conditional_profile": [
+          "2/7",
+          "5/7"
+        ]
+      },
+      "inputs": {
+        "stock_atom_totals": [
+          4,
+          3
+        ],
+        "conditional_state_profiles": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "state_convention": "Anonymous classical count states; no physical isotope identity or availability asserted."
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C11",
+      "check": "Joint isotope compatibility counterexample",
+      "result": "passed",
+      "values": {
+        "elemental_primitive_denominator": 2,
+        "joint_primitive_denominator": 4,
+        "N2_elemental_counts": [
+          1,
+          1
+        ],
+        "N2_joint_counts": [
+          "1/2",
+          "1/2",
+          "1"
+        ],
+        "N4_elemental_counts": [
+          2,
+          2
+        ],
+        "N4_joint_counts": [
+          "1",
+          "1",
+          "2"
+        ]
+      },
+      "inputs": {
+        "elemental_atomic": [
+          "1/2",
+          "1/2"
+        ],
+        "within_element_conditional_states": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1"
+          ]
+        ],
+        "inventory_totals": [
+          2,
+          4
+        ]
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C12",
+      "check": "0091 noninteracting excitation toy example",
+      "result": "passed",
+      "values": {
+        "populations": [
+          2,
+          3,
+          0
+        ],
+        "energies": [
+          1,
+          2,
+          null
+        ],
+        "E_exc": 8,
+        "energy_shares": [
+          "1/4",
+          "3/4",
+          "0"
+        ]
+      },
+      "inputs": {
+        "excitation_counts": [
+          2,
+          3,
+          0
+        ],
+        "per_excitation_energies": [
+          1,
+          2,
+          null
+        ],
+        "energy_convention": "Anonymous common energy unit; zero-population energy is unprovided and unevaluated."
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C13",
+      "check": "0092 chain-rule sign toy example",
+      "result": "passed",
+      "values": {
+        "model": "P(u,z)=u+z, z(u)=-2u",
+        "direct_derivative": 1,
+        "linked_derivative": -2,
+        "total_derivative": -1
+      },
+      "inputs": {
+        "P": "u+z",
+        "z": "-2*u",
+        "model_convention": "Differentiable anonymous scalar bookkeeping example; not an actual material constitutive law."
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C14",
+      "check": "0093 bounds and exact Jacobian/covariance algebra",
+      "result": "passed",
+      "values": {
+        "input_bounds": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "fraction_bounds": [
+          [
+            "2/7",
+            "4/7"
+          ],
+          [
+            "3/7",
+            "5/7"
+          ]
+        ],
+        "mass_point": [
+          2,
+          3
+        ],
+        "J": [
+          [
+            "3/25",
+            "-2/25"
+          ],
+          [
+            "-3/25",
+            "2/25"
+          ]
+        ],
+        "input_covariance": [
+          [
+            "1/100",
+            "0"
+          ],
+          [
+            "0",
+            "1/25"
+          ]
+        ],
+        "fraction_covariance": [
+          [
+            "1/2500",
+            "-1/2500"
+          ],
+          [
+            "-1/2500",
+            "1/2500"
+          ]
+        ],
+        "percent_covariance": [
+          [
+            4,
+            -4
+          ],
+          [
+            -4,
+            4
+          ]
+        ]
+      },
+      "inputs": {
+        "deterministic_mass_bounds": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "separate_local_mass_point": [
+          2,
+          3
+        ],
+        "separate_input_covariance": [
+          [
+            "1/100",
+            "0"
+          ],
+          [
+            "0",
+            "1/25"
+          ]
+        ],
+        "branch_relationship": "The deterministic rectangular bounds and local covariance algebra are separate stipulated examples; no common distribution or confidence interval is inferred."
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    },
+    {
+      "id": "C15",
+      "check": "Trace mole and electrical percent-coordinate conversion",
+      "result": "passed",
+      "values": {
+        "mol_for_1e19_atoms": "0.00001660539067173846663790037348778277311472",
+        "electrical_threshold_fraction": "443/100000",
+        "fraction_coordinate_prefactor_S_per_m": "6586.230843148275361320674792823230996949"
+      },
+      "inputs": {
+        "atom_inventory": "10000000000000000000",
+        "Avogadro_constant_per_mol": "602214076000000000000000",
+        "numerical_wt_percent_threshold": "0.443",
+        "source_fit_numerical_wt_percent_prefactor": "0.952",
+        "source_fit_exponent": "1.92",
+        "fraction_coordinate_scale": 100,
+        "decimal_working_precision": 40,
+        "precision_qualification": "Source fit numbers are adopted for this arithmetic conversion; their printed precision is not an exact product assay or uncertainty certification."
+      },
+      "evidence_status": "CALCULATED under the stated bookkeeping assumptions; no new measured or prepared result."
+    }
+  ],
+  "structured_test_vectors": {
+    "joint_isotope_counts": {
+      "evidence_status": "CALCULATED anonymous count model; no physical states supplied",
+      "paragraphs": [
+        "0090",
+        "0097"
+      ],
+      "elemental_atomic": [
+        "1/2",
+        "1/2"
+      ],
+      "within_element_state_atomic": [
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1"
+        ]
+      ],
+      "joint_state_labels": [
+        "A:s1",
+        "A:s2",
+        "B:s1"
+      ],
+      "joint_atomic": [
+        "1/4",
+        "1/4",
+        "1/2"
+      ],
+      "elemental_primitive_denominator": 2,
+      "joint_primitive_denominator": 4,
+      "inventories": [
+        {
+          "N": 2,
+          "elemental_counts": [
+            "1",
+            "1"
+          ],
+          "elemental_count_compatible": true,
+          "joint_state_counts": [
+            "1/2",
+            "1/2",
+            "1"
+          ],
+          "joint_count_compatible": false
+        },
+        {
+          "N": 4,
+          "elemental_counts": [
+            "2",
+            "2"
+          ],
+          "elemental_count_compatible": true,
+          "joint_state_counts": [
+            "1",
+            "1",
+            "2"
+          ],
+          "joint_count_compatible": true
+        }
+      ]
+    },
+    "whole_molecular_units": {
+      "evidence_status": "CALCULATED intact-unit inventory model; attributed molecular formula only",
+      "paragraphs": [
+        "0095",
+        "0097"
+      ],
+      "molecular_identity": "Benzene",
+      "formula": "C6H6",
+      "source_url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=71432",
+      "element_order": [
+        "H",
+        "C"
+      ],
+      "atom_counts_per_intact_unit": [
+        6,
+        6
+      ],
+      "atoms_per_intact_unit": 12,
+      "elemental_atomic": [
+        "1/2",
+        "1/2"
+      ],
+      "elemental_primitive_denominator": 2,
+      "positive_whole_unit_inventory_rule": "N=12*m with positive integer m",
+      "inventories": [
+        {
+          "N": 2,
+          "elemental_counts": [
+            "1",
+            "1"
+          ],
+          "elemental_count_compatible": true,
+          "molecule_count": "1/6",
+          "whole_molecule_count_compatible": false
+        },
+        {
+          "N": 12,
+          "elemental_counts": [
+            "6",
+            "6"
+          ],
+          "elemental_count_compatible": true,
+          "molecule_count": "1",
+          "whole_molecule_count_compatible": true
+        },
+        {
+          "N": 24,
+          "elemental_counts": [
+            "12",
+            "12"
+          ],
+          "elemental_count_compatible": true,
+          "molecule_count": "2",
+          "whole_molecule_count_compatible": true
+        }
+      ]
+    }
+  },
+  "new_edition_review": {
+    "status": "Paragraphs [0095]-[0099] reviewed; arithmetic and domain qualifications correct",
+    "inherited_numbered_paragraphs_preserved_exactly": 94,
+    "inherited_claims_preserved_exactly": 199,
+    "added_paragraphs": [
+      {
+        "paragraph": "0095",
+        "result": "Complete nonnegative normalized profiles, positive finite totals and per-phase/per-stock integer contributions are stated; whole-unit multiplicities and ensemble expectations are separate."
+      },
+      {
+        "paragraph": "0096",
+        "result": "Canonical H,C,O permutation, repeat vector and finite-chain tuple are correct; retained positive support and physical-volume categories are qualified."
+      },
+      {
+        "paragraph": "0097",
+        "result": "Joint isotope vectors and N=2/N=4 examples are correct; intact C6H6 requires N=12*m while elemental denominator is 2."
+      },
+      {
+        "paragraph": "0098",
+        "result": "Incremental finite-prefix enumeration is distinct from infinite-domain completion. The (0,1) boundary has no strictly positive binary witness."
+      },
+      {
+        "paragraph": "0099",
+        "result": "Elemental versus electrical balance terminology, finite nonempty chain population, nonnegative integer topology counts and temperature-dependent kinetics qualifications are coherent."
+      }
+    ]
+  },
+  "attributed_sources": [
+    {
+      "title": "NIST Chemistry WebBook: Benzene",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=71432",
+      "access_checked_date": "2026-10-03",
+      "supports": "Benzene molecular formula C6H6; the whole-unit versus elemental-count example is an independent calculation."
+    },
+    {
+      "title": "Johnson, Na and Demetriou: Quantifying the origin of metallic glass formation",
+      "url": "https://www.nature.com/articles/ncomms10313",
+      "publication_date": "2016-01-20",
+      "access_checked_date": "2026-10-03",
+      "supports": "Temperature-dependent crystallization waiting time with a TTT nose, local cooling geometry and separate nucleation/growth behavior. No source empirical law is adopted as a universal predictor for unsupported compositions."
+    }
+  ],
+  "calculation_limitations": "These examples independently check exact algebra and selected boundaries, not exhaustive physical domains. Toy masses, energies, covariances and derivatives are anonymous arithmetic inputs, not measured values for a real specimen. No claimed predictor or universal constitutive law was fitted.",
+  "residual_qualifications": [
+    {
+      "scope": "All physical-material claims 1-185",
+      "status": "unresolved full physical scope",
+      "detail": "Continuous numerical targets, exact supports, arbitrary rational ratios, hypothetically numbered elements and precise closed inventories do not establish availability, preparation, existence, phase identity, measurement or useful outcome. Review-complete drafting may retain these gaps."
+    },
+    {
+      "scope": "Isotope/state claims 169-173 and particle record claims 194-196",
+      "status": "unresolved physical access",
+      "detail": "Counts do not create absent states, provide lifetime or production/separation, establish coherent-state preparation, or solve containment/annihilation and quantum restrictions."
+    },
+    {
+      "scope": "Property-scenario claims 197-199 and material structure claims 174-183",
+      "status": "conditional only",
+      "detail": "Alternative signs need distinct conditional mechanisms and justified states. No magnitude or universal law follows from bookkeeping; existing source properties remain attributed and conditions unresolved where missing."
+    },
+    {
+      "scope": "Record/enumeration claims 186-193,197-199",
+      "status": "finite bounded implementation only",
+      "detail": "Algorithms express target domains and selected numerical fields. Finite tests do not complete infinite rational enumeration or every full material record; necessary chemistry and evidence fields remain unresolved."
+    }
+  ]
+}

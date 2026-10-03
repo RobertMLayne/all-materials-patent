@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 181,
+  "file_count": 193,
   "files": [
     {
       "path": ".editorconfig",
@@ -123,8 +123,8 @@
     },
     {
       "path": "AGENTS.md",
-      "size_bytes": 6345,
-      "sha256": "cea7828ffdb95a1ed1f95a3ad2cdddb729d87d4d7470aa232eb3bfd5a7b4e74e"
+      "size_bytes": 6628,
+      "sha256": "e231b39d12085bc88b85e05287c16c89f0dd644bc24dd159541054d12f282b9e"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 30938,
-      "sha256": "3e6572f919143324216b4d84ace7b23079ef6deb0c7351524bd4dca0de84ac68"
+      "size_bytes": 32409,
+      "sha256": "1413632bdc3e09c8e1ad851f30a804c7047d783be76fa24609158e5d21fd0bca"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -277,6 +277,26 @@
       "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
     },
     {
+      "path": "data/application_substantive_review_2026-10-03.json",
+      "size_bytes": 18864,
+      "sha256": "949673ac06f1111f8fc688003805981b3f46a1c514a77a5402ad41d974345199"
+    },
+    {
+      "path": "data/application_substantive_review_authoring_2026-10-03/builder.py.txt",
+      "size_bytes": 30704,
+      "sha256": "fa0b79b06f04aeb18184debb6b712803d43855862a236cc0fc101a4b6b27afe7"
+    },
+    {
+      "path": "data/application_substantive_review_authoring_2026-10-03/layout.py.txt",
+      "size_bytes": 28711,
+      "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8"
+    },
+    {
+      "path": "data/application_substantive_review_authoring_2026-10-03/output_helper.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
       "path": "data/application_theoretical_review_2026-10-01.json",
       "size_bytes": 18334,
       "sha256": "ceb71a7297ee95faf80e76841ac38cad30dbacf0f16d9297cc8cf3ce5fbb8825"
@@ -295,6 +315,11 @@
       "path": "data/application_theoretical_review_authoring_2026-10-01/output_helper.py.txt",
       "size_bytes": 37887,
       "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
+      "path": "data/claim_review_2026-10-03.json",
+      "size_bytes": 1542468,
+      "sha256": "0a624b5a57e100582cc08f39ad138ff22585ee7afcd20f685e0653c30808a942"
     },
     {
       "path": "data/claim_support_map.json",
@@ -335,6 +360,11 @@
       "path": "data/claim_support_map_property_evidence_2026-09-30.json",
       "size_bytes": 153963,
       "sha256": "a48393c446e6e8ccf230993a8cda4032263fbdf67dd3bcce1b42e1f572a7bde9"
+    },
+    {
+      "path": "data/claim_support_map_substantive_review_2026-10-03.json",
+      "size_bytes": 154721,
+      "sha256": "325102864ecbe4065d2e3dfa138383dab6a9aa1e84fb09cff2531ddcf4f06b8d"
     },
     {
       "path": "data/claim_support_map_theoretical_review_2026-10-01.json",
@@ -517,6 +547,11 @@
       "sha256": "9037d1632aba8a559df22184912316494a9b523b0c63f0b26ddc43d391650f67"
     },
     {
+      "path": "data/technical_review_2026-10-03.json",
+      "size_bytes": 41041,
+      "sha256": "a6e8c869e6f8cf7a2b4ec85929aebe847f7c9aacc2d1c51755efa7a00d8b8550"
+    },
+    {
       "path": "data/working_application_2026-09-30.json",
       "size_bytes": 12369,
       "sha256": "fd84b90ead0e99f58ce6b2bf1c8a91987ac1172e70135c78ff623f787ee1b9cf"
@@ -580,6 +615,11 @@
       "path": "documents/application_property_evidence_2026-09-30.md",
       "size_bytes": 6790,
       "sha256": "c4d4b140e7ecf79572b347e175f0af35d6208b50fd5a813ddd061f36f9b3264a"
+    },
+    {
+      "path": "documents/application_substantive_review_2026-10-03.md",
+      "size_bytes": 27996,
+      "sha256": "b9002b3c89beaccae5557d710f31d893b9045130fda692e3e328e7ef295a904d"
     },
     {
       "path": "documents/application_theoretical_review_2026-10-01.md",
@@ -712,6 +752,11 @@
       "sha256": "b1babb2c6694aed47bde8a6dda6e47bd93ee13a6844e9bb4919a9fe2661adc02"
     },
     {
+      "path": "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+      "size_bytes": 234355,
+      "sha256": "531dccb58202a5cd6cb24f307a2173ed38abac49ec1d251ed8f3e8a743697a9c"
+    },
+    {
       "path": "documents/pdf/provisional_application_theoretical_review_2026-10-01.pdf",
       "size_bytes": 229894,
       "sha256": "8ffb4207a9cfbab5f467a6848c020ffef01e8fc47c57c49e681ea6c80e0b3049"
@@ -770,6 +815,11 @@
       "path": "documents/provisional_application_property_evidence_2026-09-30.md",
       "size_bytes": 83974,
       "sha256": "b311bc0f86eb4b15955a275ba0539bcc8753a59052411739288a645f7ee2476e"
+    },
+    {
+      "path": "documents/provisional_application_substantive_review_2026-10-03.md",
+      "size_bytes": 165484,
+      "sha256": "5ccb71d5448a07f41041302f4be2b962e9a214c83b2f92e39ed642a3b8b1ec23"
     },
     {
       "path": "documents/provisional_application_theoretical_review_2026-10-01.md",
@@ -903,8 +953,8 @@
     },
     {
       "path": "tools/pdf/build_working_application.py",
-      "size_bytes": 29802,
-      "sha256": "527a3c8a0b196b07938cae9e08f28fd0a9ee11a0317a8ef70cb1d450965330b9"
+      "size_bytes": 30704,
+      "sha256": "fa0b79b06f04aeb18184debb6b712803d43855862a236cc0fc101a4b6b27afe7"
     },
     {
       "path": "tools/pdf/requirements-pdf.txt",
@@ -917,14 +967,24 @@
       "sha256": "529f077d5efa3db15fd67f4c107bc64e684e3bfab7b71b83d6e81b3162895069"
     },
     {
+      "path": "tools/substantive_review_checks.py",
+      "size_bytes": 28650,
+      "sha256": "8ba48cbfd9ccf6d0a7eeb4ceb5ca24d0f114f9f3ce322fc523502fe389499a89"
+    },
+    {
+      "path": "tools/technical_review_calculations.py",
+      "size_bytes": 25578,
+      "sha256": "a41bc07c4534aa0c5a3aedf68b5c2c97a443838e7e381a8f5d8311e286597122"
+    },
+    {
       "path": "tools/update_manifest.py",
       "size_bytes": 4785,
       "sha256": "196a2def8e20b8e31bf14f4ff3f2b3dc162472eba45766db9e370eeb5b9ec0e4"
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 225768,
-      "sha256": "6ad49b190a9827e65c2928a269e39121b68eab493731d2498feb45cbe1582f59"
+      "size_bytes": 227779,
+      "sha256": "3a7bc384760d659d4585eb3a9c10be534dbb384a380d329ceb645dab13600320"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

@@ -1,0 +1,715 @@
+{
+  "prepared_date": "2026-10-03",
+  "edition_status": "substantively reviewed unfiled theoretical provisional draft",
+  "repository_baseline": "4ee2a5eb9001d6313df705d66358a9e575b0a04d",
+  "authoring_versions": {
+    "reportlab": "4.4.9",
+    "pypdf": "6.19.0"
+  },
+  "fonts": [
+    {
+      "name": "arial.ttf",
+      "sha256": "b3658eadae55e682b5f69eb64c439c1ecc8f196c0bb8d4756d145d13bc86476a"
+    },
+    {
+      "name": "arialbd.ttf",
+      "sha256": "e8f4e3baf6cc35fed6fcce3a540e8b39e8f6cda1d22a28f2ec8f526fef7a43f5"
+    },
+    {
+      "name": "ariali.ttf",
+      "sha256": "86b32db9a06f9694e2a3760c42e5117bcdc5cc1255bb5186ca8ce0305e22f288"
+    },
+    {
+      "name": "arialbi.ttf",
+      "sha256": "267a411525980d648f10a7222a6ff1ebe4d4feeefbf9b3100cae2b5cfab5594a"
+    }
+  ],
+  "sources": [
+    {
+      "path": "documents/provisional_application_substantive_review_2026-10-03.md",
+      "sha256": "5ccb71d5448a07f41041302f4be2b962e9a214c83b2f92e39ed642a3b8b1ec23"
+    },
+    {
+      "path": "data/claim_support_map_substantive_review_2026-10-03.json",
+      "sha256": "325102864ecbe4065d2e3dfa138383dab6a9aa1e84fb09cff2531ddcf4f06b8d"
+    },
+    {
+      "path": "documents/drawings/composition_simplex.svg",
+      "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+    },
+    {
+      "path": "documents/drawings/material_record_sequence.svg",
+      "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+    },
+    {
+      "path": "tools/pdf/build_working_application.py",
+      "sha256": "fa0b79b06f04aeb18184debb6b712803d43855862a236cc0fc101a4b6b27afe7",
+      "snapshot_path": "data/application_substantive_review_authoring_2026-10-03/builder.py.txt"
+    },
+    {
+      "path": "tools/pdf/build_consolidated_review.py",
+      "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8",
+      "snapshot_path": "data/application_substantive_review_authoring_2026-10-03/layout.py.txt"
+    },
+    {
+      "path": "tools/pdf/build_identity_review_annex.py",
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+      "snapshot_path": "data/application_substantive_review_authoring_2026-10-03/output_helper.py.txt"
+    },
+    {
+      "path": "data/hydrogel_preparation_source_review_2026-09-30.json",
+      "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327"
+    },
+    {
+      "path": "data/electrical_source_review_2026-09-30.json",
+      "sha256": "47e7e9bc747814f736adaf889910d67a15915dbcf6635c6c7d341d4ea1f077b1"
+    },
+    {
+      "path": "data/oxide_defect_source_review_2026-09-30.json",
+      "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
+    },
+    {
+      "path": "data/magneli_source_review_2026-10-01.json",
+      "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
+    },
+    {
+      "path": "data/oxide_candidate_record_review_2026-10-01.json",
+      "sha256": "031d389236fbe42f81d3b607f7146a4a359e48db7892533a2c5f77aaf5bf0efa"
+    },
+    {
+      "path": "data/family_source_review_2026-10-01.json",
+      "sha256": "056c83e78d38d0fc6421150994f097081a8fd6efd98ca83951f5230a3d679e40"
+    },
+    {
+      "path": "documents/reference_entry_support.md",
+      "sha256": "91b195ba1ac6c2a9426874c570f7dbbcd363e2b95d62a082f8a4bc0ee8f37a72"
+    },
+    {
+      "path": "data/metal_glass_source_review_2026-10-01.json",
+      "sha256": "4f681b721c96d0c8071c0fdcd0b00d8fc281b3fa90db479fadcd30679be43731"
+    },
+    {
+      "path": "data/claim_review_2026-10-03.json",
+      "sha256": "0a624b5a57e100582cc08f39ad138ff22585ee7afcd20f685e0653c30808a942"
+    },
+    {
+      "path": "data/technical_review_2026-10-03.json",
+      "sha256": "a6e8c869e6f8cf7a2b4ec85929aebe847f7c9aacc2d1c51755efa7a00d8b8550"
+    }
+  ],
+  "pdf": {
+    "path": "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+    "intended_archival_path": "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+    "sha256": "531dccb58202a5cd6cb24f307a2173ed38abac49ec1d251ed8f3e8a743697a9c",
+    "size_bytes": 234355,
+    "page_count": 47
+  },
+  "complete_numbered_text_checked": {
+    "paragraphs": 99,
+    "claims": 199
+  },
+  "complete_property_table_checked": {
+    "data_rows": 10,
+    "columns": 4,
+    "headers_and_complete_rows_checked_in_order": true
+  },
+  "complete_preparation_text_checked": {
+    "complete_prose_blocks": 10,
+    "complete_table_rows_including_headers": 8,
+    "checked_in_order": true
+  },
+  "complete_electrical_text_checked": {
+    "complete_prose_blocks": 7,
+    "complete_table_rows_including_headers": 7,
+    "checked_in_order": true
+  },
+  "complete_oxide_defect_text_checked": {
+    "complete_prose_blocks": 8,
+    "complete_table_rows_including_headers": 5,
+    "checked_in_order": true
+  },
+  "complete_phase_specific_text_checked": {
+    "complete_prose_blocks": 11,
+    "complete_table_rows_including_headers": 0,
+    "checked_in_order": true
+  },
+  "complete_family_text_checked": {
+    "molecular": {
+      "complete_prose_blocks": 6,
+      "complete_table_rows_including_headers": 0,
+      "checked_in_order": true
+    },
+    "polymer": {
+      "complete_prose_blocks": 7,
+      "complete_table_rows_including_headers": 0,
+      "checked_in_order": true
+    },
+    "composite": {
+      "complete_prose_blocks": 7,
+      "complete_table_rows_including_headers": 0,
+      "checked_in_order": true
+    }
+  },
+  "complete_metal_glass_text_checked": {
+    "alloy": {
+      "complete_prose_blocks": 8,
+      "complete_table_rows_including_headers": 0,
+      "checked_in_order": true
+    },
+    "glass": {
+      "complete_prose_blocks": 7,
+      "complete_table_rows_including_headers": 0,
+      "checked_in_order": true
+    }
+  },
+  "vector_drawings_checked": 2,
+  "location_map": {
+    "paragraph_0001": 2,
+    "paragraph_0002": 2,
+    "paragraph_0003": 3,
+    "paragraph_0004": 3,
+    "paragraph_0005": 3,
+    "paragraph_0006": 3,
+    "paragraph_0007": 3,
+    "paragraph_0008": 3,
+    "paragraph_0009": 3,
+    "paragraph_0010": 3,
+    "paragraph_0011": 4,
+    "paragraph_0012": 4,
+    "paragraph_0013": 4,
+    "paragraph_0014": 4,
+    "paragraph_0015": 4,
+    "paragraph_0016": 4,
+    "paragraph_0017": 4,
+    "paragraph_0018": 4,
+    "paragraph_0019": 4,
+    "paragraph_0020": 5,
+    "paragraph_0021": 5,
+    "paragraph_0022": 5,
+    "paragraph_0023": 5,
+    "paragraph_0024": 5,
+    "paragraph_0025": 5,
+    "paragraph_0026": 5,
+    "paragraph_0027": 5,
+    "paragraph_0028": 5,
+    "paragraph_0029": 5,
+    "paragraph_0030": 6,
+    "paragraph_0031": 6,
+    "paragraph_0032": 6,
+    "paragraph_0033": 6,
+    "paragraph_0034": 6,
+    "paragraph_0035": 6,
+    "paragraph_0036": 6,
+    "paragraph_0037": 7,
+    "paragraph_0038": 7,
+    "paragraph_0039": 7,
+    "paragraph_0040": 8,
+    "paragraph_0041": 12,
+    "paragraph_0042": 12,
+    "paragraph_0043": 12,
+    "paragraph_0044": 13,
+    "paragraph_0045": 13,
+    "paragraph_0046": 13,
+    "paragraph_0047": 13,
+    "paragraph_0048": 13,
+    "paragraph_0049": 13,
+    "paragraph_0050": 14,
+    "paragraph_0051": 14,
+    "paragraph_0052": 14,
+    "paragraph_0053": 14,
+    "paragraph_0054": 14,
+    "paragraph_0055": 14,
+    "paragraph_0056": 14,
+    "paragraph_0057": 14,
+    "paragraph_0058": 14,
+    "paragraph_0059": 15,
+    "paragraph_0060": 15,
+    "paragraph_0061": 15,
+    "paragraph_0062": 15,
+    "paragraph_0063": 15,
+    "paragraph_0064": 16,
+    "paragraph_0065": 20,
+    "paragraph_0066": 23,
+    "paragraph_0067": 24,
+    "paragraph_0068": 24,
+    "paragraph_0069": 24,
+    "paragraph_0070": 24,
+    "paragraph_0071": 25,
+    "paragraph_0072": 25,
+    "paragraph_0073": 25,
+    "paragraph_0074": 25,
+    "paragraph_0075": 25,
+    "paragraph_0076": 25,
+    "paragraph_0077": 25,
+    "paragraph_0078": 26,
+    "paragraph_0079": 27,
+    "paragraph_0080": 27,
+    "paragraph_0081": 28,
+    "paragraph_0082": 28,
+    "paragraph_0083": 28,
+    "paragraph_0084": 28,
+    "paragraph_0085": 28,
+    "paragraph_0086": 29,
+    "paragraph_0087": 29,
+    "paragraph_0088": 29,
+    "paragraph_0089": 29,
+    "paragraph_0090": 30,
+    "paragraph_0091": 30,
+    "paragraph_0092": 30,
+    "paragraph_0093": 30,
+    "paragraph_0094": 30,
+    "paragraph_0095": 31,
+    "paragraph_0096": 31,
+    "paragraph_0097": 31,
+    "paragraph_0098": 31,
+    "paragraph_0099": 31,
+    "claim_1": 32,
+    "claim_2": 32,
+    "claim_3": 32,
+    "claim_4": 32,
+    "claim_5": 32,
+    "claim_6": 32,
+    "claim_7": 32,
+    "claim_8": 32,
+    "claim_9": 32,
+    "claim_10": 33,
+    "claim_11": 33,
+    "claim_12": 33,
+    "claim_13": 33,
+    "claim_14": 33,
+    "claim_15": 33,
+    "claim_16": 33,
+    "claim_17": 33,
+    "claim_18": 33,
+    "claim_19": 33,
+    "claim_20": 33,
+    "claim_21": 33,
+    "claim_22": 33,
+    "claim_23": 33,
+    "claim_24": 33,
+    "claim_25": 33,
+    "claim_26": 33,
+    "claim_27": 33,
+    "claim_28": 33,
+    "claim_29": 33,
+    "claim_30": 33,
+    "claim_31": 33,
+    "claim_32": 33,
+    "claim_33": 33,
+    "claim_34": 33,
+    "claim_35": 33,
+    "claim_36": 33,
+    "claim_37": 33,
+    "claim_38": 33,
+    "claim_39": 33,
+    "claim_40": 33,
+    "claim_41": 33,
+    "claim_42": 33,
+    "claim_43": 34,
+    "claim_44": 34,
+    "claim_45": 34,
+    "claim_46": 34,
+    "claim_47": 34,
+    "claim_48": 34,
+    "claim_49": 34,
+    "claim_50": 34,
+    "claim_51": 34,
+    "claim_52": 34,
+    "claim_53": 34,
+    "claim_54": 34,
+    "claim_55": 34,
+    "claim_56": 34,
+    "claim_57": 34,
+    "claim_58": 34,
+    "claim_59": 34,
+    "claim_60": 34,
+    "claim_61": 34,
+    "claim_62": 34,
+    "claim_63": 34,
+    "claim_64": 34,
+    "claim_65": 34,
+    "claim_66": 34,
+    "claim_67": 34,
+    "claim_68": 34,
+    "claim_69": 34,
+    "claim_70": 34,
+    "claim_71": 34,
+    "claim_72": 34,
+    "claim_73": 34,
+    "claim_74": 34,
+    "claim_75": 34,
+    "claim_76": 35,
+    "claim_77": 35,
+    "claim_78": 35,
+    "claim_79": 35,
+    "claim_80": 35,
+    "claim_81": 35,
+    "claim_82": 35,
+    "claim_83": 35,
+    "claim_84": 35,
+    "claim_85": 35,
+    "claim_86": 35,
+    "claim_87": 35,
+    "claim_88": 35,
+    "claim_89": 35,
+    "claim_90": 35,
+    "claim_91": 35,
+    "claim_92": 35,
+    "claim_93": 35,
+    "claim_94": 35,
+    "claim_95": 35,
+    "claim_96": 35,
+    "claim_97": 35,
+    "claim_98": 35,
+    "claim_99": 35,
+    "claim_100": 35,
+    "claim_101": 35,
+    "claim_102": 35,
+    "claim_103": 35,
+    "claim_104": 35,
+    "claim_105": 35,
+    "claim_106": 35,
+    "claim_107": 35,
+    "claim_108": 35,
+    "claim_109": 36,
+    "claim_110": 36,
+    "claim_111": 36,
+    "claim_112": 36,
+    "claim_113": 36,
+    "claim_114": 36,
+    "claim_115": 36,
+    "claim_116": 36,
+    "claim_117": 36,
+    "claim_118": 36,
+    "claim_119": 36,
+    "claim_120": 36,
+    "claim_121": 36,
+    "claim_122": 36,
+    "claim_123": 36,
+    "claim_124": 36,
+    "claim_125": 36,
+    "claim_126": 36,
+    "claim_127": 36,
+    "claim_128": 36,
+    "claim_129": 36,
+    "claim_130": 36,
+    "claim_131": 36,
+    "claim_132": 36,
+    "claim_133": 36,
+    "claim_134": 36,
+    "claim_135": 36,
+    "claim_136": 36,
+    "claim_137": 36,
+    "claim_138": 36,
+    "claim_139": 36,
+    "claim_140": 37,
+    "claim_141": 37,
+    "claim_142": 37,
+    "claim_143": 37,
+    "claim_144": 37,
+    "claim_145": 37,
+    "claim_146": 37,
+    "claim_147": 37,
+    "claim_148": 37,
+    "claim_149": 37,
+    "claim_150": 37,
+    "claim_151": 37,
+    "claim_152": 37,
+    "claim_153": 37,
+    "claim_154": 37,
+    "claim_155": 37,
+    "claim_156": 37,
+    "claim_157": 37,
+    "claim_158": 37,
+    "claim_159": 37,
+    "claim_160": 38,
+    "claim_161": 38,
+    "claim_162": 38,
+    "claim_163": 38,
+    "claim_164": 38,
+    "claim_165": 38,
+    "claim_166": 38,
+    "claim_167": 38,
+    "claim_168": 38,
+    "claim_169": 38,
+    "claim_170": 38,
+    "claim_171": 38,
+    "claim_172": 38,
+    "claim_173": 38,
+    "claim_174": 38,
+    "claim_175": 38,
+    "claim_176": 38,
+    "claim_177": 38,
+    "claim_178": 38,
+    "claim_179": 39,
+    "claim_180": 39,
+    "claim_181": 39,
+    "claim_182": 39,
+    "claim_183": 39,
+    "claim_184": 39,
+    "claim_185": 39,
+    "claim_186": 39,
+    "claim_187": 39,
+    "claim_188": 39,
+    "claim_189": 39,
+    "claim_190": 39,
+    "claim_191": 39,
+    "claim_192": 39,
+    "claim_193": 40,
+    "claim_194": 40,
+    "claim_195": 40,
+    "claim_196": 40,
+    "claim_197": 40,
+    "claim_198": 40,
+    "claim_199": 40
+  },
+  "headings": [
+    {
+      "title": "Provisional application review draft: composition domains and conditional material embodiments",
+      "part_page": 1
+    },
+    {
+      "title": "Administrative worksheet for later filing review",
+      "part_page": 2
+    },
+    {
+      "title": "1 Technical field",
+      "part_page": 2
+    },
+    {
+      "title": "2 Background and evidence status",
+      "part_page": 3
+    },
+    {
+      "title": "3 Summary of the composition framework",
+      "part_page": 3
+    },
+    {
+      "title": "4 Composition bases and constituent accounting",
+      "part_page": 3
+    },
+    {
+      "title": "5 Exact constituent support and composition domains",
+      "part_page": 4
+    },
+    {
+      "title": "6 All endpoint ranges and complementary proportions",
+      "part_page": 5
+    },
+    {
+      "title": "7 Structural and spatial descriptions",
+      "part_page": 6
+    },
+    {
+      "title": "8 Preparation and confirmation records",
+      "part_page": 7
+    },
+    {
+      "title": "Alloy evidence associated with [0039]: preparation, principal inventory and conditional transport",
+      "part_page": 7
+    },
+    {
+      "title": "Molecular evidence associated with [0040]: identity, crystallization and accounting",
+      "part_page": 9
+    },
+    {
+      "title": "Polymer evidence associated with [0040]: stereochemistry, processing and accounting",
+      "part_page": 10
+    },
+    {
+      "title": "Composite evidence associated with [0040]: constituents, preparation and accounting",
+      "part_page": 11
+    },
+    {
+      "title": "9 Isotopes and nuclear states",
+      "part_page": 13
+    },
+    {
+      "title": "10 Subatomic and emergent particle systems",
+      "part_page": 14
+    },
+    {
+      "title": "11 Conditional properties and alternative responses",
+      "part_page": 14
+    },
+    {
+      "title": "Glass evidence associated with [0063]: preparation, phase identity and conditional response",
+      "part_page": 15
+    },
+    {
+      "title": "Phase-specific evidence and worked record associated with [0064]",
+      "part_page": 17
+    },
+    {
+      "title": "Oxide and defect evidence associated with [0064]: preparation, diagnostics and conditional response",
+      "part_page": 18
+    },
+    {
+      "title": "Table associated with [0065]: reported absolute storage moduli",
+      "part_page": 20
+    },
+    {
+      "title": "Preparation associated with [0065]: identities, operations and composition basis",
+      "part_page": 21
+    },
+    {
+      "title": "Electrical evidence associated with [0066]: preparation, coordinates and conditional response",
+      "part_page": 23
+    },
+    {
+      "title": "12 Worked numerical embodiments",
+      "part_page": 24
+    },
+    {
+      "title": "Binary percent cells",
+      "part_page": 24
+    },
+    {
+      "title": "Fine trace range",
+      "part_page": 24
+    },
+    {
+      "title": "Rational composition outside the decimal grid",
+      "part_page": 25
+    },
+    {
+      "title": "Multiple components and rejected intervals",
+      "part_page": 25
+    },
+    {
+      "title": "13 Reproducible enumeration instructions",
+      "part_page": 25
+    },
+    {
+      "title": "14 Drawings",
+      "part_page": 25
+    },
+    {
+      "title": "15 Industrial applicability and unresolved technical scope",
+      "part_page": 27
+    },
+    {
+      "title": "Hypothetical embodiments for review",
+      "part_page": 28
+    },
+    {
+      "title": "16 Draft abstract",
+      "part_page": 32
+    },
+    {
+      "title": "17 Candidate claims",
+      "part_page": 32
+    },
+    {
+      "title": "18 Element and particle register",
+      "part_page": 40
+    },
+    {
+      "title": "Particle category register",
+      "part_page": 45
+    },
+    {
+      "title": "19 Claim support and review map",
+      "part_page": 46
+    },
+    {
+      "title": "20 Source and version notes",
+      "part_page": 47
+    }
+  ],
+  "visual_review": {
+    "status": "completed",
+    "method": "Poppler 26.07.0 at 108 dpi. Root inspected twelve contact sheets covering all 47 pages, plus full-size pages 1, 2, 19, 26, 27, 31, 32 and 47. No clipping, overlapping text, missing glyphs, misplaced drawings or actionable table-layout defects were observed. Archived PDF bytes are identical to the inspected authoring output.",
+    "pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "full_pages_reviewed": [
+      1,
+      2,
+      19,
+      26,
+      27,
+      31,
+      32,
+      47
+    ],
+    "remaining_actionable_visual_findings": 0,
+    "scope": "Appearance only; no physical, patentability, inventorship, filing or entitlement certification."
+  },
+  "filing_asserted": false,
+  "physical_enablement_certified": false,
+  "complete_theoretical_review_text_checked": {
+    "complete_prose_blocks": 19,
+    "complete_table_rows_including_headers": 0,
+    "checked_in_order": true
+  },
+  "complete_theoretical_preface_checked": {
+    "complete_prose_blocks": 8,
+    "complete_table_rows_including_headers": 10,
+    "checked_in_order": true
+  },
+  "proposed_inventor": {
+    "name": "Robert M. Layne",
+    "designation_status": "USER_DIRECTED_REVIEW_DESIGNATION",
+    "legal_inventorship_certified": false,
+    "filing_particulars_confirmed": false
+  },
+  "universal_blocking_status": "ASPIRATIONAL_NOT_ESTABLISHED",
+  "applicant_physical_experiments": "UNPERFORMED_NOT_PLANNED",
+  "python_version": "3.12.14",
+  "prepared_date_meaning": "Editorial date of this unfiled review edition in the client context; not a filing or publication date. Actual PDF metadata is preserved separately.",
+  "actual_PDF_creation_metadata": "D:20261003153807-04'00'",
+  "curation": {
+    "authoring_output_path": "generated_reports/substantive_review_2026-10-03/application.pdf",
+    "raw_report_path": "generated_reports/substantive_review_2026-10-03/authoring.json",
+    "artifact_path": "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+    "bytes_verified_equal": true,
+    "raw_report_preserved": true
+  }
+}

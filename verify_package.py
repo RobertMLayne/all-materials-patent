@@ -299,10 +299,25 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     "documents/application_theoretical_review_2026-10-01.md", *THEORETICAL_AUTHORING.values(),
 }
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
+SUBSTANTIVE_CHECKER = "tools/substantive_review_checks.py"
+SUBSTANTIVE_FILES = {
+    SUBSTANTIVE_CHECKER, "tools/technical_review_calculations.py",
+    "documents/provisional_application_substantive_review_2026-10-03.md",
+    "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+    "documents/application_substantive_review_2026-10-03.md",
+    "data/claim_support_map_substantive_review_2026-10-03.json",
+    "data/application_substantive_review_2026-10-03.json",
+    "data/claim_review_2026-10-03.json", "data/technical_review_2026-10-03.json",
+    "data/application_substantive_review_authoring_2026-10-03/builder.py.txt",
+    "data/application_substantive_review_authoring_2026-10-03/layout.py.txt",
+    "data/application_substantive_review_authoring_2026-10-03/output_helper.py.txt",
+}
+EXPECTED_HASHED = EXPECTED_HASHED | SUBSTANTIVE_FILES
+EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
     "composition_ranges", "unrestricted_compositions", "independent_unrestricted_checks",
     "trace_sampling_calculations", "claim_clarification_checks", "parse_nubase", "verify_nuclear_archive",
-    "extract_pdg_identities",
+    "extract_pdg_identities", "substantive_review_checks", "technical_review_calculations",
 })
 
 
@@ -2152,6 +2167,15 @@ def check_review_packet(root: Path) -> dict:
             "appearance_rechecked_by_this_check": False, "filing_or_enablement_certified": False}
 
 
+def check_substantive_application(root: Path) -> dict:
+    """Load the new edition checker from the supplied package or test fixture."""
+    with module_environment(root / "tools"):
+        module = import_local("substantive_review_checks", root / SUBSTANTIVE_CHECKER)
+        arithmetic = import_local("technical_review_calculations", root / "tools/technical_review_calculations.py")
+        require(module.FILES == SUBSTANTIVE_FILES, "Substantive verifier inventory differs")
+        return module.check(root, require, safe_path, evidence_block_counts, arithmetic.check)
+
+
 def run(root: Path) -> dict:
     require(__debug__, "Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     file_count = check_inventory(root)
@@ -2167,6 +2191,7 @@ def run(root: Path) -> dict:
     family_result = check_family_application(root)
     metal_glass_result = check_metal_glass_application(root)
     theoretical_result = check_theoretical_application(root)
+    substantive_result = check_substantive_application(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -2194,6 +2219,7 @@ def run(root: Path) -> dict:
             "family_application_edition_verification": family_result,
             "metal_glass_application_edition_verification": metal_glass_result,
             "theoretical_provisional_review_verification": theoretical_result,
+            "substantive_provisional_review_verification": substantive_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -3061,6 +3087,11 @@ def self_test(root: Path) -> dict:
                 for path, data in originals.items():
                     path.write_bytes(data)
 
+        with module_environment(fixture / "tools"):
+            substantive_module = import_local("substantive_review_checks", fixture / SUBSTANTIVE_CHECKER)
+            extended.extend(substantive_module.negative_tests(
+                fixture, check_substantive_application, require, VerificationError))
+
         model_path = fixture / "range_model/unrestricted_composition_model.json"
         model_original = model_path.read_bytes()
         model = json.loads(model_original)
@@ -3276,7 +3307,7 @@ def self_test(root: Path) -> dict:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
     # Preserve all ten theoretical-edition cases and the three archive repairs.
-    require(len(extended) == 76, f"Expected 76 extension failure checks, got {len(extended)}")
+    require(len(extended) == 96, f"Expected 96 extension failure checks, got {len(extended)}")
     require(len(downloader_cases) == 4, "Expected the four durable downloader publication regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
