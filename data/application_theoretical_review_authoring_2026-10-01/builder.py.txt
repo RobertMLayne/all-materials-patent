@@ -61,9 +61,6 @@ EDITIONS = {
                            "claim_support_map_theoretical_review_2026-10-01",
                            "Theoretical provisional review draft 2026-10-01",
                            "complete unfiled theoretical provisional review draft"),
-    "substantive-review": ("provisional_application_substantive_review_2026-10-03", "claim_support_map_substantive_review_2026-10-03",
-                           "Substantive provisional review 2026-10-03",
-                           "substantively reviewed unfiled theoretical provisional draft"),
 }
 PREPARATION_REVIEW = "data/hydrogel_preparation_source_review_2026-09-30.json"
 PREPARATION_HEADING = "### Preparation associated with [0065]: identities, operations and composition basis"
@@ -269,25 +266,21 @@ def main() -> int:
     root = args.package_root.resolve()
     baseline = validate_baseline(args.baseline_commit)
     stem, map_stem, label, edition_status = EDITIONS[args.edition]
-    prepared_date = "2026-10-01" if args.edition in {"phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"} else "2026-09-30"
-    if args.edition == "substantive-review":
-        prepared_date = "2026-10-03"
+    prepared_date = "2026-10-01" if args.edition in {"phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review"} else "2026-09-30"
     source_path, map_path = f"documents/{stem}.md", f"data/{map_stem}.json"
     names = (source_path, map_path, *DRAWINGS, *AUTHORING)
-    if args.edition in {"preparation-evidence", "electrical-evidence", "oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+    if args.edition in {"preparation-evidence", "electrical-evidence", "oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review"}:
         names += (PREPARATION_REVIEW,)
-    if args.edition in {"electrical-evidence", "oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+    if args.edition in {"electrical-evidence", "oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review"}:
         names += (ELECTRICAL_REVIEW,)
-    if args.edition in {"oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+    if args.edition in {"oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review"}:
         names += (OXIDE_REVIEW,)
-    if args.edition in {"phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+    if args.edition in {"phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review"}:
         names += (PHASE_REVIEW, PHASE_RECORD)
-    if args.edition in {"family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+    if args.edition in {"family-evidence", "metal-glass-evidence", "theoretical-review"}:
         names += (FAMILY_REVIEW, FAMILY_CONTEXT)
-    if args.edition in {"metal-glass-evidence", "theoretical-review", "substantive-review"}:
+    if args.edition in {"metal-glass-evidence", "theoretical-review"}:
         names += (METAL_GLASS_REVIEW,)
-    if args.edition == "substantive-review":
-        names += ("data/claim_review_2026-10-03.json", "data/technical_review_2026-10-03.json")
     captured = {name: (root/name).read_bytes() for name in names}
     source = captured[source_path].decode("utf-8")
     support = json.loads(captured[map_path])
@@ -297,7 +290,7 @@ def main() -> int:
     # Only the new review edition has appended description paragraphs. Earlier
     # editions retain their fixed count independently of mutable map metadata.
     paragraph_count = 80
-    if args.edition in {"theoretical-review", "substantive-review"}:
+    if args.edition == "theoretical-review":
         paragraph_count = support.get("source_paragraph_count")
         require(type(paragraph_count) is int and 80 < paragraph_count <= 9999,
                 "Invalid theoretical-review paragraph count")
@@ -362,7 +355,7 @@ def main() -> int:
                 require(len(positions) == 1, f"Ambiguous rendered {kind} {number} start")
                 locations[f"{kind}_{number}"] = positions[0]
         property_table = None
-        if args.edition in {"property-evidence", "preparation-evidence", "electrical-evidence", "oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+        if args.edition in {"property-evidence", "preparation-evidence", "electrical-evidence", "oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review"}:
             block = re.findall(r"^\| DBCO/azide ratio .+(?:\n\|.+)+", source, re.M)
             require(len(block) == 1, "Missing or ambiguous property table")
             rows = [[cell.strip() for cell in row.strip("|").split("|")]
@@ -380,24 +373,24 @@ def main() -> int:
             property_table = {"data_rows": 10, "columns": 4,
                               "headers_and_complete_rows_checked_in_order": True}
         preparation_text = None
-        if args.edition in {"preparation-evidence", "electrical-evidence", "oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+        if args.edition in {"preparation-evidence", "electrical-evidence", "oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review"}:
             preparation_text = check_complete_source_block(source, full, PREPARATION_HEADING, "0066")
         electrical_text = None
-        if args.edition in {"electrical-evidence", "oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+        if args.edition in {"electrical-evidence", "oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review"}:
             electrical_text = check_complete_source_block(source, full, ELECTRICAL_HEADING, "0067")
         oxide_text = None
-        if args.edition in {"oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+        if args.edition in {"oxide-defect-evidence", "phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review"}:
             require(canonical(OXIDE_HEADING.removeprefix("### ")) in full,
                     "Rendered oxide evidence heading was lost")
             oxide_text = check_complete_source_block(source, full, OXIDE_HEADING, "0065")
         phase_text = None
-        if args.edition in {"phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+        if args.edition in {"phase-specific-evidence", "family-evidence", "metal-glass-evidence", "theoretical-review"}:
             require(canonical(PHASE_HEADING.removeprefix("### ")) in full,
                     "Rendered phase-specific evidence heading was lost")
             phase_text = check_complete_source_block(source, full, PHASE_HEADING, None,
                                                      next_heading=OXIDE_HEADING)
         family_text = None
-        if args.edition in {"family-evidence", "metal-glass-evidence", "theoretical-review", "substantive-review"}:
+        if args.edition in {"family-evidence", "metal-glass-evidence", "theoretical-review"}:
             for heading in FAMILY_HEADINGS.values():
                 require(canonical(heading.removeprefix("### ")) in full,
                         "Rendered family evidence heading was lost")
@@ -412,7 +405,7 @@ def main() -> int:
                                                         "0041"),
             }
         metal_glass_text = None
-        if args.edition in {"metal-glass-evidence", "theoretical-review", "substantive-review"}:
+        if args.edition in {"metal-glass-evidence", "theoretical-review"}:
             for heading in (ALLOY_HEADING, GLASS_HEADING):
                 require(canonical(heading.removeprefix("### ")) in full,
                         "Rendered metal or glass evidence heading was lost")
@@ -424,7 +417,7 @@ def main() -> int:
             }
         theoretical_text = None
         theoretical_preface = None
-        if args.edition in {"theoretical-review", "substantive-review"}:
+        if args.edition == "theoretical-review":
             require(canonical(THEORETICAL_HEADING.removeprefix("## ")) in full,
                     "Rendered theoretical-review heading was lost")
             theoretical_text = check_complete_source_block(source, full, THEORETICAL_HEADING,
@@ -473,7 +466,7 @@ def main() -> int:
                   "vector_drawings_checked": 2, "location_map": locations, "headings": headings,
                   "visual_review": "Pending PNG inspection; extraction does not establish appearance.",
                   "filing_asserted": False, "physical_enablement_certified": False}
-        if args.edition in {"theoretical-review", "substantive-review"}:
+        if args.edition == "theoretical-review":
             result["complete_theoretical_review_text_checked"] = theoretical_text
             result["complete_theoretical_preface_checked"] = theoretical_preface
             for key in ("proposed_inventor", "universal_blocking_status", "applicant_physical_experiments"):

@@ -167,6 +167,27 @@ METAL_GLASS_AUTHORING = {
     "tools/pdf/build_consolidated_review.py": "data/application_metal_glass_evidence_authoring_2026-10-01/layout.py.txt",
     "tools/pdf/build_identity_review_annex.py": "data/application_metal_glass_evidence_authoring_2026-10-01/output_helper.py.txt",
 }
+THEORETICAL_SOURCE = "documents/provisional_application_theoretical_review_2026-10-01.md"
+THEORETICAL_MAP = "data/claim_support_map_theoretical_review_2026-10-01.json"
+THEORETICAL_EDITION = "data/application_theoretical_review_2026-10-01.json"
+THEORETICAL_PDF = "documents/pdf/provisional_application_theoretical_review_2026-10-01.pdf"
+THEORETICAL_BASELINE = "f4aa17dbf10e872af18266c71eba2772622f4b65"
+THEORETICAL_HEADING = "## Hypothetical embodiments for review"
+# These reviewed whitespace-normalized UTF-8 fingerprints are independent of
+# source/map, capture and manifest hashes. Their content remains prospective.
+THEORETICAL_PREFACE_SHA256 = "0a9d5b5da5633bb557e01d14bc8a3ec91af568975da49acfaf298319d14fe337"
+THEORETICAL_BLOCK_SHA256 = "06c9fe988c173237b9158c837b086cb0e544c12d09749d9b0245c8290fb9997e"
+THEORETICAL_INVENTOR = {
+    "name": "Robert M. Layne", "designation_status": "USER_DIRECTED_REVIEW_DESIGNATION",
+    "legal_inventorship_certified": False, "filing_particulars_confirmed": False,
+}
+THEORETICAL_SOURCE_NOTE_OLD = "No applicant identity, inventor signature, priority claim, micro-entity certification, complete current isotope archive, or worldwide patent-status finding is assumed."
+THEORETICAL_SOURCE_NOTE_NEW = "Robert M. Layne is named as proposed sole inventor for this review draft at his instruction; no inventor signature, applicant entitlement, priority claim, micro-entity certification, complete current isotope archive, or worldwide patent-status finding is assumed."
+THEORETICAL_AUTHORING = {
+    "tools/pdf/build_working_application.py": "data/application_theoretical_review_authoring_2026-10-01/builder.py.txt",
+    "tools/pdf/build_consolidated_review.py": "data/application_theoretical_review_authoring_2026-10-01/layout.py.txt",
+    "tools/pdf/build_identity_review_annex.py": "data/application_theoretical_review_authoring_2026-10-01/output_helper.py.txt",
+}
 REVIEW_AUTHORING_FILES = {
     "builder": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
     "helper": "data/review_packet_authoring/core_shared_helper_2026-09-30.py.txt",
@@ -274,12 +295,30 @@ EXPECTED_HASHED = EXPECTED_HASHED | {
     "documents/application_family_evidence_2026-10-01.md", *FAMILY_AUTHORING.values(),
     METAL_GLASS_SOURCE, METAL_GLASS_MAP, METAL_GLASS_EDITION, METAL_GLASS_PDF, METAL_GLASS_REVIEW,
     "documents/application_metal_glass_evidence_2026-10-01.md", *METAL_GLASS_AUTHORING.values(),
+    THEORETICAL_SOURCE, THEORETICAL_MAP, THEORETICAL_EDITION, THEORETICAL_PDF,
+    "documents/application_theoretical_review_2026-10-01.md", *THEORETICAL_AUTHORING.values(),
 }
+EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
+SUBSTANTIVE_CHECKER = "tools/substantive_review_checks.py"
+SUBSTANTIVE_FILES = {
+    SUBSTANTIVE_CHECKER, "tools/technical_review_calculations.py",
+    "documents/provisional_application_substantive_review_2026-10-03.md",
+    "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+    "documents/application_substantive_review_2026-10-03.md",
+    "data/claim_support_map_substantive_review_2026-10-03.json",
+    "data/application_substantive_review_2026-10-03.json",
+    "data/claim_review_2026-10-03.json", "data/technical_review_2026-10-03.json",
+    "data/application_substantive_review_authoring_2026-10-03/builder.py.txt",
+    "data/application_substantive_review_authoring_2026-10-03/layout.py.txt",
+    "data/application_substantive_review_authoring_2026-10-03/output_helper.py.txt",
+}
+EDITION_CORRECTIONS = "data/edition_identity_corrections_2026-10-03.json"
+EXPECTED_HASHED = EXPECTED_HASHED | SUBSTANTIVE_FILES | {EDITION_CORRECTIONS}
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
     "composition_ranges", "unrestricted_compositions", "independent_unrestricted_checks",
     "trace_sampling_calculations", "claim_clarification_checks", "parse_nubase", "verify_nuclear_archive",
-    "extract_pdg_identities",
+    "extract_pdg_identities", "substantive_review_checks", "technical_review_calculations",
 })
 
 
@@ -1614,6 +1653,165 @@ def check_metal_glass_application(root: Path) -> dict:
             "pdf_parsed_or_appearance_rechecked_by_this_check": False}
 
 
+def check_edition_identity_correction(root: Path) -> dict:
+    """Resolve one known historical label error without rewriting captured bytes."""
+    correction = load_json(root / EDITION_CORRECTIONS)
+    expected = {
+        "id": "EDITION-IDENTITY-01", "artifact_path": THEORETICAL_MAP,
+        "artifact_sha256": "49dd2b782033940cf5d77bf6168f8eba345329ec189f29406e791d9ee91426f1",
+        "field": "edition", "recorded_value": "metal-glass-evidence application 2026-10-01",
+        "effective_value": "theoretical review application 2026-10-01",
+        "source_path": THEORETICAL_SOURCE,
+        "source_sha256": "61ffc4ec1aa89d32dcc4cd44d35852a4b315b13d514c2898c4aabf460e3235f7",
+        "prepared_date": "2026-10-01", "source_paragraph_count": 94,
+        "reason": "The theoretical-edition map retained the preceding metal/glass edition label. "
+                  "Its source identity, paragraph count and authoring captures identify the theoretical edition.",
+        "archived_bytes_preserved": True, "claim_text_or_support_locations_changed": False,
+        "application_content_or_pdf_changed": False, "earlier_filing_or_publication_date_assigned": False,
+    }
+    require(correction == {
+        "schema_version": 1, "record_date": "2026-10-03",
+        "scope": "Post-authoring metadata correction; archived application contents and captured bytes remain unchanged.",
+        "corrections": [expected]}, "Edition identity correction differs from reviewed erratum")
+    support = load_json(root / THEORETICAL_MAP)
+    require(support.get("edition") == expected["recorded_value"]
+            and all(support.get(key) == expected[key] for key in
+                    ("source_path", "source_sha256", "prepared_date", "source_paragraph_count")),
+            "Archived edition metadata differs from the identified exception")
+    require(hashlib.sha256((root / THEORETICAL_MAP).read_bytes()).hexdigest() == expected["artifact_sha256"]
+            and hashlib.sha256((root / THEORETICAL_SOURCE).read_bytes()).hexdigest() == expected["source_sha256"],
+            "Edition identity correction is not bound to the preserved artifacts")
+    return {"recorded_edition": expected["recorded_value"], "effective_edition": expected["effective_value"],
+            "correction_record": EDITION_CORRECTIONS, "archived_bytes_preserved": True}
+
+
+def check_theoretical_application(root: Path) -> dict:
+    """Verify the complete unfiled review draft, without certifying support.
+
+    The new map alone defines its paragraph count. Fixed historical checks
+    still verify the preserved 80-paragraph editions independently.
+    """
+    previous_bytes = (root / METAL_GLASS_SOURCE).read_bytes()
+    source_bytes = (root / THEORETICAL_SOURCE).read_bytes()
+    previous, application = previous_bytes.decode("utf-8"), source_bytes.decode("utf-8")
+    support = load_json(root / THEORETICAL_MAP)
+    require(support.get("source_path") == THEORETICAL_SOURCE and support.get("source_sha256")
+            == hashlib.sha256(source_bytes).hexdigest(), "Theoretical source/map hash differs")
+    require(support.get("prepared_date") == "2026-10-01" and support.get("derived_from") == {
+        "path": METAL_GLASS_SOURCE, "sha256": hashlib.sha256(previous_bytes).hexdigest(),
+        "repository_baseline": THEORETICAL_BASELINE,
+    }, "Theoretical source derivation differs")
+    require(support.get("claims") == load_json(root / METAL_GLASS_MAP).get("claims")
+            and support.get("changed_claims") == [], "Theoretical individual claim records differ")
+    paragraph_count = support.get("source_paragraph_count")
+    require(type(paragraph_count) is int and 80 < paragraph_count <= 9999,
+            "Invalid theoretical paragraph count")
+    matches = re.findall(r"^\[(\d{4})\] (.+)$", application, re.M)
+    ids = [n for n, _ in matches]
+    require(ids == [f"{n:04d}" for n in range(1, paragraph_count + 1)],
+            "Theoretical paragraph IDs must be contiguous and ordered")
+    added = ids[80:]
+    require(support.get("changed_paragraphs") == [] and support.get("added_paragraphs") == added,
+            "Theoretical paragraph change inventory differs")
+    old_paragraphs = re.findall(r"^\[(\d{4})\] (.+)$", previous, re.M)
+    require(matches[:80] == old_paragraphs, "Theoretical inherited numbered paragraphs differ")
+    require(support.get("proposed_inventor") == THEORETICAL_INVENTOR
+            and support.get("universal_blocking_status") == "ASPIRATIONAL_NOT_ESTABLISHED"
+            and support.get("applicant_physical_experiments") == "UNPERFORMED_NOT_PLANNED",
+            "Theoretical review designation or evidence status differs")
+    boundary = "## 1 Technical field\n"
+    require(application.count(boundary) == previous.count(boundary) == 1,
+            "Theoretical technical-field boundary differs")
+    preface, body = application.split(boundary)
+    require("Proposed sole inventor: Robert M. Layne" in preface
+            and "universal blocking is aspirational" in preface
+            and "No applicant physical experiments are performed or planned." in preface,
+            "Theoretical preface review designation or evidence status differs")
+    require(hashlib.sha256(" ".join(preface.split()).encode("utf-8")).hexdigest() == THEORETICAL_PREFACE_SHA256,
+            "Theoretical reviewed preface qualifications differ")
+    require(body.count(THEORETICAL_HEADING) == body.count("## 16 Draft abstract") == 1,
+            "Theoretical hypothetical-section boundary differs")
+    start, end = body.index(THEORETICAL_HEADING), body.index("## 16 Draft abstract")
+    require(body.index("[0080] ") < start < end, "Theoretical hypothetical-section placement differs")
+    block = body[start + len(THEORETICAL_HEADING):end]
+    require([n for n, _ in re.findall(r"^\[(\d{4})\] (.+)$", block, re.M)] == added,
+            "Theoretical added paragraphs lie outside the reviewed section")
+    require(all(status in block for status in ("ESTABLISHED", "CALCULATED", "PROPOSED", "UNSUPPORTED")),
+            "Theoretical hypothetical evidence labels differ")
+    require(hashlib.sha256(" ".join((THEORETICAL_HEADING + block).split()).encode("utf-8")).hexdigest()
+            == THEORETICAL_BLOCK_SHA256, "Theoretical reviewed hypothetical qualifications differ")
+    old_body = previous.split(boundary, 1)[1]
+    old_map, new_map = PurePosixPath(METAL_GLASS_MAP).name, PurePosixPath(THEORETICAL_MAP).name
+    require(old_body.count(old_map) == body.count(new_map) == 1 and old_map not in body,
+            "Theoretical companion-map reference differs")
+    require(old_body.count(THEORETICAL_SOURCE_NOTE_OLD) == body.count(THEORETICAL_SOURCE_NOTE_NEW) == 1,
+            "Theoretical source-note review designation differs")
+    expected_body = old_body.replace(old_map, new_map, 1).replace(THEORETICAL_SOURCE_NOTE_OLD,
+                                                                THEORETICAL_SOURCE_NOTE_NEW, 1)
+    remaining = body[:start] + body[end:]
+    require(remaining == expected_body, "Theoretical source changed outside identified additions")
+    # The original checker continues to enforce all 199 wordings, dependencies
+    # and per-claim statuses against an 80-paragraph representation. Only the
+    # new section is removed; its contiguous IDs and complete pin were checked.
+    claims = check_claims(preface + boundary + remaining, {**support, "source_paragraph_count": 80})
+    edition = load_json(root / THEORETICAL_EDITION)
+    require(edition.get("prepared_date") == "2026-10-01"
+            and edition.get("edition_status") == "complete unfiled theoretical provisional review draft"
+            and edition.get("repository_baseline") == THEORETICAL_BASELINE
+            and edition.get("filing_asserted") is False and edition.get("physical_enablement_certified") is False,
+            "Theoretical edition baseline or factual status differs")
+    require(edition.get("proposed_inventor") == THEORETICAL_INVENTOR
+            and edition.get("universal_blocking_status") == "ASPIRATIONAL_NOT_ESTABLISHED"
+            and edition.get("applicant_physical_experiments") == "UNPERFORMED_NOT_PLANNED",
+            "Theoretical edition review designation or evidence status differs")
+    expected_sources = {THEORETICAL_SOURCE, THEORETICAL_MAP, METAL_GLASS_REVIEW, FAMILY_REVIEW, FAMILY_CONTEXT,
+                        PHASE_REVIEW, PHASE_RECORD, OXIDE_REVIEW, PREPARATION_REVIEW, ELECTRICAL_REVIEW,
+                        *THEORETICAL_AUTHORING, "documents/drawings/composition_simplex.svg",
+                        "documents/drawings/material_record_sequence.svg"}
+    entries = edition.get("sources", [])
+    require(len(entries) == 15 and {e["path"] for e in entries} == expected_sources,
+            "Theoretical PDF source inventory differs")
+    for entry in entries:
+        snapshot = THEORETICAL_AUTHORING.get(entry["path"])
+        require(entry.get("snapshot_path") == snapshot
+                and hashlib.sha256(safe_path(root, snapshot or entry["path"]).read_bytes()).hexdigest() == entry["sha256"],
+                "Theoretical PDF captured-source identity differs")
+    pdf = edition.get("pdf", {})
+    require(pdf.get("path") == THEORETICAL_PDF and type(pdf.get("page_count")) is int and pdf["page_count"] > 0,
+            "Invalid theoretical PDF identity")
+    data = safe_path(root, THEORETICAL_PDF).read_bytes()
+    require(data.startswith(b"%PDF-") and b"%%EOF" in data[-1024:]
+            and len(data) == pdf.get("size_bytes") and hashlib.sha256(data).hexdigest() == pdf.get("sha256"),
+            "Theoretical PDF bytes differ from record")
+    locations = edition.get("location_map", {})
+    require(locations.keys() == {f"paragraph_{n:04d}" for n in range(1, paragraph_count + 1)}
+            | {f"claim_{n}" for n in range(1, 200)}
+            and all(type(page) is int and 1 <= page <= pdf["page_count"] for page in locations.values()),
+            "Theoretical PDF recorded locations differ")
+    require(edition.get("complete_numbered_text_checked") == {"paragraphs": paragraph_count, "claims": 199}
+            and edition.get("vector_drawings_checked") == 2
+            and edition.get("complete_theoretical_review_text_checked") == evidence_block_counts(block)
+            and edition.get("complete_theoretical_preface_checked") == evidence_block_counts(preface),
+            "Theoretical recorded new text coverage differs")
+    previous_edition = load_json(root / METAL_GLASS_EDITION)
+    for key in ("complete_metal_glass_text_checked", "complete_family_text_checked", "complete_phase_specific_text_checked",
+                "complete_preparation_text_checked", "complete_electrical_text_checked", "complete_oxide_defect_text_checked",
+                "complete_property_table_checked"):
+        require(edition.get(key) == previous_edition.get(key), "Theoretical inherited block coverage differs: " + key)
+    visual = edition.get("visual_review", {})
+    require(isinstance(visual, dict) and visual.get("status") == "completed"
+            and visual.get("pages_reviewed") == list(range(1, pdf["page_count"] + 1))
+            and visual.get("remaining_actionable_visual_findings") == 0,
+            "Theoretical recorded appearance review is incomplete")
+    identity = check_edition_identity_correction(root)
+    return {**claims, "edition_identity": identity, "numbered_paragraphs": paragraph_count, "added_paragraphs": added,
+            "changed_paragraphs": [], "changed_claims": [], "captured_sources_checked": len(entries),
+            "recorded_pdf_pages": pdf["page_count"], "recorded_pdf_locations_checked": len(locations),
+            "preceding_evidence_and_remaining_body_preserved": True,
+            "physical_realization_or_filing_or_legal_inventorship_certified": False,
+            "pdf_parsed_or_appearance_rechecked_by_this_check": False}
+
+
 def check_local_links(root: Path) -> int:
     checked = 0
     for relative in EXPECTED_FILES:
@@ -2003,6 +2201,15 @@ def check_review_packet(root: Path) -> dict:
             "appearance_rechecked_by_this_check": False, "filing_or_enablement_certified": False}
 
 
+def check_substantive_application(root: Path) -> dict:
+    """Load the new edition checker from the supplied package or test fixture."""
+    with module_environment(root / "tools"):
+        module = import_local("substantive_review_checks", root / SUBSTANTIVE_CHECKER)
+        arithmetic = import_local("technical_review_calculations", root / "tools/technical_review_calculations.py")
+        require(module.FILES == SUBSTANTIVE_FILES, "Substantive verifier inventory differs")
+        return module.check(root, require, safe_path, evidence_block_counts, arithmetic.check)
+
+
 def run(root: Path) -> dict:
     require(__debug__, "Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     file_count = check_inventory(root)
@@ -2017,6 +2224,8 @@ def run(root: Path) -> dict:
     phase_result = check_phase_application(root)
     family_result = check_family_application(root)
     metal_glass_result = check_metal_glass_application(root)
+    theoretical_result = check_theoretical_application(root)
+    substantive_result = check_substantive_application(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -2043,6 +2252,8 @@ def run(root: Path) -> dict:
             "phase_specific_application_edition_verification": phase_result,
             "family_application_edition_verification": family_result,
             "metal_glass_application_edition_verification": metal_glass_result,
+            "theoretical_provisional_review_verification": theoretical_result,
+            "substantive_provisional_review_verification": substantive_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -2810,6 +3021,142 @@ def self_test(root: Path) -> dict:
                 for path, data in originals.items():
                     path.write_bytes(data)
 
+        theoretical_path, theoretical_map_path = fixture / THEORETICAL_SOURCE, fixture / THEORETICAL_MAP
+        theoretical_edition_path = fixture / THEORETICAL_EDITION
+        theoretical_snapshot_path = fixture / THEORETICAL_AUTHORING["tools/pdf/build_working_application.py"]
+        originals = {path: path.read_bytes() for path in
+                     (theoretical_path, theoretical_map_path, theoretical_edition_path,
+                      theoretical_snapshot_path, manifest_path)}
+        check_theoretical_application(fixture)
+        for case, expected_error in (
+            ("theoretical_stale_source_map_rejected", "Theoretical source/map hash differs"),
+            ("theoretical_consistent_claim_change_rejected", "Theoretical individual claim records differ"),
+            ("theoretical_inherited_paragraph_drift_rejected", "Theoretical inherited numbered paragraphs differ"),
+            ("theoretical_new_paragraph_gap_rejected", "Theoretical paragraph IDs must be contiguous and ordered"),
+            ("theoretical_preface_filing_promotion_rejected", "Theoretical reviewed preface qualifications differ"),
+            ("theoretical_physical_outcome_promotion_rejected", "Theoretical reviewed hypothetical qualifications differ"),
+            ("theoretical_administrative_row_omission_rejected", "Theoretical reviewed preface qualifications differ"),
+            ("theoretical_legal_inventorship_promotion_rejected", "Theoretical review designation or evidence status differs"),
+            ("theoretical_snapshot_identity_drift_rejected", "Theoretical PDF captured-source identity differs"),
+            ("theoretical_fixed_old_pdf_coverage_rejected", "Theoretical recorded new text coverage differs"),
+        ):
+            try:
+                text = originals[theoretical_path].decode("utf-8")
+                support = json.loads(originals[theoretical_map_path])
+                edition = json.loads(originals[theoretical_edition_path])
+                if case == "theoretical_stale_source_map_rejected":
+                    theoretical_path.write_bytes(originals[theoretical_path] + b"\nUnadopted addition.\n")
+                else:
+                    if "claim_change" in case:
+                        old_claim = support["claims"][0]["text"]
+                        new_claim = old_claim.replace("positive normalized fraction", "nonnegative normalized fraction", 1)
+                        require(old_claim != new_claim, "Theoretical claim fixture lost its target")
+                        text = text.replace("**Claim 1.** " + old_claim, "**Claim 1.** " + new_claim, 1)
+                        support["claims"][0]["text"] = new_claim
+                    elif "inherited_paragraph" in case:
+                        old = re.findall(r"^\[0005\] .+$", text, re.M)
+                        require(len(old) == 1, "Theoretical inheritance fixture lost its target")
+                        text = text.replace(old[0], old[0] + " All candidate materials are physically enabled.", 1)
+                    elif "paragraph_gap" in case:
+                        last = support["added_paragraphs"][-1]
+                        require(text.count("[" + last + "] ") == 1, "Theoretical numbering fixture lost its target")
+                        text = text.replace("[" + last + "] ", f"[{int(last) + 1:04d}] ", 1)
+                        support["added_paragraphs"][-1] = f"{int(last) + 1:04d}"
+                    elif "preface_filing" in case:
+                        preface, tail = text.split("## 1 Technical field\n", 1)
+                        text = preface + "A completed patent filing and earlier priority entitlement are asserted.\n\n" + "## 1 Technical field\n" + tail
+                    elif "administrative_row_omission" in case:
+                        preface, tail = text.split("## 1 Technical field\n", 1)
+                        rows = re.findall(r"^\| Inventor residence \|.+$", preface, re.M)
+                        require(len(rows) == 1, "Theoretical administrative fixture lost its target")
+                        replacement = preface.replace(rows[0] + "\n", "", 1)
+                        require(replacement != preface, "Theoretical administrative row was not removed")
+                        text = replacement + "## 1 Technical field\n" + tail
+                    elif "physical_outcome" in case:
+                        start, end = text.index(THEORETICAL_HEADING), text.index("## 16 Draft abstract")
+                        block = text[start:end]
+                        paragraphs = re.findall(r"^\[\d{4}\] .+$", block, re.M)
+                        require(bool(paragraphs), "Theoretical outcome fixture lost its target")
+                        replacement = block.replace(paragraphs[0], paragraphs[0]
+                                                    + " The proposed physical product has been synthesized and characterized.", 1)
+                        text = text[:start] + replacement + text[end:]
+                    elif "legal_inventorship" in case:
+                        support["proposed_inventor"]["legal_inventorship_certified"] = True
+                        edition["proposed_inventor"]["legal_inventorship_certified"] = True
+                    elif "snapshot_identity" in case:
+                        theoretical_snapshot_path.write_bytes(originals[theoretical_snapshot_path] + b"\n# Uncaptured change.\n")
+                    else:
+                        require("fixed_old_pdf_coverage" in case, "Unknown theoretical fixture")
+                        edition["complete_numbered_text_checked"]["paragraphs"] = 80
+                    theoretical_path.write_bytes(text.encode("utf-8"))
+                    support["source_sha256"] = hashlib.sha256(theoretical_path.read_bytes()).hexdigest()
+                    theoretical_map_path.write_bytes((json.dumps(support) + "\n").encode("utf-8"))
+                    preface = text.split("## 1 Technical field\n", 1)[0]
+                    start = text.index(THEORETICAL_HEADING) + len(THEORETICAL_HEADING)
+                    end = text.index("## 16 Draft abstract")
+                    edition["complete_theoretical_preface_checked"] = evidence_block_counts(preface)
+                    edition["complete_theoretical_review_text_checked"] = evidence_block_counts(text[start:end])
+                    for entry in edition["sources"]:
+                        if entry["path"] in {THEORETICAL_SOURCE, THEORETICAL_MAP}:
+                            entry["sha256"] = hashlib.sha256((fixture / entry["path"]).read_bytes()).hexdigest()
+                    theoretical_edition_path.write_bytes((json.dumps(edition) + "\n").encode("utf-8"))
+                    # Updated outer and capture hashes cannot approve a changed
+                    # historical teaching or certify an unperformed outcome.
+                    refreshed = json.loads(originals[manifest_path])
+                    changed_paths = {THEORETICAL_SOURCE, THEORETICAL_MAP, THEORETICAL_EDITION,
+                                     THEORETICAL_AUTHORING["tools/pdf/build_working_application.py"]}
+                    for entry in refreshed["files"]:
+                        if entry["path"] in changed_paths:
+                            changed = (fixture / entry["path"]).read_bytes()
+                            entry.update(size_bytes=len(changed), sha256=hashlib.sha256(changed).hexdigest())
+                    manifest_path.write_bytes((json.dumps(refreshed) + "\n").encode("utf-8"))
+                    check_integrity(fixture)
+                try:
+                    check_theoretical_application(fixture)
+                except VerificationError as error:
+                    require(expected_error in str(error), "Theoretical mutation failed for another reason: " + str(error))
+                    extended.append(case)
+                require(case in extended, "Theoretical mutation was accepted: " + case)
+            finally:
+                for path, data in originals.items():
+                    path.write_bytes(data)
+
+        identity_paths = (fixture / EDITION_CORRECTIONS, fixture / THEORETICAL_MAP)
+        identity_originals = {path: path.read_bytes() for path in identity_paths}
+        for case, expected_error in (
+            ("edition_erratum_effective_label_drift_rejected", "Edition identity correction differs"),
+            ("edition_erratum_source_binding_drift_rejected", "Edition identity correction differs"),
+            ("edition_erratum_unknown_archive_label_rejected", "Archived edition metadata differs"),
+            ("edition_erratum_archive_byte_drift_rejected", "not bound to the preserved artifacts"),
+        ):
+            try:
+                erratum = json.loads(identity_originals[identity_paths[0]])
+                if "effective_label" in case:
+                    erratum["corrections"][0]["effective_value"] = "substantive review application 2026-10-03"
+                elif "source_binding" in case:
+                    erratum["corrections"][0]["source_sha256"] = "0" * 64
+                elif "unknown_archive_label" in case:
+                    support = json.loads(identity_originals[identity_paths[1]])
+                    support["edition"] = "unidentified application"
+                    identity_paths[1].write_text(json.dumps(support), encoding="utf-8")
+                else:
+                    identity_paths[1].write_bytes(identity_originals[identity_paths[1]] + b"\n")
+                identity_paths[0].write_text(json.dumps(erratum), encoding="utf-8")
+                try:
+                    check_edition_identity_correction(fixture)
+                except VerificationError as error:
+                    require(expected_error in str(error), "Edition identity mutation failed for another reason: " + str(error))
+                    extended.append(case)
+                require(case in extended, "Edition identity mutation was accepted: " + case)
+            finally:
+                for path, original in identity_originals.items():
+                    path.write_bytes(original)
+
+        with module_environment(fixture / "tools"):
+            substantive_module = import_local("substantive_review_checks", fixture / SUBSTANTIVE_CHECKER)
+            extended.extend(substantive_module.negative_tests(
+                fixture, check_substantive_application, require, VerificationError))
+
         model_path = fixture / "range_model/unrestricted_composition_model.json"
         model_original = model_path.read_bytes()
         model = json.loads(model_original)
@@ -2831,6 +3178,22 @@ def self_test(root: Path) -> dict:
                 nuclear_verifier.verify_payload(payload, schema, nuclear_parser.SOURCE.read_bytes())
             except ValueError:
                 extended.append("nuclear_presence_promoted_to_observation_rejected")
+            payload["states"][0]["observation_status"] = "not inferred from property markers; requires source review"
+            numeric = payload["states"][0]["mass_excess"]["value"]
+            original_numeric = numeric.copy()
+            require(numeric["kind"] == "numeric", "Numeric mutation fixture is not numeric")
+            for kind in ("missing", "unparsed_text", "source_category"):
+                numeric.update(kind=kind, operator=None, value_decimal=None)
+                try:
+                    nuclear_verifier.verify_payload(payload, schema, nuclear_parser.SOURCE.read_bytes())
+                except ValueError as error:
+                    require("Numeric source mislabeled" in str(error), "Numeric mutation failed for another reason")
+                    extended.append("nuclear_numeric_mislabeled_as_" + kind + "_rejected")
+                else:
+                    raise VerificationError("Numeric source was accepted as " + kind)
+                finally:
+                    numeric.clear()
+                    numeric.update(original_numeric)
 
         metadata_path = fixture / PARTICLE_DIRECTORY / "pdg2026_identity_metadata.json"
         metadata_original = metadata_path.read_bytes()
@@ -2885,6 +3248,34 @@ def self_test(root: Path) -> dict:
                 require(load_json(observation)["sha256"] == download_sha, "Successful observation lacks the pinned test hash")
                 downloader_cases.append("mocked_pinned_test_bytes_exclusive_publication")
 
+                destination = download_root / "separate-database" / "source.bin"
+                observation = download_root / "separate-observation" / "metadata" / "source.json"
+                require(not observation.parent.exists(), "Separate observation parent fixture already exists")
+                with patch.object(downloader.urllib.request, "urlopen", return_value=OfflineResponse(download_bytes)) as response, \
+                        redirect_stdout(io.StringIO()):
+                    downloader.download(argparse.Namespace(destination=destination, observation=observation))
+                require(response.call_count == 1 and destination.read_bytes() == download_bytes,
+                        "Separate-parent transfer did not preserve pinned bytes")
+                require(load_json(observation)["sha256"] == download_sha and not destination.with_suffix(".bin.part").exists(),
+                        "Separate-parent transfer failed to publish provenance or remove the partial")
+                downloader_cases.append("separate_observation_parent_created_and_pinned_transfer_published")
+
+                destination = download_root / "preexisting-observation-database" / "source.bin"
+                observation = download_root / "preexisting-observation.json"
+                preserved_observation = b"Preserve this existing observation.\n"
+                observation.write_bytes(preserved_observation)
+                with patch.object(downloader.urllib.request, "urlopen") as response:
+                    try:
+                        downloader.download(argparse.Namespace(destination=destination, observation=observation))
+                    except ValueError as error:
+                        require("Observation already exists" in str(error), "Observation preflight failed for another reason")
+                    else:
+                        raise VerificationError("Preexisting observation was accepted")
+                require(response.call_count == 0 and observation.read_bytes() == preserved_observation,
+                        "Observation preflight fetched bytes or altered existing provenance")
+                require(not destination.parent.exists(), "Observation preflight created destination directories")
+                downloader_cases.append("preexisting_observation_preserved_before_directory_creation_or_fetch")
+
                 destination = download_root / "competing.bin"
                 observation = download_root / "competing.json"
                 competitor_bytes = b"Preserve this concurrent destination.\n"
@@ -2909,6 +3300,44 @@ def self_test(root: Path) -> dict:
                 require(partial.read_bytes() == download_bytes and not observation.exists(),
                         "Refused publication lost its verified partial or wrote a success observation")
                 downloader_cases.append("concurrent_destination_preserved_partial_retained_no_observation")
+
+                # Check all pairwise relationships before mkdir or fetch. The
+                # resolved-alias cases model path resolution, not real symlinks.
+                real_resolve = Path.resolve
+                collision_root = download_root / "collisions"
+                cases = (
+                    ("observation_below_destination", collision_root / "a.bin",
+                     collision_root / "a.bin/metadata.json", None, "ancestors or descendants"),
+                    ("observation_below_partial", collision_root / "b.bin",
+                     collision_root / "b.bin.part/metadata.json", None, "ancestors or descendants"),
+                    ("observation_above_outputs", collision_root / "ancestor/source.bin",
+                     collision_root / "ancestor", None, "ancestors or descendants"),
+                    ("resolved_partial_below_destination", collision_root / "c.bin",
+                     collision_root / "c.json", collision_root / "c.bin/partial", "ancestors or descendants"),
+                    ("resolved_partial_above_destination", collision_root / "parent/d.bin",
+                     collision_root / "d.json", collision_root / "parent", "ancestors or descendants"),
+                    ("observation_aliases_destination", collision_root / "e.bin",
+                     collision_root / "e.bin", None, "distinct paths"),
+                    ("observation_aliases_partial", collision_root / "f.bin",
+                     collision_root / "f.bin.part", None, "distinct paths"),
+                )
+                for case, destination, observation, partial_override, expected_error in cases:
+                    requested_partial = destination.with_suffix(destination.suffix + ".part")
+                    def resolved(path: Path, *args, **kwargs) -> Path:
+                        if partial_override is not None and path == requested_partial:
+                            return real_resolve(partial_override)
+                        return real_resolve(path, *args, **kwargs)
+                    with patch.object(Path, "resolve", resolved), patch.object(Path, "mkdir") as mkdir, \
+                            patch.object(downloader.urllib.request, "urlopen") as response:
+                        try:
+                            downloader.download(argparse.Namespace(destination=destination, observation=observation))
+                        except ValueError as error:
+                            require(expected_error in str(error), "Collision rejected for another reason: " + str(error))
+                        else:
+                            raise VerificationError("Downloader accepted output collision: " + case)
+                    require(mkdir.call_count == response.call_count == 0 and not collision_root.exists(),
+                            "Collision preflight created directories or fetched bytes: " + case)
+                    downloader_cases.append(case + "_rejected_before_mkdir_or_fetch")
 
         # The parent owns the real marker before launching the competing helper,
         # so contention is deterministic and requires no timing assumptions.
@@ -2980,8 +3409,9 @@ def self_test(root: Path) -> dict:
             else:
                 sys.modules["unrestricted_compositions"] = prior
     require(len(caught) == 10, f"Expected 10 deliberate failure checks, got {len(caught)}")
-    require(len(extended) == 63, f"Expected 63 extension failure checks, got {len(extended)}")
-    require(len(downloader_cases) == 2, "Expected the two durable downloader publication regressions")
+    # Preserve all ten theoretical-edition cases and the three archive repairs.
+    require(len(extended) == 101, f"Expected 101 extension failure checks, got {len(extended)}")
+    require(len(downloader_cases) == 11, "Expected eleven durable downloader publication/preflight regressions")
     return {"status": "passed", "deliberate_failure_cases_rejected": len(caught), "cases": caught,
             "extension_failure_cases_rejected": len(extended), "extension_cases": extended,
             "downloader_regression_case_count": len(downloader_cases), "downloader_regression_cases": downloader_cases,

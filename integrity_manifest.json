@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 173,
+  "file_count": 194,
   "files": [
     {
       "path": ".editorconfig",
@@ -123,8 +123,8 @@
     },
     {
       "path": "AGENTS.md",
-      "size_bytes": 5408,
-      "sha256": "50126a51c364d0fe5e71f331047b7c2e530c097bcee56fa16d18b71c22b86586"
+      "size_bytes": 6628,
+      "sha256": "e231b39d12085bc88b85e05287c16c89f0dd644bc24dd159541054d12f282b9e"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 29765,
-      "sha256": "c50f80d74d0c284a8960dff4a251d012210b807b790838db1a9e19e3d23983b8"
+      "size_bytes": 32931,
+      "sha256": "d6b0ae66263c7c6924a66064d1f67e2793787442c7245efb3621f03419974906"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -277,6 +277,51 @@
       "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
     },
     {
+      "path": "data/application_substantive_review_2026-10-03.json",
+      "size_bytes": 18864,
+      "sha256": "949673ac06f1111f8fc688003805981b3f46a1c514a77a5402ad41d974345199"
+    },
+    {
+      "path": "data/application_substantive_review_authoring_2026-10-03/builder.py.txt",
+      "size_bytes": 30704,
+      "sha256": "fa0b79b06f04aeb18184debb6b712803d43855862a236cc0fc101a4b6b27afe7"
+    },
+    {
+      "path": "data/application_substantive_review_authoring_2026-10-03/layout.py.txt",
+      "size_bytes": 28711,
+      "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8"
+    },
+    {
+      "path": "data/application_substantive_review_authoring_2026-10-03/output_helper.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
+      "path": "data/application_theoretical_review_2026-10-01.json",
+      "size_bytes": 18334,
+      "sha256": "ceb71a7297ee95faf80e76841ac38cad30dbacf0f16d9297cc8cf3ce5fbb8825"
+    },
+    {
+      "path": "data/application_theoretical_review_authoring_2026-10-01/builder.py.txt",
+      "size_bytes": 29802,
+      "sha256": "527a3c8a0b196b07938cae9e08f28fd0a9ee11a0317a8ef70cb1d450965330b9"
+    },
+    {
+      "path": "data/application_theoretical_review_authoring_2026-10-01/layout.py.txt",
+      "size_bytes": 28711,
+      "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8"
+    },
+    {
+      "path": "data/application_theoretical_review_authoring_2026-10-01/output_helper.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
+      "path": "data/claim_review_2026-10-03.json",
+      "size_bytes": 1542468,
+      "sha256": "0a624b5a57e100582cc08f39ad138ff22585ee7afcd20f685e0653c30808a942"
+    },
+    {
       "path": "data/claim_support_map.json",
       "size_bytes": 154015,
       "sha256": "b75a45d1a92705eb2f45fcea18e9817f8fb75d86c3661cff0d1b3ae43a8bf87e"
@@ -317,9 +362,24 @@
       "sha256": "a48393c446e6e8ccf230993a8cda4032263fbdf67dd3bcce1b42e1f572a7bde9"
     },
     {
+      "path": "data/claim_support_map_substantive_review_2026-10-03.json",
+      "size_bytes": 154721,
+      "sha256": "325102864ecbe4065d2e3dfa138383dab6a9aa1e84fb09cff2531ddcf4f06b8d"
+    },
+    {
+      "path": "data/claim_support_map_theoretical_review_2026-10-01.json",
+      "size_bytes": 154484,
+      "sha256": "49dd2b782033940cf5d77bf6168f8eba345329ec189f29406e791d9ee91426f1"
+    },
+    {
       "path": "data/claim_support_map_working_2026-09-30.json",
       "size_bytes": 154073,
       "sha256": "2f91092c37f1c730cbd930a38e539cf89f33347fc36c4843bb782d971fad8f4d"
+    },
+    {
+      "path": "data/edition_identity_corrections_2026-10-03.json",
+      "size_bytes": 1241,
+      "sha256": "d2bc38c8c9e15bab45038688bebcdf90967e5e2460662572590c1f358c46f5a4"
     },
     {
       "path": "data/electrical_candidate_record_review_2026-09-30.json",
@@ -409,7 +469,7 @@
     {
       "path": "data/nuclear_archive/portable_bundle_manifest.json",
       "size_bytes": 2202,
-      "sha256": "ee6bff15cefdf0adc6348ff7face156f73fba59e161dc66730f475b7cbb553a3"
+      "sha256": "4a7488c291aa914d8be4aa1416aad6fe1d1f2766431611148e6bbe0219c21f81"
     },
     {
       "path": "data/nuclear_archive/schema_header.txt",
@@ -428,8 +488,8 @@
     },
     {
       "path": "data/nuclear_archive/verify_nuclear_archive.py",
-      "size_bytes": 12328,
-      "sha256": "d3fdba1118cf527e643411d8901b659f192d6029590bbac39ca96e9aecf59792"
+      "size_bytes": 12618,
+      "sha256": "9e89a55c1d44c0fdf7e8d8c71f91242e444b6dcb55aba14c373ded70230e86fb"
     },
     {
       "path": "data/oxide_candidate_record_review_2026-10-01.json",
@@ -453,8 +513,8 @@
     },
     {
       "path": "data/particle_archive/extract_pdg_identities.py",
-      "size_bytes": 21209,
-      "sha256": "93c62fd424bb602cd3f6e01f931e81f4c9e4def3da59d2621b406fb89c9aba20"
+      "size_bytes": 21602,
+      "sha256": "b94583e22d78b79c4bd971ed8988cb89e69c80cc0fe21b2ecac18647000730f2"
     },
     {
       "path": "data/particle_archive/pdg2026_identity_archive.json",
@@ -490,6 +550,11 @@
       "path": "data/review_packet_manifest.json",
       "size_bytes": 14671,
       "sha256": "9037d1632aba8a559df22184912316494a9b523b0c63f0b26ddc43d391650f67"
+    },
+    {
+      "path": "data/technical_review_2026-10-03.json",
+      "size_bytes": 41041,
+      "sha256": "a6e8c869e6f8cf7a2b4ec85929aebe847f7c9aacc2d1c51755efa7a00d8b8550"
     },
     {
       "path": "data/working_application_2026-09-30.json",
@@ -555,6 +620,16 @@
       "path": "documents/application_property_evidence_2026-09-30.md",
       "size_bytes": 6790,
       "sha256": "c4d4b140e7ecf79572b347e175f0af35d6208b50fd5a813ddd061f36f9b3264a"
+    },
+    {
+      "path": "documents/application_substantive_review_2026-10-03.md",
+      "size_bytes": 32678,
+      "sha256": "a34ff6fc7161556a46d68c580a7214cd96cdb1d91f45f2c29999e32718c42d09"
+    },
+    {
+      "path": "documents/application_theoretical_review_2026-10-01.md",
+      "size_bytes": 10088,
+      "sha256": "2c3a54392079b9e561202c2d4d7503f81188ba9351057c0b560ec894e3f6555e"
     },
     {
       "path": "documents/claim_group_review_brief.md",
@@ -682,6 +757,16 @@
       "sha256": "b1babb2c6694aed47bde8a6dda6e47bd93ee13a6844e9bb4919a9fe2661adc02"
     },
     {
+      "path": "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+      "size_bytes": 234355,
+      "sha256": "531dccb58202a5cd6cb24f307a2173ed38abac49ec1d251ed8f3e8a743697a9c"
+    },
+    {
+      "path": "documents/pdf/provisional_application_theoretical_review_2026-10-01.pdf",
+      "size_bytes": 229894,
+      "sha256": "8ffb4207a9cfbab5f467a6848c020ffef01e8fc47c57c49e681ea6c80e0b3049"
+    },
+    {
       "path": "documents/pdf/provisional_application_working_2026-09-30.pdf",
       "size_bytes": 153458,
       "sha256": "56da3a8af00ee15f4afb609e5192607e8cf51c16baef5f2a982789145ee014ee"
@@ -737,6 +822,16 @@
       "sha256": "b311bc0f86eb4b15955a275ba0539bcc8753a59052411739288a645f7ee2476e"
     },
     {
+      "path": "documents/provisional_application_substantive_review_2026-10-03.md",
+      "size_bytes": 165484,
+      "sha256": "5ccb71d5448a07f41041302f4be2b962e9a214c83b2f92e39ed642a3b8b1ec23"
+    },
+    {
+      "path": "documents/provisional_application_theoretical_review_2026-10-01.md",
+      "size_bytes": 159094,
+      "sha256": "61ffc4ec1aa89d32dcc4cd44d35852a4b315b13d514c2898c4aabf460e3235f7"
+    },
+    {
       "path": "documents/provisional_application_working_2026-09-30.md",
       "size_bytes": 80010,
       "sha256": "1b508938a31b1e7a19b59b3f06edfd21e8378d6ba9e375551250ceb79a8fd198"
@@ -768,8 +863,8 @@
     },
     {
       "path": "documents/workflow_decisions.md",
-      "size_bytes": 60380,
-      "sha256": "0d3740471de930737502cf94dbe11def610cf0a139a5c80ad0d230d1315288ea"
+      "size_bytes": 62931,
+      "sha256": "a043f27476579bd78fd1574d4603433800b2705ff5eca8beaf667b7856d362b7"
     },
     {
       "path": "documents/working_application_2026-09-30.md",
@@ -779,7 +874,7 @@
     {
       "path": "pyproject.toml",
       "size_bytes": 338,
-      "sha256": "948f71a406b376ed19c4f3440cd53df426dc709f360e35f4d1eb9ce84f41cc18"
+      "sha256": "83a1756f3c55fc7048ab33e12ead14635e6d1c50b6f3ad28941090c7dfef8039"
     },
     {
       "path": "range_model/claim_clarification_checks.py",
@@ -849,7 +944,7 @@
     {
       "path": "requirements-dev.txt",
       "size_bytes": 96,
-      "sha256": "8cc409fd345cfcc3cbbc92f6132d101d884516d6059585f5ab720d077761bc71"
+      "sha256": "faed2b6ec2664f96f81c5cc8dba520862d9c281cf9e46502c8ae0542cc304304"
     },
     {
       "path": "tools/pdf/build_consolidated_review.py",
@@ -863,8 +958,8 @@
     },
     {
       "path": "tools/pdf/build_working_application.py",
-      "size_bytes": 25722,
-      "sha256": "4f4f0f8e37796285409583927d97ff20f82da7395a8315b0d7ed9b3838763e35"
+      "size_bytes": 30704,
+      "sha256": "fa0b79b06f04aeb18184debb6b712803d43855862a236cc0fc101a4b6b27afe7"
     },
     {
       "path": "tools/pdf/requirements-pdf.txt",
@@ -877,14 +972,24 @@
       "sha256": "529f077d5efa3db15fd67f4c107bc64e684e3bfab7b71b83d6e81b3162895069"
     },
     {
+      "path": "tools/substantive_review_checks.py",
+      "size_bytes": 29008,
+      "sha256": "d2f8401286544a0db277b34f6f5bc8d95d945f27771faaf7073a20c96df9037d"
+    },
+    {
+      "path": "tools/technical_review_calculations.py",
+      "size_bytes": 25578,
+      "sha256": "a41bc07c4534aa0c5a3aedf68b5c2c97a443838e7e381a8f5d8311e286597122"
+    },
+    {
       "path": "tools/update_manifest.py",
       "size_bytes": 4785,
       "sha256": "196a2def8e20b8e31bf14f4ff3f2b3dc162472eba45766db9e370eeb5b9ec0e4"
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 202608,
-      "sha256": "27ea88fb09907cdb262fda7464592e18bb110b6d935476f526722e44546ca977"
+      "size_bytes": 235289,
+      "sha256": "412a2070422d52828dcf645516987a2db2f13a227782ef66ff3b49e782f34cfa"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"

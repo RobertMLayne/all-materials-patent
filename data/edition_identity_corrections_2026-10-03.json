@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "record_date": "2026-10-03",
+  "scope": "Post-authoring metadata correction; archived application contents and captured bytes remain unchanged.",
+  "corrections": [
+    {
+      "id": "EDITION-IDENTITY-01",
+      "artifact_path": "data/claim_support_map_theoretical_review_2026-10-01.json",
+      "artifact_sha256": "49dd2b782033940cf5d77bf6168f8eba345329ec189f29406e791d9ee91426f1",
+      "field": "edition",
+      "recorded_value": "metal-glass-evidence application 2026-10-01",
+      "effective_value": "theoretical review application 2026-10-01",
+      "source_path": "documents/provisional_application_theoretical_review_2026-10-01.md",
+      "source_sha256": "61ffc4ec1aa89d32dcc4cd44d35852a4b315b13d514c2898c4aabf460e3235f7",
+      "prepared_date": "2026-10-01",
+      "source_paragraph_count": 94,
+      "reason": "The theoretical-edition map retained the preceding metal/glass edition label. Its source identity, paragraph count and authoring captures identify the theoretical edition.",
+      "archived_bytes_preserved": true,
+      "claim_text_or_support_locations_changed": false,
+      "application_content_or_pdf_changed": false,
+      "earlier_filing_or_publication_date_assigned": false
+    }
+  ]
+}
