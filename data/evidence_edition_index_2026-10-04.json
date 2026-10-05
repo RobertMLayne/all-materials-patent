@@ -1,0 +1,1619 @@
+{
+  "schema_version": 1,
+  "task_identity_date": "2026-10-04",
+  "prepared_date": "2026-10-05",
+  "status": "local additive review; final counsel decisions open",
+  "baseline_commit": "e0233fe2863b2fd9d43be634b6dc6022b5cc0074",
+  "date_meaning": "Preparation/source-check dates are not filing, priority or earliest-public-availability dates.",
+  "operative_edition_id": "E11",
+  "editions": [
+    {
+      "id": "E01",
+      "prepared_date": "2026-09-29",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_draft.md",
+        "sha256": "3c3a6f9b42ca87ffedfd97435ac0476d3301f7f1d650b4c2b9f0fb0b66b15949",
+        "size_bytes": 73191
+      },
+      "support_map": {
+        "path": "data/claim_support_map.json",
+        "sha256": "b75a45d1a92705eb2f45fcea18e9817f8fb75d86c3661cff0d1b3ae43a8bf87e",
+        "size_bytes": 154015
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_draft.pdf",
+        "sha256": "a8306290a92c9433271dd1711e1bdabfd1c79779877897c99186638f3d6e0d7f",
+        "size_bytes": 146255
+      },
+      "numbered_paragraph_count": 80,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false
+    },
+    {
+      "id": "E02",
+      "prepared_date": "2026-09-30",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_working_2026-09-30.md",
+        "sha256": "1b508938a31b1e7a19b59b3f06edfd21e8378d6ba9e375551250ceb79a8fd198",
+        "size_bytes": 80010
+      },
+      "support_map": {
+        "path": "data/claim_support_map_working_2026-09-30.json",
+        "sha256": "2f91092c37f1c730cbd930a38e539cf89f33347fc36c4843bb782d971fad8f4d",
+        "size_bytes": 154073
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_working_2026-09-30.pdf",
+        "sha256": "56da3a8af00ee15f4afb609e5192607e8cf51c16baef5f2a982789145ee014ee",
+        "size_bytes": 153458
+      },
+      "numbered_paragraph_count": 80,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false,
+      "authoring_record": {
+        "path": "data/working_application_2026-09-30.json",
+        "sha256": "fd84b90ead0e99f58ce6b2bf1c8a91987ac1172e70135c78ff623f787ee1b9cf",
+        "size_bytes": 12369
+      },
+      "captured_sources": [
+        {
+          "path": "documents/provisional_application_working_2026-09-30.md",
+          "sha256": "1b508938a31b1e7a19b59b3f06edfd21e8378d6ba9e375551250ceb79a8fd198"
+        },
+        {
+          "path": "data/claim_support_map_working_2026-09-30.json",
+          "sha256": "2f91092c37f1c730cbd930a38e539cf89f33347fc36c4843bb782d971fad8f4d"
+        },
+        {
+          "path": "documents/drawings/composition_simplex.svg",
+          "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+        },
+        {
+          "path": "documents/drawings/material_record_sequence.svg",
+          "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+        },
+        {
+          "path": "tools/pdf/build_working_application.py",
+          "sha256": "76d7dfa53c7a354695f5041b97ef4c0652cf4c84cc29c94e78fbb9babeb59bd6",
+          "snapshot_path": "data/working_application_authoring_2026-09-30/builder.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_consolidated_review.py",
+          "sha256": "3d0b844c308919efc803cb07927c4cc4370789138b96929496aa75674bfd7b3e",
+          "snapshot_path": "data/working_application_authoring_2026-09-30/layout.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_identity_review_annex.py",
+          "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+          "snapshot_path": "data/working_application_authoring_2026-09-30/output_helper.py.txt"
+        }
+      ],
+      "recorded_pdf_metadata": {
+        "path": "documents/pdf/provisional_application_working_2026-09-30.pdf",
+        "sha256": "56da3a8af00ee15f4afb609e5192607e8cf51c16baef5f2a982789145ee014ee",
+        "size_bytes": 153458,
+        "page_count": 28
+      },
+      "recorded_visual_review": {
+        "status": "completed",
+        "method": "All 28 pages rendered with Poppler at 108 dpi; contact sheets and full-page inspection, including changed paragraphs/claims, registers, tables and both drawings.",
+        "pages_reviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "corrected_issue": "Figure 1 C=1 text-anchor alignment; final page 11 inspected and all other 27 pages pixel-identical to prior inspected render.",
+        "remaining_actionable_visual_findings": 0,
+        "scope": "Review appearance only; no filing, physical enablement, earlier entitlement or patentability determination."
+      }
+    },
+    {
+      "id": "E03",
+      "prepared_date": "2026-09-30",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_property_evidence_2026-09-30.md",
+        "sha256": "b311bc0f86eb4b15955a275ba0539bcc8753a59052411739288a645f7ee2476e",
+        "size_bytes": 83974
+      },
+      "support_map": {
+        "path": "data/claim_support_map_property_evidence_2026-09-30.json",
+        "sha256": "a48393c446e6e8ccf230993a8cda4032263fbdf67dd3bcce1b42e1f572a7bde9",
+        "size_bytes": 153963
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_property_evidence_2026-09-30.pdf",
+        "sha256": "b1babb2c6694aed47bde8a6dda6e47bd93ee13a6844e9bb4919a9fe2661adc02",
+        "size_bytes": 159501
+      },
+      "numbered_paragraph_count": 80,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false,
+      "authoring_record": {
+        "path": "data/application_property_evidence_2026-09-30.json",
+        "sha256": "75649c350709a7294c75db4d8d1123180358f9f1c89bdf1749009a70ccca853d",
+        "size_bytes": 12751
+      },
+      "captured_sources": [
+        {
+          "path": "documents/provisional_application_property_evidence_2026-09-30.md",
+          "sha256": "b311bc0f86eb4b15955a275ba0539bcc8753a59052411739288a645f7ee2476e"
+        },
+        {
+          "path": "data/claim_support_map_property_evidence_2026-09-30.json",
+          "sha256": "a48393c446e6e8ccf230993a8cda4032263fbdf67dd3bcce1b42e1f572a7bde9"
+        },
+        {
+          "path": "documents/drawings/composition_simplex.svg",
+          "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+        },
+        {
+          "path": "documents/drawings/material_record_sequence.svg",
+          "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+        },
+        {
+          "path": "tools/pdf/build_working_application.py",
+          "sha256": "673a12db13de2cd1187a9cf65db573e60f8e06526b7948ca10d49b210eee4cb7",
+          "snapshot_path": "data/application_property_evidence_authoring_2026-09-30/builder.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_consolidated_review.py",
+          "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8",
+          "snapshot_path": "data/application_property_evidence_authoring_2026-09-30/layout.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_identity_review_annex.py",
+          "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+          "snapshot_path": "data/application_property_evidence_authoring_2026-09-30/output_helper.py.txt"
+        }
+      ],
+      "recorded_pdf_metadata": {
+        "path": "documents/pdf/provisional_application_property_evidence_2026-09-30.pdf",
+        "intended_archival_path": "documents/pdf/provisional_application_property_evidence_2026-09-30.pdf",
+        "sha256": "b1babb2c6694aed47bde8a6dda6e47bd93ee13a6844e9bb4919a9fe2661adc02",
+        "size_bytes": 159501,
+        "page_count": 29
+      },
+      "recorded_visual_review": {
+        "status": "completed",
+        "method": "All 29 pages rendered with Poppler 26.07.0 at 108 dpi and inspected in five contact sheets; pages 9, 10, 12 and 13 additionally inspected at full-page resolution for property table, evidence notes and both drawings.",
+        "pages_reviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "corrected_issue": "Widened the property-table ratio column before the final render; the complete header and all ten rows are legible on page 9.",
+        "remaining_actionable_visual_findings": 0,
+        "scope": "Appearance review only; no filing, physical enablement, earlier entitlement or patentability determination."
+      }
+    },
+    {
+      "id": "E04",
+      "prepared_date": "2026-09-30",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_preparation_evidence_2026-09-30.md",
+        "sha256": "c9b8f44b79f970379054cf89508cb81853906dbb825a6bca476eb4b0216f575e",
+        "size_bytes": 91807
+      },
+      "support_map": {
+        "path": "data/claim_support_map_preparation_evidence_2026-09-30.json",
+        "sha256": "846c73ab7868daa8e83bcbfe8f577650651f09eaaec65321a618f22f62b66f66",
+        "size_bytes": 153967
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_preparation_evidence_2026-09-30.pdf",
+        "sha256": "8fe0a7d5c093548da2034b1648432b27504c793ab55f90fc739b3dd6fe917c0b",
+        "size_bytes": 167520
+      },
+      "numbered_paragraph_count": 80,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false,
+      "authoring_record": {
+        "path": "data/application_preparation_evidence_2026-09-30.json",
+        "sha256": "0beef870e3bc61f85b924be62d03e359dc90d37cbdeaf5346ec15b92b469c8e9",
+        "size_bytes": 13113
+      },
+      "captured_sources": [
+        {
+          "path": "documents/provisional_application_preparation_evidence_2026-09-30.md",
+          "sha256": "c9b8f44b79f970379054cf89508cb81853906dbb825a6bca476eb4b0216f575e"
+        },
+        {
+          "path": "data/claim_support_map_preparation_evidence_2026-09-30.json",
+          "sha256": "846c73ab7868daa8e83bcbfe8f577650651f09eaaec65321a618f22f62b66f66"
+        },
+        {
+          "path": "documents/drawings/composition_simplex.svg",
+          "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+        },
+        {
+          "path": "documents/drawings/material_record_sequence.svg",
+          "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+        },
+        {
+          "path": "tools/pdf/build_working_application.py",
+          "sha256": "b89217f330dc4d1d10eafdaadd178a5f434f99e8102469532a79899661519639",
+          "snapshot_path": "data/application_preparation_evidence_authoring_2026-09-30/builder.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_consolidated_review.py",
+          "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8",
+          "snapshot_path": "data/application_preparation_evidence_authoring_2026-09-30/layout.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_identity_review_annex.py",
+          "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+          "snapshot_path": "data/application_preparation_evidence_authoring_2026-09-30/output_helper.py.txt"
+        },
+        {
+          "path": "data/hydrogel_preparation_source_review_2026-09-30.json",
+          "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327"
+        }
+      ],
+      "recorded_pdf_metadata": {
+        "path": "documents/pdf/provisional_application_preparation_evidence_2026-09-30.pdf",
+        "intended_archival_path": "documents/pdf/provisional_application_preparation_evidence_2026-09-30.pdf",
+        "sha256": "8fe0a7d5c093548da2034b1648432b27504c793ab55f90fc739b3dd6fe917c0b",
+        "size_bytes": 167520,
+        "page_count": 31
+      },
+      "recorded_visual_review": {
+        "status": "completed",
+        "method": "All 31 pages rendered with Poppler 26.07.0 at 108 dpi and inspected in eight contact sheets; full-page inspection of pages 9, 10, 11, 12, 14 and 15. Root additionally inspected complete preparation pages 10, 11 and 12.",
+        "pages_reviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "remaining_actionable_visual_findings": 0,
+        "scope": "Appearance review only; no filing, earlier entitlement, physical enablement or patentability determination."
+      }
+    },
+    {
+      "id": "E05",
+      "prepared_date": "2026-09-30",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_electrical_evidence_2026-09-30.md",
+        "sha256": "36125cd499bd20cd64bdad9ca599d65f2e637fc2a130a552471f9c83c7f3284a",
+        "size_bytes": 96305
+      },
+      "support_map": {
+        "path": "data/claim_support_map_electrical_evidence_2026-09-30.json",
+        "sha256": "764df80922ef6a6e69dbd43872ac1463df34a7955ff575499436f84770603eb2",
+        "size_bytes": 153968
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_electrical_evidence_2026-09-30.pdf",
+        "sha256": "1bbc26fd640e202b701f792de316865d964634e231bcc4f6958cbf9a91b78959",
+        "size_bytes": 172615
+      },
+      "numbered_paragraph_count": 80,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false,
+      "authoring_record": {
+        "path": "data/application_electrical_evidence_2026-09-30.json",
+        "sha256": "2a2ae48cd453299997d8bbf6b626f3b674b7298b9b4daf5cb853817bea9ea392",
+        "size_bytes": 13575
+      },
+      "captured_sources": [
+        {
+          "path": "documents/provisional_application_electrical_evidence_2026-09-30.md",
+          "sha256": "36125cd499bd20cd64bdad9ca599d65f2e637fc2a130a552471f9c83c7f3284a"
+        },
+        {
+          "path": "data/claim_support_map_electrical_evidence_2026-09-30.json",
+          "sha256": "764df80922ef6a6e69dbd43872ac1463df34a7955ff575499436f84770603eb2"
+        },
+        {
+          "path": "documents/drawings/composition_simplex.svg",
+          "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+        },
+        {
+          "path": "documents/drawings/material_record_sequence.svg",
+          "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+        },
+        {
+          "path": "tools/pdf/build_working_application.py",
+          "sha256": "eca63b8c6ccc3a8e62ebd133e7f4198d27998bf5acd844db88b926982134340f",
+          "snapshot_path": "data/application_electrical_evidence_authoring_2026-09-30/builder.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_consolidated_review.py",
+          "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8",
+          "snapshot_path": "data/application_electrical_evidence_authoring_2026-09-30/layout.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_identity_review_annex.py",
+          "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+          "snapshot_path": "data/application_electrical_evidence_authoring_2026-09-30/output_helper.py.txt"
+        },
+        {
+          "path": "data/hydrogel_preparation_source_review_2026-09-30.json",
+          "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327"
+        },
+        {
+          "path": "data/electrical_source_review_2026-09-30.json",
+          "sha256": "47e7e9bc747814f736adaf889910d67a15915dbcf6635c6c7d341d4ea1f077b1"
+        }
+      ],
+      "recorded_pdf_metadata": {
+        "path": "documents/pdf/provisional_application_electrical_evidence_2026-09-30.pdf",
+        "intended_archival_path": "documents/pdf/provisional_application_electrical_evidence_2026-09-30.pdf",
+        "sha256": "1bbc26fd640e202b701f792de316865d964634e231bcc4f6958cbf9a91b78959",
+        "size_bytes": 172615,
+        "page_count": 32
+      },
+      "recorded_visual_review": {
+        "status": "completed",
+        "method": "All 32 pages rendered with Poppler 26.07.0 at 108 dpi and inspected in eight contact sheets; full-page inspection of pages 12, 13, 15 and 16. Root independently inspected those four pages and the first/last contact sheets.",
+        "pages_reviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32
+        ],
+        "remaining_actionable_visual_findings": 0,
+        "scope": "Appearance review only; no filing, earlier entitlement, physical enablement or patentability determination."
+      }
+    },
+    {
+      "id": "E06",
+      "prepared_date": "2026-09-30",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_oxide_defect_evidence_2026-09-30.md",
+        "sha256": "1f397b45d90e71a612b1e3fbeb5a205f80c8512ba6ac49816cbae3dc1fa57925",
+        "size_bytes": 101668
+      },
+      "support_map": {
+        "path": "data/claim_support_map_oxide_defect_evidence_2026-09-30.json",
+        "sha256": "792e5023bd282ae7b37330410017724ba616f06262d8ebc944c1f4e1e825d473",
+        "size_bytes": 153971
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_oxide_defect_evidence_2026-09-30.pdf",
+        "sha256": "06df382fd7979cc66862ec62ecfe0fce2f3d727588e7077bb91c7991b10379df",
+        "size_bytes": 178352
+      },
+      "numbered_paragraph_count": 80,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false,
+      "authoring_record": {
+        "path": "data/application_oxide_defect_evidence_2026-09-30.json",
+        "sha256": "18959be8860131c4e92a8a45cf65e33dbe0673778ebd02cc613dabfc5cc32872",
+        "size_bytes": 14781
+      },
+      "captured_sources": [
+        {
+          "path": "documents/provisional_application_oxide_defect_evidence_2026-09-30.md",
+          "sha256": "1f397b45d90e71a612b1e3fbeb5a205f80c8512ba6ac49816cbae3dc1fa57925"
+        },
+        {
+          "path": "data/claim_support_map_oxide_defect_evidence_2026-09-30.json",
+          "sha256": "792e5023bd282ae7b37330410017724ba616f06262d8ebc944c1f4e1e825d473"
+        },
+        {
+          "path": "documents/drawings/composition_simplex.svg",
+          "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+        },
+        {
+          "path": "documents/drawings/material_record_sequence.svg",
+          "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+        },
+        {
+          "path": "tools/pdf/build_working_application.py",
+          "sha256": "de87734cd070a6840de334c63c9a451ebac4c405658a91633d2590eff92dcc07",
+          "snapshot_path": "data/application_oxide_defect_evidence_authoring_2026-09-30/builder.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_consolidated_review.py",
+          "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8",
+          "snapshot_path": "data/application_oxide_defect_evidence_authoring_2026-09-30/layout.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_identity_review_annex.py",
+          "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+          "snapshot_path": "data/application_oxide_defect_evidence_authoring_2026-09-30/output_helper.py.txt"
+        },
+        {
+          "path": "data/hydrogel_preparation_source_review_2026-09-30.json",
+          "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327"
+        },
+        {
+          "path": "data/electrical_source_review_2026-09-30.json",
+          "sha256": "47e7e9bc747814f736adaf889910d67a15915dbcf6635c6c7d341d4ea1f077b1"
+        },
+        {
+          "path": "data/oxide_defect_source_review_2026-09-30.json",
+          "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
+        }
+      ],
+      "recorded_pdf_metadata": {
+        "path": "documents/pdf/provisional_application_oxide_defect_evidence_2026-09-30.pdf",
+        "intended_archival_path": "documents/pdf/provisional_application_oxide_defect_evidence_2026-09-30.pdf",
+        "sha256": "06df382fd7979cc66862ec62ecfe0fce2f3d727588e7077bb91c7991b10379df",
+        "size_bytes": 178352,
+        "page_count": 34
+      },
+      "recorded_visual_review": {
+        "status": "completed",
+        "method": "Corrected PDF rendered with Poppler 26.07.0 at 108 dpi: all 34 PNGs are byte-for-byte identical to the initially inspected renders. The initial nine contact sheets and full-page inspections covered all pages and pages 9, 10, 11, 16, 17, 18, 25, 26, 32 and 34 respectively; root independently inspected pages 9, 10, 11, 16, 17 and 18. Root additionally inspected the corrected page 9.",
+        "pages_reviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        "remaining_actionable_visual_findings": 0,
+        "scope": "Appearance review and exact rendered-image preservation only; no filing, earlier entitlement, physical enablement or patentability determination."
+      }
+    },
+    {
+      "id": "E07",
+      "prepared_date": "2026-10-01",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_phase_specific_evidence_2026-10-01.md",
+        "sha256": "7bf785cebfea08d41702eb168b7819a0eae24410a3ff105fde33b435c375aa3e",
+        "size_bytes": 109596
+      },
+      "support_map": {
+        "path": "data/claim_support_map_phase_specific_evidence_2026-10-01.json",
+        "sha256": "871991af9bad55fe92988197c650df480501f41ba40929f0343f3bcd4fc979b5",
+        "size_bytes": 153977
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_phase_specific_evidence_2026-10-01.pdf",
+        "sha256": "5660cf04e70a4f76de4e8785ca4b02ee7636eff30998d13a6b4ebb0001170fbd",
+        "size_bytes": 184734
+      },
+      "numbered_paragraph_count": 80,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false,
+      "authoring_record": {
+        "path": "data/application_phase_specific_evidence_2026-10-01.json",
+        "sha256": "d850d15add4bd096c5a663e27ff908444156e4239d4527160d2615e967fb9e8f",
+        "size_bytes": 15003
+      },
+      "captured_sources": [
+        {
+          "path": "documents/provisional_application_phase_specific_evidence_2026-10-01.md",
+          "sha256": "7bf785cebfea08d41702eb168b7819a0eae24410a3ff105fde33b435c375aa3e"
+        },
+        {
+          "path": "data/claim_support_map_phase_specific_evidence_2026-10-01.json",
+          "sha256": "871991af9bad55fe92988197c650df480501f41ba40929f0343f3bcd4fc979b5"
+        },
+        {
+          "path": "documents/drawings/composition_simplex.svg",
+          "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+        },
+        {
+          "path": "documents/drawings/material_record_sequence.svg",
+          "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+        },
+        {
+          "path": "tools/pdf/build_working_application.py",
+          "sha256": "8fb5c63d76b014cafbf9e11630e41a5cc730870008f3a516ba2b8f3d942780bd",
+          "snapshot_path": "data/application_phase_specific_evidence_authoring_2026-10-01/builder.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_consolidated_review.py",
+          "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8",
+          "snapshot_path": "data/application_phase_specific_evidence_authoring_2026-10-01/layout.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_identity_review_annex.py",
+          "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+          "snapshot_path": "data/application_phase_specific_evidence_authoring_2026-10-01/output_helper.py.txt"
+        },
+        {
+          "path": "data/hydrogel_preparation_source_review_2026-09-30.json",
+          "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327"
+        },
+        {
+          "path": "data/electrical_source_review_2026-09-30.json",
+          "sha256": "47e7e9bc747814f736adaf889910d67a15915dbcf6635c6c7d341d4ea1f077b1"
+        },
+        {
+          "path": "data/oxide_defect_source_review_2026-09-30.json",
+          "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
+        },
+        {
+          "path": "data/magneli_source_review_2026-10-01.json",
+          "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
+        },
+        {
+          "path": "data/oxide_candidate_record_review_2026-10-01.json",
+          "sha256": "031d389236fbe42f81d3b607f7146a4a359e48db7892533a2c5f77aaf5bf0efa"
+        }
+      ],
+      "recorded_pdf_metadata": {
+        "path": "documents/pdf/provisional_application_phase_specific_evidence_2026-10-01.pdf",
+        "intended_archival_path": "documents/pdf/provisional_application_phase_specific_evidence_2026-10-01.pdf",
+        "sha256": "5660cf04e70a4f76de4e8785ca4b02ee7636eff30998d13a6b4ebb0001170fbd",
+        "size_bytes": 184734,
+        "page_count": 35
+      },
+      "recorded_visual_review": {
+        "status": "completed",
+        "method": "Poppler 26.07.0 rendering at 108 dpi; nine contact sheets inspected across three independent reviewers. Full-page inspection covered pages 1, 9, 10, 11, 12 and 35. Root additionally inspected contact sheets for pages 9-12 and 33-35 and full pages 9, 10, 11, 12 and 35.",
+        "pages_reviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "remaining_actionable_visual_findings": 0,
+        "scope": "Appearance review only; no physical realization, patentability, filing or earlier entitlement certification."
+      }
+    },
+    {
+      "id": "E08",
+      "prepared_date": "2026-10-01",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_family_evidence_2026-10-01.md",
+        "sha256": "d0a3663e417fc2a04dc50d1e2d75590f281524cff99e908965159de9b54e4321",
+        "size_bytes": 127431
+      },
+      "support_map": {
+        "path": "data/claim_support_map_family_evidence_2026-10-01.json",
+        "sha256": "6021bfa1ae1e5983753a8b70b3acb2b6e6e4ff2cba1ac415a3ca65c09de6f34b",
+        "size_bytes": 153963
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_family_evidence_2026-10-01.pdf",
+        "sha256": "4be9bae9c511cb657530e380b3f146310faf3c930c1c3d0bf87ba02881c3c138",
+        "size_bytes": 200802
+      },
+      "numbered_paragraph_count": 80,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false,
+      "authoring_record": {
+        "path": "data/application_family_evidence_2026-10-01.json",
+        "sha256": "6c81887d062c3103b623c4454c41b170098fe89e6958e51a8b1f8acf1cd61b52",
+        "size_bytes": 16223
+      },
+      "captured_sources": [
+        {
+          "path": "documents/provisional_application_family_evidence_2026-10-01.md",
+          "sha256": "d0a3663e417fc2a04dc50d1e2d75590f281524cff99e908965159de9b54e4321"
+        },
+        {
+          "path": "data/claim_support_map_family_evidence_2026-10-01.json",
+          "sha256": "6021bfa1ae1e5983753a8b70b3acb2b6e6e4ff2cba1ac415a3ca65c09de6f34b"
+        },
+        {
+          "path": "documents/drawings/composition_simplex.svg",
+          "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+        },
+        {
+          "path": "documents/drawings/material_record_sequence.svg",
+          "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+        },
+        {
+          "path": "tools/pdf/build_working_application.py",
+          "sha256": "0838bc97899bad22d53287a6b1cf68b04c0d683cda608c322a8adc1d4bd1cc99",
+          "snapshot_path": "data/application_family_evidence_authoring_2026-10-01/builder.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_consolidated_review.py",
+          "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8",
+          "snapshot_path": "data/application_family_evidence_authoring_2026-10-01/layout.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_identity_review_annex.py",
+          "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+          "snapshot_path": "data/application_family_evidence_authoring_2026-10-01/output_helper.py.txt"
+        },
+        {
+          "path": "data/hydrogel_preparation_source_review_2026-09-30.json",
+          "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327"
+        },
+        {
+          "path": "data/electrical_source_review_2026-09-30.json",
+          "sha256": "47e7e9bc747814f736adaf889910d67a15915dbcf6635c6c7d341d4ea1f077b1"
+        },
+        {
+          "path": "data/oxide_defect_source_review_2026-09-30.json",
+          "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
+        },
+        {
+          "path": "data/magneli_source_review_2026-10-01.json",
+          "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
+        },
+        {
+          "path": "data/oxide_candidate_record_review_2026-10-01.json",
+          "sha256": "031d389236fbe42f81d3b607f7146a4a359e48db7892533a2c5f77aaf5bf0efa"
+        },
+        {
+          "path": "data/family_source_review_2026-10-01.json",
+          "sha256": "056c83e78d38d0fc6421150994f097081a8fd6efd98ca83951f5230a3d679e40"
+        },
+        {
+          "path": "documents/reference_entry_support.md",
+          "sha256": "91b195ba1ac6c2a9426874c570f7dbbcd363e2b95d62a082f8a4bc0ee8f37a72"
+        }
+      ],
+      "recorded_pdf_metadata": {
+        "path": "documents/pdf/provisional_application_family_evidence_2026-10-01.pdf",
+        "intended_archival_path": "documents/pdf/provisional_application_family_evidence_2026-10-01.pdf",
+        "sha256": "4be9bae9c511cb657530e380b3f146310faf3c930c1c3d0bf87ba02881c3c138",
+        "size_bytes": 200802,
+        "page_count": 39
+      },
+      "recorded_visual_review": {
+        "status": "completed",
+        "method": "Poppler 26.07.0 rendering at 108 dpi. Root inspected contacts for pages 1-16; independent reviewers inspected contacts for pages 17-28 and 29-39. All ten contact sheets were inspected. Full-page inspection covered pages 6, 7, 8, 9, 13, 17, 18, 33 and 39. Root independently inspected full pages 6, 7, 8, 9, 13 and 39.",
+        "pages_reviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39
+        ],
+        "remaining_actionable_visual_findings": 0,
+        "scope": "Appearance review only; no physical realization, patentability, filing or earlier entitlement certification."
+      }
+    },
+    {
+      "id": "E09",
+      "prepared_date": "2026-10-01",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_metal_glass_evidence_2026-10-01.md",
+        "sha256": "94086dfe5e862fada24504c677580dbebbdc7511620b7ba7b89d8623aa4eac55",
+        "size_bytes": 141106
+      },
+      "support_map": {
+        "path": "data/claim_support_map_metal_glass_evidence_2026-10-01.json",
+        "sha256": "c6cc0ffbd504b79866c6384f53635d7d05ea02216f60695918e8e4085bebba9b",
+        "size_bytes": 153977
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_metal_glass_evidence_2026-10-01.pdf",
+        "sha256": "01429b48939e3bc9196c73290c30e7b20dd3e9b562ef486766e8c2996abd32ae",
+        "size_bytes": 212750
+      },
+      "numbered_paragraph_count": 80,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false,
+      "authoring_record": {
+        "path": "data/application_metal_glass_evidence_2026-10-01.json",
+        "sha256": "815594e2571e5f34dac8c1ab8fca02112939758aec1dd29b13a186846d5363cb",
+        "size_bytes": 17076
+      },
+      "captured_sources": [
+        {
+          "path": "documents/provisional_application_metal_glass_evidence_2026-10-01.md",
+          "sha256": "94086dfe5e862fada24504c677580dbebbdc7511620b7ba7b89d8623aa4eac55"
+        },
+        {
+          "path": "data/claim_support_map_metal_glass_evidence_2026-10-01.json",
+          "sha256": "c6cc0ffbd504b79866c6384f53635d7d05ea02216f60695918e8e4085bebba9b"
+        },
+        {
+          "path": "documents/drawings/composition_simplex.svg",
+          "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+        },
+        {
+          "path": "documents/drawings/material_record_sequence.svg",
+          "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+        },
+        {
+          "path": "tools/pdf/build_working_application.py",
+          "sha256": "4f4f0f8e37796285409583927d97ff20f82da7395a8315b0d7ed9b3838763e35",
+          "snapshot_path": "data/application_metal_glass_evidence_authoring_2026-10-01/builder.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_consolidated_review.py",
+          "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8",
+          "snapshot_path": "data/application_metal_glass_evidence_authoring_2026-10-01/layout.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_identity_review_annex.py",
+          "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+          "snapshot_path": "data/application_metal_glass_evidence_authoring_2026-10-01/output_helper.py.txt"
+        },
+        {
+          "path": "data/hydrogel_preparation_source_review_2026-09-30.json",
+          "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327"
+        },
+        {
+          "path": "data/electrical_source_review_2026-09-30.json",
+          "sha256": "47e7e9bc747814f736adaf889910d67a15915dbcf6635c6c7d341d4ea1f077b1"
+        },
+        {
+          "path": "data/oxide_defect_source_review_2026-09-30.json",
+          "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
+        },
+        {
+          "path": "data/magneli_source_review_2026-10-01.json",
+          "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
+        },
+        {
+          "path": "data/oxide_candidate_record_review_2026-10-01.json",
+          "sha256": "031d389236fbe42f81d3b607f7146a4a359e48db7892533a2c5f77aaf5bf0efa"
+        },
+        {
+          "path": "data/family_source_review_2026-10-01.json",
+          "sha256": "056c83e78d38d0fc6421150994f097081a8fd6efd98ca83951f5230a3d679e40"
+        },
+        {
+          "path": "documents/reference_entry_support.md",
+          "sha256": "91b195ba1ac6c2a9426874c570f7dbbcd363e2b95d62a082f8a4bc0ee8f37a72"
+        },
+        {
+          "path": "data/metal_glass_source_review_2026-10-01.json",
+          "sha256": "4f681b721c96d0c8071c0fdcd0b00d8fc281b3fa90db479fadcd30679be43731"
+        }
+      ],
+      "recorded_pdf_metadata": {
+        "path": "documents/pdf/provisional_application_metal_glass_evidence_2026-10-01.pdf",
+        "intended_archival_path": "documents/pdf/provisional_application_metal_glass_evidence_2026-10-01.pdf",
+        "sha256": "01429b48939e3bc9196c73290c30e7b20dd3e9b562ef486766e8c2996abd32ae",
+        "size_bytes": 212750,
+        "page_count": 42
+      },
+      "recorded_visual_review": {
+        "status": "completed",
+        "method": "Poppler 26.07.0 rendering at 108 dpi. Root inspected contacts for pages 1-16; independent reviewers inspected contacts for pages 17-28 and 29-42. All eleven contact sheets were inspected. Full-page inspection covered pages 6, 7, 14, 15, 19, 20, 27, 35 and 42. Root independently inspected full pages 6, 7, 14 and 15.",
+        "pages_reviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ],
+        "remaining_actionable_visual_findings": 0,
+        "scope": "Appearance review only; no physical realization, patentability, filing or earlier entitlement certification."
+      }
+    },
+    {
+      "id": "E10",
+      "prepared_date": "2026-10-01",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_theoretical_review_2026-10-01.md",
+        "sha256": "61ffc4ec1aa89d32dcc4cd44d35852a4b315b13d514c2898c4aabf460e3235f7",
+        "size_bytes": 159094
+      },
+      "support_map": {
+        "path": "data/claim_support_map_theoretical_review_2026-10-01.json",
+        "sha256": "49dd2b782033940cf5d77bf6168f8eba345329ec189f29406e791d9ee91426f1",
+        "size_bytes": 154484
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_theoretical_review_2026-10-01.pdf",
+        "sha256": "8ffb4207a9cfbab5f467a6848c020ffef01e8fc47c57c49e681ea6c80e0b3049",
+        "size_bytes": 229894
+      },
+      "numbered_paragraph_count": 94,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false,
+      "authoring_record": {
+        "path": "data/application_theoretical_review_2026-10-01.json",
+        "sha256": "ceb71a7297ee95faf80e76841ac38cad30dbacf0f16d9297cc8cf3ce5fbb8825",
+        "size_bytes": 18334
+      },
+      "captured_sources": [
+        {
+          "path": "documents/provisional_application_theoretical_review_2026-10-01.md",
+          "sha256": "61ffc4ec1aa89d32dcc4cd44d35852a4b315b13d514c2898c4aabf460e3235f7"
+        },
+        {
+          "path": "data/claim_support_map_theoretical_review_2026-10-01.json",
+          "sha256": "49dd2b782033940cf5d77bf6168f8eba345329ec189f29406e791d9ee91426f1"
+        },
+        {
+          "path": "documents/drawings/composition_simplex.svg",
+          "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+        },
+        {
+          "path": "documents/drawings/material_record_sequence.svg",
+          "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+        },
+        {
+          "path": "tools/pdf/build_working_application.py",
+          "sha256": "527a3c8a0b196b07938cae9e08f28fd0a9ee11a0317a8ef70cb1d450965330b9",
+          "snapshot_path": "data/application_theoretical_review_authoring_2026-10-01/builder.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_consolidated_review.py",
+          "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8",
+          "snapshot_path": "data/application_theoretical_review_authoring_2026-10-01/layout.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_identity_review_annex.py",
+          "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+          "snapshot_path": "data/application_theoretical_review_authoring_2026-10-01/output_helper.py.txt"
+        },
+        {
+          "path": "data/hydrogel_preparation_source_review_2026-09-30.json",
+          "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327"
+        },
+        {
+          "path": "data/electrical_source_review_2026-09-30.json",
+          "sha256": "47e7e9bc747814f736adaf889910d67a15915dbcf6635c6c7d341d4ea1f077b1"
+        },
+        {
+          "path": "data/oxide_defect_source_review_2026-09-30.json",
+          "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
+        },
+        {
+          "path": "data/magneli_source_review_2026-10-01.json",
+          "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
+        },
+        {
+          "path": "data/oxide_candidate_record_review_2026-10-01.json",
+          "sha256": "031d389236fbe42f81d3b607f7146a4a359e48db7892533a2c5f77aaf5bf0efa"
+        },
+        {
+          "path": "data/family_source_review_2026-10-01.json",
+          "sha256": "056c83e78d38d0fc6421150994f097081a8fd6efd98ca83951f5230a3d679e40"
+        },
+        {
+          "path": "documents/reference_entry_support.md",
+          "sha256": "91b195ba1ac6c2a9426874c570f7dbbcd363e2b95d62a082f8a4bc0ee8f37a72"
+        },
+        {
+          "path": "data/metal_glass_source_review_2026-10-01.json",
+          "sha256": "4f681b721c96d0c8071c0fdcd0b00d8fc281b3fa90db479fadcd30679be43731"
+        }
+      ],
+      "recorded_pdf_metadata": {
+        "path": "documents/pdf/provisional_application_theoretical_review_2026-10-01.pdf",
+        "intended_archival_path": "documents/pdf/provisional_application_theoretical_review_2026-10-01.pdf",
+        "sha256": "8ffb4207a9cfbab5f467a6848c020ffef01e8fc47c57c49e681ea6c80e0b3049",
+        "size_bytes": 229894,
+        "page_count": 46
+      },
+      "recorded_visual_review": {
+        "status": "completed",
+        "method": "Poppler 26.07.0 at 108 dpi. Root inspected twelve initial contact sheets covering all 46 pages and full pages 1, 2, 19, 28, 29, 30 and 46. After a mathematical-notation correction, all 46 final pages were rendered and compared pixel-for-pixel: 45 were unchanged; root re-inspected the sole changed final page 28 at full size.",
+        "pages_reviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "remaining_actionable_visual_findings": 0,
+        "scope": "Appearance only; no physical, patentability, inventorship, filing or entitlement certification."
+      }
+    },
+    {
+      "id": "E11",
+      "prepared_date": "2026-10-03",
+      "date_basis": "preserved edition/source record, not filesystem mtime",
+      "application": {
+        "path": "documents/provisional_application_substantive_review_2026-10-03.md",
+        "sha256": "5ccb71d5448a07f41041302f4be2b962e9a214c83b2f92e39ed642a3b8b1ec23",
+        "size_bytes": 165484
+      },
+      "support_map": {
+        "path": "data/claim_support_map_substantive_review_2026-10-03.json",
+        "sha256": "325102864ecbe4065d2e3dfa138383dab6a9aa1e84fb09cff2531ddcf4f06b8d",
+        "size_bytes": 154721
+      },
+      "pdf": {
+        "path": "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+        "sha256": "531dccb58202a5cd6cb24f307a2173ed38abac49ec1d251ed8f3e8a743697a9c",
+        "size_bytes": 234355
+      },
+      "numbered_paragraph_count": 99,
+      "claim_count": 199,
+      "earlier_filing_or_publication_assigned": false,
+      "later_review_exhibits_adopted": false,
+      "authoring_record": {
+        "path": "data/application_substantive_review_2026-10-03.json",
+        "sha256": "949673ac06f1111f8fc688003805981b3f46a1c514a77a5402ad41d974345199",
+        "size_bytes": 18864
+      },
+      "captured_sources": [
+        {
+          "path": "documents/provisional_application_substantive_review_2026-10-03.md",
+          "sha256": "5ccb71d5448a07f41041302f4be2b962e9a214c83b2f92e39ed642a3b8b1ec23"
+        },
+        {
+          "path": "data/claim_support_map_substantive_review_2026-10-03.json",
+          "sha256": "325102864ecbe4065d2e3dfa138383dab6a9aa1e84fb09cff2531ddcf4f06b8d"
+        },
+        {
+          "path": "documents/drawings/composition_simplex.svg",
+          "sha256": "3f947623a52dca6ac677c5c519d0f95d47569e6a75fceecd7194afd52b40b8a9"
+        },
+        {
+          "path": "documents/drawings/material_record_sequence.svg",
+          "sha256": "9b28132a377a157509ca7f8885978a59d89f071719125fe6f761772269650c55"
+        },
+        {
+          "path": "tools/pdf/build_working_application.py",
+          "sha256": "fa0b79b06f04aeb18184debb6b712803d43855862a236cc0fc101a4b6b27afe7",
+          "snapshot_path": "data/application_substantive_review_authoring_2026-10-03/builder.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_consolidated_review.py",
+          "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8",
+          "snapshot_path": "data/application_substantive_review_authoring_2026-10-03/layout.py.txt"
+        },
+        {
+          "path": "tools/pdf/build_identity_review_annex.py",
+          "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c",
+          "snapshot_path": "data/application_substantive_review_authoring_2026-10-03/output_helper.py.txt"
+        },
+        {
+          "path": "data/hydrogel_preparation_source_review_2026-09-30.json",
+          "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327"
+        },
+        {
+          "path": "data/electrical_source_review_2026-09-30.json",
+          "sha256": "47e7e9bc747814f736adaf889910d67a15915dbcf6635c6c7d341d4ea1f077b1"
+        },
+        {
+          "path": "data/oxide_defect_source_review_2026-09-30.json",
+          "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6"
+        },
+        {
+          "path": "data/magneli_source_review_2026-10-01.json",
+          "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
+        },
+        {
+          "path": "data/oxide_candidate_record_review_2026-10-01.json",
+          "sha256": "031d389236fbe42f81d3b607f7146a4a359e48db7892533a2c5f77aaf5bf0efa"
+        },
+        {
+          "path": "data/family_source_review_2026-10-01.json",
+          "sha256": "056c83e78d38d0fc6421150994f097081a8fd6efd98ca83951f5230a3d679e40"
+        },
+        {
+          "path": "documents/reference_entry_support.md",
+          "sha256": "91b195ba1ac6c2a9426874c570f7dbbcd363e2b95d62a082f8a4bc0ee8f37a72"
+        },
+        {
+          "path": "data/metal_glass_source_review_2026-10-01.json",
+          "sha256": "4f681b721c96d0c8071c0fdcd0b00d8fc281b3fa90db479fadcd30679be43731"
+        },
+        {
+          "path": "data/claim_review_2026-10-03.json",
+          "sha256": "0a624b5a57e100582cc08f39ad138ff22585ee7afcd20f685e0653c30808a942"
+        },
+        {
+          "path": "data/technical_review_2026-10-03.json",
+          "sha256": "a6e8c869e6f8cf7a2b4ec85929aebe847f7c9aacc2d1c51755efa7a00d8b8550"
+        }
+      ],
+      "recorded_pdf_metadata": {
+        "path": "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+        "intended_archival_path": "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+        "sha256": "531dccb58202a5cd6cb24f307a2173ed38abac49ec1d251ed8f3e8a743697a9c",
+        "size_bytes": 234355,
+        "page_count": 47
+      },
+      "recorded_visual_review": {
+        "status": "completed",
+        "method": "Poppler 26.07.0 at 108 dpi. Root inspected twelve contact sheets covering all 47 pages, plus full-size pages 1, 2, 19, 26, 27, 31, 32 and 47. No clipping, overlapping text, missing glyphs, misplaced drawings or actionable table-layout defects were observed. Archived PDF bytes are identical to the inspected authoring output.",
+        "pages_reviewed": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ],
+        "full_pages_reviewed": [
+          1,
+          2,
+          19,
+          26,
+          27,
+          31,
+          32,
+          47
+        ],
+        "remaining_actionable_visual_findings": 0,
+        "scope": "Appearance only; no physical, patentability, inventorship, filing or entitlement certification."
+      }
+    }
+  ],
+  "comparators": [
+    {
+      "id": "ALLOY",
+      "primary_url": "https://doi.org/10.1038/s41598-017-12551-9",
+      "local_locator": "documents/alloy_claim_comparison_2026-09-30.md",
+      "scope": "CoCrFeNi/CoCrFeMnNi principal equiatomic feeds, prepared specimens and reported local impurities; complete support and exact equality remain conditional.",
+      "chronological_prior_art_qualification": "unresolved",
+      "applicant_result": false
+    },
+    {
+      "id": "GLASS",
+      "primary_url": "https://authors.library.caltech.edu/records/4r2k2-70t09",
+      "local_locator": "documents/glass_claim_comparison_2026-10-01.md",
+      "scope": "Selected metallic-glass source/route and six-principal target; present fine-box and below-floor models are current calculations, not source specimen data.",
+      "chronological_prior_art_qualification": "unresolved",
+      "applicant_result": false
+    },
+    {
+      "id": "OXIDE",
+      "primary_url": "https://www.nature.com/articles/srep01411",
+      "local_locator": "documents/oxide_claim_comparison_2026-10-01.md",
+      "scope": "TiO2(B) nominal 1:2 formula, selected nanosheet route; retained surfaces/residuals, source-specific precursor issues and exact binary closure remain qualified.",
+      "chronological_prior_art_qualification": "unresolved",
+      "applicant_result": false
+    },
+    {
+      "id": "POLYMER",
+      "primary_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7694064/fullTextXML",
+      "local_locator": "specification [0040] polymer evidence block",
+      "scope": "Su et al. PLLA/PDLA 1:1 feed blend and ideal repeat/conditional chain-end record. Feed mass and nominal repeats are not complete incorporated composition, sequence or topology; source Mn/PDI assignment remains dimensionally unresolved.",
+      "chronological_prior_art_qualification": "unresolved",
+      "applicant_result": false
+    },
+    {
+      "id": "HYDROGEL",
+      "primary_url": "https://www.nature.com/articles/s41467-018-04508-x",
+      "local_locator": "documents/hydrogel_claim_comparison_2026-09-30.md",
+      "scope": "Source-local PIC/linker operations and response context; present count/topology/record examples remain calculated/proposed.",
+      "chronological_prior_art_qualification": "unresolved",
+      "applicant_result": false
+    },
+    {
+      "id": "ELECTRICAL",
+      "primary_url": "https://www.nature.com/articles/nnano.2011.40",
+      "local_locator": "documents/electrical_claim_comparison_2026-09-30.md",
+      "scope": "SWCNT/PEDOT:PSS/PS stock origins, source preparation and percolation context; stock-component targets are not elemental fractions or performed source specimen compositions.",
+      "chronological_prior_art_qualification": "unresolved",
+      "applicant_result": false
+    },
+    {
+      "id": "MOLECULAR",
+      "primary_url": "https://journals.iucr.org/m/issues/2021/06/00/yc5034/index.html",
+      "local_locator": "specification [0040] and [0086]",
+      "scope": "Attributed carbamazepine selected connectivity/hydrate source; bulk isolation/mixture proportions and exact retained inventory not established here.",
+      "chronological_prior_art_qualification": "unresolved",
+      "applicant_result": false
+    },
+    {
+      "id": "COMPOSITE",
+      "primary_url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=920936",
+      "local_locator": "specification [0040] and [0089]",
+      "scope": "Attributed nanotube/epoxy example; loading, constituent identity and whole retained elemental/volume inventory differ.",
+      "chronological_prior_art_qualification": "unresolved",
+      "applicant_result": false
+    },
+    {
+      "id": "NUCLEAR",
+      "primary_url": "https://www-nds.iaea.org/amdc/ame2020/NUBASE2020.pdf",
+      "local_locator": "specification [0046]-[0050], data/nuclear_archive",
+      "scope": "Dated nuclear identifiers/evaluation fields, not an arbitrary isotope material or current/future complete nuclear universe.",
+      "chronological_prior_art_qualification": "unresolved",
+      "applicant_result": false
+    },
+    {
+      "id": "PARTICLE",
+      "primary_url": "https://pdg.lbl.gov/2026/tables/contents_tables.html",
+      "local_locator": "specification [0051]-[0056], data/particle_archive",
+      "scope": "Selected identity/property source locators include searches/limits; table inclusion is not discovery or full system-record implementation.",
+      "chronological_prior_art_qualification": "unresolved",
+      "applicant_result": false
+    }
+  ],
+  "evidence_records": [
+    {
+      "path": "data/electrical_source_review_2026-09-30.json",
+      "sha256": "47e7e9bc747814f736adaf889910d67a15915dbcf6635c6c7d341d4ea1f077b1",
+      "size_bytes": 5312
+    },
+    {
+      "path": "data/family_source_review_2026-10-01.json",
+      "sha256": "056c83e78d38d0fc6421150994f097081a8fd6efd98ca83951f5230a3d679e40",
+      "size_bytes": 7203
+    },
+    {
+      "path": "data/hydrogel_preparation_source_review_2026-09-30.json",
+      "sha256": "d0d0f633c80efa9e4b437ead3974aa20cf6e9fb1e293f2a8f03d9fc069f5c327",
+      "size_bytes": 3782
+    },
+    {
+      "path": "data/magneli_source_review_2026-10-01.json",
+      "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768",
+      "size_bytes": 7021
+    },
+    {
+      "path": "data/metal_glass_source_review_2026-10-01.json",
+      "sha256": "4f681b721c96d0c8071c0fdcd0b00d8fc281b3fa90db479fadcd30679be43731",
+      "size_bytes": 10055
+    },
+    {
+      "path": "data/oxide_defect_source_review_2026-09-30.json",
+      "sha256": "cbc510c1e65324ccdac311a2b2027be3e6b08cb0d0791bd90a79345a2b759fa6",
+      "size_bytes": 5465
+    },
+    {
+      "path": "documents/reference_entry_support.md",
+      "sha256": "91b195ba1ac6c2a9426874c570f7dbbcd363e2b95d62a082f8a4bc0ee8f37a72",
+      "size_bytes": 42672
+    },
+    {
+      "path": "documents/composite_comparator_source_review_2026-09-30.md",
+      "sha256": "01c4ff61ee036d2e15ca87a6b8c6c183acc7f6f8d3fde4df2c5ff1bcb93e8b6b",
+      "size_bytes": 3885
+    },
+    {
+      "path": "data/nuclear_archive/source_metadata.json",
+      "sha256": "fa53b1fb73d8723f4867177785ea77b69509336375f0b86aae0447320b012faf",
+      "size_bytes": 4274
+    },
+    {
+      "path": "data/nuclear_archive/portable_bundle_manifest.json",
+      "sha256": "4a7488c291aa914d8be4aa1416aad6fe1d1f2766431611148e6bbe0219c21f81",
+      "size_bytes": 2202
+    },
+    {
+      "path": "data/particle_archive/pdg2026_identity_metadata.json",
+      "sha256": "46c11d87c8756d5cbd3ea92890a4501734cf08def4389d2e8b5a5a43e4fcc1ca",
+      "size_bytes": 15198
+    },
+    {
+      "path": "data/publication_observation.json",
+      "sha256": "d682a91e7af133a164861de53964f482faa893392fda653d7071b46c327a2bc1",
+      "size_bytes": 543
+    },
+    {
+      "path": "data/edition_identity_corrections_2026-10-03.json",
+      "sha256": "d2bc38c8c9e15bab45038688bebcdf90967e5e2460662572590c1f358c46f5a4",
+      "size_bytes": 1241
+    },
+    {
+      "path": "data/technical_review_2026-10-03.json",
+      "sha256": "a6e8c869e6f8cf7a2b4ec85929aebe847f7c9aacc2d1c51755efa7a00d8b8550",
+      "size_bytes": 41041
+    }
+  ],
+  "legal_source_rechecks": [
+    {
+      "id": "L01",
+      "issue": "complete-limitation anticipation",
+      "url": "https://www.uspto.gov/web/offices/pac/mpep/s2131.html",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "L04",
+      "issue": "articulated obviousness rationale",
+      "url": "https://www.uspto.gov/web/offices/pac/mpep/s2143.html",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "L06",
+      "issue": "written description separate from enablement",
+      "url": "https://www.uspto.gov/web/offices/pac/mpep/s2163.html",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "L07",
+      "issue": "claimed-scope enablement and prophetic examples",
+      "url": "https://www.uspto.gov/web/offices/pac/mpep/s2164.html",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "L13",
+      "issue": "PCT common special technical feature",
+      "url": "https://www.wipo.int/en/web/pct-system/texts/rules/r13",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "L15",
+      "issue": "ordinary human conception standard; 2024 guidance rescinded",
+      "url": "https://www.uspto.gov/subscription-center/2025/revised-inventorship-guidance-ai-assisted-inventions",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "L16",
+      "issue": "earlier-benefit support and procedure",
+      "url": "https://www.uspto.gov/web/offices/pac/mpep/s211.html",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "L17",
+      "issue": "public accessibility distinct from creation",
+      "url": "https://www.uspto.gov/web/offices/pac/mpep/s2128.html",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "L20",
+      "issue": "September 29 eligibility declaration addendum",
+      "url": "https://www.uspto.gov/sites/default/files/documents/smeds-memo-20260929.pdf",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "PROVISIONAL",
+      "issue": "U.S. provisional route",
+      "url": "https://www.uspto.gov/patents/basics/apply/provisional-application",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "PCT3",
+      "issue": "accepted international application contents",
+      "url": "https://www.wipo.int/en/web/pct-system/texts/articles/a3",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    },
+    {
+      "id": "PCT21",
+      "issue": "ordinary and requested earlier international publication",
+      "url": "https://www.wipo.int/en/web/pct-system/texts/articles/a21",
+      "checked_date": "2026-10-05",
+      "method": "official page/PDF reader inspection; no new legal opinion"
+    }
+  ],
+  "publication_observation": {
+    "observation_time_utc": "2026-09-30 02:31:40 UTC",
+    "repository": "RobertMLayne/all-materials-patent",
+    "ref": "refs/heads/main",
+    "sha": "1e1d41806d1c5dd2922bbee41f3dd30c702fcaea",
+    "source_url": "https://github.com/RobertMLayne/all-materials-patent",
+    "earliest_public_availability_certified": false,
+    "filing_asserted": false,
+    "method": "Read-only authenticated connector resolves exact public main commit; separate unauthenticated browser displays Public badge and research README.",
+    "public_access_browser_observed": true
+  },
+  "filing_asserted": false,
+  "earliest_public_availability_certified": false,
+  "legal_inventorship_confirmed": false,
+  "applicant_experiments_performed": false,
+  "complete_chronological_novelty_search": false,
+  "universal_blocking_established": false,
+  "scoped_private_intake": "Assigned local files and owner-rollout references reconciled privately: 79 legacy files; all 91 saved user-role records screened; both referenced text attachments present. No known missing local referenced attachment; complete cloud history is not claimed.",
+  "later_review_exhibits": [
+    "documents/review_readiness_2026-10-04.md",
+    "documents/claim_scenarios_2026-10-04.md",
+    "documents/material_state_process_coverage_2026-10-04.md"
+  ],
+  "edition_boundary": "Later companions are not content of any preserved earlier application or an assumed filing."
+}

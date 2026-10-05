@@ -314,11 +314,25 @@ SUBSTANTIVE_FILES = {
 }
 EDITION_CORRECTIONS = "data/edition_identity_corrections_2026-10-03.json"
 EXPECTED_HASHED = EXPECTED_HASHED | SUBSTANTIVE_FILES | {EDITION_CORRECTIONS}
+COMPLETION_FILES = {
+    "data/claim_scenarios_2026-10-04.json", "documents/claim_scenarios_2026-10-04.md",
+    "tools/claim_scenario_checks.py", "data/material_state_process_coverage_2026-10-04.json",
+    "documents/material_state_process_coverage_2026-10-04.md", "tools/coverage_checks.py",
+    "data/evidence_edition_index_2026-10-04.json", "documents/evidence_edition_index_2026-10-04.md",
+    "documents/review_readiness_2026-10-04.md", "tools/review_completion_checks.py",
+    "tools/pdf/build_completion_exhibits.py", "documents/pdf/materials_review_completion_2026-10-04.pdf",
+    "data/review_completion_authoring_2026-10-04.json",
+    "data/review_completion_authoring_2026-10-04/builder.py.txt",
+    "data/review_completion_authoring_2026-10-04/layout.py.txt",
+    "data/review_completion_authoring_2026-10-04/output_helper.py.txt",
+}
+EXPECTED_HASHED = EXPECTED_HASHED | COMPLETION_FILES
 EXPECTED_FILES = EXPECTED_HASHED | {MANIFEST, RANGE_REPORT}
 MODULE_NAMES = frozenset({
     "composition_ranges", "unrestricted_compositions", "independent_unrestricted_checks",
     "trace_sampling_calculations", "claim_clarification_checks", "parse_nubase", "verify_nuclear_archive",
     "extract_pdg_identities", "substantive_review_checks", "technical_review_calculations",
+    "claim_scenario_checks", "coverage_checks", "review_completion_checks",
 })
 
 
@@ -2210,6 +2224,16 @@ def check_substantive_application(root: Path) -> dict:
         return module.check(root, require, safe_path, evidence_block_counts, arithmetic.check)
 
 
+def check_completion_exhibits(root: Path, negative: bool = False) -> dict:
+    """Keep additive review checks independent of preserved edition checks."""
+    results = {}
+    with module_environment(root / "tools"):
+        for name in ("claim_scenario_checks", "coverage_checks", "review_completion_checks"):
+            module = import_local(name, root / "tools" / (name + ".py"))
+            results[name] = module.self_test(root) if negative else module.check(root)
+    return results
+
+
 def run(root: Path) -> dict:
     require(__debug__, "Verification requires enabled assertions; run Python without -O, -OO or PYTHONOPTIMIZE.")
     file_count = check_inventory(root)
@@ -2226,6 +2250,7 @@ def run(root: Path) -> dict:
     metal_glass_result = check_metal_glass_application(root)
     theoretical_result = check_theoretical_application(root)
     substantive_result = check_substantive_application(root)
+    completion_result = check_completion_exhibits(root)
     registry_result = check_registry(load_json(root / "data/entity_register.json"), application)
     links = check_local_links(root)
     for relative in EXPECTED_HASHED:
@@ -2254,6 +2279,7 @@ def run(root: Path) -> dict:
             "metal_glass_application_edition_verification": metal_glass_result,
             "theoretical_provisional_review_verification": theoretical_result,
             "substantive_provisional_review_verification": substantive_result,
+            "additive_completion_exhibit_verification": completion_result,
             "dated_nuclear_archive_verification": nuclear_result,
             "dated_particle_archive_verification": particle_result,
             "publication_observation_verification": publication_result,
@@ -3433,6 +3459,7 @@ def main() -> int:
         result = run(root)
         if args.self_test:
             result["verifier_self_tests"] = self_test(root)
+            result["completion_exhibit_self_tests"] = check_completion_exhibits(root, negative=True)
         print(json.dumps(result, indent=2))
         return 0
     except (VerificationError, OSError, ValueError, KeyError, IndexError, TypeError) as error:

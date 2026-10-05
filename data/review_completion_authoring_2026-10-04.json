@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "task_identifier_date": "2026-10-04",
+  "prepared_date": "2026-10-05",
+  "recorded_utc": "2026-10-05T04:35:14.360939+00:00",
+  "status": "local unfiled review; visual inspection completed",
+  "baseline_commit": "e0233fe2863b2fd9d43be634b6dc6022b5cc0074",
+  "authoring_versions": {
+    "python": "3.12.14",
+    "reportlab": "4.4.9",
+    "pypdf": "6.19.0"
+  },
+  "fonts": [
+    {
+      "name": "arial.ttf",
+      "sha256": "b3658eadae55e682b5f69eb64c439c1ecc8f196c0bb8d4756d145d13bc86476a"
+    },
+    {
+      "name": "arialbd.ttf",
+      "sha256": "e8f4e3baf6cc35fed6fcce3a540e8b39e8f6cda1d22a28f2ec8f526fef7a43f5"
+    },
+    {
+      "name": "ariali.ttf",
+      "sha256": "86b32db9a06f9694e2a3760c42e5117bcdc5cc1255bb5186ca8ce0305e22f288"
+    },
+    {
+      "name": "arialbi.ttf",
+      "sha256": "267a411525980d648f10a7222a6ff1ebe4d4feeefbf9b3100cae2b5cfab5594a"
+    }
+  ],
+  "sources": [
+    {
+      "path": "documents/review_readiness_2026-10-04.md",
+      "size_bytes": 12301,
+      "sha256": "c50752d5c4e1c71286bc0afbfc765ae20b3def429e719e6f60ae52185694cbeb"
+    },
+    {
+      "path": "documents/evidence_edition_index_2026-10-04.md",
+      "size_bytes": 13723,
+      "sha256": "cca40e17197b89f092632bbe1c8a2cf3fca27699fd33dce57e45b02da3f63441"
+    },
+    {
+      "path": "documents/material_state_process_coverage_2026-10-04.md",
+      "size_bytes": 36217,
+      "sha256": "4e10493c47ec6888bbb2f8d1e841cf6b6664d98c1e1fa6eee1237101b91bea72"
+    },
+    {
+      "path": "documents/provisional_application_substantive_review_2026-10-03.md",
+      "size_bytes": 165484,
+      "sha256": "5ccb71d5448a07f41041302f4be2b962e9a214c83b2f92e39ed642a3b8b1ec23"
+    },
+    {
+      "path": "documents/pdf/provisional_application_substantive_review_2026-10-03.pdf",
+      "size_bytes": 234355,
+      "sha256": "531dccb58202a5cd6cb24f307a2173ed38abac49ec1d251ed8f3e8a743697a9c"
+    },
+    {
+      "path": "data/claim_scenarios_2026-10-04.json",
+      "size_bytes": 5666340,
+      "sha256": "a51142cd4973b94ee2b322388763dc33b5f6c52b2caa12cb513bb798e08e99dd"
+    },
+    {
+      "path": "data/evidence_edition_index_2026-10-04.json",
+      "size_bytes": 65773,
+      "sha256": "0c629d9e128b7afd8e359dace323f7a618f05e7e64c59884da3605373073da43"
+    },
+    {
+      "path": "data/material_state_process_coverage_2026-10-04.json",
+      "size_bytes": 206178,
+      "sha256": "c756120097fac752b2aa8438597f52584fc82210781842aa92fe8459722654d0"
+    },
+    {
+      "path": "data/claim_review_2026-10-03.json",
+      "size_bytes": 1542468,
+      "sha256": "0a624b5a57e100582cc08f39ad138ff22585ee7afcd20f685e0653c30808a942"
+    },
+    {
+      "path": "data/claim_support_map_substantive_review_2026-10-03.json",
+      "size_bytes": 154721,
+      "sha256": "325102864ecbe4065d2e3dfa138383dab6a9aa1e84fb09cff2531ddcf4f06b8d"
+    },
+    {
+      "path": "tools/pdf/requirements-pdf.txt",
+      "size_bytes": 115,
+      "sha256": "cfb43a07bd0b4c2aa959c50eaf46c81f5d5cb785b0dcbf477c371545923f0b7b"
+    },
+    {
+      "path": "tools/pdf/build_completion_exhibits.py",
+      "size_bytes": 13047,
+      "sha256": "f1ec147830b98296cbeba796dbd9400c822678679730eefd40613b1f4333c02e"
+    },
+    {
+      "path": "tools/pdf/build_consolidated_review.py",
+      "size_bytes": 28711,
+      "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8"
+    },
+    {
+      "path": "tools/pdf/build_identity_review_annex.py",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    }
+  ],
+  "pdf": {
+    "path": "documents/pdf/materials_review_completion_2026-10-04.pdf",
+    "size_bytes": 415435,
+    "sha256": "60e5d7aabddd24b1b851e5e3d87c297180370ee472c3c336853939960caaac87",
+    "review_pages": 36,
+    "application_first_packet_page": 37,
+    "application_pages": 47,
+    "total_pages": 83,
+    "working_output_path": "generated_reports/pdf/materials_review_completion_2026-10-04.pdf"
+  },
+  "headings": [
+    {
+      "title": "Materials application completion review packet",
+      "part_page": 1
+    },
+    {
+      "title": "Materials application review and decision packet",
+      "part_page": 1
+    },
+    {
+      "title": "Reading and review sequence",
+      "part_page": 2
+    },
+    {
+      "title": "Technical review checklist",
+      "part_page": 3
+    },
+    {
+      "title": "Inventor, applicant and counsel checklist",
+      "part_page": 4
+    },
+    {
+      "title": "Separate submission and publication workflow",
+      "part_page": 5
+    },
+    {
+      "title": "Verification and acceptance boundaries",
+      "part_page": 5
+    },
+    {
+      "title": "Edition, citation and chronology index",
+      "part_page": 6
+    },
+    {
+      "title": "Preserved application sequence",
+      "part_page": 6
+    },
+    {
+      "title": "Finite attributed comparators",
+      "part_page": 7
+    },
+    {
+      "title": "Evidence records and source-edition provenance",
+      "part_page": 8
+    },
+    {
+      "title": "Chronology for later-claim comparisons",
+      "part_page": 9
+    },
+    {
+      "title": "Fresh official-source checks",
+      "part_page": 10
+    },
+    {
+      "title": "Scoped intake and unresolved evidence",
+      "part_page": 10
+    },
+    {
+      "title": "Material, state and process coverage: later review exhibit",
+      "part_page": 11
+    },
+    {
+      "title": "Coverage matrix",
+      "part_page": 12
+    },
+    {
+      "title": "Field assessments",
+      "part_page": 13
+    },
+    {
+      "title": "DOM - Composition-domain and quantity-basis framework",
+      "part_page": 14
+    },
+    {
+      "title": "ALLOY - Metals and crystalline alloys",
+      "part_page": 14
+    },
+    {
+      "title": "GLASS - Metallic glass and amorphous structure",
+      "part_page": 14
+    },
+    {
+      "title": "OXIDE-B - Inorganic nominal TiO2(B) nanosheets",
+      "part_page": 15
+    },
+    {
+      "title": "OXIDE-RED - Reduced oxide, defects and phase-specific host",
+      "part_page": 15
+    },
+    {
+      "title": "MOLECULAR - Molecular crystals and hydrate mixtures",
+      "part_page": 15
+    },
+    {
+      "title": "POLYMER - PLA, repeat units and finite chains",
+      "part_page": 16
+    },
+    {
+      "title": "HYDROGEL - PIC network and linker topology",
+      "part_page": 16
+    },
+    {
+      "title": "CNT-COMPOSITE - Nanotube/epoxy composite and release boundary",
+      "part_page": 16
+    },
+    {
+      "title": "ELECTRICAL - SWCNT/PEDOT:PSS/PS and electrical loading",
+      "part_page": 17
+    },
+    {
+      "title": "UNARY - Single-element form: later worked record W-U",
+      "part_page": 17
+    },
+    {
+      "title": "SPATIAL - Spatial/layered inventory: later worked record W-L",
+      "part_page": 17
+    },
+    {
+      "title": "NUCLEAR - Isotope/state and reference-time accounting",
+      "part_page": 18
+    },
+    {
+      "title": "PARTICLE - Particle/host construction: later worked record W-P",
+      "part_page": 18
+    },
+    {
+      "title": "RECORD - Bounded record workflow: later worked record W-R",
+      "part_page": 18
+    },
+    {
+      "title": "Claim and property accounting",
+      "part_page": 19
+    },
+    {
+      "title": "Later worked records",
+      "part_page": 20
+    },
+    {
+      "title": "W-U - unary count record",
+      "part_page": 20
+    },
+    {
+      "title": "W-L - spatial inventory record",
+      "part_page": 20
+    },
+    {
+      "title": "W-R - bounded record workflow",
+      "part_page": 21
+    },
+    {
+      "title": "W-P - particle host record",
+      "part_page": 21
+    },
+    {
+      "title": "Validation and remaining decisions",
+      "part_page": 22
+    },
+    {
+      "title": "All-199 scenario navigation",
+      "part_page": 22
+    }
+  ],
+  "complete_printed_fragments_checked": 1342,
+  "review_footer_page_labels_checked": 36,
+  "printed_fragment_match_convention": "All non-whitespace characters retained; wrapped filename extraction may add internal whitespace.",
+  "scenario_navigation_ids_checked": 796,
+  "exact_application_claim_bodies_checked": 199,
+  "application_page_texts_unchanged": true,
+  "original_application_bytes_unchanged": true,
+  "visual_review": {
+    "status": "completed",
+    "recorded_utc": "2026-10-05T04:38:35.372909+00:00",
+    "render_tool": "Poppler pdftoppm 26.07.0",
+    "render_dpi": 90,
+    "rendered_page_count": 83,
+    "contact_sheet_count": 7,
+    "all_contact_pages_inspected": true,
+    "root_full_page_spots": [
+      2,
+      12,
+      21,
+      30,
+      35,
+      62,
+      67,
+      83
+    ],
+    "independent_full_page_spots": [
+      20,
+      21,
+      25,
+      36,
+      37,
+      62,
+      63
+    ],
+    "actionable_layout_findings_remaining": 0,
+    "method": "All 83 pages rendered; all seven contact sheets visually inspected; full-page table, worked-record continuation, crosswalk, preserved-application boundary and drawing inspection. Independent selected-page review reported no actionable issue.",
+    "scope": "Appearance and recorded content checks only; no physical enablement, legal sufficiency, inventorship, filing or publication certified."
+  },
+  "filing_asserted": false,
+  "application_content_adoption": false,
+  "legal_or_physical_sufficiency_certified": false
+}

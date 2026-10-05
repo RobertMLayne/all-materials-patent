@@ -19,7 +19,7 @@
     "range_model/verification_report.json"
   ],
   "regenerated_report_check": "range_model/verification_report.json is compared with a fresh exact verifier result.",
-  "file_count": 194,
+  "file_count": 210,
   "files": [
     {
       "path": ".editorconfig",
@@ -133,8 +133,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 32931,
-      "sha256": "d6b0ae66263c7c6924a66064d1f67e2793787442c7245efb3621f03419974906"
+      "size_bytes": 33886,
+      "sha256": "2b81da56c6a19ef06268ce56ea0aeca609407f9cec56ccaf6e64f2a14b2c953d"
     },
     {
       "path": "data/application_electrical_evidence_2026-09-30.json",
@@ -322,6 +322,11 @@
       "sha256": "0a624b5a57e100582cc08f39ad138ff22585ee7afcd20f685e0653c30808a942"
     },
     {
+      "path": "data/claim_scenarios_2026-10-04.json",
+      "size_bytes": 5666340,
+      "sha256": "a51142cd4973b94ee2b322388763dc33b5f6c52b2caa12cb513bb798e08e99dd"
+    },
+    {
       "path": "data/claim_support_map.json",
       "size_bytes": 154015,
       "sha256": "b75a45d1a92705eb2f45fcea18e9817f8fb75d86c3661cff0d1b3ae43a8bf87e"
@@ -402,6 +407,11 @@
       "sha256": "20f4d9ad36b44714bbd2c7dc52b3ee782fda15f1802061521706aaf1a645521d"
     },
     {
+      "path": "data/evidence_edition_index_2026-10-04.json",
+      "size_bytes": 65773,
+      "sha256": "0c629d9e128b7afd8e359dace323f7a618f05e7e64c59884da3605373073da43"
+    },
+    {
       "path": "data/family_source_review_2026-10-01.json",
       "size_bytes": 7203,
       "sha256": "056c83e78d38d0fc6421150994f097081a8fd6efd98ca83951f5230a3d679e40"
@@ -425,6 +435,11 @@
       "path": "data/magneli_source_review_2026-10-01.json",
       "size_bytes": 7021,
       "sha256": "ec22f63bffef4d22e594bebf3827405df13f10527c7801bd2eab0054c65b7768"
+    },
+    {
+      "path": "data/material_state_process_coverage_2026-10-04.json",
+      "size_bytes": 206178,
+      "sha256": "c756120097fac752b2aa8438597f52584fc82210781842aa92fe8459722654d0"
     },
     {
       "path": "data/metal_glass_source_review_2026-10-01.json",
@@ -537,6 +552,26 @@
       "sha256": "d682a91e7af133a164861de53964f482faa893392fda653d7071b46c327a2bc1"
     },
     {
+      "path": "data/review_completion_authoring_2026-10-04.json",
+      "size_bytes": 9218,
+      "sha256": "434f7ca97e5c32dba852fb3f188f628b7a91267646219058cecfa1016677737c"
+    },
+    {
+      "path": "data/review_completion_authoring_2026-10-04/builder.py.txt",
+      "size_bytes": 13047,
+      "sha256": "f1ec147830b98296cbeba796dbd9400c822678679730eefd40613b1f4333c02e"
+    },
+    {
+      "path": "data/review_completion_authoring_2026-10-04/layout.py.txt",
+      "size_bytes": 28711,
+      "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8"
+    },
+    {
+      "path": "data/review_completion_authoring_2026-10-04/output_helper.py.txt",
+      "size_bytes": 37887,
+      "sha256": "954f9e2f79c60e668b2e314cc27694443e610da40d40a6e332f289ea3f07768c"
+    },
+    {
       "path": "data/review_packet_authoring/core_builder_2026-09-30.py.txt",
       "size_bytes": 28420,
       "sha256": "f3a2c60b3e6317918ba8533d5caf9bc3985eb9edab21c094d7f843cd418bfec0"
@@ -637,6 +672,11 @@
       "sha256": "94bbdfb691ea2cf7ba2a27b68a44c1074ba319fe5fd2c534d78a8458632d4b6e"
     },
     {
+      "path": "documents/claim_scenarios_2026-10-04.md",
+      "size_bytes": 731739,
+      "sha256": "537d1daad63b10ca608feba19480b33b4ec9e8900f6e6e32351009e695a4cc78"
+    },
+    {
       "path": "documents/composite_comparator_source_review_2026-09-30.md",
       "size_bytes": 3885,
       "sha256": "01c4ff61ee036d2e15ca87a6b8c6c183acc7f6f8d3fde4df2c5ff1bcb93e8b6b"
@@ -667,6 +707,11 @@
       "sha256": "753742677a6bebd5b0a974ac0b417dc2e4db4b365a2af7a27421de6e81044f16"
     },
     {
+      "path": "documents/evidence_edition_index_2026-10-04.md",
+      "size_bytes": 13723,
+      "sha256": "cca40e17197b89f092632bbe1c8a2cf3fca27699fd33dce57e45b02da3f63441"
+    },
+    {
       "path": "documents/full_scope_completion_audit.md",
       "size_bytes": 17861,
       "sha256": "a2c438e2310ddaeb897cdabceb275f4c10681bd750f5d6ad12f5f7c5b876d954"
@@ -692,6 +737,11 @@
       "sha256": "36d30a8db00a5bb6c6421de3daae7e8f6188d62cf58318bdafcca6d90b4d425e"
     },
     {
+      "path": "documents/material_state_process_coverage_2026-10-04.md",
+      "size_bytes": 36217,
+      "sha256": "4e10493c47ec6888bbb2f8d1e841cf6b6664d98c1e1fa6eee1237101b91bea72"
+    },
+    {
       "path": "documents/oxide_claim_comparison_2026-10-01.md",
       "size_bytes": 23234,
       "sha256": "cf0aa8fea0e6235be363cfd22fc3aa6b32cb9b47c4f2546e0a1ac86151a4115a"
@@ -710,6 +760,11 @@
       "path": "documents/pdf/materials_provisional_review_2026-09-30.pdf",
       "size_bytes": 714484,
       "sha256": "ec4af77607dec8c4c9d6916d194fd26b10d3edbb15a37d64e8ea5cbd232d3f3b"
+    },
+    {
+      "path": "documents/pdf/materials_review_completion_2026-10-04.pdf",
+      "size_bytes": 415435,
+      "sha256": "60e5d7aabddd24b1b851e5e3d87c297180370ee472c3c336853939960caaac87"
     },
     {
       "path": "documents/pdf/pct_defensive_disclosure_blueprint.pdf",
@@ -852,6 +907,11 @@
       "sha256": "0cc890470ff769554eddffe6f9baea17de463434f2bf455ddf8fb64df24ce130"
     },
     {
+      "path": "documents/review_readiness_2026-10-04.md",
+      "size_bytes": 12301,
+      "sha256": "c50752d5c4e1c71286bc0afbfc765ae20b3def429e719e6f60ae52185694cbeb"
+    },
+    {
       "path": "documents/technical_scope_supplement.md",
       "size_bytes": 23950,
       "sha256": "51933a785f5c0cda2cdfab4dc64fe53401f6f9c1919b299870c4375e0b4d1c8d"
@@ -947,6 +1007,21 @@
       "sha256": "faed2b6ec2664f96f81c5cc8dba520862d9c281cf9e46502c8ae0542cc304304"
     },
     {
+      "path": "tools/claim_scenario_checks.py",
+      "size_bytes": 36667,
+      "sha256": "016b74e7054b7c873a68c916e50b1ba4dea112759eb177a59d9fd0f0f8064f73"
+    },
+    {
+      "path": "tools/coverage_checks.py",
+      "size_bytes": 18149,
+      "sha256": "8a68dabc54b14acd9e507fd4ac464ea006e9a6b6ec4db6d76db7f0c6dcf87b81"
+    },
+    {
+      "path": "tools/pdf/build_completion_exhibits.py",
+      "size_bytes": 13047,
+      "sha256": "f1ec147830b98296cbeba796dbd9400c822678679730eefd40613b1f4333c02e"
+    },
+    {
       "path": "tools/pdf/build_consolidated_review.py",
       "size_bytes": 28711,
       "sha256": "2897bef7583fef3fe2218c941ff8c55b99f0747390c12825cb1f421e69777ca8"
@@ -972,6 +1047,11 @@
       "sha256": "529f077d5efa3db15fd67f4c107bc64e684e3bfab7b71b83d6e81b3162895069"
     },
     {
+      "path": "tools/review_completion_checks.py",
+      "size_bytes": 21890,
+      "sha256": "7f562d6caa9aa635fb2d75f77b6ef8f2266c390ce075715b6a356041b7dd06ad"
+    },
+    {
       "path": "tools/substantive_review_checks.py",
       "size_bytes": 29008,
       "sha256": "d2f8401286544a0db277b34f6f5bc8d95d945f27771faaf7073a20c96df9037d"
@@ -988,8 +1068,8 @@
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 235289,
-      "sha256": "412a2070422d52828dcf645516987a2db2f13a227782ef66ff3b49e782f34cfa"
+      "size_bytes": 236987,
+      "sha256": "3b8d025b9ffb76739c420fa1999feee57233a1333e6fdc022bf62ce45379ea66"
     }
   ],
   "supplement_preparation_date_utc": "2026-09-30"
