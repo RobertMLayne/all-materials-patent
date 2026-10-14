@@ -58,8 +58,8 @@
     },
     {
       "path": ".github/dependabot.yml",
-      "size_bytes": 385,
-      "sha256": "81d0cdb27f49972d364e1e69cddd06c3cf7042cecc8e9d0552d60829ea66c9fa"
+      "size_bytes": 497,
+      "sha256": "891f919fed393bfd61f90d188663e2160ebe1ac3a43c53ad787407ac09dbbe27"
     },
     {
       "path": ".github/pull_request_template.md",
@@ -89,7 +89,7 @@
     {
       "path": ".github/workflows/codeql.yml",
       "size_bytes": 1128,
-      "sha256": "4588cebaea0caf7b7aa90cd00ecf4c115a7bbb2fa4f38d5fe607b4bcc9160498"
+      "sha256": "a5604cca4d54c8478232e673cac4e48a137e9d9b87719c71304b3c151c23cf1f"
     },
     {
       "path": ".github/workflows/copilot-setup-steps.yml",
