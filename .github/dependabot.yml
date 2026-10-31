@@ -8,7 +8,8 @@ updates:
     open-pull-requests-limit: 3
     groups:
       official-actions:
-        patterns: ['actions/*', 'github/codeql-action']
+        # CodeQL subactions must move together so init/analyze stay compatible.
+        patterns: ['actions/*', 'github/codeql-action', 'github/codeql-action/*']
   - package-ecosystem: pip
     directory: /
     schedule:
