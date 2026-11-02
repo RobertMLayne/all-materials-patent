@@ -964,7 +964,7 @@
     {
       "path": "tools/pdf/requirements-pdf.txt",
       "size_bytes": 115,
-      "sha256": "cfb43a07bd0b4c2aa959c50eaf46c81f5d5cb785b0dcbf477c371545923f0b7b"
+      "sha256": "142b26e6d7637c14dec1df331682ad1fdd5005afb14e44fc842d3ac980a0a6d7"
     },
     {
       "path": "tools/pdf/test_pdf_outputs.py",
